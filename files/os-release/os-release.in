@@ -1,6 +1,6 @@
 NAME="Aemeath OS"
-VERSION="@AEMEATH_VERSION@ (Freedesktop Runtime @SDK_VERSION@)"
-VERSION_ID="@AEMEATH_VERSION@"
+VERSION="__AEMEATH_VERSION__ (Freedesktop Runtime __SDK_VERSION__)"
+VERSION_ID="__AEMEATH_VERSION__"
 ID=com.damillora.aemeath
-PRETTY_NAME="Aemeath OS @AEMEATH_VERSION@ (Freedesktop Runtime @SDK_VERSION@)"
+PRETTY_NAME="Aemeath OS __AEMEATH_VERSION__ (Freedesktop Runtime __SDK_VERSION__)"
 BUG_REPORT_URL=https://github.com/Damillora/aemeath

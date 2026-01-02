@@ -2,8 +2,11 @@ kind: script
 
 build-depends:
 - freedesktop-sdk.bst:oci/oci-builder.bst
-- oci/layers/minimal-init-scripts.bst
-- filename: oci/layers/minimal.bst
+- oci/layers/platform-init-scripts.bst
+- filename: oci/minimal.bst
+  config:
+    location: /parent
+- filename: oci/layers/platform.bst
   config:
     location: /layer
 
@@ -24,12 +27,14 @@ config:
     images:
     - os: linux
       architecture: "%{go-arch}"
+      parent:
+        image: /parent
       layer: /layer
-      comment: "Aemeath FD.o minimal base image"
+      comment: "Aemeath FD.o platform base image"
       config:
         Labels:
           'org.opencontainers.image.source': 'https://github.com/Damillora/aemeath'
           'org.opencontainers.image.url': 'https://github.com/Damillora/aemeath'
       index-annotations:
-        'org.opencontainers.image.ref.name': 'ghcr.io/damillora/aemeath:fdo-minimal'
+        'org.opencontainers.image.ref.name': 'ghcr.io/damillora/aemeath:fdo-platform'
     EOF

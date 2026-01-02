@@ -1,3 +1,2 @@
 sdk-version: "25.08"
-aemeath-version: "26.1"
-full-version: "%{aemeath-version}-fdo%{sdk-version}-aemeath"
+aemeath-version: "26.01"

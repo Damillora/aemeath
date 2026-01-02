@@ -1,10 +1,10 @@
 kind: cmake
 
 build-depends:
-  - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+  - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 
 depends:
-  - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+  - aemeath/platform.bst
 
 variables:
   cmake-local: |
@@ -13,3 +13,7 @@ variables:
     -DBUILD_WITH_PCH=FALSE
     -DQT_FEATURE_openssl_linked=ON
     -DQT_FEATURE_system_sqlite=ON
+
+sources:
+  - kind: tar
+    url: qt:%{qt6-version-branch}/%{qt6-version}/submodules/qtbase-everywhere-src-%{qt6-version}.tar.xz

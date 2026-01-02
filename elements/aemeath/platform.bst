@@ -1,5 +1,5 @@
 kind: stack
 
 depends:
+  - aemeath/minimal.bst
   - freedesktop-sdk.bst:platform.bst
-  - oci/layers/minimal-stack.bst

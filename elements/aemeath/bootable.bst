@@ -1,0 +1,29 @@
+kind: stack
+
+depends:
+  - aemeath/minimal.bst
+  - freedesktop-sdk.bst:components/util-linux-full.bst
+  - freedesktop-sdk.bst:components/linux.bst
+  - freedesktop-sdk.bst:components/linux-firmware.bst
+  - freedesktop-sdk.bst:components/wireless-regdb-bin.bst
+  - freedesktop-sdk.bst:components/systemd.bst
+  - freedesktop-sdk.bst:components/dbus.bst
+  - freedesktop-sdk.bst:components/dracut.bst
+  - freedesktop-sdk.bst:components/shadow.bst
+  - freedesktop-sdk.bst:components/tzdata.bst
+  - freedesktop-sdk.bst:components/iproute2.bst
+  - freedesktop-sdk.bst:vm/base-filesystem.bst
+  - freedesktop-sdk.bst:vm/config/journald.bst
+  - freedesktop-sdk.bst:vm/config/networkd.bst
+  - freedesktop-sdk.bst:vm/config/resolved.bst
+  - freedesktop-sdk.bst:vm/config/useradd-default.bst
+  - freedesktop-sdk.bst:vm/config/systemd-homed-firstboot.bst
+  - freedesktop-sdk.bst:components/usbutils.bst
+  - freedesktop-sdk.bst:components/hosts.bst
+  - freedesktop-sdk.bst:components/less.bst
+  - freedesktop-sdk.bst:components/audit.bst
+  - freedesktop-sdk.bst:components/nsswitch-config.bst
+  - freedesktop-sdk.bst:components/tpm2-tss.bst
+  - freedesktop-sdk.bst:components/tpm2-tools.bst
+  - freedesktop-sdk.bst:components/efitools.bst
+  - freedesktop-sdk.bst:components/lvm2.bst

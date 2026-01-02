@@ -1,0 +1,3 @@
+option('full-version', type : 'string', value : 'aemeath', description : 'Aemeath full version')
+option('aemeath-version', type : 'string', value : 'aemeath', description : 'Aemeath version')
+option('sdk-version', type : 'string', value : 'aemeath', description : 'FD.o SDK version')

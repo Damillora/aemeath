@@ -25,4 +25,4 @@ sources:
 - kind: git_repo
   url: 'kde:frameworks/kiconthemes.git'
   track: 'v%{kf6-version}'
-  ref: b9bdd85c3d57b387a71110ef3924a027a6617688
+  ref: 2c87505182e067f5f141ea2fedb73edb2088cc46

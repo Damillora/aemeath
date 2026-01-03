@@ -17,4 +17,4 @@ sources:
 - kind: git_repo
   url: 'kde:frameworks/kcodecs.git'
   track: 'v%{kf6-version}'
-  ref: b9bdd85c3d57b387a71110ef3924a027a6617688
+  ref: 7494a001f6d05e3de2294e54b8b7aed6162ad473

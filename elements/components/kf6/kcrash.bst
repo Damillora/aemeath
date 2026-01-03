@@ -19,4 +19,4 @@ sources:
 - kind: git_repo
   url: 'kde:frameworks/kcrash.git'
   track: 'v%{kf6-version}'
-  ref: b9bdd85c3d57b387a71110ef3924a027a6617688
+  ref: 09996fcb95d796d26e552fefd6a9e82fd2c2a610

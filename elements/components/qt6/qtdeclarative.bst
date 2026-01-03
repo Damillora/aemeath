@@ -19,7 +19,7 @@ config:
     for f in qml qmleasing qmlls qmlpreview qmlscene
     do
         rm "%{install-root}%{bindir}/$f"
-        ln -sf "$f6" "%{install-root}%{bindir}/$f"
+        ln -sf "${f}6" "%{install-root}%{bindir}/$f"
     done
 
 sources:

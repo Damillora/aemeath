@@ -18,4 +18,4 @@ sources:
 - kind: git_repo
   url: 'kde:frameworks/kconfig.git'
   track: 'v%{kf6-version}'
-  ref: b9bdd85c3d57b387a71110ef3924a027a6617688
+  ref: 1a6beb5dd8e4f560885ecbdf21dab9fbe3608c70

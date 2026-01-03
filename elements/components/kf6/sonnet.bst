@@ -19,4 +19,4 @@ sources:
 - kind: git_repo
   url: 'kde:frameworks/sonnet.git'
   track: 'v%{kf6-version}'
-  ref: b9bdd85c3d57b387a71110ef3924a027a6617688
+  ref: d5016014eb8ad4d06713ddb4f2d74ed06a4e8120

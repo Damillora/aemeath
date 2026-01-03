@@ -18,4 +18,4 @@ sources:
 - kind: git_repo
   url: 'kde:frameworks/breeze-icons.git'
   track: 'v%{kf6-version}'
-  ref: b9bdd85c3d57b387a71110ef3924a027a6617688
+  ref: eb34fcfcde9fabcf4be00f4c91d2cfddb36d6f73

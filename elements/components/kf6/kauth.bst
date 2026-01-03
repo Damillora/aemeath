@@ -22,4 +22,4 @@ sources:
 - kind: git_repo
   url: 'kde:frameworks/kauth.git'
   track: 'v%{kf6-version}'
-  ref: b9bdd85c3d57b387a71110ef3924a027a6617688
+  ref: cad50012cc1db3de0418bc3567f97708ebc19fe8

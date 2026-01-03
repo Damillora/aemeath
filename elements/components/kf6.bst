@@ -3,22 +3,28 @@ kind: stack
 depends:
   - components/kf6/attica.bst
   - components/kf6/breeze-icons.bst
-  - components/qt6/extra-cmake-modules.bst
-  - components/qt6/karchive.bst
-  - components/qt6/kauth.bst
-  - components/qt6/kcodecs.bst
-  - components/qt6/kcolorscheme.bst
-  - components/qt6/kconfig.bst
-  - components/qt6/kconfigwidgets.bst
-  - components/qt6/kcoreaddons.bst
-  - components/qt6/kcrash.bst
-  - components/qt6/kdbusaddons.bst
-  - components/qt6/kglobalaccel.bst
-  - components/qt6/kguiaddons.bst
-  - components/qt6/ki18n.bst
-  - components/qt6/kiconthemes.bst
-  - components/qt6/kitemviews.bst
-  - components/qt6/kservice.bst
-  - components/qt6/kwidgetsaddons.bst
-  - components/qt6/kwindowsystem.bst
-  - components/qt6/sonnet.bst
+  - components/kf6/extra-cmake-modules.bst
+  - components/kf6/karchive.bst
+  - components/kf6/kauth.bst
+  - components/kf6/kbookmark.bst
+  - components/kf6/kcodecs.bst
+  - components/kf6/kcolorscheme.bst
+  - components/kf6/kcompletion.bst
+  - components/kf6/kconfig.bst
+  - components/kf6/kconfigwidgets.bst
+  - components/kf6/kcoreaddons.bst
+  - components/kf6/kcrash.bst
+  - components/kf6/kdbusaddons.bst
+  - components/kf6/kdoctools.bst
+  - components/kf6/kfilemetadata.bst
+  - components/kf6/kglobalaccel.bst
+  - components/kf6/kguiaddons.bst
+  - components/kf6/ki18n.bst
+  - components/kf6/kiconthemes.bst
+  - components/kf6/kitemviews.bst
+  - components/kf6/kpackage.bst
+  - components/kf6/kservice.bst
+  - components/kf6/ktexttemplate.bst
+  - components/kf6/kwidgetsaddons.bst
+  - components/kf6/kwindowsystem.bst
+  - components/kf6/sonnet.bst

@@ -21,4 +21,4 @@ sources:
 - kind: git_repo
   url: 'kde:frameworks/kwindowsystem.git'
   track: 'v%{kf6-version}'
-  ref: b9bdd85c3d57b387a71110ef3924a027a6617688
+  ref: bdce163d61413bcdd48ecc654196cc04678035d4

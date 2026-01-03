@@ -8,19 +8,23 @@ build-depends:
 depends:
 - aemeath/platform.bst
 - components/qt6/qtbase.bst
+- components/kf6/karchive.bst
 - components/kf6/kcodecs.bst
-- components/kf6/kcolorscheme.bst
 - components/kf6/kconfig.bst
 - components/kf6/kcoreaddons.bst
 - components/kf6/ki18n.bst
-- components/kf6/kwidgetsaddons.bst
+- freedesktop-sdk.bst:components/ffmpeg.bst
+- freedesktop-sdk.bst:components/taglib.bst
+- components/kf6-deps/qt6-poppler.bst
+- components/kf6-deps/exiv2.bst
 
 variables:
   cmake-local: |
-    -DBUILD_TESTING=OFF
+    -DBUILD_TESTING=OFF \
+    -DBUILD_PYTHON_BINDINGS=OFF
 
 sources:
 - kind: git_repo
-  url: 'kde:frameworks/kconfigwidgets.git'
+  url: 'kde:frameworks/kfilemetadata.git'
   track: 'v%{kf6-version}'
-  ref: ed30024a4c4ac6b2dfc02265309ce526fbfc00f0
+  ref: d4d22ec8ff60a83d60e47d2dd0b066dac613272d

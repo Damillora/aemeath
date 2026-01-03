@@ -10,7 +10,7 @@ depends:
 - aemeath/platform.bst
 - components/qt6/qtbase.bst
 - components/kf6/kcoreaddons.bst
-- components/kf6-deps/qt6-polkit-qt.bst
+- components/deps/qt6-polkit-qt.bst
 - components/kf6/kwindowsystem.bst
 
 variables:

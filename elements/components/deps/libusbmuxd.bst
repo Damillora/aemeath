@@ -10,4 +10,4 @@ build-depends:
 
 depends:
 - aemeath/minimal.bst
-- components/kf6-deps/libplist.bst
+- components/deps/libplist.bst

@@ -7,7 +7,7 @@ build-depends:
 
 depends:
 - aemeath/platform.bst
-- components/kf6-deps/editorconfig-core-c.bst
+- components/deps/editorconfig-core-c.bst
 - components/qt6/qtbase.bst
 - components/qt6/qtdeclarative.bst
 - components/qt6/qtspeech.bst
@@ -37,4 +37,4 @@ sources:
 - kind: git_repo
   url: 'kde:frameworks/ktexteditor.git'
   track: 'v%{kf6-version}'
-  ref: 09996fcb95d796d26e552fefd6a9e82fd2c2a610
+  ref: e7e89ffbfdd7dd8fee5d0c6fa70f69340d90418e

@@ -10,7 +10,7 @@ build-depends:
 
 depends:
 - aemeath/minimal.bst
-- components/kf6-deps/libusbmuxd.bst
+- components/deps/libusbmuxd.bst
 - freedesktop-sdk.bst:components/gnutls.bst
 - freedesktop-sdk.bst:components/libgcrypt.bst
 

@@ -19,7 +19,7 @@ depends:
 - components/kf6/knotifications.bst
 - components/kf6/kwidgetsaddons.bst
 - components/kf6/kwindowsystem.bst
-- components/kf6-deps/qt6-qca.bst
+- components/deps/qt6-qca.bst
 - freedesktop-sdk.bst:components/libgcrypt.bst
 - freedesktop-sdk.bst:components/libsecret.bst
 - freedesktop-sdk.bst:components/gpgmepp.bst

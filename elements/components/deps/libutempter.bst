@@ -13,4 +13,4 @@ build-depends:
 
 depends:
 - aemeath/minimal.bst
-- components/kf6-deps/libimobiledevice.bst
+- components/deps/libimobiledevice.bst

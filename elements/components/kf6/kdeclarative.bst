@@ -24,4 +24,4 @@ sources:
 - kind: git_repo
   url: 'kde:frameworks/kdeclarative.git'
   track: 'v%{kf6-version}'
-  ref: 48349f0bcd8ed56bcb9049c584330ac79ce09ca1
+  ref: 5e91de6f9a0d1f4bccdeb9d63c96397214d3b7a0

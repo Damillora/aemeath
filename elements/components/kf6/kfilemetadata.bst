@@ -15,8 +15,8 @@ depends:
 - components/kf6/ki18n.bst
 - freedesktop-sdk.bst:components/ffmpeg.bst
 - freedesktop-sdk.bst:components/taglib.bst
-- components/kf6-deps/qt6-poppler.bst
-- components/kf6-deps/exiv2.bst
+- components/deps/qt6-poppler.bst
+- components/deps/exiv2.bst
 
 variables:
   cmake-local: |

@@ -18,7 +18,7 @@ depends:
 - components/kf6/kirigami.bst
 - components/kf6/kpackage.bst
 - components/kf6/kwidgetsaddons.bst
-#- components/kf6/syndication.bst
+- components/kf6/syndication.bst
 
 variables:
   cmake-local: |
@@ -28,4 +28,4 @@ sources:
 - kind: git_repo
   url: 'kde:frameworks/knewstuff.git'
   track: 'v%{kf6-version}'
-  ref: f32f5ec982a2c38193977e4fd38f6cbd25ee8789
+  ref: 9079fe3cfad2f9c1a8e2fc0ed6b241c23a7901db

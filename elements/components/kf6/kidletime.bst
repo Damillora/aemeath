@@ -5,7 +5,7 @@ build-depends:
 - components/kf6/extra-cmake-modules.bst
 - components/qt6/qttools.bst
 - freedesktop-sdk.bst:components/wayland-protocols.bst
-- components/kf6-deps/plasma-wayland-protocols.bst
+- components/deps/plasma-wayland-protocols.bst
 
 depends:
 - aemeath/platform.bst
@@ -19,4 +19,4 @@ sources:
 - kind: git_repo
   url: 'kde:frameworks/kidletime.git'
   track: 'v%{kf6-version}'
-  ref: bdce163d61413bcdd48ecc654196cc04678035d4
+  ref: 42783be439a555c17192be1d693bb374b2b563e8

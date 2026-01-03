@@ -5,7 +5,7 @@ build-depends:
 - components/kf6/extra-cmake-modules.bst
 - components/qt6/qttools.bst
 - components/kf6/ki18n.bst
-- components/kf6-deps/perl-uri.bst
+- components/deps/perl-uri.bst
 
 depends:
 - aemeath/platform.bst

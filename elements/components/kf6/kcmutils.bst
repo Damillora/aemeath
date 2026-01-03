@@ -29,4 +29,4 @@ sources:
 - kind: git_repo
   url: 'kde:frameworks/kcmutils.git'
   track: 'v%{kf6-version}'
-  ref: 48349f0bcd8ed56bcb9049c584330ac79ce09ca1
+  ref: 3c25a54f62d0d87d92432c377f834a34249c1b92

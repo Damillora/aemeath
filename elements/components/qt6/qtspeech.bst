@@ -10,7 +10,7 @@ depends:
 - aemeath/platform.bst
 - components/qt6/qtbase.bst
 - components/qt6/qtmultimedia.bst
-- components/kf6-deps/speech-dispatcher.bst
+- components/deps/speech-dispatcher.bst
 
 sources:
 - kind: tar

@@ -17,4 +17,4 @@ sources:
 - kind: git_repo
   url: 'kde:frameworks/kplotting.git'
   track: 'v%{kf6-version}'
-  ref: bdce163d61413bcdd48ecc654196cc04678035d4
+  ref: 890a2a93e0d09738c58b9ce7f2f58a3c1f56afe4

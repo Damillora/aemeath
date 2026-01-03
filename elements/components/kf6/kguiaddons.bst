@@ -6,7 +6,7 @@ build-depends:
 - components/qt6/qttools.bst
 - components/qt6/qtdeclarative.bst
 - freedesktop-sdk.bst:components/wayland-protocols.bst
-- components/kf6-deps/plasma-wayland-protocols.bst
+- components/deps/plasma-wayland-protocols.bst
 
 depends:
 - aemeath/platform.bst

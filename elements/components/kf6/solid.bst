@@ -10,10 +10,10 @@ depends:
 - aemeath/platform.bst
 - components/qt6/qtbase.bst
 - freedesktop-sdk.bst:components/udisks.bst
-- components/kf6-deps/upower.bst
-- components/kf6-deps/libimobiledevice.bst
-- components/kf6-deps/libplist.bst
-- components/kf6-deps/media-player-info.bst
+- components/deps/upower.bst
+- components/deps/libimobiledevice.bst
+- components/deps/libplist.bst
+- components/deps/media-player-info.bst
 
 variables:
   cmake-local: |

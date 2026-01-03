@@ -17,4 +17,4 @@ sources:
 - kind: git_repo
   url: 'kde:frameworks/kdnssd.git'
   track: 'v%{kf6-version}'
-  ref: 287a3edf485f914507bdaaf6680815ff561abb93
+  ref: e442897324c753bad6bd2e2196263510fead542d

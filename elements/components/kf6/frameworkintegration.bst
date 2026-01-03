@@ -23,4 +23,4 @@ sources:
 - kind: git_repo
   url: 'kde:frameworks/frameworkintegration.git'
   track: 'v%{kf6-version}'
-  ref: 09996fcb95d796d26e552fefd6a9e82fd2c2a610
+  ref: adbd800bb1931501173af8e067c73c1ffcbd56fd

@@ -10,7 +10,7 @@ depends:
 - aemeath/platform.bst
 - components/qt6/qtbase.bst
 - components/kf6/kconfig.bst
-- components/kf6-deps/libcanberra.bst
+- components/deps/libcanberra.bst
 
 variables:
   cmake-local: |

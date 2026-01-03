@@ -11,7 +11,7 @@ depends:
 - components/kf6/kconfig.bst
 - components/kf6/ki18n.bst
 - components/kf6/kio.bst
-- components/kf6-deps/libcanberra.bst
+- components/deps/libcanberra.bst
 
 variables:
   cmake-local: |
@@ -21,4 +21,4 @@ sources:
 - kind: git_repo
   url: 'kde:frameworks/knotifyconfig.git'
   track: 'v%{kf6-version}'
-  ref: f32f5ec982a2c38193977e4fd38f6cbd25ee8789
+  ref: 808782a8cbdec00e368cb0fef845b6cd25ccc983

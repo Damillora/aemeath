@@ -21,6 +21,6 @@ variables:
 
 sources:
 - kind: git_repo
-  url: 'kde:frameworks/sonnet.git'
+  url: 'kde:frameworks/solid.git'
   track: 'v%{kf6-version}'
   ref: d5016014eb8ad4d06713ddb4f2d74ed06a4e8120

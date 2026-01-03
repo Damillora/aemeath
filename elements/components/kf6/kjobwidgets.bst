@@ -8,16 +8,17 @@ build-depends:
 depends:
 - aemeath/platform.bst
 - components/qt6/qtbase.bst
-- components/kf6/kconfig.bst
 - components/kf6/kcoreaddons.bst
-- components/kf6/ki18n.bst
+- components/kf6/knotifications.bst
+- components/kf6/kwidgetsaddons.bst
 
 variables:
   cmake-local: |
-    -DBUILD_TESTING=OFF
+    -DBUILD_TESTING=OFF \
+    -DBUILD_PYTHON_BINDINGS=OFF
 
 sources:
 - kind: git_repo
-  url: 'kde:frameworks/kservice.git'
+  url: 'kde:frameworks/kjobwidgets.git'
   track: 'v%{kf6-version}'
-  ref: 1d40f85f4ab8926ae17124ed37cb918931743eed
+  ref: 7c3779ed45dfdc4b3b75c1232806899b23c91474

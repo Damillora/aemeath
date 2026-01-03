@@ -6,7 +6,7 @@ depends:
   - components/kf6/extra-cmake-modules.bst
   - components/kf6/karchive.bst
   - components/kf6/kauth.bst
-  - components/kf6/kbookmark.bst
+  - components/kf6/kbookmarks.bst
   - components/kf6/kcodecs.bst
   - components/kf6/kcolorscheme.bst
   - components/kf6/kcompletion.bst
@@ -21,10 +21,15 @@ depends:
   - components/kf6/kguiaddons.bst
   - components/kf6/ki18n.bst
   - components/kf6/kiconthemes.bst
+  - components/kf6/kio.bst
   - components/kf6/kitemviews.bst
+  - components/kf6/kjobwidgets.bst
+  - components/kf6/knotifications.bst
   - components/kf6/kpackage.bst
   - components/kf6/kservice.bst
   - components/kf6/ktexttemplate.bst
+  - components/kf6/kwallet.bst
   - components/kf6/kwidgetsaddons.bst
   - components/kf6/kwindowsystem.bst
+  - components/kf6/solid.bst
   - components/kf6/sonnet.bst

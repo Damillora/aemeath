@@ -4,13 +4,16 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 - components/kf6/extra-cmake-modules.bst
 - components/qt6/qttools.bst
+- components/qt6/qtdeclarative.bst
 
 depends:
 - aemeath/platform.bst
 - components/qt6/qtbase.bst
-- components/kf6/kconfig.bst
-- components/kf6/kcoreaddons.bst
-- components/kf6/ki18n.bst
+- freedesktop-sdk.bst:components/udisks.bst
+- components/kf6-deps/upower.bst
+- components/kf6-deps/libimobiledevice.bst
+- components/kf6-deps/libplist.bst
+- components/kf6-deps/media-player-info.bst
 
 variables:
   cmake-local: |
@@ -18,6 +21,6 @@ variables:
 
 sources:
 - kind: git_repo
-  url: 'kde:frameworks/kservice.git'
+  url: 'kde:frameworks/sonnet.git'
   track: 'v%{kf6-version}'
-  ref: 1d40f85f4ab8926ae17124ed37cb918931743eed
+  ref: d5016014eb8ad4d06713ddb4f2d74ed06a4e8120

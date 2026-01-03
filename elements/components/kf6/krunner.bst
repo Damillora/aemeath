@@ -4,12 +4,16 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 - components/kf6/extra-cmake-modules.bst
 - components/kf6/kdoctools.bst
+- components/qt6/qttools.bst
 
 depends:
 - aemeath/platform.bst
 - components/qt6/qtbase.bst
+- components/kf6/kconfig.bst
 - components/kf6/kcoreaddons.bst
 - components/kf6/ki18n.bst
+- components/kf6/kitemmodels.bst
+- components/kf6/kwindowsystem.bst
 
 variables:
   cmake-local: |
@@ -17,6 +21,6 @@ variables:
 
 sources:
 - kind: git_repo
-  url: 'kde:frameworks/kpty.git'
+  url: 'kde:frameworks/krunner.git'
   track: 'v%{kf6-version}'
-  ref: 089fa7172b7b572f212ef7ed73c192bf81e920e7
+  ref: f9b6ff7ef8dc66bb8f5481a6c9cf7e599806e39a

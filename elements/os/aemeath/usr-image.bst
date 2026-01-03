@@ -33,6 +33,10 @@ config:
     mkdir -p /sysroot/usr/share/factory
     mv -T /sysroot/etc /sysroot/usr/share/factory/etc
 
+    # Remove pam_selinux from config, because for some reason systemd-user still has them.
+  - |
+    sed -i /pam_selinux/d /sysroot/usr/lib/pam.d/*
+
   - |
     echo "IMAGE_VERSION=%{aemeath-version}" >>/sysroot/usr/lib/os-release
 
@@ -44,6 +48,8 @@ config:
     C /etc/hosts
     C /etc/issue
     C /etc/issue.net
+    C /etc/libinput
+    C /etc/libnl
     C /etc/ld.so.conf
     C /etc/locale.conf
     C /etc/localtime
@@ -51,12 +57,17 @@ config:
     C /etc/lvm
     C /etc/mke2fs.conf
     C /etc/pki
+    C /etc/polkit-1
     C /etc/profile
     C /etc/profile.d
+    C /etc/protocols
+    C /etc/pulse
     C /etc/rpc
     C /etc/shells
+    C /etc/speech-dispatcher
     C /etc/skel
     C /etc/udev
+    C /etc/udisks2
     C /etc/xattr.conf
     C /etc/xdg
     C! /etc/audit

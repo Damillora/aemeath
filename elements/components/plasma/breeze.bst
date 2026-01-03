@@ -27,10 +27,10 @@ depends:
 
 variables:
   cmake-local: |
-    -DBUILD_TESTING=OFF
+    -DBUILD_TESTING=OFF \
+    -DBUILD_QT5=OFF
 
 sources:
-- kind: git_repo
-  url: 'kde:plasma/breeze.git'
-  track: 'v%{plasma-version}'
-  ref: bdce163d61413bcdd48ecc654196cc04678035d4
+- kind: tar
+  url: 'kde_stable:plasma/%{plasma-version}/breeze-%{plasma-version}.tar.xz'
+  ref: 2b50b2e8ff250ca782ff65f8ea5140121d544d8b8ba4eaa345d6224e8076c3d1

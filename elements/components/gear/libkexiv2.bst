@@ -3,20 +3,17 @@ kind: cmake
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 - components/kf6/extra-cmake-modules.bst
-- components/kf6/kdoctools.bst
 
 depends:
 - aemeath/platform.bst
 - components/qt6/qtbase.bst
-- components/kf6/kcoreaddons.bst
-- components/kf6/ki18n.bst
+- components/deps/exiv2.bst
 
 variables:
   cmake-local: |
     -DBUILD_TESTING=OFF
 
 sources:
-- kind: git_repo
-  url: 'kde:frameworks/kpty.git'
-  track: 'v%{kf6-version}'
-  ref: 089fa7172b7b572f212ef7ed73c192bf81e920e7
+- kind: tar
+  url: 'kde_stable:release-service/%{gear-version}/src/libkexiv2-%{gear-version}.tar.xz'
+  ref: bfe39ed22b830c99e37583ad0e67eb28e912c43235b3ab478986374676234a34

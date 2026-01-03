@@ -4,12 +4,13 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 - components/kf6/extra-cmake-modules.bst
 - components/qt6/qttools.bst
-- freedesktop-sdk.bst:components/wayland-protocols.bst
-- components/deps/plasma-wayland-protocols.bst
+- components/qt6/qtdeclarative.bst
 
 depends:
 - aemeath/platform.bst
 - components/qt6/qtbase.bst
+- components/kf6/kconfig.bst
+- components/kf6/kcoreaddons.bst
 
 variables:
   cmake-local: |
@@ -17,5 +18,5 @@ variables:
 
 sources:
 - kind: tar
-  url: 'kde_stable:plasma/%{plasma-version}/kwayland-%{plasma-version}.tar.xz'
-  ref: ebb7371b402a0bed0cc55966cc10d13b431b288cb7d19e1f41519853f98e3d39
+  url: 'kde_stable:plasma/%{plasma-version}/plasma-activities-%{plasma-version}.tar.xz'
+  ref: 9e22f3af2f3a3ce30852564fac596f495634f4319c0ad23ec763a994abe50539

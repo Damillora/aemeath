@@ -8,8 +8,8 @@ depends:
 
 variables:
   cmake-local: |
-    -DINSTALL_ARCHDATADIR=lib \
-    -DINSTALL_LIBDIR=/usr/lib/x86_64-linux-gnu \
+    -DINSTALL_ARCHDATADIR=lib/qt6 \
+    -DINSTALL_LIBDIR=lib/x86_64-linux-gnu \
     -DQT_DISABLE_RPATH=ON \
     -DBUILD_WITH_PCH=FALSE \
     -DQT_FEATURE_openssl_linked=ON \

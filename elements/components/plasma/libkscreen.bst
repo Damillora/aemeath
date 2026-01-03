@@ -16,7 +16,6 @@ variables:
     -DBUILD_TESTING=OFF
 
 sources:
-- kind: git_repo
-  url: 'kde:plasma/libkscreen.git'
-  track: 'v%{plasma-version}'
-  ref: bdce163d61413bcdd48ecc654196cc04678035d4
+- kind: tar
+  url: 'kde_stable:plasma/%{plasma-version}/libkscreen-%{plasma-version}.tar.xz'
+  ref: 98a684fac01d0d3ea309a89f00a7739ec32263df38f5a7b988e74302af546f94

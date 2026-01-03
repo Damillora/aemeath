@@ -5,6 +5,8 @@ build-depends:
 - components/kf6/extra-cmake-modules.bst
 - components/qt6/qttools.bst
 - components/qt6/qtdeclarative.bst
+- freedesktop-sdk.bst:components/bison.bst
+- freedesktop-sdk.bst:components/flex.bst
 
 depends:
 - aemeath/platform.bst
@@ -23,4 +25,4 @@ sources:
 - kind: git_repo
   url: 'kde:frameworks/solid.git'
   track: 'v%{kf6-version}'
-  ref: d5016014eb8ad4d06713ddb4f2d74ed06a4e8120
+  ref: f444838319419ccbb181e7e12078913375317d08

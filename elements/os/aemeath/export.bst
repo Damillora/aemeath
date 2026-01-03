@@ -7,7 +7,7 @@ build-depends:
 - filename: os/aemeath/boot.bst
   config:
     location: /boot
-- public-stacks/runtime-minimal.bst
+- aemeath/minimal.bst
 
 environment:
   XZFLAGS: '-T%{max-jobs}'

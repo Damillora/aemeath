@@ -45,6 +45,7 @@ config:
     C /etc/bashrc
     C /etc/default
     C /etc/environment
+    C /etc/fonts
     C /etc/hosts
     C /etc/issue
     C /etc/issue.net

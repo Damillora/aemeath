@@ -31,13 +31,10 @@ depends:
 - components/kf6/kwidgetsaddons.bst
 - components/kf6/kwindowsystem.bst
 - components/kf6/syntax-highlighting.bst
-- components/plasma/kpipewire.bst
-- components/plasma/kwayland.bst
 - components/deps/qt6-polkit-qt.bst
 - components/deps/python3-psutil.bst
 - components/deps/python3-pygdbmi.bst
 - components/deps/python3-sentry-sdk.bst
-- freedesktop-sdk.bst:components/xdg-desktop-portal.bst
 
 variables:
   cmake-local: |

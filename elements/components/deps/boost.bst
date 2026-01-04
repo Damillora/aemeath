@@ -23,12 +23,12 @@ depends:
 config:
   build-commands:
   - |
-    ./bootstrap.sh --prefix="%{prefix}" --with-python=python3
+    ./bootstrap.sh --prefix="%{prefix}" --libdir="%{lib}" --with-python=python3
     ./b2 stage -j%{max-jobs} threading=multi link=shared
 
   install-commands:
   - |
-    ./b2  --prefix=%{install-root}%{prefix} install threading=multi link=shared
+    ./b2 --prefix=%{install-root}%{prefix} install threading=multi link=shared
 
 sources:
 - kind: tar

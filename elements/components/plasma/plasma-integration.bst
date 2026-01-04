@@ -7,7 +7,7 @@ build-depends:
 
 runtime-depends:
 #- components/plasma/qqc2-breeze-style.bst
-- components/plasma/xdg-desktop-portal-kde.bst
+#- components/plasma/xdg-desktop-portal-kde.bst
 - components/deps/noto-fonts.bst
 - freedesktop-sdk.bst:components/noto-emoji.bst
 

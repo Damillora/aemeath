@@ -23,8 +23,10 @@ depends:
 - components/kf6/kio.bst
 - components/kf6/kirigami.bst
 - components/kf6/kjobwidgets.bst
+- components/kf6/knewstuff.bst
 - components/kf6/knotifications.bst
 - components/kf6/kservice.bst
+- components/kf6/ksvg.bst
 - components/kf6/kstatusnotifieritem.bst
 - components/kf6/kwidgetsaddons.bst
 - components/kf6/kwindowsystem.bst
@@ -32,7 +34,9 @@ depends:
 - components/kf6/prison.bst
 - components/kf6/purpose.bst
 - components/plasma/kpipewire.bst
+- components/plasma/libplasma.bst
 - components/plasma/layer-shell-qt.bst
+- components/deps/kirigami-addons.bst
 
 variables:
   cmake-local: |

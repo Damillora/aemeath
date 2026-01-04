@@ -28,10 +28,12 @@ variables:
   cmake-local: |
     -DBUILD_TESTING=OFF \
     -DDBUS_CONFIG_FILENAME=plasma_org.freedesktop.DisplayManager.conf \
-    -DPAM_OS_CONFIGURATION=arch
+    -DPAM_OS_CONFIGURATION=aemeath
 
 sources:
 - kind: git_repo
   url: 'kde:plasma/plasma-login-manager.git'
   track: master
   ref: 91dc1d8de3a265ec59fb272a9ce7d0bd1cd43b7d
+- kind: local
+  path: files/plasma-login-manager

@@ -8,10 +8,10 @@ build-depends:
 - components/deps/intltool.bst
 - freedesktop-sdk.bst:components/wayland-protocols.bst
 
-runtime-depends:
-- components/plasma/systemsettings.bst
-- components/plasma/plasma-nm.bst
-- components/plasma/plasma-pa.bst
+#runtime-depends:
+#- components/plasma/systemsettings.bst
+#- components/plasma/plasma-nm.bst
+#- components/plasma/plasma-pa.bst
 
 depends:
 - aemeath/platform.bst

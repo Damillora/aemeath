@@ -20,7 +20,7 @@ depends:
   - components/plasma/plasma-workspace.bst
   - components/plasma/plasma-disks.bst
   - components/plasma/bluedevil.bst
-  - components/plasma/kde-gtk-config.bst
+  #- components/plasma/kde-gtk-config.bst
   - components/plasma/kmenuedit.bst
   - components/plasma/kscreen.bst
   - components/plasma/kwallet-pam.bst
@@ -32,9 +32,7 @@ depends:
   - components/plasma/polkit-kde-agent.bst
   - components/plasma/powerdevil.bst
   - components/plasma/plasma-desktop.bst
-  #- components/plasma/kgamma.bst
   - components/plasma/ksshaskpass.bst
-  # - components/plasma/sddm-kcm.bst
   - components/plasma/discover.bst
   - components/plasma/kactivitymanagerd.bst
   - components/plasma/plasma-integration.bst
@@ -48,14 +46,17 @@ depends:
   - components/plasma/plasma-systemmonitor.bst
   # - components/plasma/qqc2-breeze-style.bst
   - components/plasma/ksystemstats.bst
-  # - components/plasma/oxygen-sounds.bst
   - components/plasma/kdeplasma-addons.bst
   - components/plasma/flatpak-kcm.bst
   - components/plasma/plasma-welcome.bst
   - components/plasma/ocean-sound-theme.bst
   # - components/plasma/print-manager.bst
-  # - components/plasma/wacomtablet.bst
-  # - components/plasma/oxygen.bst
   - components/plasma/spectacle.bst
   - components/plasma/plasma-login-manager.bst
 # - components/plasma/krdp.bst
+  # obsolete things
+  # - components/plasma/wacomtablet.bst
+  # - components/plasma/oxygen.bst
+  #- components/plasma/oxygen-sounds.bst
+  #- components/plasma/kgamma.bst
+  # - components/plasma/sddm-kcm.bst

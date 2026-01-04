@@ -4,8 +4,8 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 - components/kf6/extra-cmake-modules.bst
 
-runtime-depends:
-- components/plasma/ksystemstats.bst
+#runtime-depends:
+#- components/plasma/ksystemstats.bst
 
 depends:
 - aemeath/platform.bst

@@ -12,7 +12,8 @@ depends:
 variables:
   cmake-local: |
     -DBUILD_TESTS=OFF \
-    -DBUILD_WITH_QT6=ON
+    -DBUILD_WITH_QT6=ON \
+    -DQCA_LIBRARY_INSTALL_DIR="%{prefix}/lib/x86_64-linux-gnu"
 
 sources:
 - kind: git_repo

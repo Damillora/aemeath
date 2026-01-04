@@ -4,14 +4,18 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 - components/kf6/extra-cmake-modules.bst
 - components/deps/qt6-qcoro.bst
+- components/deps/plasma-wayland-protocols.bst
 
-#runtime-depends:
-#- components/plasma/kactivitymanagerd.bst
-#- components/plasma/milou.bst
-#- components/plasma/ocean-sound-theme.bst
-#- components/plasma/plasma-workspace-wallpapers.bst
+runtime-depends:
+- components/plasma/kactivitymanagerd.bst
+- components/plasma/milou.bst
+- components/plasma/kde-cli-tools.bst
+- components/plasma/ocean-sound-theme.bst
+- components/plasma/plasma-workspace-wallpapers.bst
 #- components/gear/kio-extras.bst
-#- components/plasma/plasma-integration.bst
+- components/plasma/plasma-integration.bst
+- components/deps/accountsservice.bst
+- components/deps/qt6-phonon-vlc.bst
 
 depends:
 - aemeath/platform.bst
@@ -80,7 +84,8 @@ depends:
 - components/deps/kirigami-addons.bst
 - components/deps/libcanberra.bst
 - components/deps/libqalculate.bst
-- components/deps/appstream-qt.bst
+- components/deps/qt6-phonon.bst
+- components/staging/appstream-qt.bst
 
 variables:
   cmake-local: |

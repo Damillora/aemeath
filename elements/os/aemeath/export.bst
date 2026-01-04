@@ -8,6 +8,7 @@ build-depends:
   config:
     location: /boot
 - aemeath/minimal.bst
+- freedesktop-sdk.bst:components/xz.bst
 
 environment:
   XZFLAGS: '-T%{max-jobs}'

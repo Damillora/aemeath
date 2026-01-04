@@ -4,6 +4,10 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 - components/kf6/extra-cmake-modules.bst
 - components/kf6/kdoctools.bst
+- freedesktop-sdk.bst:components/vulkan-headers.bst
+
+#runtime-depends:
+#- components/plasma/systemsettings.bst
 
 depends:
 - aemeath/platform.bst

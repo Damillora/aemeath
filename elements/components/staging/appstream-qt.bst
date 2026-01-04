@@ -3,8 +3,8 @@ kind: meson
 sources:
 - kind: git_repo
   url: github:ximion/appstream.git
-  track: v*
-  ref: d6ce0a8dbdf31a33762009a0e1f364e938470af2
+  track: v1.0.*
+  ref: f3ccabfa4d9582b7b0baa90d79899eb93b28b10c
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
@@ -35,6 +35,7 @@ depends:
 
 variables:
   meson-local: >-
+    -Dqt=true
     -Dstemming=false
     -Dcompose=true
     -Ddocs=false

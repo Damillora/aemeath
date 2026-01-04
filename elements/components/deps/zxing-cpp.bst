@@ -7,15 +7,15 @@ depends:
 - aemeath/minimal.bst
 
 variables:
+  cmake-global: >-
+    -DZXING_EXAMPLES=OFF
   cmake-local: >-
-    -DBUILD_DEPENDENCIES=LOCAL \
+    -DZXING_DEPENDENCIES=LOCAL \
     -DBUILD_SHARED_LIBS=ON \
-    -DBUILD_UNIT_TESTS=OFF \
-    -DBUILD_BLACKBOX_TESTS=OFF \
-    -DBUILD_EXAMPLES=OFF
+    -DZXING_UNIT_TESTS=OFF \
+    -DZXING_BLACKBOX_TESTS=OFF
 
 sources:
-- kind: git_repo
-  url: github:zxing-cpp/zxing-cpp.git
-  track: v*
-  ref: b9a959bf86582ec2e520ff0a20467b328ff69e64
+- kind: tar
+  url: github:zxing-cpp/zxing-cpp/archive/v2.3.0.tar.gz
+  ref: 64e4139103fdbc57752698ee15b5f0b0f7af9a0331ecbdc492047e0772c417ba

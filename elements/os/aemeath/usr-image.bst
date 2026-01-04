@@ -88,12 +88,29 @@ config:
     C! /etc/systemd/system.conf
     C! /etc/systemd/timesyncd.conf
     C! /etc/systemd/user.conf
+    # freedesktop-sdk.bst:components/modemmanager.bst (just directories)
+    C /etc/ModemManager
+    # freedesktop-sdk.bst:components/networkmanager.bst (just directories)
+    C /etc/NetworkManager
+    # freedesktop-sdk.bst:components/upower.bst
+    L /etc/UPower/UPower.conf
+    # freedesktop-sdk.bst:components/containers-common.bst
+    L /etc/containers/policy.json
+    L /etc/containers/registries.conf
+    L /etc/containers/registries.conf.d/000-shortnames.conf
+    L /etc/containers/registries.d/default.yaml
+    # freedesktop-sdk.bst:components/bash-config.bst
+    L /etc/bashrc
     # freedesktop-sdk.bst:integration/ldconfig.bst
     L /etc/ld.so.conf
     # vm/mesa-default.bst
     L /etc/ld.so.conf.d/00_mesa.conf
     # components/sway/sway.bst
     L /etc/sway/config
+    # freedesktop-sdk.bst:components/flatpak.bst
+    L /etc/dbus-1/system.d/org.freedesktop.Flatpak.SystemHelper.conf
+    # freedesktop-sdk.bst:components/modemmanager.bst
+    L /etc/dbus-1/system.d/org.freedesktop.ModemManager1.conf
     EOF
 
   - |

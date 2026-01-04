@@ -2,7 +2,6 @@ kind: cmake
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
-
 depends:
 - aemeath/platform.bst
 - components/qt6/qtbase.bst

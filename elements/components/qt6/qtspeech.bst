@@ -3,8 +3,6 @@ kind: cmake
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 - components/qt6/qtdeclarative.bst
-- components/qt6/qtquick3d.bst
-- components/qt6/qtshadertools.bst
 
 depends:
 - aemeath/platform.bst

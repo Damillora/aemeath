@@ -5,6 +5,7 @@ build-depends:
 - components/kf6/extra-cmake-modules.bst
 - components/qt6/qttools.bst
 - components/qt6/qtdeclarative.bst
+- freedesktop-sdk.bst:components/perl.bst
 
 depends:
 - aemeath/platform.bst

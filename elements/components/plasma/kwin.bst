@@ -4,7 +4,9 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 - components/kf6/extra-cmake-modules.bst
 - components/kf6/kdoctools.bst
+- components/kf6/krunner.bst
 - freedesktop-sdk.bst:components/wayland-protocols.bst
+- freedesktop-sdk.bst:components/xwayland.bst
 - components/deps/plasma-wayland-protocols.bst
 
 depends:
@@ -48,6 +50,7 @@ depends:
 - components/plasma/libplasma.bst
 - components/deps/libcanberra.bst
 - components/deps/libdisplay-info.bst
+- freedesktop-sdk.bst:components/xorg-lib-xcvt.bst
 - freedesktop-sdk.bst:components/libinput.bst
 - freedesktop-sdk.bst:components/pipewire.bst
 

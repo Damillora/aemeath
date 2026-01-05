@@ -38,7 +38,9 @@ jobs:
         with:
           python-version: "3.13"
       - name: Install buildstream
-        run: pip3 install 'BuildStream == 2.*'
+        run: |
+          sudo apt-get install -y bubblewrap
+          pip3 install 'BuildStream == 2.*'
       - name: Tailscale
         uses: tailscale/github-action@v4
         with:

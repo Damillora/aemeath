@@ -30,11 +30,15 @@ jobs:
           server_type: cx33
           location: nbg1 # Nuremberg, Germany
           image: docker-ce # Rocky Linux 9
-  setup:
-    name: Setup Runner
-    needs: create-runner # required to start the main job when the runner is ready
+  build:
+    name: Build Aemeath
+    needs:
+      - create-runner
     runs-on: ${{ needs.create-runner.outputs.label }} # run the job on the newly created runner
-
+    container:
+      image: registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2
+      options: |
+        --network host --privileged
     steps:
       # These stage versions are pinned by https://github.com/renovatebot/renovate
       - name: Tailscale
@@ -44,15 +48,6 @@ jobs:
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
           tags: tag:github-actions
           ping: aemeath-cache.castorice.my.id
-  build:
-    name: Build Aemeath
-    needs:
-      - create-runner
-      - setup # required to start the main job when the runner is ready
-    runs-on: ${{ needs.create-runner.outputs.label }} # run the job on the newly created runner
-    container:
-      image: registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2
-    steps:
       - name: Checkout
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
       - name: Get current date

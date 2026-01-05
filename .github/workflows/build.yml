@@ -34,6 +34,11 @@ jobs:
         with:
           path: ~/.cache/buildstream
           key: ${{ runner.os }}-bst-${{ steps.date.outputs.date }}
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - name: Install buildstream
+        run: pip3 install 'BuildStream == 2.*'
       - name: Tailscale
         uses: tailscale/github-action@v4
         with:
@@ -64,15 +69,9 @@ jobs:
           AEMEATH_CRT: ${{secrets.BST_ARTIFACT_PUSH_CERT}}
           AEMEATH_KEY: ${{secrets.BST_ARTIFACT_PUSH_KEY}}
       - name: Pull build artifacts
-        uses: docker://registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2:latest
-        with:
-          driver-opts: network=host
-          args: bst artifact pull
+        run: bst artifact pull
       - name: Build packages
-        uses: docker://registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2:latest
-        with:
-          driver-opts: network=host
-          args: bst build aemeath/os.bst
+        run: bst build aemeath/os.bst
       - name: Disable pushing for non-packages
         run: |
           cat <<EOF > include/artifacts.yml
@@ -84,12 +83,6 @@ jobs:
           EOF
         shell: bash
       - name: Build images
-        uses: docker://registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2:latest
-        with:
-          driver-opts: network=host
-          args: bst build os/aemeath/export.bst
+        run: bst build os/aemeath/export.bst
       - name: Export images
-        uses: docker://registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2:latest
-        with:
-          driver-opts: network=host
-          args: bst artifact checkout os/aemeath/export.bst --directory target
+        run: bst artifact checkout os/aemeath/export.bst --directory target

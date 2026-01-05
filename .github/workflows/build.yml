@@ -38,7 +38,7 @@ jobs:
     container:
       image: registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2
       options: |
-        --network host --privileged
+        --network host --privileged --device /dev/net/tun:/dev/net/tun
     steps:
       # These stage versions are pinned by https://github.com/renovatebot/renovate
       - name: Tailscale

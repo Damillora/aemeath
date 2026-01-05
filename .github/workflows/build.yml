@@ -28,7 +28,7 @@ jobs:
       - name: Maximize build space
         uses: ublue-os/remove-unwanted-software@517622d6452028f266b7ba4cc9a123b5f58a6b53 # v7
         with:
-          remove-docker-images: false
+          remove-docker-cached-images: false
       - name: Tailscale
         uses: tailscale/github-action@v4
         with:
@@ -61,7 +61,7 @@ jobs:
       - name: Build packages
         uses: docker://registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2:latest
         with:
-          args: bst build --artifact-remote url=https://aemeath-cache.castorice.my.id,push=true,client-cert=aemeath.crt,client-key=aemeath.key aemeath/os.bst
+          args: bst build aemeath/os.bst
       - name: Disable pushing for non-packages
         run: |
           cat <<EOF > include/artifacts.yml
@@ -75,7 +75,7 @@ jobs:
       - name: Build images
         uses: docker://registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2:latest
         with:
-          args: bst build --artifact-remote url=https://aemeath-cache.castorice.my.id,client-cert=aemeath.crt,client-key=aemeath.key os/aemeath/export.bst
+          args: bst build os/aemeath/export.bst
       - name: Export images
         uses: docker://registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2:latest
         with:

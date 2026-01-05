@@ -50,24 +50,48 @@ jobs:
     runs-on: ${{ needs.create-runner.outputs.label }} # run the job on the newly created runner
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
-      - name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y%m%d')"
-      - name: Set up environment
+      - name: Build images
         run: |
+          sudo -u damillora toolbox run --container aemeath /bin/bash << EOF
+          set -euox pipefail
+
+          CURRENT_DATE="$(date +'%Y%m%d')"
+
+          git clone ${SERVER_URL}/${REPO_URL}.git aemeath
+
+          cd aemeath
+
           echo "image-version: ${IMAGE_VERSION}" > include/image-version.yml
           echo "$AEMEATH_CRT" > aemeath.crt
           echo "$AEMEATH_KEY" > aemeath.key
+
+          cat <<EOF > include/artifacts.yml
+          artifacts:
+          - url: https://aemeath-cache.castorice.my.id
+            push: true
+            auth:
+              client-key: aemeath.key
+              client-cert: aemeath.crt
+          EOF
+          bst build aemeath/os.bst
+          cat <<EOF > include/artifacts.yml
+          artifacts:
+          - url: https://aemeath-cache.castorice.my.id
+            auth:
+              client-key: aemeath.key
+              client-cert: aemeath.crt
+          EOF
+          bst build os/aemeath/export.bst
+          bst artifact checkout os/aemeath/export.bst --directory target
+          EOF
+        shell: bash
         env:
+          SERVER_URL: ${{ github.server_url	}}
+          REPO_URL: ${{ github.repository }}
+          BUILD_COMMIT: ${{ github.sha }}
           IMAGE_VERSION: "${{ steps.date.outputs.date }}"
           AEMEATH_CRT: ${{secrets.BST_ARTIFACT_PUSH_CERT}}
           AEMEATH_KEY: ${{secrets.BST_ARTIFACT_PUSH_KEY}}
-      - name: Build images
-        run: sudo -u damillora toolbox run --container aemeath .github/build.sh
-
-        shell: bash
   delete-runner:
     name: Delete Hetzner Cloud runner
     needs:

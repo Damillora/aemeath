@@ -29,13 +29,15 @@ jobs:
           hcloud_token: ${{ secrets.HCLOUD_TOKEN }}
           server_type: cx33
           location: nbg1 # Nuremberg, Germany
-          image: docker-ce # Rocky Linux 9
+          image: fedora-42 # Rocky Linux 9
   setup:
     name: Setup Runner
     needs: create-runner # required to start the main job when the runner is ready
     runs-on: ${{ needs.create-runner.outputs.label }} # run the job on the newly created runner
 
     steps:
+      - run: dnf config-manager addrepo --from-repofile https://download.docker.com/linux/fedora/docker-ce.repo
+      - run: dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
       - run: curl -fsSL https://tailscale.com/install.sh | sh
       - run: tailscale up --auth-key="${{ secrets.TS_OAUTH_SECRET }}" --advertise-tags=tag:github-actions
 

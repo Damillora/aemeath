@@ -40,7 +40,7 @@ jobs:
       - run: dnf install -y podman toolbox
       - run: curl -fsSL https://tailscale.com/install.sh | sh
       - run: tailscale up --auth-key="${{ secrets.TS_OAUTH_SECRET }}" --advertise-tags=tag:github-actions
-      - run: sudo -u damillora toolbox create -i registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2 aemeath
+      - run: sudo -u damillora toolbox create --assumeyes -i registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2 aemeath
 
   build:
     name: Build Aemeath

@@ -36,10 +36,7 @@ jobs:
     runs-on: ${{ needs.create-runner.outputs.label }} # run the job on the newly created runner
 
     steps:
-<<<<<<< HEAD
-=======
       - run: useradd -m damillora
->>>>>>> 25d5ee3 (feat: another alternative approach)
       - run: dnf install -y podman toolbox
       - run: curl -fsSL https://tailscale.com/install.sh | sh
       - run: tailscale up --auth-key="${{ secrets.TS_OAUTH_SECRET }}" --advertise-tags=tag:github-actions

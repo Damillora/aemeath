@@ -78,8 +78,6 @@ jobs:
         env:
           AEMEATH_CRT: ${{secrets.BST_ARTIFACT_PUSH_CERT}}
           AEMEATH_KEY: ${{secrets.BST_ARTIFACT_PUSH_KEY}}
-      - name: Pull build artifacts
-        run: bst artifact pull
       - name: Build packages
         run: bst build aemeath/os.bst
       - name: Disable pushing for non-packages

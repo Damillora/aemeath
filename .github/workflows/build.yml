@@ -38,6 +38,7 @@ jobs:
     steps:
       - run: dnf config-manager addrepo --from-repofile https://download.docker.com/linux/fedora/docker-ce.repo
       - run: dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+      - run: systemctl enable --now docker.service
       - run: curl -fsSL https://tailscale.com/install.sh | sh
       - run: tailscale up --auth-key="${{ secrets.TS_OAUTH_SECRET }}" --advertise-tags=tag:github-actions
 

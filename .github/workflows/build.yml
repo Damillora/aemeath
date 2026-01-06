@@ -41,17 +41,6 @@ jobs:
       - run: systemctl enable --now docker.service
       - run: curl -fsSL https://tailscale.com/install.sh | sh
       - run: tailscale up --auth-key="${{ secrets.TS_OAUTH_SECRET }}" --advertise-tags=tag:github-actions
-      - run: |
-          # create ~/bin
-          mkdir -p ~/bin
-
-          # download and extract just to ~/bin/just
-          curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to ~/bin --tag 1.46.0
-
-          # add `~/bin` to the paths that your shell searches for executables
-          # this line should be added to your shells initialization file,
-          # e.g. `~/.bashrc` or `~/.zshrc`
-          export PATH="$PATH:$HOME/bin"
   build:
     name: Build Aemeath
     needs:
@@ -64,6 +53,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - run: |
+          # create ~/bin
+          mkdir -p ~/.local/bin
+
+          # download and extract just to ~/bin/just
+          curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to ~/.local/bin --tag 1.46.0
       - name: Set up environment
         run: |
           echo "$AEMEATH_CRT" > aemeath.crt

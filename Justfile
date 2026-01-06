@@ -1,8 +1,12 @@
 [default]
 default: build export disk-image
 
-clean:
+clean: clean-target clean-disks
+
+clean-target:
     rm -rf target
+
+clean-disks:
     rm -rf disks
 
 generate-version:
@@ -34,14 +38,13 @@ disable-push:
         client-cert: aemeath.crt
     EOF
 
-build: clean generate-version enable-push
-    bst build aemeath/os.bst
+build: generate-version enable-push
+    bst build aemeath/desktop.bst
 
-export: build disable-push
+export: clean-target build disable-push
     bst build os/aemeath/export.bst
     bst artifact checkout os/aemeath/export.bst --directory target
 
-disk-image: build disable-push
+disk-image: clean-disks build disable-push
     bst build os/aemeath/disk-image.bst
     bst artifact checkout os/aemeath/disk-image.bst --directory disks
-

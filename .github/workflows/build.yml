@@ -72,6 +72,12 @@ jobs:
         env:
           AEMEATH_CRT: ${{secrets.BST_ARTIFACT_PUSH_CERT}}
           AEMEATH_KEY: ${{secrets.BST_ARTIFACT_PUSH_KEY}}
+      - name: Build components
+        run: just build
+      - name: Build usr and kernel images
+        run: just export
+      - name: Build disk images
+        run: just disk-image
   delete-runner:
     name: Delete Hetzner Cloud runner
     needs:

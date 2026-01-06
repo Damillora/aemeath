@@ -93,6 +93,8 @@ public:
       systemd-sysupdated:
       - '%{bindir}/updatectl'
       - '%{indep-libdir}/systemd/systemd-sysupdated'
+      - '%{indep-libdir}/systemd/system/systemd-sysupdated.service'
+      - '%{indep-libdir}/systemd/system/dbus-org.freedesktop.sysupdate1.service'
       - '%{datadir}/dbus-1/system.d/org.freedesktop.sysupdate1.conf'
       - '%{datadir}/dbus-1/system-services/org.freedesktop.sysupdate1.service'
       - '%{datadir}/polkit-1/actions/org.freedesktop.sysupdate1.policy'

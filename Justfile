@@ -9,21 +9,13 @@ build:
     cat <<EOF > include/artifacts.yml
     artifacts:
     - url: https://aemeath-cache.castorice.my.id
+      push: true
       auth:
         client-key: aemeath.key
         client-cert: aemeath.crt
     EOF
     bst build aemeath/os.bst
 
-    cat <<EOF > include/artifacts.yml
-    artifacts:
-    - url: https://aemeath-cache.castorice.my.id
-      push: true
-      auth:
-        client-key: aemeath.key
-        client-cert: aemeath.crt
-    EOF
-    bst artifact push	
     cat <<EOF > include/artifacts.yml
     artifacts:
     - url: https://aemeath-cache.castorice.my.id

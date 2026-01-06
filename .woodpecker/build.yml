@@ -1,0 +1,17 @@
+when:
+  - event: push
+    branch: main
+
+steps:
+  - name: build
+    image: registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2
+    commands:
+      - curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to DEST
+      - echo "$AEMEATH_CRT" > aemeath.crt
+      - echo "$AEMEATH_KEY" > aemeath.key
+      - just build
+    environment:
+      AEMEATH_CRT:
+        from_secret: BST_ARTIFACT_PUSH_CERT
+      AEMEATH_KEY:
+        from_secret: BST_ARTIFACT_PUSH_KEY

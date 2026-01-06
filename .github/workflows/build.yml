@@ -57,6 +57,11 @@ jobs:
         run: |
           # Setup just
           curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /usr/bin --tag 1.46.0
+
+          # Setup 7z
+          curl -L https://github.com/ip7z/7zip/releases/download/25.01/7z2501-linux-x64.tar.xz | tar xJf - 7zz
+          mv 7zz /usr/bin/
+
           # Setup rclone
           curl https://rclone.org/install.sh | bash
 

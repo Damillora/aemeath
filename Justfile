@@ -1,3 +1,6 @@
+[default]
+default: build export disk-image
+
 clean:
     rm -rf target
     rm -rf disks
@@ -42,4 +45,3 @@ disk-image: build disable-push
     bst build os/aemeath/disk-image.bst
     bst artifact checkout os/aemeath/disk-image.bst --directory disks
 
-default: build export disk-image

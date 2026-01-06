@@ -3,7 +3,7 @@ clean:
     rm -rf disks
 
 generate-version:
-    #!/usr/bin/env/bash
+    #!/usr/bin/env bash
     CURRENT_DATE="$(date +'%Y%m%d')"
 
     echo "image-version: ${CURRENT_DATE}" > include/image-version.yml

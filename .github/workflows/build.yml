@@ -58,7 +58,7 @@ jobs:
           # Setup just
           curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /usr/bin --tag 1.46.0
           # Setup rclone
-          curl https://rclone.org/install.sh | sudo bash
+          curl https://rclone.org/install.sh | bash
 
           cat << EOF > /rclone.conf
           [fina]

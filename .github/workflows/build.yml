@@ -53,13 +53,30 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
-      - run: |
-          # create ~/bin
-          mkdir -p /bin
+      - name: Setup tools
+        run: |
+          # Setup just
+          curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /usr/bin --tag 1.46.0
+          # Setup rclone
+          curl https://rclone.org/install.sh | sudo bash
 
-          # download and extract just to ~/bin/just
-          curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /bin --tag 1.46.0
+          cat << EOF > /rclone.conf
+          [fina]
+          type = s3
+          provider = Other
+          env_auth = false
+          access_key_id = $S3_ACCESS_KEY_ID
+          secret_access_key = $S3_SECRET_ACCESS_KEY
+          region = fina
+          endpoint = s3.castorice.my.id
+          force_path_style = true
+          acl = public-read
+          bucket_acl = public-read
+          EOF
         shell: bash
+        env:
+          S3_ACCESS_KEY_ID: ${{secrets.S3_ACCESS_KEY_ID}}
+          S3_SECRET_ACCESS_KEY: ${{secrets.S3_SECRET_ACCESS_KEY}}
       - name: Set up environment
         run: |
           echo "$AEMEATH_CRT" > aemeath.crt
@@ -76,6 +93,11 @@ jobs:
         shell: bash
       - name: Build disk images
         run: just disk-image
+        shell: bash
+      - name: Copy artifacts to S3 bucket
+        run: |
+          rclone --config /rclone.conf copy target/* fina:aemeath/sysupdate/
+          rclone --config /rclone.conf copy disks/* fina:aemeath/disks/
         shell: bash
   delete-runner:
     name: Delete Hetzner Cloud runner

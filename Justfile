@@ -25,3 +25,5 @@ build:
     EOF
     bst build os/aemeath/export.bst
     bst artifact checkout os/aemeath/export.bst --directory target
+    bst build os/aemeath/disk-image.bst
+    bst artifact checkout os/aemeath/disk-image.bst --directory disks

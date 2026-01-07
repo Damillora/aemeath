@@ -97,9 +97,6 @@ jobs:
       - name: Build usr and kernel images
         run: just export
         shell: bash
-      - name: Build disk images
-        run: just disk-image
-        shell: bash
       - name: Copy artifacts to S3 bucket
         run: |
           set -euox pipefail
@@ -107,10 +104,6 @@ jobs:
           for f in target/*
           do
             rclone --config /rclone.conf copy "$f" fina:aemeath/sysupdate/
-          done
-          for f in disks/*
-          do
-            rclone --config /rclone.conf copy "$f" fina:aemeath/disks/
           done
         shell: bash
   delete-runner:

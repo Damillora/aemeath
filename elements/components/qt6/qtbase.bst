@@ -57,28 +57,48 @@ depends:
 #xdg-utils
 
 variables:
-  cmake-local: |
-    -DINSTALL_ARCHDATADIR=lib/qt6 \
-    -DINSTALL_LIBDIR=lib/x86_64-linux-gnu \
-    -DQT_DISABLE_RPATH=ON \
-    -DBUILD_WITH_PCH=FALSE \
-    -DQT_FEATURE_openssl_linked=ON \
+  cmake-local: >-
+    -DINSTALL_BINDIR="%{libdir}/qt6/bin"
+    -DINSTALL_PUBLICBINDIR="%{bindir}"
+    -DINSTALL_LIBDIR=%{libdir}
+    -DINSTALL_MKSPECSDIR="%{libdir}/mkspecs"
+    -DINSTALL_ARCHDATADIR="%{libdir}/qt6"
+    -DINSTALL_DOCDIR="%{docdir}/qt6"
+    -DQT_FEATURE_openssl_linked=ON
     -DQT_FEATURE_system_sqlite=ON
 
 config:
   install-commands:
-  - |
-    %{make-install}
+    (>):
+    - |
+      mkdir -p "%{install-root}%{bindir}"
+      while read -r target link; do
+        ln -sr "%{install-root}%{prefix}/$target" "%{install-root}%{prefix}/$link"
+      done < "%{build-dir}/user_facing_tool_links.txt"
 
-  - |
-    rm "%{install-root}%{bindir}/qmake"
-    ln -sf "qmake6" "%{install-root}%{bindir}/qmake"
-    rm "%{install-root}%{bindir}/qtpaths"
-    ln -sf "qtpaths6" "%{install-root}%{bindir}/qtpaths"
-    rm "%{install-root}%{bindir}/androiddeployqt"
-    ln -sf "androiddeployqt6" "%{install-root}%{bindir}/androiddeployqt"
+    - |
+      cd "%{install-root}%{libdir}/qt6/bin"
+      for f in qmake qtpaths androiddeployqt; do
+        if [ -f "$f" ] && [ -f "${f}6" ]; then
+          ln -sf "${f}6" "$f"
+        fi
+      done
 
 sources:
 - kind: tar
   url: 'qt:%{qt6-version-branch}/%{qt6-version}/submodules/qtbase-everywhere-src-%{qt6-version}.tar.xz'
   ref: 5a6226f7e23db51fdc3223121eba53f3f5447cf0cc4d6cb82a3a2df7a65d265d
+
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/mkspecs'
+        - '%{libdir}/mkspecs/**'
+        - '%{libdir}/*.prl'
+        - '%{libdir}/**/*.prl'
+        - '%{libdir}/qt6/bin'
+        - '%{libdir}/qt6/bin/**'
+        - '%{bindir}/androiddeployqt6'
+        - '%{bindir}/qmake6'

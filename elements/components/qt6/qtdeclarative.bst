@@ -13,17 +13,26 @@ depends:
 
 config:
   install-commands:
-  - |
-    %{make-install}
-
-  - |
-    for f in qml qmleasing qmlls qmlpreview qmlscene
-    do
-        rm "%{install-root}%{bindir}/$f"
-        ln -sf "${f}6" "%{install-root}%{bindir}/$f"
-    done
+    (>):
+    - |
+      mkdir -p "%{install-root}%{bindir}"
+      while read -r target link; do
+        ln -sr "%{install-root}%{prefix}/$target" "%{install-root}%{prefix}/$link"
+      done < "%{build-dir}/user_facing_tool_links.txt"
 
 sources:
 - kind: tar
   url: 'qt:%{qt6-version-branch}/%{qt6-version}/submodules/qtdeclarative-everywhere-src-%{qt6-version}.tar.xz'
   ref: 4fb4efb894e0b96288543505d69794d684bcfbe4940ce181d3e6817bda54843e
+
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{bindir}/qml6'
+        - '%{bindir}/qmlcachegen6'
+        - '%{bindir}/qmleasing6'
+        - '%{bindir}/qmlls6'
+        - '%{bindir}/qmlpreview6'
+        - '%{bindir}/qmlscene6'

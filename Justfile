@@ -15,29 +15,6 @@ generate-version:
 
     echo "image-version: ${CURRENT_DATE}" > include/image-version.yml
 
-enable-push:
-    #!/usr/bin/env bash
-    cat <<EOF > include/artifacts.yml
-    artifacts:
-    - url: https://aemeath-cache.castorice.my.id
-      push: true
-      auth:
-        client-key: aemeath.key
-        client-cert: aemeath.crt
-    EOF
-
-disable-push:
-    #!/usr/bin/env bash
-    set -euox pipefail
-
-    cat <<EOF > include/artifacts.yml
-    artifacts:
-    - url: https://aemeath-cache.castorice.my.id
-      auth:
-        client-key: aemeath.key
-        client-cert: aemeath.crt
-    EOF
-
 build: generate-version enable-push
     bst build aemeath/desktop.bst
 

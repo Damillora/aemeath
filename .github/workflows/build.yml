@@ -85,14 +85,38 @@ jobs:
           S3_SECRET_ACCESS_KEY: ${{secrets.S3_SECRET_ACCESS_KEY}}
       - name: Set up environment
         run: |
-          echo "$AEMEATH_CRT" > aemeath.crt
-          echo "$AEMEATH_KEY" > aemeath.key
+          echo "$AEMEATH_CRT" > /aemeath.crt
+          echo "$AEMEATH_KEY" > /aemeath.key
+
+          mkdir -p $HOME/.config
+          cat << EOF > $HOME/.config.buildstream
+          artifacts:
+            override-project-caches: false
+            servers:
+            - url: https://aemeath-cache.castorice.my.id
+              push: true
+              auth:
+                client-key: /aemeath.key
+                client-cert: /aemeath.crt
+          EOF
         shell: bash
         env:
           AEMEATH_CRT: ${{secrets.BST_ARTIFACT_PUSH_CERT}}
           AEMEATH_KEY: ${{secrets.BST_ARTIFACT_PUSH_KEY}}
       - name: Build components
         run: just build
+        shell: bash
+      - name: Disable push for building images
+        run: |
+          cat << EOF > $HOME/.config.buildstream
+          artifacts:
+            override-project-caches: false
+            servers:
+            - url: https://aemeath-cache.castorice.my.id
+              auth:
+                client-key: /aemeath.key
+                client-cert: /aemeath.crt
+          EOF
         shell: bash
       - name: Build usr and kernel images
         run: just disk-image

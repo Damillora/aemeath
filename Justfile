@@ -15,13 +15,13 @@ generate-version:
 
     echo "image-version: ${CURRENT_DATE}" > include/image-version.yml
 
-build: generate-version enable-push
+build: generate-version
     bst build aemeath/desktop.bst
 
-export: clean-target build disable-push
+export: clean-target build
     bst build os/aemeath/export.bst
     bst artifact checkout os/aemeath/export.bst --directory target
 
-disk-image: clean-disks build disable-push
+disk-image: clean-disks build
     bst build os/aemeath/disk-image.bst
     bst artifact checkout os/aemeath/disk-image.bst --directory disks

@@ -88,16 +88,13 @@ jobs:
           echo "$AEMEATH_CRT" > /aemeath.crt
           echo "$AEMEATH_KEY" > /aemeath.key
 
-          mkdir -p $HOME/.config
-          cat << EOF > $HOME/.config/buildstream.conf
+          cat << EOF > include/artifacts.yml
           artifacts:
-            override-project-caches: false
-            servers:
-            - url: https://aemeath-cache.castorice.my.id
-              push: true
-              auth:
-                client-key: /aemeath.key
-                client-cert: /aemeath.crt
+          - url: https://aemeath-cache.castorice.my.id
+            push: true
+            auth:
+              client-key: /aemeath.key
+              client-cert: /aemeath.crt
           EOF
         shell: bash
         env:
@@ -108,14 +105,12 @@ jobs:
         shell: bash
       - name: Disable push for building images
         run: |
-          cat << EOF > $HOME/.config/buildstream.conf
+          cat << EOF > include/artifacts.yml
           artifacts:
-            override-project-caches: false
-            servers:
-            - url: https://aemeath-cache.castorice.my.id
-              auth:
-                client-key: /aemeath.key
-                client-cert: /aemeath.crt
+          - url: https://aemeath-cache.castorice.my.id
+            auth:
+              client-key: /aemeath.key
+              client-cert: /aemeath.crt
           EOF
         shell: bash
       - name: Build usr and kernel images

@@ -1,7 +1,7 @@
 kind: filter
 
 build-depends:
-- components/staging/systemd-base.bst
+- components/freedesktop/systemd-base.bst
 
 runtime-depends:
 - freedesktop-sdk.bst:components/systemd-manifest.bst

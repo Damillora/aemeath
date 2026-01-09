@@ -4,7 +4,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 - freedesktop-sdk.bst:components/mesa-headers.bst
 - freedesktop-sdk.bst:components/xorg-lib-xi.bst
-- components/deps/glu.bst
+- components/freedesktop/glu.bst
 
 variables:
   local_flags: -std=gnu17

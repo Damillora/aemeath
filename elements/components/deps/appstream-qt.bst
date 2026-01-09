@@ -1,7 +1,7 @@
 kind: filter
 
 build-depends:
-- components/staging/appstream-base.bst
+- components/freedesktop/appstream.bst
 
 runtime-depends:
 - freedesktop-sdk.bst:components/appstream.bst

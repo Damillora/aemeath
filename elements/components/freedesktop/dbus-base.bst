@@ -28,20 +28,11 @@ variables:
     -Ddoxygen_docs=enabled
     -Dxml_docs=enabled
 
-config:
-  install-commands:
-    - |
-      mkdir -p %{install-root}%{libexecdir}/
-      cp %{build-dir}/bus/dbus-daemon-launch-helper  %{install-root}%{libexecdir}/dbus-daemon-launch-helper
-      #install -m4750 -o root -g messagebus %{build-dir}/bus/dbus-daemon-launch-helper  %{install-root}%{libexecdir}/dbus-daemon-launch-helper
-
 public:
-  initial-script:
-    script: |
-      #!/bin/bash
-      sysroot="${1}"
-      chown root:messagebus "${sysroot}%{libexecdir}/dbus-daemon-launch-helper"
-      chmod 4755 "${sysroot}%{libexecdir}/dbus-daemon-launch-helper"
+  bst:
+    split-rules:
+      dbus-daemon-launch-helper:
+        - '%{libexecdir}/dbus-daemon-launch-helper'
 
 sources:
 - kind: git_repo

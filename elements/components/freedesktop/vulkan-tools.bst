@@ -6,7 +6,7 @@ build-depends:
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:components/vulkan-headers.bst
 - freedesktop-sdk.bst:components/wayland-protocols.bst
-- components/deps/volk.bst
+- components/freedesktop/volk.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

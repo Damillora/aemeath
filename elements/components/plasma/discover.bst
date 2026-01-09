@@ -34,7 +34,7 @@ depends:
 - components/kf6/qqc2-desktop-style.bst
 - components/deps/qt6-qcoro.bst
 - components/deps/kirigami-addons.bst
-- components/staging/appstream-qt.bst
+- components/deps/appstream-qt.bst
 - freedesktop-sdk.bst:components/flatpak.bst
 - freedesktop-sdk.bst:components/fwupd.bst
 

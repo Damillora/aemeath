@@ -16,8 +16,8 @@ build-depends:
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
-- components/staging/libmbim.bst
-- components/staging/libqmi.bst
+- components/freedesktop/libmbim.bst
+- components/freedesktop/libqmi.bst
 - freedesktop-sdk.bst:components/glib.bst
 - freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:components/libgudev.bst

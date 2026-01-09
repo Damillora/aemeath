@@ -1,7 +1,7 @@
 kind: filter
 
 build-depends:
-- components/staging/poppler.bst
+- components/freedesktop/poppler.bst
 
 runtime-depends:
 - freedesktop-sdk.bst:components/poppler.bst

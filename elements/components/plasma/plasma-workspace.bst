@@ -105,7 +105,7 @@ depends:
 - components/deps/libcanberra.bst
 - components/deps/libqalculate.bst
 - components/deps/qt6-phonon.bst
-- components/staging/appstream-qt.bst
+- components/deps/appstream-qt.bst
 
 variables:
   cmake-local: |

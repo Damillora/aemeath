@@ -14,7 +14,7 @@ depends:
 - components/kf6/kiconthemes.bst
 - components/kf6/knewstuff.bst
 - components/kf6/knotifications.bst
-- components/staging/appstream-qt.bst
+- components/deps/appstream-qt.bst
 variables:
   cmake-local: |
     -DBUILD_TESTING=OFF

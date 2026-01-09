@@ -13,8 +13,8 @@ build-depends:
 - freedesktop-sdk.bst:components/help2man.bst
 depends:
 - freedesktop-sdk.bst:components/glib.bst
-- components/staging/libqrtr-glib.bst
-- components/staging/libmbim.bst
+- components/freedesktop/libqrtr-glib.bst
+- components/freedesktop/libmbim.bst
 - freedesktop-sdk.bst:components/bash-completion.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

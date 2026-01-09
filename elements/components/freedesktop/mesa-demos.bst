@@ -10,8 +10,8 @@ depends:
 - freedesktop-sdk.bst:components/libdrm.bst
 - freedesktop-sdk.bst:components/libdecor.bst
 - freedesktop-sdk.bst:components/libxkbcommon.bst
-- components/deps/freeglut.bst
-- components/deps/glu.bst
+- components/freedesktop/freeglut.bst
+- components/freedesktop/glu.bst
 
 variables:
   meson-local: >-

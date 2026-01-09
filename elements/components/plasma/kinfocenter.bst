@@ -37,12 +37,12 @@ depends:
 - components/plasma/layer-shell-qt.bst
 - components/plasma/libkscreen.bst
 - components/plasma/libplasma.bst
-- components/deps/vulkan-tools.bst
-- components/deps/mesa-demos.bst
+- components/freedesktop/clinfo.bst
+- components/freedesktop/mesa-demos.bst
+- components/freedesktop/vulkan-tools.bst
 - components/deps/wayland-utils.bst
 - components/deps/libdisplay-info.bst
 - components/deps/lm-sensors.bst
-- components/deps/clinfo.bst
 
 variables:
   cmake-local: |

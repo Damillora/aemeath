@@ -7,12 +7,12 @@ depends:
 - freedesktop-sdk.bst:components/pipewire-daemon.bst
 - freedesktop-sdk.bst:components/wireplumber.bst
 - freedesktop-sdk.bst:components/flatpak.bst
-- components/staging/systemd-sysupdated.bst
+- components/deps/systemd-sysupdated.bst
 # System utilities
 - freedesktop-sdk.bst:components/containers-common.bst
 - freedesktop-sdk.bst:components/podman.bst
 - freedesktop-sdk.bst:components/sudo.bst
-- components/staging/dbus-daemon-launch-helper.bst
+- components/deps/dbus-daemon-launch-helper.bst
 # System libraries
 - freedesktop-sdk.bst:vm/mesa-default.bst
 # Plasma

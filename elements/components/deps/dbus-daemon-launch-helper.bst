@@ -1,10 +1,10 @@
 kind: filter
 
 build-depends:
-- components/freedesktop/appstream.bst
+- components/freedesktop/dbus-base.bst
 
 runtime-depends:
-- freedesktop-sdk.bst:components/appstream.bst
+- freedesktop-sdk.bst:components/dbus-base.bst
 
 config:
   include:

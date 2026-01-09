@@ -2,6 +2,8 @@ kind: script
 
 build-depends:
 - freedesktop-sdk.bst:vm/deploy-tools.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+- freedesktop-sdk.bst:components/zstd.bst
 - filename: os/aemeath/usr-image.bst
   config:
     location: '/usr-image'

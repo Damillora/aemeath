@@ -8,7 +8,7 @@ build-depends:
   config:
     location: /boot
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
-- freedesktop-sdk.bst:components/xz.bst
+- freedesktop-sdk.bst:components/zstd.bst
 
 environment:
   ZSTDFLAGS: '--rm -19'

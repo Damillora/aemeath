@@ -114,10 +114,10 @@ jobs:
           EOF
         shell: bash
       - name: Build usr and kernel images
-        run: just disk-image
+        run: just export
         shell: bash
       - name: Build disk images
-        run: just export
+        run: just disk-image
         shell: bash
       - name: Copy artifacts to S3 bucket
         run: |

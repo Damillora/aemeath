@@ -22,5 +22,4 @@ variables:
 sources:
 - kind: git_repo
   url: freedesktop:mesa/demos.git
-  track: mesa-demos-*
   ref: mesa-demos-9.0.0-0-g661681767bfb4e8f136aac1fd7934e6b0fa46d29

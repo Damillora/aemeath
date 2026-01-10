@@ -16,7 +16,4 @@ variables:
 sources:
 - kind: git_repo
   url: github:FreeGLUTProject/freeglut.git
-  track: v*
-  exclude:
-  - v*rc*
   ref: v3.8.0-0-g3db1649ce1f5e42f1338b51e3fa14849be547d5d

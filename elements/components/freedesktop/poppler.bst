@@ -27,7 +27,6 @@ variables:
 sources:
 - kind: git_repo
   url: freedesktop:poppler/poppler.git
-  track: poppler-*
   ref: 45d43f4685d0596abcecd2587d4b821e8e40879b
 
 public:

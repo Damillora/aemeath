@@ -27,5 +27,4 @@ variables:
 sources:
 - kind: git_repo
   url: github:KhronosGroup/Vulkan-Tools.git
-  track: vulkan-sdk-*
   ref: vulkan-sdk-1.4.321.0-0-g06ae73a3dc3a03466817d8370355203dac7b79b1

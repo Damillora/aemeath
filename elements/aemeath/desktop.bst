@@ -8,6 +8,7 @@ depends:
 - freedesktop-sdk.bst:components/wireplumber.bst
 - freedesktop-sdk.bst:components/flatpak.bst
 - components/deps/systemd-sysupdated.bst
+- components/other/tailscale.bst
 # System utilities
 - freedesktop-sdk.bst:components/containers-common.bst
 - freedesktop-sdk.bst:components/podman.bst

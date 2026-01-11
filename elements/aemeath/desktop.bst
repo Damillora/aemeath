@@ -10,6 +10,7 @@ depends:
 - components/deps/systemd-sysupdated.bst
 - components/other/tailscale.bst
 # System utilities
+- freedesktop-sdk.bst:components/nano.bst
 - freedesktop-sdk.bst:components/containers-common.bst
 - freedesktop-sdk.bst:components/podman.bst
 - freedesktop-sdk.bst:components/sudo.bst

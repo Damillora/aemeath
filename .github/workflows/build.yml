@@ -90,7 +90,7 @@ jobs:
         run: |
           docker run --rm \
           --workdir /work \
-          -v "$HOME:$HOME" \
+          -v "$HOME/.config:$HOME/.config" \
           -v "${{ github.workspace }}:/work" \
           -e HOME \
           --privileged --device /dev/fuse \
@@ -111,7 +111,7 @@ jobs:
         run: |
           docker run --rm \
           --workdir /work \
-          -v "$HOME:$HOME" \
+          -v "$HOME/.config:$HOME/.config" \
           -v "${{ github.workspace }}:/work" \
           -e HOME \
           --privileged --device /dev/fuse \

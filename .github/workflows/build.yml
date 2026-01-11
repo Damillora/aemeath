@@ -87,10 +87,16 @@ jobs:
               client-cert: aemeath.crt
           EOF
       - name: Build components
-        uses: docker://registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2
-        with:
-          args: bst build aemeath/desktop.bst
-          options: --privileged --device /dev/fuse
+        run: |
+          docker run --rm \
+          --workdir /work \
+          -v "$HOME:$HOME" \
+          -v "${{ github.workspace }}:/work" \
+          -e HOME \
+          --privileged --device /dev/fuse \
+          registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2 \
+          bst build aemeath/desktop.bst
+        shell: bash
       - name: Disable push for building images
         run: |
           cat << EOF > include/artifacts.yml
@@ -102,14 +108,18 @@ jobs:
           EOF
         shell: bash
       - name: Build release artifacts
-        uses: docker://registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2
-        with:
-          args: |
-            /bin/sh -c "bst build os/aemeath/export.bst;
-            bst artifact checkout os/aemeath/export.bst --directory target;
-            bst build os/aemeath/disk-image.bst;
-            bst artifact checkout os/aemeath/disk-image.bst --directory disks;"
-          options: --privileged --device /dev/fuse
+        run: |
+          docker run --rm \
+          --workdir /work \
+          -v "$HOME:$HOME" \
+          -v "${{ github.workspace }}:/work" \
+          -e HOME \
+          --privileged --device /dev/fuse \
+          registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2 \
+          /bin/sh -c "bst build os/aemeath/export.bst; \
+          bst artifact checkout os/aemeath/export.bst --directory target; \
+          bst build os/aemeath/disk-image.bst; \
+          bst artifact checkout os/aemeath/disk-image.bst --directory disks;"
       - name: Copy artifacts to S3 bucket
         run: |
           set -euox pipefail

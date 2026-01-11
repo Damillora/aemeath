@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<component type="operating-system">
+  <id>com.damillora.aemeath</id>
+  <name>Aemeath OS</name>
+  <summary>A distroless Linux operating system based on Freedesktop SDK, with the KDE Plasma desktop.</summary>
+  <pkgname>host</pkgname>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <description>
+    <p>An experimental distroless Linux operating system based on the Freedesktop SDK, running the KDE Plasma desktop environment.</p>
+    <p>Aemeath is immutable, and does not have a package manager. System updates are image-based, while applications are installed from Flatpak. It aims to include the latest KDE software, while building on top of the same Freedesktop SDK used by the Flatpak runtime.</p>
+  </description>
+  <url type="homepage">https://github.com/Damillora/aemeath</url>
+  <url type="bugtracker">https://github.com/Damillora/aemeath</url>
+  <url type="help">https://github.com/Damillora/aemeath/issues</url>
+  <developer_name>Damillora</developer_name>
+  <provides>
+    <modalias>linux</modalias>
+  </provides>
+
+  <releases>
+    <release version="26.01" date="2025-01-15" type="stable">
+      <description>
+        <p>Aemeath 26.01</p>
+      </description>
+    </release>
+  </releases>
+</component>

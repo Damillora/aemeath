@@ -1,9 +1,9 @@
 # Aemeath
 
-An experimental distroless Linux operating system based on the Freedesktop SDK, running the KDE
+An experimental immutable Linux distribution based on the Freedesktop SDK, running the KDE
 Plasma desktop environment.
 
-Aemeath is immutable, and does not have a package manager. System updates are image-based, 
+Aemeath does not have a package manager. System updates are image-based, 
 while applications are installed from Flatpak. It aims to include the latest KDE software, 
 while building on top of the same Freedesktop SDK used by the Flatpak runtime.
 

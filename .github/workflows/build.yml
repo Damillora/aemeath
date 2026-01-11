@@ -205,6 +205,18 @@ jobs:
           # Setup rclone
           curl https://rclone.org/install.sh | sudo bash
 
+          mkdir -p $HOME/.config
+          cat << EOF > $HOME/.config/buildstream.conf
+          scheduler:
+            fetchers: 10
+            builders: 1
+            pushers: 4
+            network-retries: 2
+            on-error: quit
+          build:
+            max-jobs: 4
+          EOF
+
           cat << EOF > rclone.conf
           [fina]
           type = s3

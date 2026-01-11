@@ -14,12 +14,7 @@ concurrency:
 
 jobs:
   build-aemeath:
-    needs:
-      - build
     name: Build Aemeath
-    if: |
-      always() &&
-      (needs.build.result == 'skipped')
     runs-on: ubuntu-latest
     steps:
       - name: Tailscale

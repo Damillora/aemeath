@@ -87,7 +87,6 @@ jobs:
               client-cert: aemeath.crt
           EOF
       - name: Build components
-        run: docker run --privileged --device /dev/fuse
         uses: docker://registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2
         with:
           args: --privileged --device /dev/fuse  bst build aemeath/desktop.bst

@@ -191,7 +191,7 @@ jobs:
           remove-docker-cached-images: false
       - name: Install buildstream
         run: |
-          pip3 install --user 'BuildStream == 2.*' 'dulwich >= 0.21.7' requests tomlkit
+          pip3 install --user 'BuildStream == 2.*' 'dulwich == 0.22.1' requests tomlkit
       - name: Setup tools
         run: |
           set -euox pipefail

@@ -13,52 +13,60 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-aemeath:
-    name: Build Aemeath
+  create-runner:
+    name: Create Hetzner Cloud runner
     runs-on: ubuntu-latest
+    outputs:
+      label: ${{ steps.create-hcloud-runner.outputs.label }}
+      server_id: ${{ steps.create-hcloud-runner.outputs.server_id }}
     steps:
-      - name: Tailscale
-        uses: tailscale/github-action@v4
+      - name: Create runner
+        id: create-hcloud-runner
+        uses: Cyclenerd/hcloud-github-runner@v1
         with:
-          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
-          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
-          tags: tag:github-actions
-          ping: aemeath-cache.castorice.my.id
+          mode: create
+          github_token: ${{ secrets.AEMEATH_GH_PAT }}
+          hcloud_token: ${{ secrets.HCLOUD_TOKEN }}
+          server_type: ccx33
+          location: nbg1 # Nuremberg, Germany
+          image: fedora-42 # Rocky Linux 9
+  setup:
+    name: Setup Runner
+    needs: create-runner # required to start the main job when the runner is ready
+    runs-on: ${{ needs.create-runner.outputs.label }} # run the job on the newly created runner
+
+    steps:
+      - run: dnf config-manager addrepo --from-repofile https://download.docker.com/linux/fedora/docker-ce.repo
+      - run: dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+      - run: systemctl enable --now docker.service
+      - run: curl -fsSL https://tailscale.com/install.sh | sh
+      - run: tailscale up --auth-key="${{ secrets.TS_OAUTH_SECRET }}" --advertise-tags=tag:github-actions
+  build:
+    name: Build Aemeath
+    needs:
+      - create-runner
+      - setup
+    runs-on: ${{ needs.create-runner.outputs.label }} # run the job on the newly created runner
+    container:
+      image: registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2
+      options: --privileged --device /dev/fuse
+    steps:
       - name: Checkout
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
-      # This is optional, but if you see that your builds are way too big for the runners, you can enable this by uncommenting the following lines:
-      - name: Maximize build space
-        uses: ublue-os/remove-unwanted-software@517622d6452028f266b7ba4cc9a123b5f58a6b53 # v7
-        with:
-          remove-docker-cached-images: false
       - name: Setup tools
         run: |
           set -euox pipefail
-
-          echo "$AEMEATH_CRT" > aemeath.crt
-          echo "$AEMEATH_KEY" > aemeath.key
-
-          sudo apt install -y bubblewrap lzip
-
           # Setup just
-          curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | sudo bash -s -- --to /usr/bin --tag 1.46.0
+          curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /usr/bin --tag 1.46.0
+
+          # Setup 7z
+          curl -L https://github.com/ip7z/7zip/releases/download/25.01/7z2501-linux-x64.tar.xz | tar xJf - 7zz
+          mv 7zz /usr/bin/7z
 
           # Setup rclone
-          curl https://rclone.org/install.sh | sudo bash
+          curl https://rclone.org/install.sh | bash
 
-          mkdir -p $HOME/.config
-          cat << EOF > $HOME/.config/buildstream.conf
-          scheduler:
-            fetchers: 10
-            builders: 4
-            pushers: 4
-            network-retries: 2
-            on-error: quit
-          build:
-            max-jobs: 1
-          EOF
-
-          cat << EOF > rclone.conf
+          cat << EOF > /rclone.conf
           [fina]
           type = s3
           provider = Other
@@ -73,31 +81,27 @@ jobs:
           EOF
         shell: bash
         env:
-          AEMEATH_CRT: ${{secrets.BST_ARTIFACT_PUSH_CERT}}
-          AEMEATH_KEY: ${{secrets.BST_ARTIFACT_PUSH_KEY}}
           S3_ACCESS_KEY_ID: ${{secrets.S3_ACCESS_KEY_ID}}
           S3_SECRET_ACCESS_KEY: ${{secrets.S3_SECRET_ACCESS_KEY}}
-      - name: Enable push for building images
+      - name: Set up environment
         run: |
+          echo "$AEMEATH_CRT" > /aemeath.crt
+          echo "$AEMEATH_KEY" > /aemeath.key
+
           cat << EOF > include/artifacts.yml
           artifacts:
           - url: https://aemeath-cache.castorice.my.id
             push: true
             auth:
-              client-key: aemeath.key
-              client-cert: aemeath.crt
+              client-key: /aemeath.key
+              client-cert: /aemeath.crt
           EOF
+        shell: bash
+        env:
+          AEMEATH_CRT: ${{secrets.BST_ARTIFACT_PUSH_CERT}}
+          AEMEATH_KEY: ${{secrets.BST_ARTIFACT_PUSH_KEY}}
       - name: Build components
-        run: |
-          docker run --rm \
-          --network host \
-          --workdir /work \
-          -v "$HOME/.config:$HOME/.config" \
-          -v "${{ github.workspace }}:/work" \
-          -e HOME \
-          --privileged --device /dev/fuse \
-          registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2 \
-          bst build aemeath/desktop.bst
+        run: just build
         shell: bash
       - name: Disable push for building images
         run: |
@@ -105,34 +109,42 @@ jobs:
           artifacts:
           - url: https://aemeath-cache.castorice.my.id
             auth:
-              client-key: aemeath.key
-              client-cert: aemeath.crt
+              client-key: /aemeath.key
+              client-cert: /aemeath.crt
           EOF
         shell: bash
-      - name: Build release artifacts
-        run: |
-          docker run --rm \
-          --network host \
-          --workdir /work \
-          -v "$HOME/.config:$HOME/.config" \
-          -v "${{ github.workspace }}:/work" \
-          -e HOME \
-          --privileged --device /dev/fuse \
-          registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2 \
-          /bin/sh -c "bst build os/aemeath/export.bst; \
-          bst artifact checkout os/aemeath/export.bst --directory target; \
-          bst build os/aemeath/disk-image.bst; \
-          bst artifact checkout os/aemeath/disk-image.bst --directory disks;"
+      - name: Build usr and kernel images
+        run: just export
+        shell: bash
+      - name: Build disk images
+        run: just disk-image
+        shell: bash
       - name: Copy artifacts to S3 bucket
         run: |
           set -euox pipefail
 
           for f in target/*
           do
-            rclone --config rclone.conf copy "$f" fina:aemeath/sysupdate/
+            rclone --config /rclone.conf copy "$f" fina:aemeath/sysupdate/
           done
           for f in disks/*
           do
-            rclone --config rclone.conf copy "$f" fina:aemeath/images/
+            rclone --config /rclone.conf copy "$f" fina:aemeath/images/
           done
         shell: bash
+  delete-runner:
+    name: Delete Hetzner Cloud runner
+    needs:
+      - create-runner # required to get output from the create-runner job
+      - build # required to wait when the main job is done
+    runs-on: ubuntu-latest
+    if: ${{ always() }} # required to stop the runner even if the error happened in the previous jobs
+    steps:
+      - name: Delete runner
+        uses: Cyclenerd/hcloud-github-runner@v1
+        with:
+          mode: delete
+          github_token: ${{ secrets.AEMEATH_GH_PAT }}
+          hcloud_token: ${{ secrets.HCLOUD_TOKEN }}
+          name: ${{ needs.create-runner.outputs.label }}
+          server_id: ${{ needs.create-runner.outputs.server_id }}

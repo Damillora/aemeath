@@ -50,12 +50,12 @@ jobs:
           cat << EOF > $HOME/.config/buildstream.conf
           scheduler:
             fetchers: 10
-            builders: 1
+            builders: 4
             pushers: 4
             network-retries: 2
             on-error: quit
           build:
-            max-jobs: 4
+            max-jobs: 1
           EOF
 
           cat << EOF > rclone.conf

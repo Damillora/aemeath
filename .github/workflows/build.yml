@@ -89,7 +89,8 @@ jobs:
       - name: Build components
         uses: docker://registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2
         with:
-          args: --privileged --device /dev/fuse  bst build aemeath/desktop.bst
+          args: bst build aemeath/desktop.bst
+          options: --privileged --device /dev/fuse
       - name: Disable push for building images
         run: |
           cat << EOF > include/artifacts.yml
@@ -104,10 +105,11 @@ jobs:
         uses: docker://registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2
         with:
           args: |
-            --privileged --device /dev/fuse bst /bin/sh -c "bst build os/aemeath/export.bst;
+            /bin/sh -c "bst build os/aemeath/export.bst;
             bst artifact checkout os/aemeath/export.bst --directory target;
             bst build os/aemeath/disk-image.bst;
             bst artifact checkout os/aemeath/disk-image.bst --directory disks;"
+          options: --privileged --device /dev/fuse
       - name: Copy artifacts to S3 bucket
         run: |
           set -euox pipefail

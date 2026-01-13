@@ -22,7 +22,7 @@ config:
   - |
     install -Dm755 tailscale tailscaled -t  "%{install-root}%{bindir}"
     mkdir -p "%{install-root}%{sysconfdir}/etc/default"
-    install -Dm644 cmd/tailscaled/tailscaled.defaults "%{install-root}%{sysconfdir}/etc/default/tailscaled"
+    install -Dm644 cmd/tailscaled/tailscaled.defaults "%{install-root}%{sysconfdir}/default/tailscaled"
     install -Dm644 cmd/tailscaled/tailscaled.service -t "%{install-root}%{indep-libdir}/systemd/system"
 
 sources:

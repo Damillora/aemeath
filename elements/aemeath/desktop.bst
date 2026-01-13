@@ -15,6 +15,7 @@ depends:
 - freedesktop-sdk.bst:components/containers-common.bst
 - freedesktop-sdk.bst:components/podman.bst
 - freedesktop-sdk.bst:components/sudo.bst
+- freedesktop-sdk.bst:components/desktop-file-utils.bst
 - components/deps/dbus-daemon-launch-helper.bst
 - components/other/distrobox.bst
 # System libraries

@@ -38,9 +38,10 @@ config:
            --no-machineid --kernel-image /boot/vmlinuz \
            --kver $(ls -1 /lib/modules | head -n1) \
            --kernel-cmdline "rw mount.usrflags=ro lockdown=confidentiality systemd.firstboot=no" \
-           --install 'fsck.ext4' \
-           --install 'mkfs.ext4' \
+           --install 'fsck.btrfs' \
+           --install 'mkfs.btrfs' \
            --add-drivers erofs \
+           --add-drivers btrfs \
            --libdirs %{libdir} \
            --libdirs %{indep-libdir} \
            --add systemd-repart \

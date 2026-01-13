@@ -32,6 +32,7 @@ depends:
 - components/kf6/solid.bst
 - components/gear/kio-extras.bst
 - components/gear/baloo-widgets.bst
+- components/gear/ffmpegthumbs.bst
 
 variables:
   cmake-local: |

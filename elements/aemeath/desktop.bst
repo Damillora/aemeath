@@ -15,6 +15,7 @@ depends:
 - freedesktop-sdk.bst:components/podman.bst
 - freedesktop-sdk.bst:components/sudo.bst
 - components/deps/dbus-daemon-launch-helper.bst
+- components/other/distrobox.bst
 # System libraries
 - freedesktop-sdk.bst:vm/mesa-default.bst
 # Plasma

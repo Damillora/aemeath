@@ -11,6 +11,9 @@ depends:
 - freedesktop-sdk.bst:components/linux-pam.bst
 - freedesktop-sdk.bst:components/libgcrypt.bst
 
+runtime-depends:
+- components/deps/socat.bst
+
 variables:
   cmake-local: |
     -DBUILD_TESTING=OFF

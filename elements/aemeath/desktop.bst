@@ -19,6 +19,9 @@ depends:
 - components/other/distrobox.bst
 # System libraries
 - freedesktop-sdk.bst:vm/mesa-default.bst
+# Other utilities
+- freedesktop-sdk.bst:components/git.bst
+- freedesktop-sdk.bst:components/findutils.bst
 # Plasma
 - components/plasma.bst
 # Built-in apps

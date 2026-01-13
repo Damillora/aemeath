@@ -1,1 +1,3 @@
 # Empty, used by CI
+artifacts:
+- url: https://aemeath-cache.nanao.moe

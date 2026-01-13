@@ -1,10 +1,9 @@
 kind: autotools
 
 sources:
-- kind: git_repo
-  url: git://repo.or.cz/socat.git
-  track: tag-1.*
-  ref: tag-1.8.1.0-0-g8834d6cc7e0d7b04cd31f9f7d0cb3e06913b0323
+- kind: tar
+  url: http://www.dest-unreach.org/socat/download/socat-1.8.1.0.tar.gz
+  ref: 9a884880b1b00dfb2ffc6959197b1554b200af731018174cd048115dc28ef239
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

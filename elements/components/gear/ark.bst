@@ -29,6 +29,7 @@ depends:
 - components/kf6/kwidgetsaddons.bst
 - components/kf6/kwindowsystem.bst
 - components/kf6/kxmlgui.bst
+- components/deps/libzip.bst
 
 variables:
   cmake-local: |

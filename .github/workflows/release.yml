@@ -1,0 +1,51 @@
+---
+name: Create release
+on:
+  workflow_dispatch:
+
+jobs:
+  create-release:
+    name: Create release tag
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - name: Generate tag
+        run: |
+          previous_version=$(git describe --tags $(git rev-list --tags --max-count=1))
+          previous_date="${previous_version%%.*}"
+          previous_rev="${previous_version#*.}"
+          current_date=$(date +%Y%m%d)
+          current_rev=1
+          if [[ "$previous_date" == "$current_date" ]]; then
+            current_rev=$((previous_rev+1))
+          fi
+          echo "image_version=${current_date}.${current_rev}" >> $GITHUB_ENV
+        shell: bash
+      - name: Import component versions
+        run: |
+          yq -o=shell include/versions.yml >> ${GITHUB_ENV}
+      - name: Generate Notes
+        run: |
+          cat > "CHANGELOG.md" << EOF
+          # Aemeath OS ${{ env.image-version }}
+          ## Components
+          |**Package**            |**Version**               |
+          |-----------------------|--------------------------|
+          |**Freedesktop SDK**    |${{ env.sdk_version }}    |
+          |**Qt**                 |${{ env.qt6_version }}    |
+          |**KDE Frameworks**     |${{ env.kf6_version }}    |
+          |**KDE Plasma**         |${{ env.plasma_version }} |
+          |**KDE Gear**           |${{ env.gear_version }}   |
+
+          ## Downloads
+          * [Disk Image](https://aemeath.fuxuan.nanao.moe/images/aemeath_${{ env.image-version }}.img.zst)
+          EOF
+        shell: bash
+      - name: Create Release
+        uses: softprops/action-gh-release@v2 # v2
+        with:
+          name: "Aemeath OS ${{ env.image-version }}"
+          tag_name: ${{ env.image-version }}
+          body_path: CHANGELOG.md
+          make_latest: true

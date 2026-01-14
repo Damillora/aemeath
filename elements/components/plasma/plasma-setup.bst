@@ -26,5 +26,4 @@ variables:
 sources:
 - kind: git_repo
   url: 'kde:plasma/plasma-setup.git'
-  track: master
-  ref: v6.5.90-1-g1db6a7293e25bc8f8fad8c244e2423563a77bf20
+  ref: b88c47943e739db67556872074bf7b31b73ec390

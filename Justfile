@@ -9,13 +9,7 @@ clean-target:
 clean-disks:
     rm -rf disks
 
-generate-version:
-    #!/usr/bin/env bash
-    CURRENT_DATE="$(date +'%Y%m%d')"
-
-    echo "image-version: ${CURRENT_DATE}" > include/image-version.yml
-
-build: generate-version
+build:
     bst build aemeath/desktop.bst
 
 export: clean-target build

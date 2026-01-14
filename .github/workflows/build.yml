@@ -27,7 +27,7 @@ jobs:
           github_token: ${{ secrets.AEMEATH_GH_PAT }}
           hcloud_token: ${{ secrets.HCLOUD_TOKEN }}
           server_type: ccx33
-          location: nbg1 # Nuremberg, Germany
+          location: hel1
           image: fedora-42 # Rocky Linux 9
   setup:
     name: Setup Runner

@@ -30,4 +30,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/kde-cli-tools-%{plasma-version}.tar.xz'
-  ref: 88fe4335429ccec842de90eaa881930eccd29bc947528caf6fe12c93e609efb6
+  ref: 083b5d3c8e6315554547e1fc538c7d9f0671e08f7c52f2bc0a5a345027a12279

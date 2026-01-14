@@ -36,6 +36,6 @@ sources:
 - kind: git_repo
   url: 'kde:plasma/plasma-login-manager.git'
   track: master
-  ref: d9628033968ef9ceb4c2702c46c3ec68ba94f595
+  ref: v6.5.90-1-g4ee75e9b0e4279aa567f9e75d035b62a8a91ec5a
 - kind: local
   path: files/plasma-login-manager

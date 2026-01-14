@@ -72,4 +72,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/kwin-%{plasma-version}.tar.xz'
-  ref: 258443f72180cf5a8141b440bb51a714a2e67e30867736290793ce50d7bb1d70
+  ref: fbad845044231174ca7aad45572d1713d1b6f65289d94cac24776a103f051e46

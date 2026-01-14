@@ -27,6 +27,6 @@ sources:
 - kind: git_repo
   url: 'kde:plasma/plasma-setup.git'
   track: master
-  ref: 1524a421e0a4f5d2e003ddfb093946f418678178
+  ref: v6.5.90-1-g1db6a7293e25bc8f8fad8c244e2423563a77bf20
 - kind: patch_queue
   path: patches/plasma-setup

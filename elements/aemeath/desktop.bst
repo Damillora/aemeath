@@ -2,6 +2,8 @@ kind: stack
 
 depends:
 - aemeath/minimal.bst
+# i686 libraries, just in case
+- freedesktop-sdk.bst:cross-compilers/standard-libs-i686.bst
 # System services
 - freedesktop-sdk.bst:components/plymouth.bst
 - freedesktop-sdk.bst:components/networkmanager.bst
@@ -11,6 +13,7 @@ depends:
 - components/deps/systemd-sysupdated.bst
 - components/other/tailscale.bst
 # System utilities
+- freedesktop-sdk.bst:components/openssh.bst
 - freedesktop-sdk.bst:components/nano.bst
 - freedesktop-sdk.bst:components/containers-common.bst
 - freedesktop-sdk.bst:components/podman.bst

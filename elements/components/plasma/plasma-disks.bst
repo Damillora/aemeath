@@ -28,4 +28,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/plasma-disks-%{plasma-version}.tar.xz'
-  ref: ec86e8659c03f0bd8867bb17fa876586ee15ac24aad528911debf12c534c711b
+  ref: df3863ebbfd1fdc925e01b1fc95e906016a452d77854a20fcb2297681dc46b77

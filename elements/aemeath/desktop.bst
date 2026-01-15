@@ -13,6 +13,7 @@ depends:
 - components/deps/systemd-sysupdated.bst
 - components/other/tailscale.bst
 # System utilities
+- freedesktop-sdk.bst:components/procps.bst
 - freedesktop-sdk.bst:components/openssh.bst
 - freedesktop-sdk.bst:components/nano.bst
 - freedesktop-sdk.bst:components/containers-common.bst

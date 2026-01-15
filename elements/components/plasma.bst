@@ -56,6 +56,7 @@ depends:
   # Experimental things
   - components/plasma/plasma-login-manager.bst
   - components/plasma/plasma-setup.bst
+  - components/plasma/plasma-keyboard.bst
   # obsolete things
   # - components/plasma/wacomtablet.bst
   # - components/plasma/oxygen.bst

@@ -1,0 +1,31 @@
+---
+name: Build container image
+on:
+  schedule:
+    - cron: "27 00 * * *" # 03:05am UTC everyday
+  workflow_dispatch:
+
+jobs:
+  build_push:
+    name: Track sources
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    container:
+      image: registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2
+      options: --privileged --device /dev/fuse
+    steps:
+      - name: Checkout
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+        with:
+          token: ${{ secrets.AEMEATH_GH_PAT }}
+          fetch-depth: 0
+      - name: Track sources
+        run: bst source track
+      - name: Commit & push
+        run: |
+          git add .
+          git commit -m "chore: bst source track" && git push
+        shel: bash

@@ -27,6 +27,8 @@ jobs:
       - name: Commit & push
         run: |
           git config --global --add safe.directory $GITHUB_WORKSPACE
+          git config --global user.name "Aemeath OS Updates"
+          git config --global user.email "aemeath@damillora.com"
           git add elements
           git commit -m "chore: bst source track" && git push
         shell: bash

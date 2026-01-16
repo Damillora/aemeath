@@ -26,6 +26,7 @@ jobs:
         run: bst source track
       - name: Commit & push
         run: |
-          git add .
+          git config --global --add safe.directory $GITHUB_WORKSPACE
+          git add elements
           git commit -m "chore: bst source track" && git push
         shell: bash

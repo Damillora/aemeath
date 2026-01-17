@@ -1,10 +1,10 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: github:Qalculate/libqalculate/releases/download/v5.8.2/libqalculate-5.8.2.tar.gz
-
-  ref: 7136f3c929e88e7cea0fa66427bc541dcc99c7ecbe0d67cb256bfc922d2127d1
+- kind: git_repo
+  url: github:Qalculate/libqalculate.git
+  track: 'v*'
+  ref: v5.8.2-0-g4a4c32ca2789cf2a8b4228019a8f361dd8fdc70f
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

@@ -18,5 +18,5 @@ config:
 
 sources:
 - kind: tar
-  url: https://archives.boost.io/release/1.89.0/source/boost_1_89_0.tar.bz2
-  ref: 85a33fa22621b4f314f8e85e1a5e2a9363d22e4f4992925d4bb3bc631b5a0c7a
+  url: https://archives.boost.io/release/1.90.0/source/boost_1_90_0.tar.bz2
+  ref: 49551aff3b22cbc5c5a9ed3dbc92f0e23ea50a0f7325b0d198b705e8ee3fc305

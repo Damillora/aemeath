@@ -16,6 +16,7 @@ variables:
     -DZXING_BLACKBOX_TESTS=OFF
 
 sources:
-- kind: tar
-  url: github:zxing-cpp/zxing-cpp/archive/v2.3.0.tar.gz
-  ref: 64e4139103fdbc57752698ee15b5f0b0f7af9a0331ecbdc492047e0772c417ba
+- kind: git_repo
+  url: github:zxing-cpp/zxing-cpp.git
+  track: v*
+  ref: v2.3.0-rc1-0-gb9a959bf86582ec2e520ff0a20467b328ff69e64

@@ -31,6 +31,9 @@ depends:
 - components/kf6/kwindowsystem.bst
 - components/kf6/solid.bst
 
+runtime-depends:
+- components/deps/switcheroo-control.bst
+
 variables:
   cmake-local: |
     -DBUILD_TESTING=OFF

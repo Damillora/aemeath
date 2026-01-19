@@ -1,14 +1,17 @@
 kind: filter
 
 build-depends:
-- components/freedesktop/systemd-base.bst
+- freedesktop-sdk.bst:components/systemd-base.bst
 
 runtime-depends:
+- freedesktop-sdk.bst:components/python3.bst
+- freedesktop-sdk.bst:components/python3-pefile.bst
 - freedesktop-sdk.bst:components/systemd-manifest.bst
 
 config:
   include:
-  - systemd-sysupdated
+  - ukify
+  - systemd-license
   include-orphans: false
 
 public:

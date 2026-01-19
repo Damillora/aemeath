@@ -4,8 +4,13 @@ kind: meson
 #  - freedesktop-sdk.bst:components/systemd.bst
 #  - freedesktop-sdk.bst:components/systemd-libs.bst
 
-(@):
-- freedesktop-sdk.bst:elements/include/systemd.yml
+sources:
+- kind: git_repo
+  url: github:systemd/systemd.git
+  track: v*
+  exclude:
+  - '*-rc*'
+  ref: v259-0-g9ca433482f2281d71718718705ca8cd3bf562ad6
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
@@ -63,12 +68,6 @@ config:
 variables:
   efi: 'false'
   bpf-framework: 'disabled'
-  fallback-ntp-servers: "gnome.pool.ntp.org"
-  fallback-dns-servers: >-
-    1.1.1.1#one.one.one.one
-    1.0.0.1#one.one.one.one
-    2606:4700:4700::1111#one.one.one.one
-    2606:4700:4700::1001#one.one.one.one
 
   meson-local: >-
     -Dsysvinit-path=%{sysconfdir}/init.d
@@ -78,8 +77,26 @@ variables:
     -Dbootloader=%{efi}
     -Defi=%{efi}
     -Dfirstboot=true
+    -Ddefault-dnssec=no
+    -Didn=true
     -Dman=enabled
     -Dhtml=enabled
+    -Dtpm=true
+    -Dtpm2=enabled
+    -Dsbat-distro=aemeath
+    -Dsbat-distro-generation=1
+    -Dsbat-distro-summary="Aemeath OS"
+    -Dsbat-distro-url=https://github.com/Damillora/aemeath/
+    -Dversion-tag="$(git describe --abbrev=7 | sed "s/^v//")"
+    -Dxenctrl=disabled
+    -Dbpf-framework=%{bpf-framework}
+    -Dgnutls=disabled
+    -Dglib=disabled
+    -Ddbus=disabled
+    -Dukify=%{efi}
+    -Dkernel-install=true
+    -Dvmlinux-h=provided
+    -Dvmlinux-h-path='%{includedir}/%{gcc_triplet}/linux/vmlinux.h'
     -Dsysupdated=enabled
 
 public:
@@ -90,11 +107,36 @@ public:
 
   bst:
     split-rules:
-      systemd-sysupdated:
-      - '%{bindir}/updatectl'
-      - '%{indep-libdir}/systemd/systemd-sysupdated'
-      - '%{indep-libdir}/systemd/system/systemd-sysupdated.service'
-      - '%{indep-libdir}/systemd/system/dbus-org.freedesktop.sysupdate1.service'
-      - '%{datadir}/dbus-1/system.d/org.freedesktop.sysupdate1.conf'
-      - '%{datadir}/dbus-1/system-services/org.freedesktop.sysupdate1.service'
-      - '%{datadir}/polkit-1/actions/org.freedesktop.sysupdate1.policy'
+      kernel-install:
+      - '%{bindir}/kernel-install'
+      - '%{datadir}/bash-completion/completions/kernel-install'
+      - '%{datadir}/zsh/site-functions/_kernel-install'
+      - '%{indep-libdir}/kernel'
+      - '%{indep-libdir}/kernel/**'
+      - '%{mandir}/man8/kernel-install.8'
+      - '%{debugdir}%{bindir}/kernel-install.debug'
+      ukify:
+      - '%{bindir}/ukify'
+      - '%{indep-libdir}/systemd/ukify'
+      - '%{mandir}/man1/ukify.1'
+      systemd-libs:
+      - '%{libdir}'
+      - '%{libdir}/libsystemd*.so*'
+      - '%{libdir}/libudev*.so*'
+      - '%{libdir}/libnss_resolve.so*'
+      - '%{libdir}/pkgconfig'
+      - '%{libdir}/pkgconfig/libsystemd.pc'
+      - '%{libdir}/pkgconfig/libudev.pc'
+      - '%{includedir}'
+      - '%{includedir}/libudev.h'
+      - '%{includedir}/systemd'
+      - '%{includedir}/systemd/**'
+      - '%{debugdir}/dwz/%{stripdir-suffix}/*'
+      - '%{debugdir}%{libdir}/libsystemd*.so*'
+      - '%{debugdir}%{libdir}/libudev*.so*'
+      - '%{debugdir}%{libdir}/libnss_resolve.so*'
+      - '%{sourcedir}'
+      - '%{sourcedir}/**'
+      systemd-license:
+      - "%{project_licensedir}"
+      - "%{project_licensedir}/**"

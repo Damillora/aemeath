@@ -18,4 +18,4 @@ sources:
 - kind: git_repo
   url: github:89luca89/distrobox
   track: "*.*"
-  ref: 1.8.2.2-0-ga7b2437dbee94ab465a7403945e8eabc9dd7d859
+  ref: 1.8.2.3-0-g856da362c4cde69e4340ffa22bc01d72693743e2

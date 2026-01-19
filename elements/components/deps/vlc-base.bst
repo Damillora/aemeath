@@ -26,7 +26,7 @@ variables:
 
 sources:
 - kind: tar
-  url: https://download.videolan.org/vlc/3.0.23/vlc-3.0.23.tar.xz
+  url: videolan:vlc/3.0.23/vlc-3.0.23.tar.xz
   ref: e891cae6aa3ccda69bf94173d5105cbc55c7a7d9b1d21b9b21666e69eff3e7e0
 
 public:

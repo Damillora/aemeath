@@ -4,7 +4,7 @@ build-depends:
 - components/freedesktop/dbus-base.bst
 
 runtime-depends:
-- freedesktop-sdk.bst:components/dbus-base.bst
+- freedesktop-sdk.bst:components/dbus.bst
 
 config:
   include:

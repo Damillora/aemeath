@@ -2,13 +2,14 @@ kind: cmake
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
+- freedesktop-sdk.bst:components/wayland-protocols.bst
 - components/kf6/extra-cmake-modules.bst
 - components/qt6/qttools.bst
-- freedesktop-sdk.bst:components/wayland-protocols.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/dbus.bst
+- freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:components/libxkbcommon.bst
 - freedesktop-sdk.bst:components/xorg-lib-x11.bst
 - freedesktop-sdk.bst:components/xorg-lib-xtst.bst
@@ -20,13 +21,11 @@ depends:
 - components/kf6/kcoreaddons.bst
 - components/kf6/kcrash.bst
 - components/kf6/kdbusaddons.bst
-- components/kf6/kdeclarative.bst
 - components/kf6/kguiaddons.bst
 - components/kf6/ki18n.bst
 - components/kf6/kio.bst
 - components/kf6/kirigami.bst
 - components/kf6/kitemmodels.bst
-- components/kf6/kjobwidgets.bst
 - components/kf6/knotifications.bst
 - components/kf6/kpackage.bst
 - components/kf6/kpeople.bst
@@ -38,10 +37,10 @@ depends:
 - components/kf6/solid.bst
 - components/deps/kirigami-addons.bst
 - components/deps/libfakekey.bst
-- components/deps/qt6-pulseaudio-qt.bst
+- components/deps/pulseaudio-qt.bst
+
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

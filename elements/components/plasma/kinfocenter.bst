@@ -4,10 +4,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 - components/kf6/extra-cmake-modules.bst
 - components/kf6/kdoctools.bst
-- freedesktop-sdk.bst:components/vulkan-headers.bst
-
-runtime-depends:
-- components/plasma/systemsettings.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
@@ -28,15 +24,7 @@ depends:
 - components/kf6/kio.bst
 - components/kf6/kirigami.bst
 - components/kf6/kservice.bst
-- components/kf6/knotifications.bst
-- components/kf6/kpackage.bst
-- components/kf6/ksvg.bst
-- components/kf6/kwindowsystem.bst
-- components/kf6/kxmlgui.bst
 - components/kf6/solid.bst
-- components/plasma/layer-shell-qt.bst
-- components/plasma/libkscreen.bst
-- components/plasma/libplasma.bst
 - components/freedesktop/clinfo.bst
 - components/freedesktop/mesa-demos.bst
 - components/freedesktop/vulkan-tools.bst
@@ -44,9 +32,11 @@ depends:
 - components/deps/libdisplay-info.bst
 - components/deps/lm-sensors.bst
 
+runtime-depends:
+- components/plasma/systemsettings.bst
+
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

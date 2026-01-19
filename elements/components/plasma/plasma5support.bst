@@ -3,7 +3,6 @@ kind: cmake
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 - components/kf6/extra-cmake-modules.bst
-- components/qt6/qttools.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
@@ -20,13 +19,13 @@ depends:
 - components/kf6/knotifications.bst
 - components/kf6/kservice.bst
 - components/kf6/kunitconversion.bst
+- components/kf6/solid.bst
 - components/kf6/networkmanager-qt.bst
 - components/plasma/libksysguard.bst
 - components/plasma/plasma-activities.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

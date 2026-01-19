@@ -8,8 +8,7 @@ depends:
 - freedesktop-sdk.bst:components/cmake.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: git_repo

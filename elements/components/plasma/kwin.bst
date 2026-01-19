@@ -2,9 +2,9 @@ kind: cmake
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
+- freedesktop-sdk.bst:components/wayland-protocols.bst
 - components/kf6/extra-cmake-modules.bst
 - components/kf6/kdoctools.bst
-- freedesktop-sdk.bst:components/wayland-protocols.bst
 - components/deps/plasma-wayland-protocols.bst
 
 depends:
@@ -19,11 +19,14 @@ depends:
 - freedesktop-sdk.bst:components/libdrm.bst
 - freedesktop-sdk.bst:components/libepoxy.bst
 - freedesktop-sdk.bst:components/libinput.bst
+- freedesktop-sdk.bst:components/libei.bst
 - freedesktop-sdk.bst:components/pipewire.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:components/xcb-util-keysyms.bst
 - freedesktop-sdk.bst:components/xcb-util-wm.bst
+- freedesktop-sdk.bst:components/fontconfig.bst
+- freedesktop-sdk.bst:components/freetype.bst
 - components/qt6/qtbase.bst
 - components/qt6/qt5compat.bst
 - components/qt6/qtdeclarative.bst
@@ -43,12 +46,9 @@ depends:
 - components/kf6/ki18n.bst
 - components/kf6/kidletime.bst
 - components/kf6/kirigami.bst
-- components/kf6/kitemmodels.bst
 - components/kf6/knewstuff.bst
 - components/kf6/knotifications.bst
-- components/kf6/krunner.bst
 - components/kf6/kpackage.bst
-- components/kf6/kquickcharts.bst
 - components/kf6/kservice.bst
 - components/kf6/ksvg.bst
 - components/kf6/kwidgetsaddons.bst
@@ -62,13 +62,16 @@ depends:
 - components/plasma/kscreenlocker.bst
 - components/plasma/kwayland.bst
 - components/plasma/libplasma.bst
+- components/plasma/plasma-activities.bst
 - components/deps/libcanberra.bst
 - components/deps/libdisplay-info.bst
 - components/deps/libqaccessibilityclient.bst
 
+runtime-depends:
+- freedesktop-sdk.bst:components/hwdata.bst
+
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

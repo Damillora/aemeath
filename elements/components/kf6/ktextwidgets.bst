@@ -16,11 +16,10 @@ depends:
 - components/kf6/sonnet.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: git_repo
-  url: 'kde:frameworks/ktextwidgets.git'
+  url: kde:frameworks/ktextwidgets.git
   track: 'v%{kf6-version}'
   ref: v6.22.0-0-gcadbcf79438e217ff045a15ee9c5573437c4892c

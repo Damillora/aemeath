@@ -6,17 +6,14 @@ build-depends:
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
-- components/qt6/qtbase.bst
-- components/kf6/kwallet.bst
 - freedesktop-sdk.bst:components/linux-pam.bst
 - freedesktop-sdk.bst:components/libgcrypt.bst
-
-runtime-depends:
+- components/qt6/qtbase.bst
+- components/kf6/kwallet.bst
 - components/deps/socat.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

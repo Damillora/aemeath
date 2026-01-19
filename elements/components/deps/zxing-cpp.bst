@@ -7,12 +7,11 @@ depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
-  cmake-global: >-
-    -DZXING_EXAMPLES=OFF
   cmake-local: >-
-    -DZXING_DEPENDENCIES=LOCAL \
-    -DBUILD_SHARED_LIBS=ON \
-    -DZXING_UNIT_TESTS=OFF \
+    -DZXING_EXAMPLES=OFF
+    -DZXING_DEPENDENCIES=LOCAL
+    -DBUILD_SHARED_LIBS=ON
+    -DZXING_UNIT_TESTS=OFF
     -DZXING_BLACKBOX_TESTS=OFF
 
 sources:

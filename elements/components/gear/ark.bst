@@ -10,7 +10,6 @@ depends:
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:components/zlib.bst
 - components/qt6/qtbase.bst
-- components/qt6/qtmultimedia.bst
 - components/kf6/breeze-icons.bst
 - components/kf6/kcolorscheme.bst
 - components/kf6/kcompletion.bst
@@ -22,6 +21,7 @@ depends:
 - components/kf6/kfilemetadata.bst
 - components/kf6/ki18n.bst
 - components/kf6/kio.bst
+- components/kf6/kiconthemes.bst
 - components/kf6/kjobwidgets.bst
 - components/kf6/kparts.bst
 - components/kf6/kpty.bst
@@ -32,8 +32,7 @@ depends:
 - components/deps/libzip.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

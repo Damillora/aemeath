@@ -3,14 +3,14 @@ kind: autotools
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
+depends:
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+
 variables:
   notparallel: true
   make-install-args: >-
-    %{make-args} prefix="%{install-root}%{prefix}"  INCLUDEDIR="%{install-root}%{prefix}/include" BINDIR="%{install-root}%{bindir}" LIBDIR="%{install-root}%{libdir}" MANDIR="%{install-root}%{mandir}" install
+    %{make-args} prefix="%{install-root}%{prefix}" INCLUDEDIR="%{install-root}%{prefix}/include" BINDIR="%{install-root}%{bindir}" LIBDIR="%{install-root}%{libdir}" MANDIR="%{install-root}%{mandir}" install
 
-
-depends:
-- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 sources:
 - kind: tar
   url: xiph:releases/cdparanoia/cdparanoia-III-10.2.src.tgz

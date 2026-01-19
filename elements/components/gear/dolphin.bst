@@ -29,14 +29,17 @@ depends:
 - components/kf6/ktextwidgets.bst
 - components/kf6/kuserfeedback.bst
 - components/kf6/kwindowsystem.bst
+- components/kf6/kwidgetsaddons.bst
+- components/kf6/kguiaddons.bst
 - components/kf6/solid.bst
 - components/gear/kio-extras.bst
 - components/gear/baloo-widgets.bst
+
+runtime-depends:
 - components/gear/ffmpegthumbs.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

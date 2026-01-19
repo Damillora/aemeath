@@ -20,9 +20,7 @@ depends:
 - components/plasma/kdecoration.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF \
-    -DBUILD_QT5=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

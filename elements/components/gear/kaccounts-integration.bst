@@ -17,6 +17,7 @@ depends:
 - components/deps/qt6-qcoro.bst
 - components/deps/libaccounts-qt.bst
 - components/deps/signon-qt6.bst
+- components/deps/intltool.bst
 
 variables:
   cmake-local: -DBUILD_TESTING=OFF

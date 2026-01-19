@@ -8,6 +8,7 @@ build-depends:
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/glib.bst
+- freedesktop-sdk.bst:components/libpulse.bst
 - components/qt6/qtbase.bst
 - components/qt6/qtdeclarative.bst
 - components/kf6/kcmutils.bst
@@ -22,14 +23,12 @@ depends:
 - components/kf6/kstatusnotifieritem.bst
 - components/kf6/ksvg.bst
 - components/plasma/libplasma.bst
-- components/plasma/plasma-workspace.bst
+- components/deps/kirigami-addons.bst
 - components/deps/libcanberra.bst
-- freedesktop-sdk.bst:components/libpulse.bst
-- components/deps/qt6-pulseaudio-qt.bst
+- components/deps/pulseaudio-qt.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

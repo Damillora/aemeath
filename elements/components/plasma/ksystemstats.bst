@@ -6,8 +6,8 @@ build-depends:
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+- freedesktop-sdk.bst:components/libnl.bst
 - components/qt6/qtbase.bst
-- components/qt6/qtdeclarative.bst
 - components/kf6/kcoreaddons.bst
 - components/kf6/kcrash.bst
 - components/kf6/ki18n.bst
@@ -16,11 +16,9 @@ depends:
 - components/kf6/networkmanager-qt.bst
 - components/plasma/libksysguard.bst
 - components/deps/lm-sensors.bst
-- freedesktop-sdk.bst:components/libnl.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

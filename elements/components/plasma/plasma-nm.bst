@@ -15,12 +15,10 @@ depends:
 - components/kf6/kconfig.bst
 - components/kf6/kcoreaddons.bst
 - components/kf6/kdbusaddons.bst
-- components/kf6/kdeclarative.bst
 - components/kf6/ki18n.bst
 - components/kf6/kio.bst
 - components/kf6/kirigami.bst
 - components/kf6/knotifications.bst
-- components/kf6/kquickcharts.bst
 - components/kf6/ksvg.bst
 - components/kf6/kwallet.bst
 - components/kf6/kwidgetsaddons.bst
@@ -30,14 +28,11 @@ depends:
 - components/kf6/prison.bst
 - components/kf6/solid.bst
 - components/plasma/libplasma.bst
-- components/plasma/plasma-workspace.bst
-- components/deps/kirigami-addons.bst
 - components/deps/qt6-qca.bst
 - components/deps/qt6-qcoro.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

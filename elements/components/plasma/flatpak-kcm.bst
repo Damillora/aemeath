@@ -6,20 +6,19 @@ build-depends:
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+- freedesktop-sdk.bst:components/flatpak.bst
 - components/qt6/qtbase.bst
 - components/qt6/qtdeclarative.bst
+- components/qt6/qtsvg.bst
 - components/kf6/kcmutils.bst
 - components/kf6/kconfig.bst
 - components/kf6/kcoreaddons.bst
 - components/kf6/ki18n.bst
-- components/kf6/kirigami.bst
 - components/kf6/kitemmodels.bst
 - components/kf6/kservice.bst
-- freedesktop-sdk.bst:components/flatpak.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

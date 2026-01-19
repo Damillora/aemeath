@@ -1,12 +1,12 @@
 kind: autotools
 
 build-depends:
-- freedesktop-sdk.bst:components/appstream.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:components/appstream.bst
 
 depends:
-- freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+- freedesktop-sdk.bst:components/systemd.bst
 
 sources:
 - kind: git_repo

@@ -3,7 +3,6 @@ kind: cmake
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 - components/kf6/extra-cmake-modules.bst
-- components/kf6/kdoctools.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
@@ -13,14 +12,12 @@ depends:
 - components/kf6/kcrash.bst
 - components/kf6/kdbusaddons.bst
 - components/kf6/ki18n.bst
-- components/kf6/kirigami.bst
 - components/kf6/knotifications.bst
 - components/kf6/kwindowsystem.bst
 - components/deps/qt6-polkit-qt.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

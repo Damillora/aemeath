@@ -4,7 +4,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 - components/qt6/qtlanguageserver.bst
 - components/qt6/qtshadertools.bst
-- freedesktop-sdk.bst:components/vulkan-headers.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

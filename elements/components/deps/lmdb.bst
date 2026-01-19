@@ -7,8 +7,7 @@ depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
-  make-args: >-
-    prefix="%{prefix}" libdir="%{libdir}" -C libraries/liblmdb
+  make-args: prefix="%{prefix}" libdir="%{libdir}" -C libraries/liblmdb
 
 public:
   bst:

@@ -1,11 +1,5 @@
 kind: meson
 
-sources:
-- kind: git_repo
-  url: freedesktop:upower/power-profiles-daemon.git
-  track: '*.*'
-  ref: 0.30-0-g5b4994c8a91290481bef87a5bae95391d0ec677f
-
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - freedesktop-sdk.bst:components/gtk-doc.bst
@@ -28,3 +22,9 @@ variables:
     -Dgtk_doc=true
     -Dmanpage=disabled
     -Dpylint=disabled
+
+sources:
+- kind: git_repo
+  url: freedesktop:upower/power-profiles-daemon.git
+  track: '*.*'
+  ref: 0.30-0-g5b4994c8a91290481bef87a5bae95391d0ec677f

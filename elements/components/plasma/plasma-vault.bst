@@ -23,11 +23,10 @@ depends:
 - components/plasma/libksysguard.bst
 - components/plasma/libplasma.bst
 - components/plasma/plasma-activities.bst
-- components/plasma/plasma-workspace.bst
+# TODO: gocryptfs
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

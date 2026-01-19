@@ -7,8 +7,7 @@ depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
-  cmake-local: >-
-    -DBUILD_SHARED_LIBS=ON
+  cmake-local: -DBUILD_SHARED_LIBS=ON
 
 sources:
 - kind: git_repo

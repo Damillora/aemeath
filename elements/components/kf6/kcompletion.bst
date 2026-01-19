@@ -2,8 +2,8 @@ kind: cmake
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
-- components/kf6/extra-cmake-modules.bst
 - components/qt6/qttools.bst
+- components/kf6/extra-cmake-modules.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
@@ -13,11 +13,10 @@ depends:
 - components/kf6/kwidgetsaddons.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: git_repo
-  url: 'kde:frameworks/kcompletion.git'
+  url: kde:frameworks/kcompletion.git
   track: 'v%{kf6-version}'
   ref: v6.22.0-0-g2864a16edec2c4b6ddcbe5cafafa25c834aff3b5

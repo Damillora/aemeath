@@ -15,16 +15,13 @@ depends:
 - components/kf6/kdbusaddons.bst
 - components/kf6/ki18n.bst
 - components/kf6/kio.bst
-- components/kf6/kirigami.bst
 - components/kf6/knotifications.bst
 - components/kf6/kservice.bst
 - components/kf6/solid.bst
-- components/plasma/kinfocenter.bst
 - components/deps/smartmontools.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

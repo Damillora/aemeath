@@ -6,17 +6,19 @@ build-depends:
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+- freedesktop-sdk.bst:components/libavif.bst
+- freedesktop-sdk.bst:components/libheif.bst
+- freedesktop-sdk.bst:components/libjxl.bst
 - components/qt6/qtbase.bst
 - components/kf6/karchive.bst
-- freedesktop-sdk.bst:components/libheif.bst
 - components/deps/libraw.bst
+# TODO: openexr
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: git_repo
-  url: 'kde:frameworks/kimageformats.git'
+  url: kde:frameworks/kimageformats.git
   track: 'v%{kf6-version}'
   ref: v6.22.0-0-g19df8b03a86b24f85c42f1abcef95cb3c0f85c9b

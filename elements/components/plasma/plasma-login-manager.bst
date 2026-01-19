@@ -3,7 +3,6 @@ kind: cmake
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 - components/kf6/extra-cmake-modules.bst
-- components/deps/qt6-qcoro.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
@@ -18,7 +17,6 @@ depends:
 - components/kf6/kdbusaddons.bst
 - components/kf6/ki18n.bst
 - components/kf6/kio.bst
-- components/kf6/kirigami.bst
 - components/kf6/kpackage.bst
 - components/kf6/kservice.bst
 - components/kf6/kwindowsystem.bst
@@ -27,14 +25,14 @@ depends:
 - components/plasma/plasma-workspace.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF \
-    -DDBUS_CONFIG_FILENAME=plasma_org.freedesktop.DisplayManager.conf \
+  cmake-local: >-
+    -DBUILD_TESTING=OFF
+    -DDBUS_CONFIG_FILENAME=plasma_org.freedesktop.DisplayManager.conf
     -DPAM_OS_CONFIGURATION=aemeath
 
 sources:
 - kind: git_repo
-  url: 'kde:plasma/plasma-login-manager.git'
+  url: kde:plasma/plasma-login-manager.git
   ref: 6b91c7003f3125612f99d4d7ae73696db594a302
 - kind: local
   path: files/plasma-login-manager

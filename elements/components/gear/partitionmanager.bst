@@ -23,8 +23,7 @@ depends:
 - components/deps/qt6-polkit-qt.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

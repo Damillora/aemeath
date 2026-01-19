@@ -3,8 +3,6 @@ kind: cmake
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 - components/kf6/extra-cmake-modules.bst
-- components/kf6/kdoctools.bst
-- components/qt6/qttools.bst
 - components/deps/plasma-wayland-protocols.bst
 
 depends:
@@ -15,7 +13,7 @@ depends:
 - freedesktop-sdk.bst:components/wayland.bst
 - components/qt6/qtbase.bst
 - components/qt6/qtdeclarative.bst
-- components/qt6/qt5compat.bst
+- components/kf6/karchive.bst
 - components/kf6/kcolorscheme.bst
 - components/kf6/kconfig.bst
 - components/kf6/kcoreaddons.bst
@@ -33,8 +31,7 @@ depends:
 - components/plasma/plasma-activities.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

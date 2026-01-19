@@ -1,27 +1,27 @@
 kind: manual
 
 build-depends:
-  - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
-  - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 config:
   build-commands:
-    - |
-      for i in *.in; do
-        m4 \
-        -D__AEMEATH_VERSION__="%{image-version}" \
-        "${i}" >"$(basename "${i}" .in)"
-      done
+  - |
+    for i in *.in; do
+      m4 \
+      -D__AEMEATH_VERSION__="%{image-version}" \
+      "${i}" >"$(basename "${i}" .in)"
+    done
 
   install-commands:
-    - |
-      mkdir -p "%{install-root}%{indep-libdir}"
-      install os-release "%{install-root}%{indep-libdir}"
-      mkdir -p "%{install-root}%{sysconfdir}"
-      ln -s "$(realpath --relative-to="%{install-root}%{sysconfdir}" "%{install-root}%{indep-libdir}/os-release")" %{install-root}%{sysconfdir}/os-release
+  - |
+    mkdir -p "%{install-root}%{indep-libdir}"
+    install os-release "%{install-root}%{indep-libdir}"
+    mkdir -p "%{install-root}%{sysconfdir}"
+    ln -s "$(realpath --relative-to="%{install-root}%{sysconfdir}" "%{install-root}%{indep-libdir}/os-release")" %{install-root}%{sysconfdir}/os-release
 
 sources:
-  - kind: local
-    path: files/os-release
+- kind: local
+  path: files/os-release

@@ -23,10 +23,11 @@ depends:
 - components/kf6/ki18n.bst
 - components/kf6/kidletime.bst
 - components/kf6/kirigami.bst
-- components/kf6/kitemmodels.bst
 - components/kf6/knotifications.bst
+- components/kf6/krunner.bst
 - components/kf6/kservice.bst
 - components/kf6/kxmlgui.bst
+- components/kf6/solid.bst
 - components/plasma/libkscreen.bst
 - components/plasma/libplasma.bst
 - components/plasma/plasma-activities.bst
@@ -36,9 +37,7 @@ depends:
 - components/deps/ddcutil.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF \
-    -DBUILD_QT5=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

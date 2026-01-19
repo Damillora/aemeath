@@ -2,9 +2,8 @@ kind: cmake
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
-- components/kf6/extra-cmake-modules.bst
-- components/qt6/qttools.bst
 - components/qt6/qtshadertools.bst
+- components/kf6/extra-cmake-modules.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
@@ -17,11 +16,10 @@ depends:
 - components/kf6/kwidgetsaddons.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: git_repo
-  url: 'kde:frameworks/kdeclarative.git'
+  url: kde:frameworks/kdeclarative.git
   track: 'v%{kf6-version}'
   ref: v6.22.0-0-g96312da6ab468199b61c8ceac69cc0259d845610

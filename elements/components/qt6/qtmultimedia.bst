@@ -5,14 +5,13 @@ build-depends:
 - components/qt6/qtdeclarative.bst
 - components/qt6/qtquick3d.bst
 - components/qt6/qtshadertools.bst
-- freedesktop-sdk.bst:components/vulkan-headers.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
-- components/qt6/qtbase.bst
 - freedesktop-sdk.bst:components/libpulse.bst
 - freedesktop-sdk.bst:components/pipewire.bst
 - freedesktop-sdk.bst:components/ffmpeg.bst
+- components/qt6/qtbase.bst
 
 sources:
 - kind: tar

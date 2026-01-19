@@ -2,7 +2,6 @@ kind: cmake
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
-- freedesktop-sdk.bst:components/vulkan-headers.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
@@ -46,6 +45,7 @@ depends:
 - freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
 - freedesktop-sdk.bst:components/libpulse.bst
 - freedesktop-sdk.bst:extensions/mesa/mesa.bst
+- freedesktop-sdk.bst:components/vulkan-headers.bst
 
 #Unported dependencies
 #double-conversion
@@ -98,7 +98,5 @@ public:
         - '%{libdir}/mkspecs/**'
         - '%{libdir}/*.prl'
         - '%{libdir}/**/*.prl'
-        - '%{libdir}/qt6/bin'
-        - '%{libdir}/qt6/bin/**'
         - '%{bindir}/androiddeployqt6'
         - '%{bindir}/qmake6'

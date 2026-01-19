@@ -2,7 +2,7 @@ kind: stack
 
 depends:
   - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
-  - components/core/linux.bst # Latest Freedesktop kernel
+  - components/kernel/linux.bst # Latest Freedesktop kernel
   - freedesktop-sdk.bst:components/bash-config.bst
   - freedesktop-sdk.bst:components/bash-completion.bst
   - freedesktop-sdk.bst:components/bash-config.bst

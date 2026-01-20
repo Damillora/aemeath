@@ -12,7 +12,6 @@ build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/systemd-ukify.bst
 - freedesktop-sdk.bst:components/util-linux.bst
-- freedesktop-sdk.bst:components/binutils.bst
 
 variables:
   strip-binaries: ''
@@ -25,13 +24,8 @@ config:
     cp -rT /boot "%{install-root}/boot"
 
   - |
-    set -x
-    usr_img="$(readlink /usr-image/usr.erofs)"
-    sdk_version="${usr_img##usr_}"
-    sdk_version="${sdk_version%.erofs}"
-    sdk_version="${sdk_version%_*}"
+    sdk_version=$(basename "$(readlink /usr-image/usr.erofs)" | cut -d'_' -f2)
     version="$(ls -1 /usr/lib/modules | head -n1)"
-    usr_part_uuid="$(uuidgen -s --namespace "%{uuidnamespace}" --name partition-usr)"
     objcopy -O binary -j .linux "/boot/EFI/Linux/linux-${version}.efi" linux
     objcopy -O binary -j .initrd "/boot/EFI/Linux/linux-${version}.efi" initrd
     objcopy -O binary -j .cmdline "/boot/EFI/Linux/linux-${version}.efi" cmdline.txt

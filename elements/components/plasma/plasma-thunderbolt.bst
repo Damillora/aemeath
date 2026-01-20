@@ -12,13 +12,11 @@ depends:
 - components/kf6/kcoreaddons.bst
 - components/kf6/kdbusaddons.bst
 - components/kf6/ki18n.bst
-- components/kf6/kirigami.bst
 - components/kf6/knotifications.bst
 - components/deps/boltd.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

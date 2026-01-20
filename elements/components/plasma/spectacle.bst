@@ -2,7 +2,6 @@ kind: cmake
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
-- freedesktop-sdk.bst:components/vulkan-headers.bst
 - components/kf6/extra-cmake-modules.bst
 - components/kf6/kdoctools.bst
 - components/deps/plasma-wayland-protocols.bst
@@ -17,7 +16,6 @@ depends:
 - components/qt6/qtbase.bst
 - components/qt6/qtdeclarative.bst
 - components/qt6/qtmultimedia.bst
-- components/qt6/qtwayland.bst
 - components/kf6/kconfig.bst
 - components/kf6/kcoreaddons.bst
 - components/kf6/kcrash.bst
@@ -39,8 +37,7 @@ depends:
 - components/deps/opencv.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

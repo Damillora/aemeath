@@ -2,7 +2,6 @@ kind: cmake
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
-- freedesktop-sdk.bst:components/vulkan-headers.bst
 - components/kf6/extra-cmake-modules.bst
 
 depends:
@@ -14,8 +13,7 @@ depends:
 - components/kf6/kcoreaddons.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

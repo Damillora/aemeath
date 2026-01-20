@@ -32,10 +32,7 @@ config:
     usr_verity_part_uuid="$(cat /usr-image/usr-root-hash.txt | sed -E 's/.*([0-9a-f]{8})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{12})$/\1-\2-\3-\4-\5/')"
     disk_uuid="$(uuidgen -s --namespace "%{uuidnamespace}" --name disk)"
     . /usr-image/vars.txt
-    usr_img="$(readlink /usr-image/usr.erofs)"
-    sdk_version="${usr_img##usr_}"
-    sdk_version="${sdk_version%.erofs}"
-    sdk_version="${sdk_version%_*}"
+    sdk_version=$(basename "$(readlink /usr-image/usr.erofs)" | cut -d'_' -f2)
     cat > "%{build-root}/genimage.cfg" <<EOF
     image efi.img {
         vfat {

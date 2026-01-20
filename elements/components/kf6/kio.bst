@@ -2,9 +2,9 @@ kind: cmake
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
+- components/qt6/qttools.bst
 - components/kf6/extra-cmake-modules.bst
 - components/kf6/kdoctools.bst
-- components/qt6/qttools.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
@@ -30,13 +30,16 @@ depends:
 - components/kf6/kwidgetsaddons.bst
 - components/kf6/kwindowsystem.bst
 - components/kf6/solid.bst
+- components/kf6/kded.bst
+
+runtime-depends:
+- components/deps/switcheroo-control.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: git_repo
-  url: 'kde:frameworks/kio.git'
+  url: kde:frameworks/kio.git
   track: 'v%{kf6-version}'
   ref: v6.22.0-0-g1f471941c4be1de739322ed302266aea85de68c7

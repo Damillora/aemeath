@@ -3,8 +3,6 @@ kind: cmake
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 - components/kf6/extra-cmake-modules.bst
-- freedesktop-sdk.bst:components/vulkan-headers.bst
-
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
@@ -17,13 +15,11 @@ depends:
 - components/kf6/kdeclarative.bst
 - components/kf6/kglobalaccel.bst
 - components/kf6/ki18n.bst
-- components/kf6/kiconthemes.bst
 - components/kf6/kio.bst
 - components/kf6/kirigami.bst
 - components/kf6/kitemmodels.bst
 - components/kf6/knewstuff.bst
 - components/kf6/kpackage.bst
-- components/kf6/kquickcharts.bst
 - components/kf6/kservice.bst
 - components/kf6/kwindowsystem.bst
 - components/plasma/libksysguard.bst
@@ -31,8 +27,7 @@ depends:
 - components/deps/kirigami-addons.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

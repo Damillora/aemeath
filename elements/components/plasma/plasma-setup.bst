@@ -19,11 +19,11 @@ depends:
 - components/plasma/plasma-workspace.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF \
+  cmake-local: >-
+    -DBUILD_TESTING=OFF
     -DCMAKE_BUILD_TYPE=Release
 
 sources:
 - kind: git_repo
-  url: 'kde:plasma/plasma-setup.git'
+  url: kde:plasma/plasma-setup.git
   ref: b88c47943e739db67556872074bf7b31b73ec390

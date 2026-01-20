@@ -23,13 +23,10 @@ depends:
 - components/kf6/kuserfeedback.bst
 - components/kf6/kwindowsystem.bst
 - components/plasma/libplasma.bst
-- components/plasma/plasma-nm.bst
-- components/plasma/plasma5support.bst
 - components/deps/kirigami-addons.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

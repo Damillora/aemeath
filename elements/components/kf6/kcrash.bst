@@ -3,7 +3,6 @@ kind: cmake
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 - components/kf6/extra-cmake-modules.bst
-- components/qt6/qttools.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
@@ -12,12 +11,10 @@ depends:
 - components/kf6/kcoreaddons.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF \
-    -DBUILD_PYTHON_BINDINGS=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: git_repo
-  url: 'kde:frameworks/kcrash.git'
+  url: kde:frameworks/kcrash.git
   track: 'v%{kf6-version}'
   ref: v6.22.0-0-g353f34f997a6b83c80126eaa5b3af21c1c1f6d3d

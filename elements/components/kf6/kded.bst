@@ -15,11 +15,10 @@ depends:
 - components/kf6/kservice.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: git_repo
-  url: 'kde:frameworks/kded.git'
+  url: kde:frameworks/kded.git
   track: 'v%{kf6-version}'
   ref: v6.22.0-0-g319f8030471ed776eb5aea1c9ce939165c31b5ee

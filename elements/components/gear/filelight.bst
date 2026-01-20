@@ -9,6 +9,7 @@ depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - components/qt6/qtbase.bst
 - components/qt6/qtdeclarative.bst
+- components/kf6/kcolorscheme.bst
 - components/kf6/kconfig.bst
 - components/kf6/kcoreaddons.bst
 - components/kf6/kcrash.bst
@@ -17,11 +18,9 @@ depends:
 - components/kf6/kirigami.bst
 - components/kf6/kwidgetsaddons.bst
 - components/kf6/qqc2-desktop-style.bst
-- components/deps/kirigami-addons.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

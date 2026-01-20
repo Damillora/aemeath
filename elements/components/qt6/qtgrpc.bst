@@ -6,9 +6,9 @@ build-depends:
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
-- components/qt6/qtbase.bst
 - freedesktop-sdk.bst:components/grpc.bst
 - freedesktop-sdk.bst:components/protobuf.bst
+- components/qt6/qtbase.bst
 
 sources:
 - kind: tar

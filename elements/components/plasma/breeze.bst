@@ -8,9 +8,8 @@ build-depends:
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - components/qt6/qtbase.bst
-- components/qt6/qtsvg.bst
 - components/qt6/qtdeclarative.bst
-- components/kf6/breeze-icons.bst
+- components/qt6/qtsvg.bst
 - components/kf6/frameworkintegration.bst
 - components/kf6/kcmutils.bst
 - components/kf6/kcolorscheme.bst
@@ -18,16 +17,14 @@ depends:
 - components/kf6/kcoreaddons.bst
 - components/kf6/kguiaddons.bst
 - components/kf6/ki18n.bst
-- components/kf6/kwidgetsaddons.bst
+- components/kf6/kiconthemes.bst
+- components/kf6/kirigami.bst
 - components/kf6/kwindowsystem.bst
 - components/plasma/kdecoration.bst
-- freedesktop-sdk.bst:components/libnl.bst
-- components/deps/libpcap.bst
-- components/deps/lm-sensors.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF \
+  cmake-local: >-
+    -DBUILD_TESTING=OFF
     -DBUILD_QT5=OFF
 
 sources:

@@ -2,21 +2,14 @@ kind: cmake
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
-- freedesktop-sdk.bst:components/python3-pip.bst
 - components/kf6/extra-cmake-modules.bst
-- components/deps/plasma-wayland-protocols.bst
-- freedesktop-sdk.bst:components/wayland-protocols.bst
-
-#runtime-depends:
-#- components/plasma/qqc2-breeze-style.bst
-#- components/plasma/xdg-desktop-portal-kde.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/gdb.bst
+- freedesktop-sdk.bst:components/elfutils.bst
 - components/qt6/qtbase.bst
 - components/qt6/qtdeclarative.bst
-- components/kf6/kcmutils.bst
 - components/kf6/kconfig.bst
 - components/kf6/kcoreaddons.bst
 - components/kf6/kcrash.bst
@@ -26,6 +19,7 @@ depends:
 - components/kf6/kirigami.bst
 - components/kf6/kitemmodels.bst
 - components/kf6/knotifications.bst
+- components/kf6/kjobwidgets.bst
 - components/kf6/kservice.bst
 - components/kf6/kstatusnotifieritem.bst
 - components/kf6/kwallet.bst
@@ -38,8 +32,8 @@ depends:
 - components/deps/python3-sentry-sdk.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF \
+  cmake-local: >-
+    -DBUILD_TESTING=OFF
     -DWITH_PYTHON_VENDORING=OFF
 
 sources:

@@ -10,11 +10,10 @@ depends:
 - components/qt6/qtbase.bst
 
 variables:
-  cmake-local: |
-    -DQT_MAJOR_VERSION=6
+  cmake-local: -DQT_MAJOR_VERSION=6
 
 sources:
 - kind: git_repo
-  url: 'kde:libraries/polkit-qt-1.git'
-  track: 'v*'
+  url: kde:libraries/polkit-qt-1.git
+  track: v*
   ref: v0.200.0-0-gaa1c6c414ec021fd32e30492c00bb13347e228db

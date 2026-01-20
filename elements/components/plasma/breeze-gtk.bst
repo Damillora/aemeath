@@ -2,17 +2,16 @@ kind: cmake
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
+- freedesktop-sdk.bst:components/pycairo.bst
 - components/kf6/extra-cmake-modules.bst
 - components/deps/sassc.bst
-- components/deps/python3-cairo.bst
 - components/plasma/breeze.bst
 
 runtime-depends:
 - freedesktop-sdk.bst:components/gtk3.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

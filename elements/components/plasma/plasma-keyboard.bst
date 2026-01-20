@@ -16,17 +16,11 @@ depends:
 - components/kf6/kconfig.bst
 - components/kf6/kcoreaddons.bst
 - components/kf6/ki18n.bst
-- components/kf6/kirigami.bst
-- components/kf6/kitemmodels.bst
-- components/deps/kirigami-addons.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF \
-    -DDBUS_CONFIG_FILENAME=plasma_org.freedesktop.DisplayManager.conf \
-    -DPAM_OS_CONFIGURATION=aemeath
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: git_repo
-  url: 'kde:plasma/plasma-keyboard.git'
+  url: kde:plasma/plasma-keyboard.git
   ref: db805131a89346ec1b8c98f2970730f8e3159974

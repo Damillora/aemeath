@@ -2,23 +2,11 @@ kind: cmake
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
-- freedesktop-sdk.bst:components/vulkan-headers.bst
+- components/qt6/qtshadertools.bst
 - components/kf6/extra-cmake-modules.bst
 - components/kf6/kdoctools.bst
 - components/deps/qt6-qcoro.bst
 - components/deps/plasma-wayland-protocols.bst
-
-runtime-depends:
-- components/plasma/kactivitymanagerd.bst
-- components/plasma/milou.bst
-- components/plasma/kde-cli-tools.bst
-- components/plasma/ocean-sound-theme.bst
-- components/plasma/plasma-workspace-wallpapers.bst
-- components/gear/kio-extras.bst
-- components/plasma/plasma-integration.bst
-- components/deps/accountsservice.bst
-- components/deps/qt6-phonon-vlc.bst
-- freedesktop-sdk.bst:components/xwayland.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
@@ -42,7 +30,6 @@ depends:
 - freedesktop-sdk.bst:components/xcb-util-image.bst
 - freedesktop-sdk.bst:components/zlib.bst
 - components/qt6/qtbase.bst
-- components/qt6/qt5compat.bst
 - components/qt6/qtdeclarative.bst
 - components/qt6/qtlocation.bst
 - components/qt6/qtpositioning.bst
@@ -50,7 +37,6 @@ depends:
 - components/qt6/qttools.bst
 - components/kf6/karchive.bst
 - components/kf6/kauth.bst
-- components/kf6/kbookmarks.bst
 - components/kf6/kcmutils.bst
 - components/kf6/kcolorscheme.bst
 - components/kf6/kcompletion.bst
@@ -70,7 +56,6 @@ depends:
 - components/kf6/kio.bst
 - components/kf6/kirigami.bst
 - components/kf6/kitemmodels.bst
-- components/kf6/kjobwidgets.bst
 - components/kf6/knewstuff.bst
 - components/kf6/knotifications.bst
 - components/kf6/knotifyconfig.bst
@@ -110,9 +95,21 @@ depends:
 - components/deps/qt6-phonon.bst
 - components/deps/appstream-qt.bst
 
+runtime-depends:
+- freedesktop-sdk.bst:components/xwayland.bst
+- components/plasma/kactivitymanagerd.bst
+- components/plasma/milou.bst
+- components/plasma/kde-cli-tools.bst
+- components/plasma/ocean-sound-theme.bst
+- components/plasma/plasma-workspace-wallpapers.bst
+- components/plasma/plasma-integration.bst
+- components/gear/kio-extras.bst
+- components/deps/accountsservice.bst
+- components/deps/qt6-phonon-vlc.bst
+
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF \
+  cmake-local: >-
+    -DBUILD_TESTING=OFF
     -DWITH_X11_SESSION=OFF
 
 config:

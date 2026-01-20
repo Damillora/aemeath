@@ -1,11 +1,5 @@
 kind: meson
 
-sources:
-- kind: git_repo
-  url: freedesktop:accountsservice/accountsservice.git
-  track: refs/tags/*
-  ref: 23.13.9-0-g57e491f5e6f3da2d5a949f4f8747c8f4e8ed799d
-
 build-depends:
 - freedesktop-sdk.bst:components/gobject-introspection.bst
 - freedesktop-sdk.bst:components/vala.bst
@@ -20,5 +14,10 @@ depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
-  local_flags: >-
-    -Wno-error=implicit-function-declaration
+  local_flags: -Wno-error=implicit-function-declaration
+
+sources:
+- kind: git_repo
+  url: freedesktop:accountsservice/accountsservice.git
+  track: refs/tags/*
+  ref: 23.13.9-0-g57e491f5e6f3da2d5a949f4f8747c8f4e8ed799d

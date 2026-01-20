@@ -2,11 +2,10 @@ kind: cmake
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
-- components/kf6/extra-cmake-modules.bst
-- components/qt6/qttools.bst
-- components/qt6/qtdeclarative.bst
 - freedesktop-sdk.bst:components/bison.bst
 - freedesktop-sdk.bst:components/flex.bst
+- components/qt6/qttools.bst
+- components/kf6/extra-cmake-modules.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
@@ -19,11 +18,10 @@ depends:
 - components/deps/media-player-info.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: git_repo
-  url: 'kde:frameworks/solid.git'
+  url: kde:frameworks/solid.git
   track: 'v%{kf6-version}'
   ref: v6.22.0-0-gbee90e244b43f7a05ae6c7458e4d1c414438b5d7

@@ -2,8 +2,9 @@ kind: cmake
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
-- components/kf6/extra-cmake-modules.bst
 - components/qt6/qttools.bst
+- components/kf6/extra-cmake-modules.bst
+- components/kf6/kdoctools.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
@@ -25,13 +26,10 @@ depends:
 - components/kf6/kwidgetsaddons.bst
 - components/kf6/kwindowsystem.bst
 - components/plasma/libplasma.bst
-- freedesktop-sdk.bst:components/libnl.bst
-- components/deps/libpcap.bst
-- components/deps/lm-sensors.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF \
+  cmake-local: >-
+    -DBUILD_TESTING=OFF
     -DBUILD_QT5=OFF
 
 sources:

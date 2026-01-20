@@ -22,8 +22,7 @@ depends:
 - components/deps/kirigami-addons.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

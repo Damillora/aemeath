@@ -4,12 +4,11 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 - components/kf6/extra-cmake-modules.bst
 - components/kf6/kdoctools.bst
-- components/qt6/qtdeclarative.bst
-- components/qt6/qttools.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - components/qt6/qtbase.bst
+- components/qt6/qtdeclarative.bst
 - components/kf6/kconfig.bst
 - components/kf6/kcoreaddons.bst
 - components/kf6/kcrash.bst
@@ -22,11 +21,10 @@ depends:
 - components/deps/lmdb.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: git_repo
-  url: 'kde:frameworks/baloo.git'
+  url: kde:frameworks/baloo.git
   track: 'v%{kf6-version}'
   ref: v6.22.0-0-ge14a102aaf956030181821bfd93c11ce2981e529

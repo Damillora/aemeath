@@ -10,13 +10,13 @@ depends:
 - components/qt6/qtwebsockets.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF \
-    -DCMAKE_BUILD_TYPE=Release \
+  cmake-local: >-
+    -DBUILD_TESTING=OFF
+    -DCMAKE_BUILD_TYPE=Release
     -DBUILD_SHARED_LIBS=ON
 
 sources:
 - kind: git_repo
-  url: 'github:danvratil/qcoro.git'
-  track: 'v*'
+  url: github:danvratil/qcoro.git
+  track: v*
   ref: v0.12.0-0-gef1231ae490465b4f592ca326eee6d56a3d802ae

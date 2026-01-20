@@ -1,19 +1,12 @@
 kind: autotools
 
-sources:
-- kind: tar
-  url: aemeath:files/libcanberra-0.30.tar.xz
-  ref: c2b671e67e0c288a69fc33dc1b6f1b534d07882c2aceed37004bf48c601afa72
-- kind: patch_queue
-  path: patches/libcanberra
-
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/libpulse.bst
 - freedesktop-sdk.bst:components/libtool.bst
-- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 public:
   bst:
@@ -22,3 +15,10 @@ public:
         (>):
         - '%{libdir}/libcanberra-gtk3.so'
         - '%{libdir}/libcanberra.so'
+
+sources:
+- kind: tar
+  url: aemeath:files/libcanberra-0.30.tar.xz
+  ref: c2b671e67e0c288a69fc33dc1b6f1b534d07882c2aceed37004bf48c601afa72
+- kind: patch_queue
+  path: patches/libcanberra

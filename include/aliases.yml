@@ -1,0 +1,23 @@
+aliases:
+  gitlab: https://gitlab.com/
+  github: https://github.com/
+  crates: https://static.crates.io/
+  freedesktop: https://gitlab.freedesktop.org/
+  tcpdump: https://www.tcpdump.org/
+  launchpad: https://launchpad.net/
+  flathub: https://flathub.org/repo/
+  yoctoproject: https://git.yoctoproject.org/
+  apache: https://downloads.apache.org/
+  openldap: https://git.openldap.org/
+  videolan: https://download.videolan.org/
+  boost: https://archives.boost.io/
+  cpan: https://cpan.metacpan.org/
+  xiph: https://downloads.xiph.org/
+  dest-unreach: http://www.dest-unreach.org/
+  sourceforge: https://sourceforge.net/projects/
+  rustlang: https://static.rust-lang.org/
+  qt: https://download.qt.io/official_releases/qt/
+  kde: https://invent.kde.org/
+  kde_stable: https://download.kde.org/stable/
+  aemeath: https://aemeath.fuxuan.nanao.moe/
+  kernel: https://git.kernel.org/pub/scm/

@@ -20,8 +20,7 @@ runtime-depends:
 - freedesktop-sdk.bst:components/f2fs-tools.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

@@ -3,7 +3,6 @@ kind: cmake
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 - freedesktop-sdk.bst:components/shaderc.bst
-- freedesktop-sdk.bst:components/vulkan-headers.bst
 - freedesktop-sdk.bst:components/vulkan-icd-loader.bst
 - components/qt6/qtdeclarative.bst
 

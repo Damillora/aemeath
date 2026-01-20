@@ -5,17 +5,10 @@ build-depends:
 - components/kf6/extra-cmake-modules.bst
 - components/deps/plasma-wayland-protocols.bst
 
-runtime-depends:
-#- components/plasma/qqc2-breeze-style.bst
-- components/plasma/xdg-desktop-portal-kde.bst
-- components/deps/noto-fonts.bst
-- freedesktop-sdk.bst:components/noto-emoji.bst
-
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/wayland.bst
 - components/qt6/qtbase.bst
-- components/qt6/qtdeclarative.bst
 - components/kf6/kcolorscheme.bst
 - components/kf6/kcompletion.bst
 - components/kf6/kconfig.bst
@@ -32,9 +25,14 @@ depends:
 - components/kf6/kxmlgui.bst
 - components/kf6/qqc2-desktop-style.bst
 
+runtime-depends:
+- components/plasma/xdg-desktop-portal-kde.bst
+- components/deps/noto-fonts.bst
+- freedesktop-sdk.bst:components/noto-emoji.bst
+
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF \
+  cmake-local: >-
+    -DBUILD_TESTING=OFF
     -DBUILD_QT5=OFF
 
 sources:

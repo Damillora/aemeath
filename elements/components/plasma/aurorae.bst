@@ -14,15 +14,16 @@ depends:
 - components/kf6/kconfig.bst
 - components/kf6/kcoreaddons.bst
 - components/kf6/ki18n.bst
-- components/kf6/kirigami.bst
 - components/kf6/knewstuff.bst
 - components/kf6/kpackage.bst
 - components/kf6/ksvg.bst
 - components/plasma/kdecoration.bst
 
+runtime-depends:
+- components/kf6/kirigami.bst
+
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF \
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

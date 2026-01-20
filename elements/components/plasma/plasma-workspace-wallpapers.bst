@@ -3,12 +3,9 @@ kind: cmake
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 - components/kf6/extra-cmake-modules.bst
-- components/qt6/qttools.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF \
-    -DBUILD_QT5=OFF
+  cmake-local: -DBUILD_TESTING=OFF
 
 sources:
 - kind: tar

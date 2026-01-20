@@ -5,9 +5,9 @@ build-depends:
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
-- components/qt6/qtbase.bst
 - freedesktop-sdk.bst:components/libtiff.bst
 - freedesktop-sdk.bst:components/libwebp.bst
+- components/qt6/qtbase.bst
 
 sources:
 - kind: tar

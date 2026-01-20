@@ -1,9 +1,10 @@
 kind: script
 
 build-depends:
-- freedesktop-sdk.bst:vm/deploy-tools.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/zstd.bst
+- freedesktop-sdk.bst:components/jq.bst
+- freedesktop-sdk.bst:vm/deploy-tools.bst
 - filename: os/aemeath/usr-image.bst
   config:
     location: '/usr-image'
@@ -13,9 +14,10 @@ build-depends:
 
 environment:
   E2FSPROGS_FAKE_TIME: '1767369576'
-  ZSTDFLAGS: '--rm -19'
+  ZSTDFLAGS: '--rm -5'
 environment-nocache:
 - ZSTDFLAGS
+
 variables:
   uuidnamespace: df2427db-01ec-4c99-96b1-be3edb3cd9f6
   build-root: /genimage
@@ -28,21 +30,20 @@ config:
 
   - |
     efi_part_uuid="$(uuidgen -s --namespace "%{uuidnamespace}" --name partition-efi)"
-    usr_part_uuid="$(cat /usr-image/usr-root-hash.txt | sed -E 's/^([0-9a-f]{8})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{12}).*/\1-\2-\3-\4-\5/')"
-    usr_verity_part_uuid="$(cat /usr-image/usr-root-hash.txt | sed -E 's/.*([0-9a-f]{8})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{12})$/\1-\2-\3-\4-\5/')"
+    usr_part_uuid="$(jq -r '(.[] | select(.file | match("/10-usr.conf$"))).uuid' /usr-image/compressed.repart.json)"
+    usr_verity_part_uuid=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).uuid' /usr-image/compressed.repart.json)
     disk_uuid="$(uuidgen -s --namespace "%{uuidnamespace}" --name disk)"
     . /usr-image/vars.txt
-    sdk_version=$(basename "$(readlink /usr-image/usr.erofs)" | cut -d'_' -f2)
     cat > "%{build-root}/genimage.cfg" <<EOF
     image efi.img {
         vfat {
             extraargs = "--invariant -F32 -i${id_efi} -n EFI"
         }
         mountpoint = "/boot"
-        size = 2048M
+        size = 512M
         temporary = true
     }
-    image aemeath_${sdk_version}.img {
+    image aemeath_%{image-version}.img {
         hdimage {
             align = 1M
             partition-table-type = "gpt"
@@ -53,17 +54,17 @@ config:
             partition-type-uuid = "U"
             partition-uuid = "${efi_part_uuid}"
         }
-        partition fdsdk_usr_${sdk_version} {
-            image = "/usr-image/usr.erofs"
+        partition fdsdk_usr_%{image-version} {
             partition-type-uuid = "%{usr-uuid}"
             partition-uuid = "${usr_part_uuid}"
-            size = 10G
+            image = "/usr-image/compressed.usr.raw"
+            size = 4G
         }
-        partition fdsdk_usr_verity_${sdk_version} {
+        partition fdsdk_usr_verity_%{image-version} {
             partition-type-uuid = "%{usr-verity-uuid}"
             partition-uuid = "${usr_verity_part_uuid}"
-            image = "/usr-image/usr.verity"
-            size = 200M
+            image = "/usr-image/compressed.usr-verity.raw"
+            size = 275M
         }
     }
     config {
@@ -71,7 +72,7 @@ config:
       outputpath = "%{install-root}"
     }
     EOF
-    du -h --max-depth=3 /sysroot | grep '^[^0]' | sort -rh
+
+  - |
     genimage --config "%{build-root}/genimage.cfg" --rootpath /sysroot
-    zstd ${ZSTDFLAGS} %{install-root}/aemeath_${sdk_version}.img
-    du -BM "%{install-root}/aemeath_${sdk_version}.img.zst"
+    zstd ${ZSTDFLAGS} "%{install-root}/aemeath_%{image-version}.img"

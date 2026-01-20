@@ -2,19 +2,23 @@ kind: script
 
 build-depends:
 - freedesktop-sdk.bst:components/fakecap.bst
-- freedesktop-sdk.bst:vm/deploy-tools.bst
 - freedesktop-sdk.bst:components/erofs-utils.bst
-- os/aemeath/initial-scripts.bst
+- freedesktop-sdk.bst:vm/deploy-tools.bst
 - freedesktop-sdk.bst:vm/prepare-image.bst
+- os/aemeath/initial-scripts.bst
+- os/aemeath/repart-config.bst
+- os/aemeath/repart-config-compress.bst
 - filename: os/aemeath/filesystem.bst
   config:
     location: '/sysroot'
 
 variables:
-  uuidnamespace: df2427db-01ec-4c99-96b1-be3edb3cd9f6
-  salt: 5ceca5e1f86ae62403b27e66c5160717f1bb88405a1d1d0853241c27f3764843
+  sysroot-seed: df2427db-01ec-4c99-96b1-be3edb3cd9f6
+  repart-seed: 35e34b2b-1fcf-4ab1-ae63-bcda061741c1
 
 environment:
+  EROFS_OPTIONS: --all-time -E fragments,fragdedupe=inode
+  EROFS_WORKERS: --workers=%{max-jobs}
   LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
   FAKECAP_DB: /fakecap
 
@@ -26,7 +30,7 @@ config:
   - |
     prepare-image.sh \
        --sysroot /sysroot \
-       --seed "%{uuidnamespace}" \
+       --seed "%{sysroot-seed}" \
        --rootpasswd "root" > '%{install-root}/vars.txt'
 
   - |
@@ -138,17 +142,34 @@ config:
     C /etc/fwupd
     EOF
 
+  - mkdir -p definitions
   - |
-    mkfs.erofs '%{install-root}/usr_%{image-version}.erofs' /sysroot/usr
-  - |
-    veritysetup format --salt="%{salt}" "%{install-root}/usr_%{image-version}.erofs" "%{install-root}/usr_%{image-version}.verity" | sed '/^Root hash:[[:space:]]*/{;s///;q;};d' >"%{install-root}/usr-root-hash.txt"
+    for entry in /usr/lib/repart.d/*.conf; do
+      name="$(basename "${entry}")"
+      num="${name%%-*}"
+      if [ "${num}" -lt 30 ]; then
+        cp "${entry}" definitions/
+      fi
+    done
 
+  - mkdir -p /var/tmp
   - |
-    usr_part_uuid="$(cat "%{install-root}/usr-root-hash.txt" | sed -E 's/^([0-9a-f]{8})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{12}).*/\1\2\3\4\5/')"
-    mv "%{install-root}/usr_%{image-version}.erofs" "%{install-root}/usr_%{image-version}_${usr_part_uuid}.erofs"
-    ln -s "usr_%{image-version}_${usr_part_uuid}.erofs" '%{install-root}/usr.erofs'
+    TMPDIR=/var/tmp \
+    SYSTEMD_LOG_LEVEL=debug \
+    SYSTEMD_REPART_MKFS_OPTIONS_EROFS="${EROFS_OPTIONS} ${EROFS_WORKERS}" \
+      systemd-repart \
+        --definitions=/usr/lib/repart.d.compress \
+        --empty=create \
+        --size=auto \
+        --dry-run=no \
+        --discard=no \
+        --offline=true \
+        --no-pager \
+        --seed=%{repart-seed} \
+        --root=/sysroot \
+        --split=true \
+        '%{install-root}/compressed.raw' \
+        --json=pretty \
+        > '%{install-root}/compressed.repart.json'
 
-  - |
-    usr_verity_part_uuid="$(cat "%{install-root}/usr-root-hash.txt" | sed -E 's/.*([0-9a-f]{8})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{12})$/\1\2\3\4\5/')"
-    mv "%{install-root}/usr_%{image-version}.verity" "%{install-root}/usr_%{image-version}_${usr_verity_part_uuid}.verity"
-    ln -s "usr_%{image-version}_${usr_verity_part_uuid}.verity" '%{install-root}/usr.verity'
+  - rm '%{install-root}/compressed.raw'

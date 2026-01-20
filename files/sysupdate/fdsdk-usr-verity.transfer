@@ -6,7 +6,9 @@ Verify=false
 [Source]
 Type=url-file
 Path=https://aemeath.fuxuan.nanao.moe/sysupdate/
-MatchPattern=usr_@v_@u.verity.xz
+MatchPattern=usr_@v_@u.verity \
+             usr_@v_@u.verity.xz \
+             usr_@v_@u.verity.zst
 
 [Target]
 Type=partition

@@ -6,7 +6,7 @@ Verify=false
 [Source]
 Type=url-file
 Path=https://aemeath.fuxuan.nanao.moe/sysupdate/
-MatchPattern=usr_@v_@u.raw.xz
+MatchPattern=usr_@v_@u.erofs.xz
 
 [Target]
 Type=partition

@@ -20,8 +20,8 @@ config:
   commands:
   - |
     usr_part_uuid="$(jq -r '(.[] | select(.file | match("/10-usr.conf$"))).uuid' /usr-image/compressed.repart.json | tr -d '-')"
-    mv /usr-image/compressed.usr.raw "%{install-root}/usr_%{image-version}_${usr_part_uuid}.raw"
-    xz ${XZFLAGS} "%{install-root}/usr_%{image-version}_${usr_part_uuid}.raw"
+    mv /usr-image/compressed.usr.raw "%{install-root}/usr_%{image-version}_${usr_part_uuid}.erofs"
+    xz ${XZFLAGS} "%{install-root}/usr_%{image-version}_${usr_part_uuid}.erofs"
 
   - |
     usr_verity_part_uuid="$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).uuid' /usr-image/compressed.repart.json | tr -d '-')"

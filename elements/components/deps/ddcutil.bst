@@ -17,4 +17,4 @@ sources:
 - kind: git_repo
   url: github:rockowitz/ddcutil.git
   track: v*
-  ref: v2.2.3-0-g8660f29c0370ca093d45ea6c91277edd00d51301
+  ref: v2.2.4-0-g90d75c75a9cb80178177191bdb832656efa8cd8f

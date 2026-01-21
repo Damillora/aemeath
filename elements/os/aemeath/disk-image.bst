@@ -64,7 +64,7 @@ config:
             partition-type-uuid = "%{usr-verity-uuid}"
             partition-uuid = "${usr_verity_part_uuid}"
             image = "/usr-image/compressed.usr-verity.raw"
-            size = 275M
+            size = 50M
         }
     }
     config {

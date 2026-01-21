@@ -78,6 +78,15 @@ jobs:
           acl = public-read
           bucket_acl = public-read
           EOF
+
+          mkdir -p $HOME/.config
+          cat << EOF > $HOME/.config/buildstream.conf
+          scheduler:
+            builders: 1
+
+          build:
+            max-jobs: 8
+          EOF
         shell: bash
         env:
           S3_ACCESS_KEY_ID: ${{secrets.S3_ACCESS_KEY_ID}}

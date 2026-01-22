@@ -25,5 +25,5 @@ config:
     mkdir -p "%{install-root}/boot/EFI/Linux/aemeath_%{image-version}.efi.extra.d"
   - |
     ukify build \
-      --cmdline="systemd.volatile=yes" \
+      --cmdline="root=tmpfs" \
       --output="%{install-root}/boot/EFI/Linux/aemeath_%{image-version}.efi.extra.d/live.addon.efi"

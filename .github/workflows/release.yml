@@ -51,6 +51,7 @@ jobs:
 
           ## Downloads
           * [Disk Image](https://aemeath.fuxuan.nanao.moe/images/aemeath_${{ env.image_version }}.img.zst)
+          * [Live Image](https://aemeath.fuxuan.nanao.moe/images/aemeath-live_${{ env.image_version }}.img.zst)
 
           **NOTE: due to space limitations, only recent versions are downloadable**
 

@@ -46,7 +46,7 @@ config:
         size = 256M
         temporary = true
     }
-    image aemeath_%{image-version}.img {
+    image aemeath-live_%{image-version}.img {
         hdimage {
             align = 1M
             partition-table-type = "gpt"
@@ -76,4 +76,4 @@ config:
 
   - |
     genimage --config "%{build-root}/genimage.cfg" --rootpath /sysroot
-    zstd ${ZSTDFLAGS} "%{install-root}/aemeath_%{image-version}.img"
+    zstd ${ZSTDFLAGS} "%{install-root}/aemeath-live_%{image-version}.img"

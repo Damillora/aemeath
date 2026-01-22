@@ -129,6 +129,9 @@ jobs:
       - name: Build disk images
         run: just disk-image
         shell: bash
+      - name: Build live image
+        run: just live-image
+        shell: bash
       - name: Copy artifacts to S3 bucket
         run: |
           set -euox pipefail
@@ -138,6 +141,10 @@ jobs:
             rclone --config /rclone.conf copy "$f" fina:aemeath/sysupdate/
           done
           for f in disks/*
+          do
+            rclone --config /rclone.conf copy "$f" fina:aemeath/images/
+          done
+          for f in live/*
           do
             rclone --config /rclone.conf copy "$f" fina:aemeath/images/
           done

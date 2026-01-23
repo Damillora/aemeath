@@ -31,7 +31,7 @@ sources:
   track: v*
   exclude:
   - '*-pre*'
-  ref: v1.94.0-0-g82077075c79f2c20bc663029dd14ab2f19e09307
+  ref: v1.94.1-0-gd885b34776cd2e96f1f368a4d31729e37ff8b59b
 - kind: tar
   url: aemeath:files/tailscale-v1.94.0-vendor.tar.xz
   directory: vendor

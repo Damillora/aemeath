@@ -47,7 +47,7 @@ jobs:
       - setup
     runs-on: ${{ needs.create-runner.outputs.label }} # run the job on the newly created runner
     container:
-      image: registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2
+      image: registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2:4387d0fa82f12808377dacc5feaf08a0d82a06af
       options: --privileged --device /dev/fuse
     steps:
       - name: Checkout

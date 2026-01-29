@@ -73,6 +73,13 @@ runtime-depends:
 variables:
   cmake-local: -DBUILD_TESTING=OFF
 
+public:
+  initial-script:
+    script: |
+      #!/bin/bash
+      sysroot="${1}"
+      setcap cap_sys_nice+ep "${sysroot}%{bindir}/kwin_wayland"
+
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/kwin-%{plasma-version}.tar.xz'

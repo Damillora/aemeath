@@ -15,5 +15,7 @@ variables:
 sources:
 - kind: git_repo
   url: kde:frameworks/kdnssd.git
-  track: 'v%{kf6-version}'
+  track: 'v%{kf6-version}.*'
+  exclude:
+  - '*rc*'
   ref: v6.22.0-0-g8b6b27b579aa9b5479c36698a27bd8fe98ce276c

@@ -16,5 +16,7 @@ variables:
 sources:
 - kind: git_repo
   url: kde:frameworks/breeze-icons.git
-  track: 'v%{kf6-version}'
+  track: 'v%{kf6-version}.*'
+  exclude:
+  - '*rc*'
   ref: v6.22.0-0-g81dc0bd7b6141baea1819138505f9486719d3084

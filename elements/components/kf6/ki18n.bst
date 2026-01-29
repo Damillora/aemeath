@@ -16,5 +16,7 @@ variables:
 sources:
 - kind: git_repo
   url: kde:frameworks/ki18n.git
-  track: 'v%{kf6-version}'
+  track: 'v%{kf6-version}.*'
+  exclude:
+  - '*rc*'
   ref: v6.22.0-0-g7d0575cca49cda0d4acfc1dfd64eb3995b5e4fb2

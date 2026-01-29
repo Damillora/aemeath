@@ -19,5 +19,7 @@ variables:
 sources:
 - kind: git_repo
   url: kde:frameworks/kcoreaddons.git
-  track: 'v%{kf6-version}'
+  track: 'v%{kf6-version}.*'
+  exclude:
+  - '*rc*'
   ref: v6.22.0-0-gaf34a53c79e4aa568b7ba1516d9517a33f8e7915

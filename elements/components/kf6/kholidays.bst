@@ -16,5 +16,7 @@ variables:
 sources:
 - kind: git_repo
   url: kde:frameworks/kholidays.git
-  track: 'v%{kf6-version}'
+  track: 'v%{kf6-version}.*'
+  exclude:
+  - '*rc*'
   ref: v6.22.0-0-ged0d328a66411635c33046b0c5e52655599c0acb

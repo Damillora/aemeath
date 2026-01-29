@@ -15,5 +15,7 @@ variables:
 sources:
 - kind: git_repo
   url: kde:frameworks/bluez-qt.git
-  track: 'v%{kf6-version}'
+  track: 'v%{kf6-version}.*'
+  exclude:
+  - '*rc*'
   ref: v6.22.0-0-gb6426b8ff8cb24229fd5cb2331b4338dc7a563a2

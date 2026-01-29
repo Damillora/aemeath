@@ -20,5 +20,7 @@ variables:
 sources:
 - kind: git_repo
   url: kde:frameworks/kpeople.git
-  track: 'v%{kf6-version}'
+  track: 'v%{kf6-version}.*'
+  exclude:
+  - '*rc*'
   ref: v6.22.0-0-gff1dfce346a3577bf29304c7df1537492ac32340

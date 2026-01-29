@@ -21,5 +21,7 @@ variables:
 sources:
 - kind: git_repo
   url: kde:frameworks/kidletime.git
-  track: 'v%{kf6-version}'
+  track: 'v%{kf6-version}.*'
+  exclude:
+  - '*rc*'
   ref: v6.22.0-0-g064374fa4737c36563224de6673d6ab4cda4271b

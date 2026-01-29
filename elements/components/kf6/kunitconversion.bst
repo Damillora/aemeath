@@ -17,5 +17,7 @@ variables:
 sources:
 - kind: git_repo
   url: kde:frameworks/kunitconversion.git
-  track: 'v%{kf6-version}'
+  track: 'v%{kf6-version}.*'
+  exclude:
+  - '*rc*'
   ref: v6.22.0-0-gbcb5524d458e7a7303d3bf7fcb81d77f706df47a

@@ -14,5 +14,7 @@ variables:
 sources:
 - kind: git_repo
   url: kde:frameworks/threadweaver.git
-  track: 'v%{kf6-version}'
+  track: 'v%{kf6-version}.*'
+  exclude:
+  - '*rc*'
   ref: v6.22.0-0-g7491939daf97400277cc22f539445e32aea0f78e

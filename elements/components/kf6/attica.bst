@@ -14,5 +14,7 @@ variables:
 sources:
 - kind: git_repo
   url: kde:frameworks/attica.git
-  track: 'v%{kf6-version}'
+  track: 'v%{kf6-version}.*'
+  exclude:
+  - '*rc*'
   ref: v6.22.0-0-gf6343034c9a77dee0289d9715a3fe80f8c5c558b

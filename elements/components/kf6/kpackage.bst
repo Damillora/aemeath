@@ -18,5 +18,7 @@ variables:
 sources:
 - kind: git_repo
   url: kde:frameworks/kpackage.git
-  track: 'v%{kf6-version}'
+  track: 'v%{kf6-version}.*'
+  exclude:
+  - '*rc*'
   ref: v6.22.0-0-g4fa04fd58962db33dc8b05c0963e67a143f648a5

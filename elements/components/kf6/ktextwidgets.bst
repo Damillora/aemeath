@@ -21,5 +21,7 @@ variables:
 sources:
 - kind: git_repo
   url: kde:frameworks/ktextwidgets.git
-  track: 'v%{kf6-version}'
+  track: 'v%{kf6-version}.*'
+  exclude:
+  - '*rc*'
   ref: v6.22.0-0-gcadbcf79438e217ff045a15ee9c5573437c4892c

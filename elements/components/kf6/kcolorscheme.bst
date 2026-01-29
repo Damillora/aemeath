@@ -17,5 +17,7 @@ variables:
 sources:
 - kind: git_repo
   url: kde:frameworks/kcolorscheme.git
-  track: 'v%{kf6-version}'
+  track: 'v%{kf6-version}.*'
+  exclude:
+  - '*rc*'
   ref: v6.22.0-0-g7972879c36f6ce07cfdda04b01d258185f6d044b

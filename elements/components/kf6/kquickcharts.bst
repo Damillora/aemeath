@@ -16,5 +16,7 @@ variables:
 sources:
 - kind: git_repo
   url: kde:frameworks/kquickcharts.git
-  track: 'v%{kf6-version}'
+  track: 'v%{kf6-version}.*'
+  exclude:
+  - '*rc*'
   ref: v6.22.0-0-g3f685898464abe640eeb07763fb48c652bc492e1

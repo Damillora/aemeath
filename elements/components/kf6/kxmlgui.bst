@@ -26,5 +26,7 @@ variables:
 sources:
 - kind: git_repo
   url: kde:frameworks/kxmlgui.git
-  track: 'v%{kf6-version}'
+  track: 'v%{kf6-version}.*'
+  exclude:
+  - '*rc*'
   ref: v6.22.0-0-gcc8ef30b396de591ca0cc261a4776d56c2615bc1

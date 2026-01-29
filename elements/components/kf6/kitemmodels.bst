@@ -16,5 +16,7 @@ variables:
 sources:
 - kind: git_repo
   url: kde:frameworks/kitemmodels.git
-  track: 'v%{kf6-version}'
+  track: 'v%{kf6-version}.*'
+  exclude:
+  - '*rc*'
   ref: v6.22.0-0-g9ddc111ef4a5a546870547071f96c0a64dd89cba

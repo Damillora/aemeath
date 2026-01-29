@@ -19,5 +19,7 @@ variables:
 sources:
 - kind: git_repo
   url: kde:frameworks/krunner.git
-  track: 'v%{kf6-version}'
+  track: 'v%{kf6-version}.*'
+  exclude:
+  - '*rc*'
   ref: v6.22.0-0-gbfe9f124da65472f05514198777d80c53ce8a4e6

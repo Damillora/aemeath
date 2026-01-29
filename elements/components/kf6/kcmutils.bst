@@ -24,5 +24,7 @@ variables:
 sources:
 - kind: git_repo
   url: kde:frameworks/kcmutils.git
-  track: 'v%{kf6-version}'
+  track: 'v%{kf6-version}.*'
+  exclude:
+  - '*rc*'
   ref: v6.22.0-0-g7ed6c474f634bc1d080356b24b0381c13d03b94d

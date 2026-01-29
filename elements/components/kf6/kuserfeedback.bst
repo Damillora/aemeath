@@ -20,5 +20,7 @@ variables:
 sources:
 - kind: git_repo
   url: kde:frameworks/kuserfeedback.git
-  track: 'v%{kf6-version}'
+  track: 'v%{kf6-version}.*'
+  exclude:
+  - '*rc*'
   ref: v6.22.0-0-gd882ae3f76d0b12c7035e1b7884c03c41996b93f

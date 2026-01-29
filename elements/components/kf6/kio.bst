@@ -41,5 +41,7 @@ variables:
 sources:
 - kind: git_repo
   url: kde:frameworks/kio.git
-  track: 'v%{kf6-version}'
-  ref: v6.22.0-0-g1f471941c4be1de739322ed302266aea85de68c7
+  track: 'v%{kf6-version}.*'
+  exclude:
+  - '*rc*'
+  ref: v6.22.1-0-g94483cf5d196ed2ac1eb890930868d85a03d3045

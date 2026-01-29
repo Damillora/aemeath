@@ -21,5 +21,7 @@ variables:
 sources:
 - kind: git_repo
   url: kde:frameworks/kdeclarative.git
-  track: 'v%{kf6-version}'
+  track: 'v%{kf6-version}.*'
+  exclude:
+  - '*rc*'
   ref: v6.22.0-0-g96312da6ab468199b61c8ceac69cc0259d845610

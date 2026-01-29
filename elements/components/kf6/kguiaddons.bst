@@ -21,5 +21,5 @@ variables:
 sources:
 - kind: git_repo
   url: kde:frameworks/kguiaddons.git
-  #track: 'v%{kf6-version}'
+  track: 'v%{kf6-version}.*'
   ref: v6.22.1-0-g17e9692201952da82f27791c56276fb7d82582b4

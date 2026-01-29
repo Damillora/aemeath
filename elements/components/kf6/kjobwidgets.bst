@@ -20,5 +20,7 @@ variables:
 sources:
 - kind: git_repo
   url: kde:frameworks/kjobwidgets.git
-  track: 'v%{kf6-version}'
+  track: 'v%{kf6-version}.*'
+  exclude:
+  - '*rc*'
   ref: v6.22.0-0-g7127a083a2484484c95bfc3c6f839634b2a19ccc

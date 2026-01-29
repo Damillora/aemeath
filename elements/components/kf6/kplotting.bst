@@ -14,5 +14,7 @@ variables:
 sources:
 - kind: git_repo
   url: kde:frameworks/kplotting.git
-  track: 'v%{kf6-version}'
+  track: 'v%{kf6-version}.*'
+  exclude:
+  - '*rc*'
   ref: v6.22.0-0-g7f86fa34480c90861ca9f15f98a99410d26aa85b

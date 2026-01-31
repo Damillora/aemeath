@@ -13,4 +13,4 @@ sources:
 - kind: git_repo
   url: github:martinpitt/python-dbusmock.git
   track: "*.*"
-  ref: 0.37.2-0-g1ce6196a687d324a55fbf1f74e0f66a4e83f7a15
+  ref: 0.38.1-0-gee00606c4a57d83028ae2df71d47f6bda07741f8

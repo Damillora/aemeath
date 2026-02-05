@@ -20,4 +20,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:release-service/%{gear-version}/src/kio-admin-%{gear-version}.tar.xz'
-  ref: a96c0e2564205c40ae12733230410480ad9429daa64b3b0ae5cdbb8d1b958839
+  ref: eed02570461f23145aa1450acee6d0281223c227173bc95541f5ec618b7f9b46

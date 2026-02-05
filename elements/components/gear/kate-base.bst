@@ -24,22 +24,22 @@ variables:
   cmake-local: -DBUILD_TESTING=OFF
 
 sources:
-  - kind: tar
-    url: "kde_stable:release-service/%{gear-version}/src/kate-%{gear-version}.tar.xz"
-    ref: 1323014ca4054ac624dd5805c1128ba666a861ae2c3a22fba1e703df42f92844
+- kind: tar
+  url: "kde_stable:release-service/%{gear-version}/src/kate-%{gear-version}.tar.xz"
+  ref: 084d7d75c70326438f4a34fecb3576d9968808650c1852c44726472f9267062a
 
 public:
   bst:
     split-rules:
       kate:
-        - "%{bindir}/kate"
-        - "%{datadir}/applications/org.kde.kate.desktop"
-        - "%{datadir}/icons/hicolor/*/apps/kate.*"
-        - "%{datadir}/man/man1/kate.1*"
+      - "%{bindir}/kate"
+      - "%{datadir}/applications/org.kde.kate.desktop"
+      - "%{datadir}/icons/hicolor/*/apps/kate.*"
+      - "%{datadir}/man/man1/kate.1*"
       kate-libs:
-        - "%{libdir}/libkateprivate.so.*"
+      - "%{libdir}/libkateprivate.so.*"
       kwrite:
-        - "%{bindir}/kwrite"
-        - "%{datadir}/applications/org.kde.kwrite.desktop"
-        - "%{datadir}/icons/hicolor/*/apps/kwrite.*"
-        - "%{datadir}/man/man1/kwrite.1*"
+      - "%{bindir}/kwrite"
+      - "%{datadir}/applications/org.kde.kwrite.desktop"
+      - "%{datadir}/icons/hicolor/*/apps/kwrite.*"
+      - "%{datadir}/man/man1/kwrite.1*"

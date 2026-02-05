@@ -37,4 +37,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:release-service/%{gear-version}/src/ark-%{gear-version}.tar.xz'
-  ref: e9961ffdfa908959cec65d443572cb8ccedaa8d62651f2a5f6d72cf95aff27fe
+  ref: abd7350914c65a763cac513cd679f635555b618c1df183b331134f7b3229a478

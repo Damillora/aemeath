@@ -50,8 +50,8 @@ depends:
   - components/plasma/flatpak-kcm.bst
   - components/plasma/plasma-welcome.bst
   - components/plasma/ocean-sound-theme.bst
-  # - components/plasma/print-manager.bst
-  # - components/plasma/krdp.bst
+  - components/plasma/print-manager.bst
+  - components/plasma/krdp.bst
   - components/plasma/spectacle.bst
   # Experimental things
   - components/plasma/plasma-login-manager.bst

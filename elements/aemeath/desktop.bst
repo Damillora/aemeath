@@ -11,6 +11,7 @@ depends:
 - freedesktop-sdk.bst:components/pipewire-daemon.bst
 - freedesktop-sdk.bst:components/wireplumber.bst
 - freedesktop-sdk.bst:components/flatpak.bst
+- freedesktop-sdk.bst:components/cups-daemon.bst
 - components/deps/systemd-sysupdated.bst
 - components/other/tailscale.bst
 # System utilities

@@ -46,6 +46,6 @@ jobs:
           tailscale_version=$(git describe --tags $(git rev-list --tags --max-count=1))
           git checkout $tailscale_version
           go mod vendor
-          tar -C vendor cJf "$GITHUB_WORKSPACE/tailscale-${tailscale_version}-vendor.tar.xz" .
+          tar cJf "$GITHUB_WORKSPACE/tailscale-${tailscale_version}-vendor.tar.xz" -C vendor  .
           rclone copy --ignore-existing "$GITHUB_WORKSPACE/tailscale-${tailscale_version}-vendor.tar.xz" fina:aemeath/files/
         shell: bash

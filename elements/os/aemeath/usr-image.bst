@@ -97,6 +97,10 @@ config:
     C! /etc/systemd/system.conf
     C! /etc/systemd/timesyncd.conf
     C! /etc/systemd/user.conf
+    # freedesktop-sdk.bst:components/audit.bst
+    L /etc/bash_completion.d/audit.bash_completion
+    L! /etc/audit/audisp-filter.conf
+    L! /etc/audit/audisp-remote.conf
     # freedesktop-sdk.bst:components/modemmanager.bst (just directories)
     C /etc/ModemManager
     # freedesktop-sdk.bst:components/networkmanager.bst (just directories)
@@ -149,6 +153,8 @@ config:
     d /etc/cups/ppd
     L /etc/cups/ssl
     L /etc/paperspecs
+    # freedesktop-sdk.bst:components/bash-completion.bst
+    L /etc/bash_completion.d/000_bash_completion_compat.bash
     EOF
 
   - mkdir -p definitions

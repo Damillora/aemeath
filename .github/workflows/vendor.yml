@@ -1,0 +1,52 @@
+---
+name: Generate vendor tarballs
+on:
+  schedule:
+    - cron: "27 00 * * *" # 03:05am UTC everyday
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref || github.run_id }}-${{ inputs.brand_name}}-${{ inputs.stream_name }}
+  cancel-in-progress: true
+
+jobs:
+  vendor:
+    name: Generate vendor tarballs
+    runs-on: ubuntu-latest
+    container:
+      image: registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2:4387d0fa82f12808377dacc5feaf08a0d82a06af
+      options: --privileged --device /dev/fuse
+    steps:
+      - uses: actions/setup-go@v6
+      - name: Setup tools
+        run: |
+          # Setup rclone
+          curl https://rclone.org/install.sh | bash
+          mkdir -p $HOME/.config/rclone
+          cat << EOF > $HOME/.config/rclone/rclone.conf
+          [fina]
+          type = s3
+          provider = Other
+          env_auth = false
+          access_key_id = $S3_ACCESS_KEY_ID
+          secret_access_key = $S3_SECRET_ACCESS_KEY
+          region = fina
+          endpoint = s3.castorice.my.id
+          force_path_style = true
+          acl = public-read
+          bucket_acl = public-read
+          EOF
+        shell: bash
+        env:
+          S3_ACCESS_KEY_ID: ${{secrets.S3_ACCESS_KEY_ID}}
+          S3_SECRET_ACCESS_KEY: ${{secrets.S3_SECRET_ACCESS_KEY}}
+      - name: Tailscale vendor
+        run: |
+          git clone https://github.com/tailscale/tailscale.git
+          cd tailscale
+          tailscale_version=$(git describe --tags $(git rev-list --tags --max-count=1))
+          git checkout $tailscale_version
+          go mod vendor
+          tar -C vendor cJf "$GITHUB_WORKSPACE/tailscale-${tailscale_version}-vendor.tar.xz" .
+          rclone copy "$GITHUB_WORKSPACE/tailscale-${tailscale_version}-vendor.tar.xz" fina:aemeath/files/
+        shell: bash

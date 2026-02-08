@@ -114,6 +114,8 @@ config:
     L /etc/ld.so.conf
     # vm/mesa-default.bst
     L /etc/ld.so.conf.d/00_mesa.conf
+    # freedesktop-sdk.bst:extensions/codecs-extra
+    L /etc/ld.so.conf.d/00_codecs.conf
     # components/sway/sway.bst
     L /etc/sway/config
     # freedesktop-sdk.bst:components/avahi.bst

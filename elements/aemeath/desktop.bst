@@ -27,6 +27,9 @@ depends:
 - components/other/toolbox.bst
 # System libraries
 - freedesktop-sdk.bst:vm/mesa-default.bst
+- freedesktop-sdk.bst:extensions/codecs-extra/ffmpeg.bst #H.264 support
+- freedesktop-sdk.bst:extensions/codecs-extra/libheif.bst #H.264 support
+- freedesktop-sdk.bst:extensions/codecs-extra/gstreamer-plugins-ugly-x264.bst #H.264 support
 # Other utilities
 - freedesktop-sdk.bst:components/git.bst
 - freedesktop-sdk.bst:components/findutils.bst

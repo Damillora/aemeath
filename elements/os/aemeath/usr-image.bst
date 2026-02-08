@@ -136,6 +136,17 @@ config:
     C /etc/sudoers.dist
     # freedesktop-sdk.bst:components/fwupd.bst
     C /etc/fwupd
+    # freedesktop-sdk.bst:components/cups-daemon-only.bst
+    L /etc/cups/cups-files.conf
+    L /etc/cups/cups-files.conf.default
+    L /etc/cups/cupsd.conf
+    L /etc/cups/cupsd.conf.default
+    L /etc/cups/snmp.conf
+    L /etc/cups/snmp.conf.default
+    # Needed for cups which tries to write PPDs there even driverless
+    d /etc/cups/ppd
+    L /etc/cups/ssl
+    L /etc/paperspecs
     EOF
 
   - mkdir -p definitions

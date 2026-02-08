@@ -18,7 +18,7 @@ jobs:
       - name: Setup tools
         run: |
           # Setup rclone
-          curl https://rclone.org/install.sh | bash
+          curl https://rclone.org/install.sh | sudo bash
           mkdir -p $HOME/.config/rclone
           cat << EOF > $HOME/.config/rclone/rclone.conf
           [fina]

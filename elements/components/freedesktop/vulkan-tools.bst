@@ -1,5 +1,8 @@
 kind: cmake
 
+(@):
+- freedesktop-sdk.bst:elements/include/vulkan-stack.yml
+
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 - freedesktop-sdk.bst:components/glslang.bst
@@ -23,8 +26,4 @@ variables:
     -DBUILD_WSI_XCB_SUPPORT=On \
     -DBUILD_WSI_XLIB_SUPPORT=On \
     -DBUILD_WSI_WAYLAND_SUPPORT=On
-
-sources:
-- kind: git_repo
-  url: github:KhronosGroup/Vulkan-Tools.git
-  ref: vulkan-sdk-1.4.321.0-0-g06ae73a3dc3a03466817d8370355203dac7b79b1
+  command-subdir: vulkan-tools

@@ -21,6 +21,7 @@ depends:
 - components/kf6/kwidgetsaddons.bst
 - components/kf6/kwindowsystem.bst
 - components/plasma/libplasma.bst
+- components/deps/system-config-printer.bst
 
 variables:
   cmake-local: -DBUILD_TESTING=OFF

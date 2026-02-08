@@ -1,8 +1,5 @@
 kind: cmake
 
-(@):
-- freedesktop-sdk.bst:elements/include/vulkan-stack.yml
-
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 - freedesktop-sdk.bst:components/vulkan-headers.bst
@@ -14,4 +11,8 @@ variables:
   license-files-extra: LICENSE.md
   cmake-local: >-
     -DVOLK_INSTALL:BOOL=ON
-  command-subdir: volk
+
+sources:
+- kind: git_repo
+  url: github:zeux/volk.git
+  ref: vulkan-sdk-1.4.321.0-0-ga8da8ef3368482b0ee9b0ec0c6079a16a89c6924

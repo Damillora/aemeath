@@ -13,9 +13,6 @@ jobs:
   vendor:
     name: Generate vendor tarballs
     runs-on: ubuntu-latest
-    container:
-      image: registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2:4387d0fa82f12808377dacc5feaf08a0d82a06af
-      options: --privileged --device /dev/fuse
     steps:
       - uses: actions/setup-go@v6
       - name: Setup tools

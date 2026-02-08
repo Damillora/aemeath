@@ -1,5 +1,8 @@
 kind: cmake
 
+(@):
+- freedesktop-sdk.bst:elements/components/poppler.bst
+
 build-depends:
 - freedesktop-sdk.bst:components/gobject-introspection.bst
 - freedesktop-sdk.bst:components/gtk-doc.bst
@@ -23,11 +26,6 @@ variables:
     -DENABLE_QT5=OFF
     -DENABLE_QT6=ON
     -DENABLE_BOOST=OFF
-
-sources:
-- kind: git_repo
-  url: freedesktop:poppler/poppler.git
-  ref: poppler-26.01.0-0-gd3c0e9ca648efbca25a32741ebef9386afc53d1d
 
 public:
   bst:

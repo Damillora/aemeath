@@ -5,7 +5,6 @@ depends:
   - freedesktop-sdk.bst:components/bash-config.bst
   - freedesktop-sdk.bst:components/bash-completion.bst
   - freedesktop-sdk.bst:components/util-linux-full.bst
-  - freedesktop-sdk.bst:components/linux.bst
   - freedesktop-sdk.bst:components/linux-firmware.bst
   - freedesktop-sdk.bst:components/wireless-regdb-bin.bst
   - freedesktop-sdk.bst:components/systemd.bst

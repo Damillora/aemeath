@@ -1,8 +1,10 @@
 kind: script
 
 build-depends:
-- os/aemeath/efi/deps.bst
-- os/aemeath/efi/initial-scripts.bst
+- os/aemeath/initramfs/deps.bst
+- os/aemeath/initramfs/initial-scripts.bst
+# Linux kernel
+- freedesktop-sdk.bst:components/linux.bst
 - freedesktop-sdk.bst:vm/prepare-image.bst
 
 variables:
@@ -34,10 +36,8 @@ config:
 
   - |
     dracut -v --xz --reproducible --fstab \
-           --uefi \
            --no-machineid --kernel-image /boot/vmlinuz \
            --kver $(ls -1 /lib/modules | head -n1) \
-           --kernel-cmdline "rw quiet splash mount.usrflags=ro lockdown=confidentiality systemd.firstboot=no" \
            --install 'fsck.btrfs' \
            --install 'mkfs.btrfs' \
            --add-drivers erofs \
@@ -52,20 +52,18 @@ config:
            --add crypt \
            --add tpm2-tss
 
-  - mkdir -p '%{install-root}/boot/loader/keys/auto'
-
-  - cp -r '%{datadir}/efitools/efi'/{PK,KEK,DB}.auth '%{install-root}/boot/loader/keys/auto'
-
+  - mkdir -p "%{install-root}/boot"
+  - cp /boot/vmlinuz "%{install-root}/boot/"
   - |
-    cat <<EOF >"%{install-root}/boot/loader/loader.conf"
-    timeout 3
-    editor yes
-    console-mode keep
-    EOF
-
-  - mkdir -p "%{install-root}/usr/lib/modules"
-  - cp -rT /usr/lib/modules "%{install-root}/usr/lib/modules"
+    version="$(ls -1 /lib/modules | head -n1)"
+    cp /boot/initramfs-${version}.img "%{install-root}/boot/initramfs.img"
 
   - mkdir -p "%{install-root}/boot/EFI"
   - cp -rT /boot/EFI "%{install-root}/boot/EFI"
   - mkdir -p "%{install-root}/boot/loader"
+  - |
+    cat <<EOF >%{install-root}/boot/loader/loader.conf
+    timeout 3
+    editor yes
+    console-mode keep
+    EOF

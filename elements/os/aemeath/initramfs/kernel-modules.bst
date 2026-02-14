@@ -3,6 +3,7 @@ kind: manual
 build-depends:
 - filename: freedesktop-sdk.bst:components/linux.bst
   strict: true
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 config:
   install-commands:

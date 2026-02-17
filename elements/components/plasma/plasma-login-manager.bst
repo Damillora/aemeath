@@ -31,8 +31,8 @@ variables:
     -DPAM_OS_CONFIGURATION=aemeath
 
 sources:
-- kind: git_repo
-  url: kde:plasma/plasma-login-manager.git
-  ref: 6b91c7003f3125612f99d4d7ae73696db594a302
+- kind: tar
+  url: 'kde_stable:plasma/%{plasma-version}/plasma-login-manager-%{plasma-version}.tar.xz'
+  ref: 7498de956b308b71fd42676028209235e2b7fbf793eee029e65484979e2ef0d4
 - kind: local
   path: files/plasma-login-manager

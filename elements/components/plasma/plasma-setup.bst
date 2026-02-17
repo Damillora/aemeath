@@ -24,6 +24,6 @@ variables:
     -DCMAKE_BUILD_TYPE=Release
 
 sources:
-- kind: git_repo
-  url: kde:plasma/plasma-setup.git
-  ref: b88c47943e739db67556872074bf7b31b73ec390
+- kind: tar
+  url: 'kde_stable:plasma/%{plasma-version}/plasma-setup-%{plasma-version}.tar.xz'
+  ref: f837d0c8bca66119f8c7ed935e3dcc03dd6ec72b3276d6c16e99728bb9cc104e

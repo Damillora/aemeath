@@ -21,6 +21,6 @@ variables:
   cmake-local: -DBUILD_TESTING=OFF
 
 sources:
-- kind: git_repo
-  url: kde:plasma/plasma-keyboard.git
-  ref: db805131a89346ec1b8c98f2970730f8e3159974
+- kind: tar
+  url: 'kde_stable:plasma/%{plasma-version}/plasma-keyboard-%{plasma-version}.tar.xz'
+  ref: cc2ee9154e55e1a49c934aa8b2d4146a7209859de58057d96d297561652b76dc

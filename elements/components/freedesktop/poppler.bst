@@ -34,3 +34,4 @@ public:
       - '%{libdir}/libpoppler-qt6.so*'
       - '%{includedir}/poppler/qt6/**'
       - '%{libdir}/pkgconfig/poppler-qt6.pc'
+

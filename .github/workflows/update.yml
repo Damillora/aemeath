@@ -23,6 +23,7 @@ jobs:
           token: ${{ secrets.AEMEATH_GH_PAT }}
           fetch-depth: 0
       - name: Track sources
+        continue-on-error: true
         run: bst source track
       - name: Commit & push
         run: |

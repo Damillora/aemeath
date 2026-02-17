@@ -12,6 +12,7 @@ depends:
 - components/kf6/ki18n.bst
 - components/kf6/kwallet.bst
 - components/kf6/kwidgetsaddons.bst
+- components/deps/qt6-qtkeychain.bst
 
 variables:
   cmake-local: -DBUILD_TESTING=OFF

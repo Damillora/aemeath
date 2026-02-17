@@ -8,6 +8,7 @@ depends:
   - freedesktop-sdk.bst:components/linux-firmware.bst
   - freedesktop-sdk.bst:components/wireless-regdb-bin.bst
   - freedesktop-sdk.bst:components/systemd.bst
+  - freedesktop-sdk.bst:components/dbus.bst
   - freedesktop-sdk.bst:components/dracut.bst
   - freedesktop-sdk.bst:components/shadow.bst
   - freedesktop-sdk.bst:components/tzdata.bst
@@ -22,5 +23,4 @@ depends:
   - freedesktop-sdk.bst:components/efitools.bst
   - freedesktop-sdk.bst:components/lvm2.bst
   - freedesktop-sdk.bst:vm/base-filesystem.bst
-  - components/deps/dbus-broker.bst
   - components/aemeath/os-release.bst

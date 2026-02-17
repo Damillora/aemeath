@@ -36,6 +36,7 @@ depends:
 - components/plasma/layer-shell-qt.bst
 - components/deps/opencv.bst
 - components/deps/qt6-kquickimageeditor.bst
+- components/deps/tesseract.bst
 
 variables:
   cmake-local: -DBUILD_TESTING=OFF

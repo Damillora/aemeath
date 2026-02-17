@@ -35,6 +35,7 @@ depends:
 - components/plasma/kpipewire.bst
 - components/plasma/layer-shell-qt.bst
 - components/deps/opencv.bst
+- components/deps/qt6-kquickimageeditor.bst
 
 variables:
   cmake-local: -DBUILD_TESTING=OFF

@@ -7,7 +7,7 @@ depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/brotli.bst
 - freedesktop-sdk.bst:components/bluez-libs.bst
-- freedesktop-sdk.bst:components/dbus.bst
+- freedesktop-sdk.bst:components/libdbus.bst
 - freedesktop-sdk.bst:components/fontconfig.bst
 - freedesktop-sdk.bst:components/freetype.bst
 - freedesktop-sdk.bst:components/glib.bst

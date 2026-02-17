@@ -19,7 +19,7 @@ depends:
 - components/freedesktop/libmbim.bst
 - components/freedesktop/libqmi.bst
 - freedesktop-sdk.bst:components/glib.bst
-- freedesktop-sdk.bst:components/dbus.bst
+- freedesktop-sdk.bst:components/libdbus.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/polkit.bst
 

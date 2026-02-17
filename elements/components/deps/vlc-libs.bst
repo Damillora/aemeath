@@ -9,7 +9,7 @@ runtime-depends:
 - freedesktop-sdk.bst:components/ffmpeg.bst
 - freedesktop-sdk.bst:components/libgcrypt.bst
 - freedesktop-sdk.bst:components/lua.bst
-- freedesktop-sdk.bst:components/dbus.bst
+- freedesktop-sdk.bst:components/libdbus.bst
 - freedesktop-sdk.bst:components/libvorbis.bst
 - freedesktop-sdk.bst:components/opus.bst
 - freedesktop-sdk.bst:components/libpng.bst

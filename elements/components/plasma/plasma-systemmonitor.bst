@@ -32,4 +32,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/plasma-systemmonitor-%{plasma-version}.tar.xz'
-  ref: 8be93fa95d510f2b53ac8a86f7e66aa10e5480af3632e419689bdb5ad33ef1fe
+  ref: c105ed686ad0799a89bf968213ab4a719820d8eb2609bd76033d656807aef958

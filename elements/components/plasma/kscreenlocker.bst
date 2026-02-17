@@ -39,4 +39,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/kscreenlocker-%{plasma-version}.tar.xz'
-  ref: 150d649e925a2bd3a7e1047b7e2bf5e9541632a31252fd23ae448fb7b413f33e
+  ref: f5d60fefe580e1d832f5af1b74ca25357d0e04e66daed7533006b7d562fcbd58

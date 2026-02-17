@@ -31,4 +31,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/plasma-welcome-%{plasma-version}.tar.xz'
-  ref: 32e29caa3507047f786857a0dd10830835837a0b5bb1d67d4b7f4e5540e00920
+  ref: 20b9bb3f0de8b262c7e5a0dda89d23575d932f15e31623333750c4abc5ccf5a7

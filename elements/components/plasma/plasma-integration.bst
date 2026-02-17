@@ -38,4 +38,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/plasma-integration-%{plasma-version}.tar.xz'
-  ref: ad5af85adc0772a1f9bcdcca51b1cbdda2ef2891b51c2b1b0a388a28521de3c5
+  ref: 5a69d012da2cbfc6d4d9177531f1a68c60cb023fbde114d5d5e95637b6189dfb

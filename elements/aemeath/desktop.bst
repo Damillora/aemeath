@@ -46,6 +46,7 @@ depends:
 - components/gear/kdeconnect-kde.bst
 - components/gear/kfind.bst
 - components/gear/kdialog.bst
+- components/gear/qrca.bst
 #- components/gear/khelpcenter.bst # wait for Qt6WebEngine
 - components/gear/kio-admin.bst
 # Configurations

@@ -1,16 +1,19 @@
 kind: manual
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   strip-binaries: ""
-  install-command: >-
-    install -Dm0644 -t "%{install-root}%{datadir}/tessdata/" osd.*
-    install -Dm0644 -t "%{install-root}%{datadir}/tessdata/" equ.*
-    install -Dm0644 -t "%{install-root}%{datadir}/tessdata/" eng.*
-    install -Dm0644 -t "%{install-root}%{datadir}/tessdata/" jpn.*
-    install -Dm0644 -t "%{install-root}%{datadir}/tessdata/" jpn_vert.*
+
+config:
+  install-commands:
+    - |
+      install -Dm0644 -t "%{install-root}%{datadir}/tessdata/" osd.*
+      install -Dm0644 -t "%{install-root}%{datadir}/tessdata/" equ.*
+      install -Dm0644 -t "%{install-root}%{datadir}/tessdata/" eng.*
+      install -Dm0644 -t "%{install-root}%{datadir}/tessdata/" jpn.*
+      install -Dm0644 -t "%{install-root}%{datadir}/tessdata/" jpn_vert.*
 
 
 sources:

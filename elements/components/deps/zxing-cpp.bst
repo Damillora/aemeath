@@ -25,6 +25,6 @@ sources:
   track: v*
   exclude:
   - '*rc*'
-  ref: v3.0.1-0-g15a0cfd2cf7ed122b6458e05230b55b45fe203cf
+  ref: v3.0.2-0-g8dd1cf5c4fd6fb6211bb96713db926ac6f2cf825
 - kind: patch_queue
   path: patches/zxing-cpp

@@ -59,6 +59,9 @@ config:
     cp /boot/vmlinuz "%{install-root}/usr/lib/modules/${version}/vmlinuz"
     cp /boot/initramfs-${version}.img "%{install-root}/usr/lib/modules/${version}/initramfs.img"
 
+  - mkdir -p '%{install-root}/boot/loader/keys/auto'
+  - cp -r '%{datadir}/efitools/efi'/{PK,KEK,DB}.auth '%{install-root}/boot/loader/keys/auto'
+
   - mkdir -p "%{install-root}/boot/EFI"
   - cp -rT /boot/EFI "%{install-root}/boot/EFI"
   - mkdir -p "%{install-root}/boot/loader"

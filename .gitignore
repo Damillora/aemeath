@@ -20,26 +20,19 @@ logs/
 # Ignore the default checkout directory
 checkout/
 
-files/boot-keys/*.key
-files/boot-keys/*.crt
-files/boot-keys/*.pem
-files/boot-keys/modules/*.crt
-files/boot-keys/extra-db/*.crt
-files/boot-keys/extra-db/*.owner
-files/boot-keys/extra-db-mic/*.crt
-files/boot-keys/extra-db-mic/*.owner
-files/boot-keys/extra-db-mic/*.cer
-files/boot-keys/extra-kek/*.crt
-files/boot-keys/extra-kek/*.owner
-files/boot-keys/extra-kek-mic/*.crt
-files/boot-keys/extra-kek-mic/*.owner
-files/boot-keys/extra-kek-mic/*.cer
-files/boot-keys/import-pubring.gpg
-files/boot-keys/import-pubring.pgp
-files/boot-keys/private-key/
-files/boot-keys/VENDOR.der
-current-secure-vm/
-secure-vm-repo/
+files/boot-keys/DB.crt
+files/boot-keys/DB.key
+files/boot-keys/KEK.crt
+files/boot-keys/KEK.key
+files/boot-keys/PK.crt
+files/boot-keys/PK.key
+files/boot-keys/VENDOR.crt
+files/boot-keys/VENDOR.key
+files/boot-keys/extra-db/
+files/boot-keys/extra-kek/
+files/boot-keys/modules/linux-module-cert.crt
+files/boot-keys/linux-module-cert.crt
+files/boot-keys/linux-module-cert.key
 
 # aemeath cache keys
 aemeath.crt

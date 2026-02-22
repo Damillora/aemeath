@@ -20,7 +20,6 @@ depends:
   - freedesktop-sdk.bst:components/nsswitch-config.bst
   - freedesktop-sdk.bst:components/tpm2-tss.bst
   - freedesktop-sdk.bst:components/tpm2-tools.bst
-  - freedesktop-sdk.bst:components/efitools.bst
   - freedesktop-sdk.bst:components/lvm2.bst
   - freedesktop-sdk.bst:vm/base-filesystem.bst
   - components/deps/dbus-broker.bst

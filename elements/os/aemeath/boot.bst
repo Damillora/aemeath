@@ -32,4 +32,24 @@ config:
       --linux=/usr/lib/modules/${version}/vmlinuz \
       --initrd=/usr/lib/modules/${version}/initramfs.img \
       --cmdline=@new-cmdline.txt \
+      --secureboot-private-key=VENDOR.key \
+      --secureboot-certificate=VENDOR.crt \
       --output="%{install-root}/boot/EFI/Linux/aemeath_%{image-version}.efi"
+  - |
+    sbsign --key VENDOR.key --cert VENDOR.crt --output "%{install-root}/boot/EFI/systemd/systemd-boot%{efi-arch}.efi" "/boot/EFI/systemd/systemd-boot%{efi-arch}.efi"
+  - |
+    sbsign --key DB.key --cert DB.crt --output "%{install-root}/boot/EFI/aemeath/shim%{efi-arch}.efi" "/boot/EFI/aemeath/shim%{efi-arch}.efi"
+    sbsign --key DB.key --cert DB.crt --output "%{install-root}/boot/EFI/aemeath/mm%{efi-arch}.efi" "/boot/EFI/aemeath/mm%{efi-arch}.efi"
+    sbsign --key DB.key --cert DB.crt --output "%{install-root}/boot/EFI/BOOT/fb%{efi-arch}.efi" "/boot/EFI/BOOT/fb%{efi-arch}.efi"
+    cp "%{install-root}/boot/EFI/aemeath/mm%{efi-arch}.efi" "%{install-root}/boot/EFI/BOOT/mm%{efi-arch}.efi"
+    cp "%{install-root}/boot/EFI/aemeath/shim%{efi-arch}.efi" "%{install-root}/boot/EFI/BOOT/BOOT$(echo "%{efi-arch}" | tr a-z A-Z).EFI"
+
+sources:
+- kind: local
+  path: files/boot-keys/VENDOR.key
+- kind: local
+  path: files/boot-keys/VENDOR.crt
+- kind: local
+  path: files/boot-keys/DB.key
+- kind: local
+  path: files/boot-keys/DB.crt

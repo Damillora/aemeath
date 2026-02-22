@@ -5,7 +5,16 @@ build-depends:
 - freedesktop-sdk.bst:components/gnu-efi.bst
 - freedesktop-sdk.bst:components/help2man.bst
 - freedesktop-sdk.bst:components/perl-slurp.bst
-- components/boot/boot-keys.bst
+
+(?):
+- not prod_keys:
+    build-depends:
+      (>):
+      - components/boot/boot-keys-test.bst
+- prod_keys:
+    build-depends:
+      (>):
+      - components/boot/boot-keys-prod.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

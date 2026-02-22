@@ -5,7 +5,16 @@ build-depends:
 - freedesktop-sdk.bst:components/git-minimal.bst
 - freedesktop-sdk.bst:components/openssl.bst
 - freedesktop-sdk.bst:components/sbsigntools.bst
-- components/boot/boot-keys.bst
+
+(?):
+- not prod_keys:
+    build-depends:
+      (>):
+      - components/boot/boot-keys-test.bst
+- prod_keys:
+    build-depends:
+      (>):
+      - components/boot/boot-keys-prod.bst
 
 variables:
   efi-arch: "x64"

@@ -1,6 +1,13 @@
 kind: manual
 
 build-depends:
+- components/aemeath/os-release.bst
+- filename: freedesktop-sdk.bst:components/linux.bst
+  strict: true
+- os/aemeath/initramfs.bst
+- filename: os/aemeath/usr-image.bst
+  config:
+    location: /usr-image
 - freedesktop-sdk.bst:components/binutils.bst
 - freedesktop-sdk.bst:components/sbsigntools.bst
 - freedesktop-sdk.bst:components/sign-file.bst
@@ -8,11 +15,6 @@ build-depends:
 - freedesktop-sdk.bst:components/systemd-ukify.bst
 - freedesktop-sdk.bst:components/util-linux.bst
 - freedesktop-sdk.bst:components/jq.bst
-- components/aemeath/os-release.bst
-- os/aemeath/initramfs.bst
-- filename: os/aemeath/usr-image.bst
-  config:
-    location: /usr-image
 
 variables:
   strip-binaries: ''
@@ -25,7 +27,6 @@ config:
   install-commands:
   - |
     cp -rT /boot "%{install-root}/boot"
-
   - |
     version="$(ls -1 /usr/lib/modules | head -n1)"
     echo -n "%{kcmdline} usrhash=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).roothash' /usr-image/compressed.repart.json) " > new-cmdline.txt

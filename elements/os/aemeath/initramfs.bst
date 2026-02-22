@@ -3,8 +3,6 @@ kind: script
 build-depends:
 - os/aemeath/initramfs/deps.bst
 - os/aemeath/initramfs/initial-scripts.bst
-# Linux kernel
-- freedesktop-sdk.bst:components/linux.bst
 - freedesktop-sdk.bst:vm/prepare-image.bst
 
 variables:
@@ -53,7 +51,6 @@ config:
            --add tpm2-tss
 
   - mkdir -p "%{install-root}/boot"
-  - cp /boot/vmlinuz "%{install-root}/boot/"
   - |
     version="$(ls -1 /lib/modules | head -n1)"
     cp /boot/initramfs-${version}.img "%{install-root}/boot/initramfs.img"

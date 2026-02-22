@@ -2,8 +2,6 @@ kind: manual
 
 build-depends:
 - components/aemeath/os-release.bst
-- filename: freedesktop-sdk.bst:components/linux.bst
-  strict: true
 - os/aemeath/initramfs.bst
 - filename: os/aemeath/usr-image.bst
   config:
@@ -31,7 +29,7 @@ config:
     version="$(ls -1 /usr/lib/modules | head -n1)"
     echo -n "%{kcmdline} usrhash=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).roothash' /usr-image/compressed.repart.json) " > new-cmdline.txt
     ukify build \
-      --linux=/boot/vmlinuz \
-      --initrd=/boot/initramfs.img \
+      --linux=/usr/lib/modules/${version}/vmlinuz \
+      --initrd=/usr/lib/modules/${version}/initramfs.img \
       --cmdline=@new-cmdline.txt \
       --output="%{install-root}/boot/EFI/Linux/aemeath_%{image-version}.efi"

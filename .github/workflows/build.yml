@@ -146,6 +146,9 @@ jobs:
           PK_KEY: ${{secrets.PK_KEY}}
           VENDOR_CRT: ${{secrets.VENDOR_CRT}}
           VENDOR_KEY: ${{secrets.VENDOR_KEY}}
+      - name: Download Microsoft keys
+        run: just microsoft-keys
+        shell: bash
       - name: Build usr and kernel images
         run: just prod_keys=true export
         shell: bash

@@ -1,6 +1,8 @@
 kind: script
 
 build-depends:
+- filename: freedesktop-sdk.bst:components/linux.bst
+  strict: true
 - os/aemeath/initramfs/deps.bst
 - os/aemeath/initramfs/initial-scripts.bst
 - freedesktop-sdk.bst:vm/prepare-image.bst
@@ -53,7 +55,12 @@ config:
   - mkdir -p "%{install-root}/boot"
   - |
     version="$(ls -1 /lib/modules | head -n1)"
-    cp /boot/initramfs-${version}.img "%{install-root}/boot/initramfs.img"
+    mkdir -p "%{install-root}/usr/lib/modules/${version}"
+    cp /boot/vmlinuz "%{install-root}/usr/lib/modules/${version}/vmlinuz"
+    cp /boot/initramfs-${version}.img "%{install-root}/usr/lib/modules/${version}/initramfs.img"
+
+  - mkdir -p '%{install-root}/boot/loader/keys/auto'
+  - cp -r '%{datadir}/efitools/efi'/{PK,KEK,DB}.auth '%{install-root}/boot/loader/keys/auto'
 
   - mkdir -p "%{install-root}/boot/EFI"
   - cp -rT /boot/EFI "%{install-root}/boot/EFI"

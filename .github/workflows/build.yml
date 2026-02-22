@@ -1,5 +1,5 @@
 ---
-name: Build container image
+name: Build Aemeath OS
 on:
   push:
     tags:
@@ -123,14 +123,37 @@ jobs:
               client-cert: /aemeath.crt
           EOF
         shell: bash
+      - name: Set up keys
+        run: |
+          echo "$DB_CRT" > files/boot-keys/DB.crt
+          echo "$DB_KEY" > files/boot-keys/DB.key
+          echo "$KEK_CRT" > files/boot-keys/KEK.crt
+          echo "$KEK_KEY" > files/boot-keys/KEK.key
+          echo "$MODULE_CRT" > files/boot-keys/linux-module-cert.crt
+          echo "$MODULE_KEY" > files/boot-keys/linux-module-cert.key
+          echo "$PK_CRT" > files/boot-keys/PK.crt
+          echo "$PK_KEY" > files/boot-keys/PK.key
+          echo "$VENDOR_CRT" > files/boot-keys/VENDOR.crt
+          echo "$VENDOR_KEY" > files/boot-keys/VENDOR.key
+        env:
+          DB_CRT: ${{secrets.DB_CRT}}
+          DB_KEY: ${{secrets.DB_KEY}}
+          KEK_CRT: ${{secrets.KEK_CRT}}
+          KEK_KEY: ${{secrets.KEK_KEY}}
+          MODULE_CRT: ${{secrets.MODULE_CRT}}
+          MODULE_KEY: ${{secrets.MODULE_KEY}}
+          PK_CRT: ${{secrets.PK_CRT}}
+          PK_KEY: ${{secrets.PK_KEY}}
+          VENDOR_CRT: ${{secrets.VENDOR_CRT}}
+          VENDOR_KEY: ${{secrets.VENDOR_KEY}}
       - name: Build usr and kernel images
-        run: just export
+        run: just prod_keys=true export
         shell: bash
       - name: Build disk images
-        run: just disk-image
+        run: just prod_keys=true disk-image
         shell: bash
       - name: Build live image
-        run: just live-image
+        run: just prod_keys=true live-image
         shell: bash
       - name: Copy artifacts to S3 bucket
         run: |

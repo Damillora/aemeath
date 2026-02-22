@@ -2,8 +2,6 @@ kind: manual
 
 build-depends:
 - freedesktop-sdk.bst:components/binutils.bst
-- freedesktop-sdk.bst:components/sbsigntools.bst
-- freedesktop-sdk.bst:components/sign-file.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/systemd-ukify.bst
 - freedesktop-sdk.bst:components/util-linux.bst
@@ -21,12 +19,4 @@ config:
   - |
     ukify build \
       --cmdline="root=tmpfs rd.systemd.mask=systemd-repart.service systemd.mask=systemd-repart.service" \
-      --secureboot-private-key=VENDOR.key \
-      --secureboot-certificate=VENDOR.crt \
       --output="%{install-root}/boot/EFI/Linux/aemeath_%{image-version}.efi.extra.d/live.addon.efi"
-
-sources:
-- kind: local
-  path: files/boot-keys/VENDOR.key
-- kind: local
-  path: files/boot-keys/VENDOR.crt

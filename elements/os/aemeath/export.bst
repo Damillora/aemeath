@@ -19,13 +19,13 @@ environment-nocache:
 config:
   commands:
   - |
-    usr_part_uuid="$(jq -r '(.[] | select(.file | match("/10-usr.conf$"))).uuid' /usr-image/compressed.repart.json | tr -d '-')"
-    mv /usr-image/compressed.usr.raw "%{install-root}/usr_%{image-version}_${usr_part_uuid}.erofs"
+    usr_part_uuid="$(jq -r '(.[] | select(.file | match("/10-usr.conf$"))).uuid' /usr-image/compress.repart.json | tr -d '-')"
+    mv /usr-image/compress.usr.raw "%{install-root}/usr_%{image-version}_${usr_part_uuid}.erofs"
     xz ${XZFLAGS} "%{install-root}/usr_%{image-version}_${usr_part_uuid}.erofs"
 
   - |
-    usr_verity_part_uuid="$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).uuid' /usr-image/compressed.repart.json | tr -d '-')"
-    mv /usr-image/compressed.usr-verity.raw "%{install-root}/usr_%{image-version}_${usr_verity_part_uuid}.verity"
+    usr_verity_part_uuid="$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).uuid' /usr-image/compress.repart.json | tr -d '-')"
+    mv /usr-image/compress.usr-verity.raw "%{install-root}/usr_%{image-version}_${usr_verity_part_uuid}.verity"
     xz ${XZFLAGS} "%{install-root}/usr_%{image-version}_${usr_verity_part_uuid}.verity"
 
   - |

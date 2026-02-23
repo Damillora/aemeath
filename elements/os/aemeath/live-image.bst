@@ -4,7 +4,13 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/zstd.bst
 - freedesktop-sdk.bst:components/jq.bst
+- freedesktop-sdk.bst:components/systemd.bst
+- freedesktop-sdk.bst:components/dosfstools.bst
+- freedesktop-sdk.bst:components/mtools.bst
+- freedesktop-sdk.bst:components/util-linux.bst
 - freedesktop-sdk.bst:vm/deploy-tools.bst
+- components/aemeath/os-release.bst
+- os/aemeath/repart-config-live.bst
 - filename: os/aemeath/usr-image.bst
   config:
     location: '/usr-image'
@@ -22,58 +28,42 @@ environment-nocache:
 - ZSTDFLAGS
 
 variables:
-  uuidnamespace: df2427db-01ec-4c99-96b1-be3edb3cd9f6
-  build-root: /genimage
-  usr-uuid: 8484680c-9521-48c6-9c11-b0720656f69e
-  usr-verity-uuid: 77ff5f63-e7b6-4633-acf4-1565b864c0e6
+  repart-seed: 35e34b2b-1fcf-4ab1-ae63-bcda061741c1
 
 config:
   commands:
-  - mkdir -p '%{build-root}'
+  - |
+    mkdir -p '/build'
+    mkdir -p /var/tmp
+  - |
+    mv /usr-image/compress.usr.raw /sysroot/
+    mv /usr-image/compress.usr-verity.raw /sysroot/
 
   - |
-    efi_part_uuid="$(uuidgen -s --namespace "%{uuidnamespace}" --name partition-efi)"
-    usr_part_uuid="$(jq -r '(.[] | select(.file | match("/10-usr.conf$"))).uuid' /usr-image/compressed.repart.json)"
-    usr_verity_part_uuid=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).uuid' /usr-image/compressed.repart.json)
-    disk_uuid="$(uuidgen -s --namespace "%{uuidnamespace}" --name disk)"
-    . /usr-image/vars.txt
-    cat > "%{build-root}/genimage.cfg" <<EOF
-    image efi.img {
-        vfat {
-            extraargs = "--invariant -F32 -i${id_efi} -n EFI"
-        }
-        mountpoint = "/boot"
-        size = 256M
-        temporary = true
-    }
-    image aemeath-live_%{image-version}.img {
-        hdimage {
-            align = 1M
-            partition-table-type = "gpt"
-            disk-uuid = "${disk_uuid}"
-        }
-        partition efi {
-            image = "efi.img"
-            partition-type-uuid = "U"
-            partition-uuid = "${efi_part_uuid}"
-        }
-        partition aemeath_usr_%{image-version} {
-            partition-type-uuid = "%{usr-uuid}"
-            partition-uuid = "${usr_part_uuid}"
-            image = "/usr-image/compressed.usr.raw"
-        }
-        partition aemeath_usr_verity_%{image-version} {
-            partition-type-uuid = "%{usr-verity-uuid}"
-            partition-uuid = "${usr_verity_part_uuid}"
-            image = "/usr-image/compressed.usr-verity.raw"
-        }
-    }
-    config {
-      tmppath = "%{build-root}/tmp"
-      outputpath = "%{install-root}"
-    }
+    usr_part_uuid="$(jq -r '(.[] | select(.file | match("/10-usr.conf$"))).uuid' /usr-image/compress.repart.json)"
+    usr_verity_part_uuid=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).uuid' /usr-image/compress.repart.json)
+    cat <<EOF >> /usr/lib/repart.d.live/20-usr.conf
+    UUID=${usr_part_uuid}
     EOF
-
+    cat <<EOF >> /usr/lib/repart.d.live/21-usr-verity.conf
+    UUID=${usr_verity_part_uuid}
+    EOF
   - |
-    genimage --config "%{build-root}/genimage.cfg" --rootpath /sysroot
+    SYSTEMD_LOG_LEVEL=debug \
+      systemd-repart \
+        --sector-size=512 \
+        --definitions=/usr/lib/repart.d.live \
+        --empty=create \
+        --dry-run=no \
+        --size=auto \
+        --discard=no \
+        --offline=true \
+        --no-pager \
+        --seed=%{repart-seed} \
+        --root=/sysroot \
+        '/build/live.raw' \
+        --json=pretty \
+        >'/build/live.repart.json'
+  - |
+    mv '/build/live.raw' "%{install-root}/aemeath-live_%{image-version}.img"
     zstd ${ZSTDFLAGS} "%{install-root}/aemeath-live_%{image-version}.img"

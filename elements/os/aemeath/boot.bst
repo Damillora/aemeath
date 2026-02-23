@@ -27,7 +27,7 @@ config:
     cp -rT /boot "%{install-root}/boot"
   - |
     version="$(ls -1 /usr/lib/modules | head -n1)"
-    echo -n "%{kcmdline} usrhash=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).roothash' /usr-image/compressed.repart.json) " > new-cmdline.txt
+    echo -n "%{kcmdline} usrhash=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).roothash' /usr-image/compress.repart.json) " > new-cmdline.txt
     ukify build \
       --linux=/usr/lib/modules/${version}/vmlinuz \
       --initrd=/usr/lib/modules/${version}/initramfs.img \

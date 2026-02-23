@@ -183,8 +183,8 @@ config:
         --seed=%{repart-seed} \
         --root=/sysroot \
         --split=true \
-        '%{install-root}/compressed.raw' \
+        '%{install-root}/compress.raw' \
         --json=pretty \
-        > '%{install-root}/compressed.repart.json'
+        > '%{install-root}/compress.repart.json'
 
-  - rm '%{install-root}/compressed.raw'
+  - rm '%{install-root}/compress.raw'

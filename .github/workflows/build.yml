@@ -122,6 +122,8 @@ jobs:
           echo "$PK_KEY" > files/boot-keys/PK.key
           echo "$VENDOR_CRT" > files/boot-keys/VENDOR.crt
           echo "$VENDOR_KEY" > files/boot-keys/VENDOR.key
+          mkdir -p files/boot-keys/modules
+          cp files/boot-keys/linux-module-cert.key files/boot-keys/modules
         shell: bash
         env:
           DB_CRT: ${{secrets.DB_CRT}}

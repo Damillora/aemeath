@@ -14,7 +14,7 @@ artifacts:
   - url: https://aemeath-cache.castorice.my.id
     push: true
     auth:
-      client-cert: aemeath.crt
-      client-key: aemeath.key
+      client-cert: /aemeath.crt
+      client-key: /aemeath.key
 EOF
 fi

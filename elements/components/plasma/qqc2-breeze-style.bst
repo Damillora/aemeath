@@ -22,4 +22,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/qqc2-breeze-style-%{plasma-version}.tar.xz'
-  ref: 70c407627144d59c585c2f430e9834a014803678f16ca514e5fbf7a5cb83afec
+  ref: 15e258d784917aa27c7dc1155da75fbaa94c9a345705bc934fcdf0e5e0456a13

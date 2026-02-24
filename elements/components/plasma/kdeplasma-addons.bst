@@ -47,4 +47,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/kdeplasma-addons-%{plasma-version}.tar.xz'
-  ref: df58519038f8fa02f399c3ebd06d6860880641f2bd68566b2207212f9ba34235
+  ref: cbead79f090df1ace14fe93cc30baf332a592dbcf8e260ef20f825c6c4bc277e

@@ -18,4 +18,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/kwrited-%{plasma-version}.tar.xz'
-  ref: b011b548974b3d5b66e6a8d17e08153ef1ffc9229e0ec26d2284f76561e77bdf
+  ref: a42719a434785548e7ff86f523debaec28e73919fe32951b6ffa42ce0f314593

@@ -21,4 +21,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/plasma-thunderbolt-%{plasma-version}.tar.xz'
-  ref: 241086eb76b079f7fa886f760119aa3631ba8c7668031f3af0efe9a23cd8613e
+  ref: 561033a11268d219ffea8dcaf4b7476232d459e302f5a4e59523355004882d81

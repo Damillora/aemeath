@@ -15,4 +15,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/kdecoration-%{plasma-version}.tar.xz'
-  ref: 6a86a7e3bab3dc2e3f6486688e8502a5c1acec1379bb085f853b0e829ae64a3b
+  ref: 46b8749c09488d5ddc164b23747e266079092eef945d3002b344f07c31026e6f

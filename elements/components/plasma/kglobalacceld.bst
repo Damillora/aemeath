@@ -27,4 +27,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/kglobalacceld-%{plasma-version}.tar.xz'
-  ref: 5dd5f582630c838b1bbbf163894b1b485a461f3e843b84ffaa6521664569db6c
+  ref: aa87b1d26da1947c2706ffaaddb21d4c60bb5f05e8204da345411a13558c756b

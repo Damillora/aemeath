@@ -24,4 +24,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/krdp-%{plasma-version}.tar.xz'
-  ref: 5c3c17c57520f1f2e974629eaa9dd7b457d4ed505e6f06cbb693db174522ded9
+  ref: 67baa1a4af5e30b7ce1b9c70645214a2bf0bf3b8351adca894fb121f597a7553

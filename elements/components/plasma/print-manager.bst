@@ -29,4 +29,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/print-manager-%{plasma-version}.tar.xz'
-  ref: 9b45069d8e61bfa5d2cf958fd562d18fe0dccb677008d99aceeb5599b808b5ed
+  ref: 2cc4be33015883b18aef31eaa33a858f8627fb69bd4918d977cbc16580c503d0

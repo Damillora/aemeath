@@ -120,4 +120,4 @@ config:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/plasma-workspace-%{plasma-version}.tar.xz'
-  ref: 098e1fddb30600855248bea36e012c0f5ff12d1ba3381a1ce42005e4d2304d6e
+  ref: c8c344bd3c842731cfd5df1c717db6e451329dd32b983717d7ff9abdff3434ed

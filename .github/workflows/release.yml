@@ -3,6 +3,10 @@ name: Create release
 on:
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref || github.run_id }}-${{ inputs.brand_name}}-${{ inputs.stream_name }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
@@ -10,15 +14,27 @@ jobs:
   create-release:
     name: Create release tag
     runs-on: ubuntu-latest
+    env:
+      BUILD_CONTAINER: aemeath-build
+      RUN_CMD: toolbox run -c aemeath
     steps:
+      - name: Tailscale
+        uses: tailscale/github-action@v4
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:github-actions
       - name: Checkout
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
         with:
-          token: ${{ secrets.AEMEATH_GH_PAT }}
           fetch-depth: 0
       - uses: taiki-e/install-action@v2
         with:
-          tool: git-cliff
+          tool: git-cliff,just,rclone
+      - name: Install podman and toolbx
+        run: |
+          sudo apt-get update
+          sudo apt-get -y install podman-toolbox
       - name: Generate tag
         run: |
           previous_version=$(git describe --tags $(git rev-list --tags --max-count=1))
@@ -32,6 +48,98 @@ jobs:
           echo "Previous Version: ${previous_date}.${previous_rev}"
           echo "Current Version: ${current_date}.${current_rev}"
           echo "image_version=${current_date}.${current_rev}" >> $GITHUB_ENV
+        shell: bash
+      - name: Configure tools
+        run: |
+          set -euox pipefail
+
+          mkdir -p $HOME/.config
+          ./.github/scripts/buildstream-conf.sh > $HOME/.config/buildstream.conf
+          mkdir -p $HOME/.config/rclone
+          ./.github/scripts/rclone-conf.sh > $HOME/.config/rclone/rclone.conf
+        shell: bash
+        env:
+          S3_ACCESS_KEY_ID: ${{secrets.S3_ACCESS_KEY_ID}}
+          S3_SECRET_ACCESS_KEY: ${{secrets.S3_SECRET_ACCESS_KEY}}
+      - name: Set up environment
+        run: |
+          echo "$AEMEATH_CRT" > aemeath.crt
+          echo "$AEMEATH_KEY" > aemeath.key
+
+          echo "image-version: ${{  env.image_version }}" > include/image-version.yml
+        shell: bash
+        env:
+          AEMEATH_CRT: ${{secrets.BST_ARTIFACT_PUSH_CERT}}
+          AEMEATH_KEY: ${{secrets.BST_ARTIFACT_PUSH_KEY}}
+      - name: Set up keys
+        run: |
+          echo "$DB_CRT" > files/boot-keys/DB.crt
+          echo "$DB_KEY" > files/boot-keys/DB.key
+          echo "$KEK_CRT" > files/boot-keys/KEK.crt
+          echo "$KEK_KEY" > files/boot-keys/KEK.key
+          echo "$MODULE_CRT" > files/boot-keys/linux-module-cert.crt
+          echo "$MODULE_KEY" > files/boot-keys/linux-module-cert.key
+          echo "$PK_CRT" > files/boot-keys/PK.crt
+          echo "$PK_KEY" > files/boot-keys/PK.key
+          echo "$VENDOR_CRT" > files/boot-keys/VENDOR.crt
+          echo "$VENDOR_KEY" > files/boot-keys/VENDOR.key
+          mkdir -p files/boot-keys/modules
+          cp files/boot-keys/linux-module-cert.crt files/boot-keys/modules
+        shell: bash
+        env:
+          DB_CRT: ${{secrets.DB_CRT}}
+          DB_KEY: ${{secrets.DB_KEY}}
+          KEK_CRT: ${{secrets.KEK_CRT}}
+          KEK_KEY: ${{secrets.KEK_KEY}}
+          MODULE_CRT: ${{secrets.MODULE_CRT}}
+          MODULE_KEY: ${{secrets.MODULE_KEY}}
+          PK_CRT: ${{secrets.PK_CRT}}
+          PK_KEY: ${{secrets.PK_KEY}}
+          VENDOR_CRT: ${{secrets.VENDOR_CRT}}
+          VENDOR_KEY: ${{secrets.VENDOR_KEY}}
+      - name: Download Microsoft keys
+        run: just microsoft-keys
+      - name: Prepare container
+        run: |
+          toolbox create -i registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2:4387d0fa82f12808377dacc5feaf08a0d82a06af aemeath
+          # Sanity check
+          $RUN_CMD ls
+      - name: Build components
+        run: |
+          $RUN_CMD just build
+        shell: bash
+      - name: Disable push for building images
+        run: |
+          ./.github/scripts/buildstream-conf.sh nopush > $HOME/.config/buildstream.conf
+        shell: bash
+      - name: Build usr and kernel images
+        run: |
+          $RUN_CMD just export
+        shell: bash
+      - name: Build disk images
+        run: |
+          $RUN_CMD just disk-image
+        shell: bash
+      - name: Build live image
+        run: |
+          $RUN_CMD just live-image
+        shell: bash
+      - name: Copy artifacts to S3 bucket
+        run: |
+          set -euox pipefail
+
+          for f in target/*
+          do
+            rclone copy "$f" fina:aemeath/sysupdate/
+          done
+          for f in disks/*
+          do
+            rclone copy "$f" fina:aemeath/images/
+          done
+          for f in live/*
+          do
+            rclone copy "$f" fina:aemeath/images/
+          done
         shell: bash
       - name: Import component versions
         run: |

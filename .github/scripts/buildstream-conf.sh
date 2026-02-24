@@ -3,7 +3,7 @@ scheduler:
   builders: 1
 
 build:
-  max-jobs: 8
+  max-jobs: 4
 
 EOF
 
@@ -14,7 +14,7 @@ artifacts:
   - url: https://aemeath-cache.castorice.my.id
     push: true
     auth:
-      client-cert: /aemeath.crt
-      client-key: /aemeath.key
+      client-cert: aemeath.crt
+      client-key: aemeath.key
 EOF
 fi

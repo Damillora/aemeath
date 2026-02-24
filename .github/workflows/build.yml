@@ -80,13 +80,7 @@ jobs:
           EOF
 
           mkdir -p $HOME/.config
-          cat << EOF > $HOME/.config/buildstream.conf
-          scheduler:
-            builders: 1
-
-          build:
-            max-jobs: 8
-          EOF
+          ./.github/scripts/buildstream-conf.sh > $HOME/.config/buildstream.conf
         shell: bash
         env:
           S3_ACCESS_KEY_ID: ${{secrets.S3_ACCESS_KEY_ID}}
@@ -95,15 +89,6 @@ jobs:
         run: |
           echo "$AEMEATH_CRT" > /aemeath.crt
           echo "$AEMEATH_KEY" > /aemeath.key
-
-          cat << EOF > include/artifacts.yml
-          artifacts:
-          - url: https://aemeath-cache.castorice.my.id
-            push: true
-            auth:
-              client-key: /aemeath.key
-              client-cert: /aemeath.crt
-          EOF
 
           echo "image-version: ${{  github.ref_name }}" > include/image-version.yml
         shell: bash
@@ -140,20 +125,14 @@ jobs:
         run: just microsoft-keys
       - name: Build components
         run: |
-          just build
           # Build signed Linux separately as it takes a really long time to build
           # and caching is preferred.
           bst -o prod_keys True build freedesktop-sdk.bst:components/linux.bst
+          just build
         shell: bash
       - name: Disable push for building images
         run: |
-          cat << EOF > include/artifacts.yml
-          artifacts:
-          - url: https://aemeath-cache.castorice.my.id
-            auth:
-              client-key: /aemeath.key
-              client-cert: /aemeath.crt
-          EOF
+          ./.github/scripts/buildstream-conf.sh nopush > $HOME/.config/buildstream.conf
         shell: bash
       - name: Build usr and kernel images
         run: just prod_keys=true export

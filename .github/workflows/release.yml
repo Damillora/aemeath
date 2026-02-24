@@ -17,6 +17,7 @@ jobs:
     env:
       BUILD_CONTAINER: aemeath-build
       RUN_CMD: toolbox run -c aemeath
+      JUST_CMD: $CARGO_HOME/bin/just
     steps:
       - name: Tailscale
         uses: tailscale/github-action@v4
@@ -98,7 +99,7 @@ jobs:
           VENDOR_CRT: ${{secrets.VENDOR_CRT}}
           VENDOR_KEY: ${{secrets.VENDOR_KEY}}
       - name: Download Microsoft keys
-        run: just microsoft-keys
+        run: $JUST_CMD microsoft-keys
       - name: Prepare container
         run: |
           toolbox_image=registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2:4387d0fa82f12808377dacc5feaf08a0d82a06af
@@ -109,7 +110,7 @@ jobs:
         shell: bash
       - name: Build components
         run: |
-          $RUN_CMD just build
+          $RUN_CMD $JUST_CMD build
         shell: bash
       - name: Disable push for building images
         run: |
@@ -117,15 +118,15 @@ jobs:
         shell: bash
       - name: Build usr and kernel images
         run: |
-          $RUN_CMD just export
+          $RUN_CMD $JUST_CMD export
         shell: bash
       - name: Build disk images
         run: |
-          $RUN_CMD just disk-image
+          $RUN_CMD $JUST_CMD disk-image
         shell: bash
       - name: Build live image
         run: |
-          $RUN_CMD just live-image
+          $RUN_CMD $JUST_CMD live-image
         shell: bash
       - name: Copy artifacts to S3 bucket
         run: |

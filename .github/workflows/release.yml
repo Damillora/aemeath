@@ -101,9 +101,12 @@ jobs:
         run: just microsoft-keys
       - name: Prepare container
         run: |
-          toolbox create -i registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2:4387d0fa82f12808377dacc5feaf08a0d82a06af aemeath
+          toolbox_image=registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2:4387d0fa82f12808377dacc5feaf08a0d82a06af
+          podman pull $toolbox_image
+          toolbox create -i $toolbox_image aemeath
           # Sanity check
           $RUN_CMD ls
+        shell: bash
       - name: Build components
         run: |
           $RUN_CMD just build

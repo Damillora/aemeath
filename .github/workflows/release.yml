@@ -37,6 +37,7 @@ jobs:
       BUILD_CONTAINER: aemeath-build
       RUN_CMD: toolbox run -c aemeath
       HOME: /home/aemeath
+      SHELL: /bin/bash
     steps:
       - name: Make home dir
         run: mkdir -p $HOME

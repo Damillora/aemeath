@@ -35,9 +35,8 @@ jobs:
       - create-runner
     env:
       BUILD_CONTAINER: aemeath-build
-      RUN_CMD: podman exec -t -w /src -e HOME aemeath-build
+      RUN_CMD: podman exec -w /src -e HOME aemeath-build
       HOME: /home/aemeath
-      AS_USER: sudo -u aemeath --
     steps:
       - name: Make home dir
         run: mkdir -p $HOME
@@ -125,15 +124,12 @@ jobs:
       - name: Prepare container
         run: |
           podman run --name $BUILD_CONTAINER \
-                  --tty --device /dev/fuse --privileged \
+                  --device /dev/fuse --privileged \
                   -v $(pwd):/src \
                   -v $HOME:$HOME \
                   -e HOME=$HOME \
                   -d registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2:4387d0fa82f12808377dacc5feaf08a0d82a06af \
                   sleep infinity
-          $RUN_CMD useradd -d $HOME aemeath
-          $RUN_CMD chown -R aemeath:aemeath .
-          $RUN_CMD chown -R aemeath:aemeath $HOME
       - name: Build components
         run: |
           $RUN_CMD $HOME/.install-action/bin/just build

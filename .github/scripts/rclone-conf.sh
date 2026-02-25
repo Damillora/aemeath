@@ -10,4 +10,6 @@ endpoint = s3.castorice.my.id
 force_path_style = true
 acl = public-read
 bucket_acl = public-read
+upload_cutoff = 500Mi
+chunk_size = 100Mi
 EOF

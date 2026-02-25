@@ -57,18 +57,6 @@ jobs:
       - name: Install podman and toolbx
         run: |
           sudo dnf -y install podman yq rclone
-      - name: Prepare container
-        run: |
-          podman run --name $BUILD_CONTAINER \
-                  --tty --device /dev/fuse --privileged \
-                  -v $(pwd):/src \
-                  -v $HOME:$HOME \
-                  -e HOME=$HOME \
-                  -d registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2:4387d0fa82f12808377dacc5feaf08a0d82a06af \
-                  sleep infinity
-          $RUN_CMD useradd -d $HOME aemeath
-          $RUN_CMD chown -R aemeath:aemeath .
-          $RUN_CMD chown -R aemeath:aemeath $HOME
         shell: bash
       - name: Generate tag
         run: |
@@ -134,6 +122,18 @@ jobs:
           VENDOR_KEY: ${{secrets.VENDOR_KEY}}
       - name: Download Microsoft keys
         run: $HOME/.install-action/bin/just microsoft-keys
+      - name: Prepare container
+        run: |
+          podman run --name $BUILD_CONTAINER \
+                  --tty --device /dev/fuse --privileged \
+                  -v $(pwd):/src \
+                  -v $HOME:$HOME \
+                  -e HOME=$HOME \
+                  -d registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2:4387d0fa82f12808377dacc5feaf08a0d82a06af \
+                  sleep infinity
+          $RUN_CMD useradd -d $HOME aemeath
+          $RUN_CMD chown -R aemeath:aemeath .
+          $RUN_CMD chown -R aemeath:aemeath $HOME
       - name: Build components
         run: |
           $RUN_CMD $HOME/.install-action/bin/just build
@@ -154,6 +154,9 @@ jobs:
         run: |
           $RUN_CMD $HOME/.install-action/bin/just live-image
         shell: bash
+      - name: Fix permissions
+        run: |
+          chown -R root:root $HOME/.config
       - name: Copy artifacts to S3 bucket
         run: |
           set -euox pipefail

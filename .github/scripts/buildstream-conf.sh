@@ -3,7 +3,7 @@ scheduler:
   builders: 1
 
 build:
-  max-jobs: 4
+  max-jobs: 8
 
 EOF
 

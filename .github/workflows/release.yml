@@ -1,5 +1,5 @@
 ---
-name: Create release
+name: Build release
 on:
   workflow_dispatch:
 
@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   create-release:
-    name: Create release tag
+    name: Create release
     runs-on: ubuntu-latest
     env:
       BUILD_CONTAINER: aemeath-build
@@ -113,6 +113,7 @@ jobs:
       - name: Build components
         run: |
           $RUN_CMD $HOME/.cargo/bin/just build
+          $RUN_CMD bst build freedesktop-sdk.bst:components/linux.bst
         shell: bash
       - name: Disable push for building images
         run: |

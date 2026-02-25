@@ -137,6 +137,8 @@ jobs:
       - name: Build components
         run: |
           $RUN_CMD $HOME/.install-action/bin/just build
+          # Cache Linux kernel
+          $RUN_CMD bst build freedesktop-sdk.bst:components/linux.bst
         shell: bash
       - name: Disable push for building images
         run: |

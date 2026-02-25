@@ -1,5 +1,5 @@
 ---
-name: Build release
+name: Create release
 on:
   workflow_dispatch:
 
@@ -11,16 +11,32 @@ permissions:
   contents: write
 
 jobs:
+  create-runner:
+    name: Create Hetzner Cloud runner
+    runs-on: ubuntu-latest
+    outputs:
+      label: ${{ steps.create-hcloud-runner.outputs.label }}
+      server_id: ${{ steps.create-hcloud-runner.outputs.server_id }}
+    steps:
+      - name: Create runner
+        id: create-hcloud-runner
+        uses: Cyclenerd/hcloud-github-runner@v1
+        with:
+          mode: create
+          github_token: ${{ secrets.AEMEATH_GH_PAT }}
+          hcloud_token: ${{ secrets.HCLOUD_TOKEN }}
+          server_type: ccx33
+          location: hel1
+          image: fedora-43 # Rocky Linux 9
   create-release:
     name: Create release
-    runs-on: ubuntu-latest
+    runs-on: ${{ needs.create-runner.outputs.label }} # run the job on the newly created runner
+    needs:
+      - create-runner
     env:
       BUILD_CONTAINER: aemeath-build
       RUN_CMD: toolbox run -c aemeath
     steps:
-      # This is optional, but if you see that your builds are way too big for the runners, you can enable this by uncommenting the following lines:
-      - name: Maximize build space
-        uses: ublue-os/remove-unwanted-software@517622d6452028f266b7ba4cc9a123b5f58a6b53 # v7
       - name: Tailscale
         uses: tailscale/github-action@v4
         with:
@@ -33,11 +49,10 @@ jobs:
           fetch-depth: 0
       - uses: taiki-e/install-action@v2
         with:
-          tool: git-cliff,just,rclone
+          tool: git-cliff
       - name: Install podman and toolbx
         run: |
-          sudo apt-get update
-          sudo apt-get -y install podman-toolbox
+          sudo dnf -y install toolbox yq rclone just
       - name: Generate tag
         run: |
           previous_version=$(git describe --tags $(git rev-list --tags --max-count=1))
@@ -113,7 +128,6 @@ jobs:
       - name: Build components
         run: |
           $RUN_CMD $HOME/.cargo/bin/just build
-          $RUN_CMD bst build freedesktop-sdk.bst:components/linux.bst
         shell: bash
       - name: Disable push for building images
         run: |
@@ -188,3 +202,19 @@ jobs:
           tag_name: ${{ env.image_version }}
           body_path: CHANGELOG.md
           make_latest: true
+  delete-runner:
+    name: Delete Hetzner Cloud runner
+    needs:
+      - create-runner # required to get output from the create-runner job
+      - create-release # required to wait when the main job is done
+    runs-on: ubuntu-latest
+    if: ${{ always() }} # required to stop the runner even if the error happened in the previous jobs
+    steps:
+      - name: Delete runner
+        uses: Cyclenerd/hcloud-github-runner@v1
+        with:
+          mode: delete
+          github_token: ${{ secrets.AEMEATH_GH_PAT }}
+          hcloud_token: ${{ secrets.HCLOUD_TOKEN }}
+          name: ${{ needs.create-runner.outputs.label }}
+          server_id: ${{ needs.create-runner.outputs.server_id }}

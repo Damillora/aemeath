@@ -52,10 +52,10 @@ jobs:
           fetch-depth: 0
       - uses: taiki-e/install-action@v2
         with:
-          tool: git-cliff
+          tool: git-cliff,just
       - name: Install podman and toolbx
         run: |
-          sudo dnf -y install toolbox yq rclone just
+          sudo dnf -y install toolbox yq rclone
       - name: Generate tag
         run: |
           previous_version=$(git describe --tags $(git rev-list --tags --max-count=1))

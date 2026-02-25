@@ -35,9 +35,9 @@ jobs:
       - create-runner
     env:
       BUILD_CONTAINER: aemeath-build
-      RUN_CMD: toolbox run -c aemeath
+      RUN_CMD: podman exec -t -w /src -e HOME aemeath-build
       HOME: /home/aemeath
-      SHELL: /bin/bash
+      AS_USER: sudo -u aemeath --
     steps:
       - name: Make home dir
         run: mkdir -p $HOME
@@ -56,7 +56,20 @@ jobs:
           tool: git-cliff,just
       - name: Install podman and toolbx
         run: |
-          sudo dnf -y install toolbox yq rclone
+          sudo dnf -y install podman yq rclone
+      - name: Prepare container
+        run: |
+          podman run --name $BUILD_CONTAINER \
+                  --tty --device /dev/fuse --privileged \
+                  -v $(pwd):/src \
+                  -v $HOME:$HOME \
+                  -e HOME=$HOME \
+                  -d registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2:4387d0fa82f12808377dacc5feaf08a0d82a06af \
+                  sleep infinity
+          $RUN_CMD useradd -d $HOME aemeath
+          $RUN_CMD chown -R aemeath:aemeath .
+          $RUN_CMD chown -R aemeath:aemeath $HOME
+        shell: bash
       - name: Generate tag
         run: |
           previous_version=$(git describe --tags $(git rev-list --tags --max-count=1))
@@ -121,14 +134,6 @@ jobs:
           VENDOR_KEY: ${{secrets.VENDOR_KEY}}
       - name: Download Microsoft keys
         run: $HOME/.install-action/bin/just microsoft-keys
-      - name: Prepare container
-        run: |
-          toolbox_image=registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2:4387d0fa82f12808377dacc5feaf08a0d82a06af
-          podman pull $toolbox_image
-          toolbox create -i $toolbox_image aemeath
-          # Sanity check
-          $RUN_CMD ls
-        shell: bash
       - name: Build components
         run: |
           $RUN_CMD $HOME/.install-action/bin/just build

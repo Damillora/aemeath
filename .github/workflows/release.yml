@@ -36,7 +36,10 @@ jobs:
     env:
       BUILD_CONTAINER: aemeath-build
       RUN_CMD: toolbox run -c aemeath
+      HOME: /home/aemeath
     steps:
+      - name: Make home dir
+        run: mkdir -p $HOME
       - name: Tailscale
         uses: tailscale/github-action@v4
         with:

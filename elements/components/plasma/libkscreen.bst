@@ -19,4 +19,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/libkscreen-%{plasma-version}.tar.xz'
-  ref: 308ce7ecdad876079ff678417de29b8c4e2e83e1e404e44442141d63fe5e9dc5
+  ref: 2bc247268fdbbea584af33f8a67c9fd1e891aba1e174f272c71a42a1787929d8

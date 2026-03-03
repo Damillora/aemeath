@@ -42,4 +42,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/powerdevil-%{plasma-version}.tar.xz'
-  ref: 18729609612956fb51f41c13ca8afd46fa1e46ade1184433d31e576866630403
+  ref: 6d0858a84f783c311447f487078969f9b6500973391212eaff4e6cc0fec99ca0

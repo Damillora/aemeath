@@ -39,4 +39,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/drkonqi-%{plasma-version}.tar.xz'
-  ref: 019befea19c6a8d31ff3adca886b9547b1c12553f3702a23d57b9b5fa41fd332
+  ref: 67b55787dd4d6aa62c60936dabbaf530aaaf31f2ad5b1397d1cebce714b16642

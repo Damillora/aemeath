@@ -41,4 +41,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/kinfocenter-%{plasma-version}.tar.xz'
-  ref: 2dcd57f2300ef64610b875d720045f204873dca6ff7c32178577639e4ba34763
+  ref: 2903f356fbf0477c3d1a6cf4431eaaecd534aac057831a7fe47d9c7554fef0ff

@@ -18,4 +18,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/kwallet-pam-%{plasma-version}.tar.xz'
-  ref: 310e0f7685922d2c5ad4e811f5d1f05ce58334e1ec17209b939cb429fb5d4b27
+  ref: 3ab318b96cc4da47b5ffd7610f14231572cafb5622a852095a9463b4f9e50a2e

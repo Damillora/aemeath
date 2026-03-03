@@ -35,4 +35,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/bluedevil-%{plasma-version}.tar.xz'
-  ref: c160707d26bfe7c6661fa593d74f7a580417782c364cec4e14ca0bc4f542fe1b
+  ref: 008deb607f0c533bd3c91038881100b93cb5f4a0624e13c233d1edef72448e0f

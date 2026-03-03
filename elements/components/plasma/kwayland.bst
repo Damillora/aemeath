@@ -17,4 +17,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/kwayland-%{plasma-version}.tar.xz'
-  ref: cc26e022a3090babacd0ae8ec146d1bd42df91eb8cb76a407b072e9cdd836017
+  ref: f3497dfb4163a1bab447e546340a4858baad6fd39cd24b44f427c0e96d6508a4

@@ -45,4 +45,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:release-service/%{gear-version}/src/kdeconnect-kde-%{gear-version}.tar.xz'
-  ref: d0504bbc3572f7e131983786eddb9c580986e5e46bb44b94a6df77a8777e4ef2
+  ref: a242c968b7f83af21e02113ce5728b9fca98258b6e8f6e7a33d5d6c3cc9e69bb

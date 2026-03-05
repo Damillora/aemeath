@@ -17,4 +17,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:release-service/%{gear-version}/src/libkcompactdisc-%{gear-version}.tar.xz'
-  ref: 02e5bb5330a2dd9fbae0dba1e1c8536a78dc1f88ba2756e8b96f928156d3c180
+  ref: 0f4c6b9f41a3cf0d1451204c58abf5c303ec6671f1d15989cd0d8d92bb9ee567

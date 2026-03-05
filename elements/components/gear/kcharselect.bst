@@ -25,4 +25,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:release-service/%{gear-version}/src/kcharselect-%{gear-version}.tar.xz'
-  ref: af3c7c94c9c79f57da8fa4483e85a03f0f40058be8e35867a0cc28072ccbcec8
+  ref: 90df5543516dc72d83edff79f9bdca9763061d0dc3b0bd3eb7295ca912fcecde

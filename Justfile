@@ -56,9 +56,15 @@ microsoft-keys:
     set -euxo pipefail
     [ -d files/boot-keys/extra-kek ] || mkdir -p files/boot-keys/extra-kek
     [ -d files/boot-keys/extra-db ] || mkdir -p files/boot-keys/extra-db
-    curl https://www.microsoft.com/pkiops/certs/MicCorUEFCA2011_2011-06-27.crt | openssl x509 -inform der -outform pem >files/boot-keys/extra-kek/mic-kek.crt
+    curl 'https://www.microsoft.com/pkiops/certs/MicCorKEKCA2011_2011-06-24.crt' | openssl x509 -inform der -outform pem >files/boot-keys/extra-kek/mic-kek.crt
     echo 77fa9abd-0359-4d32-bd60-28f4e78f784b >files/boot-keys/extra-kek/mic-kek.owner
+    curl 'https://www.microsoft.com/pkiops/certs/microsoft%20corporation%20kek%202k%20ca%202023.crt' | openssl x509 -inform der -outform pem >files/boot-keys/extra-kek/mic-2023-kek.crt
+    echo 77fa9abd-0359-4d32-bd60-28f4e78f784b >files/boot-keys/extra-kek/mic-2023-kek.owner
     curl https://www.microsoft.com/pkiops/certs/MicCorUEFCA2011_2011-06-27.crt | openssl x509 -inform der -outform pem >files/boot-keys/extra-db/mic-other.crt
     echo 77fa9abd-0359-4d32-bd60-28f4e78f784b >files/boot-keys/extra-db/mic-other.owner
     curl https://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt | openssl x509 -inform der -outform pem >files/boot-keys/extra-db/mic-win.crt
     echo 77fa9abd-0359-4d32-bd60-28f4e78f784b >files/boot-keys/extra-db/mic-win.owner
+    curl 'https://www.microsoft.com/pkiops/certs/microsoft%20uefi%20ca%202023.crt' | openssl x509 -inform der -outform pem >files/boot-keys/extra-db/mic-2023-other.crt
+    echo 77fa9abd-0359-4d32-bd60-28f4e78f784b >files/boot-keys/extra-db/mic-2023-other.owner
+    curl 'https://www.microsoft.com/pkiops/certs/windows%20uefi%20ca%202023.crt' | openssl x509 -inform der -outform pem >files/boot-keys/extra-db/mic-2023-win.crt
+    echo 77fa9abd-0359-4d32-bd60-28f4e78f784b >files/boot-keys/extra-db/mic-2023-win.owner

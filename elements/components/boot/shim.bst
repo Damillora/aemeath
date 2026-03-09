@@ -40,3 +40,5 @@ sources:
   directory: gnu-efi
   # branch shim-16.1
   ref: shim-16.0-pr660-1-gdc7fd96f23d6b582416f672844362d776d175cf4
+- kind: patch_queue
+  path: patches/shim

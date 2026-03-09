@@ -1,5 +1,5 @@
 # Freedesktop SDK
-sdk-version: "25.08.7"
+sdk-version: "25.08.8"
 # Qt6
 qt6-version-branch: "6.10"
 qt6-version: "6.10.2"

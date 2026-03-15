@@ -25,4 +25,4 @@ sources:
   track: 'v%{kf6-version}.*'
   exclude:
   - '*rc*'
-  ref: v6.23.0-0-g7d9f5e9087e0d7a82fd53463f7162f139a27404b
+  ref: v6.24.0-0-g13f63754d8b3fd6e319ce03fd18c62613866c964

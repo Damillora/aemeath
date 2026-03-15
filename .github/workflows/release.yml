@@ -75,8 +75,9 @@ jobs:
         run: |
           set -euox pipefail
 
+          ./.github/scripts/arifacts-yml.sh > include/artifacts.yml
           mkdir -p $HOME/.config
-          ./.github/scripts/buildstream-conf.sh > $HOME/.config/buildstream.conf
+          ./.github/scripts/buildstream-conf.sh nopush > $HOME/.config/buildstream.conf
           mkdir -p $HOME/.config/rclone
           ./.github/scripts/rclone-conf.sh > $HOME/.config/rclone/rclone.conf
         shell: bash
@@ -138,7 +139,7 @@ jobs:
         shell: bash
       - name: Disable push for building images
         run: |
-          ./.github/scripts/buildstream-conf.sh nopush > $HOME/.config/buildstream.conf
+          ./.github/scripts/arifacts-yml.sh nopush > include/artifacts.yml
         shell: bash
       - name: Build usr and kernel images
         run: |

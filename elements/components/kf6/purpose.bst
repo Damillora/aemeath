@@ -19,6 +19,7 @@ depends:
 - components/kf6/kservice.bst
 - components/kf6/prison.bst
 - components/gear/kaccounts-integration.bst
+- components/deps/accounts-qml-module.bst
 
 variables:
   cmake-local: -DBUILD_TESTING=OFF

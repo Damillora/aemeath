@@ -2,6 +2,8 @@ kind: cmake
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
+- freedesktop-sdk.bst:components/bison.bst
+- freedesktop-sdk.bst:components/flex.bst
 - components/kf6/extra-cmake-modules.bst
 - components/qt6/qttools.bst
 

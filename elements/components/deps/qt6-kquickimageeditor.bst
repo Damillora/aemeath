@@ -15,4 +15,4 @@ sources:
 - kind: git_repo
   url: kde:libraries/kquickimageeditor.git
   track: v*
-  ref: v0.6.0-0-g887bf3a093c2d5d59ac31bf3ef6e360874a985c1
+  ref: v0.6.1-0-gdc18bdf112c2959d515608fb524207b7d2728c34

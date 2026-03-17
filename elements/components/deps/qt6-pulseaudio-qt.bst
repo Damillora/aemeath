@@ -18,4 +18,4 @@ sources:
 - kind: git_repo
   url: kde:libraries/pulseaudio-qt.git
   track: v*
-  ref: v1.7.0-0-gcdde86de70e1ea540ead2577e4320d452dad94b9
+  ref: v1.8.1-0-g10786fe31e640858f4f5db5366aed9c56d77bfab

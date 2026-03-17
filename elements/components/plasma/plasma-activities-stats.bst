@@ -16,4 +16,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/plasma-activities-stats-%{plasma-version}.tar.xz'
-  ref: 435b5e6358380dda59f8c6d72e8b0fcf277c00b715b17bf59a0d3f04076fd814
+  ref: 56667b230dc52893c3f08680e37a403d228a50a6a0b06ad081179224a7f16d16

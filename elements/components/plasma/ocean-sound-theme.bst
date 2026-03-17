@@ -14,4 +14,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/ocean-sound-theme-%{plasma-version}.tar.xz'
-  ref: 7a6c71c0bba6b0eb0c774907d0804565666ea26f321e26017284bd341a8cc515
+  ref: a879429433796e611206e94aed70c506618ace9bf492a3f2ff9d771087b6f808

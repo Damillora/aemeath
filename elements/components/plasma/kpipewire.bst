@@ -23,4 +23,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/kpipewire-%{plasma-version}.tar.xz'
-  ref: e6a9f1de8a26ed83c376757ea9db7ad2f19294caba93151eb6b8b73f6654a1e0
+  ref: 3758393ad2dfd32074a31c705d840d742a074731983b489995829f18636d9e21

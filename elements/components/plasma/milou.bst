@@ -19,4 +19,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/milou-%{plasma-version}.tar.xz'
-  ref: 748f25a728d01fb7f6bcc875fac3a441498f592b33ab9bcb2572ec973a109818
+  ref: 909834cd7c62de83255a97090c685903ed6245b50be9c15d299703d9b822f9fd

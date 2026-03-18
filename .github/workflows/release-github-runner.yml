@@ -1,5 +1,5 @@
 ---
-name: Create release
+name: Create release (GitHub runner)
 on:
   workflow_dispatch:
 

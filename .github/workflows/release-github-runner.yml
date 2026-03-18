@@ -96,7 +96,7 @@ jobs:
           VENDOR_CRT: ${{secrets.VENDOR_CRT}}
           VENDOR_KEY: ${{secrets.VENDOR_KEY}}
       - name: Download Microsoft keys
-        run: $HOME/.install-action/bin/just microsoft-keys
+        run: $HOME/.cargo/bin/just microsoft-keys
       - name: Prepare container
         run: |
           docker run --name $BUILD_CONTAINER \
@@ -108,7 +108,7 @@ jobs:
                   sleep infinity
       - name: Build components
         run: |
-          $RUN_CMD $HOME/.install-action/bin/just build
+          $RUN_CMD $HOME/.cargo/bin/just build
           # Cache Linux kernel
           $RUN_CMD bst build freedesktop-sdk.bst:components/linux.bst
         shell: bash
@@ -119,15 +119,15 @@ jobs:
         shell: bash
       - name: Build usr and kernel images
         run: |
-          $RUN_CMD $HOME/.install-action/bin/just export
+          $RUN_CMD $HOME/.cargo/bin/just export
         shell: bash
       - name: Build disk images
         run: |
-          $RUN_CMD $HOME/.install-action/bin/just disk-image
+          $RUN_CMD $HOME/.cargo/bin/just disk-image
         shell: bash
       - name: Build live image
         run: |
-          $RUN_CMD $HOME/.install-action/bin/just live-image
+          $RUN_CMD $HOME/.cargo/bin/just live-image
         shell: bash
       - name: Fix permissions
         run: |

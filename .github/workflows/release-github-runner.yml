@@ -17,12 +17,7 @@ jobs:
     env:
       BUILD_CONTAINER: aemeath-build
       RUN_CMD: docker exec -w /src -e HOME aemeath-build
-      HOME: /home/aemeath
     steps:
-      - name: Make home dir
-        run: |
-          sudo mkdir -p $HOME
-          sudo chown $(whoami) -R $HOME
       - name: Maximize build space
         uses: ublue-os/remove-unwanted-software@v8
       - name: Tailscale
@@ -111,6 +106,9 @@ jobs:
                   -e HOME=$HOME \
                   -d registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2:4387d0fa82f12808377dacc5feaf08a0d82a06af \
                   sleep infinity
+          # Sanity check
+          $RUN_CMD cat $HOME/.config/buildstream.conf
+        shell: bash
       - name: Build components
         run: |
           $RUN_CMD $HOME/.cargo/bin/just build

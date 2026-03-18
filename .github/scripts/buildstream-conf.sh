@@ -4,7 +4,7 @@ scheduler:
   pusher: 4
 
 build:
-  max-jobs: 8
+  max-jobs: 4
 
 EOF
 

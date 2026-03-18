@@ -11,35 +11,15 @@ permissions:
   contents: write
 
 jobs:
-  create-runner:
-    name: Create Hetzner Cloud runner
-    runs-on: ubuntu-latest
-    outputs:
-      label: ${{ steps.create-hcloud-runner.outputs.label }}
-      server_id: ${{ steps.create-hcloud-runner.outputs.server_id }}
-    steps:
-      - name: Create runner
-        id: create-hcloud-runner
-        uses: Cyclenerd/hcloud-github-runner@v1
-        with:
-          mode: create
-          github_token: ${{ secrets.AEMEATH_GH_PAT }}
-          hcloud_token: ${{ secrets.HCLOUD_TOKEN }}
-          server_type: ccx23
-          location: hel1
-          image: fedora-43 # Rocky Linux 9
   create-release:
     name: Create release
-    runs-on: ${{ needs.create-runner.outputs.label }} # run the job on the newly created runner
-    needs:
-      - create-runner
+    runs-on: ubuntu-latest
     env:
       BUILD_CONTAINER: aemeath-build
-      RUN_CMD: podman exec -w /src -e HOME aemeath-build
-      HOME: /home/aemeath
+      RUN_CMD: docker exec -w /src -e HOME aemeath-build
     steps:
-      - name: Make home dir
-        run: mkdir -p $HOME
+      - name: Maximize build space
+        uses: ublue-os/remove-unwanted-software@v8
       - name: Tailscale
         uses: tailscale/github-action@v4
         with:
@@ -53,9 +33,6 @@ jobs:
       - uses: taiki-e/install-action@v2
         with:
           tool: git-cliff,just
-      - name: Install podman and toolbx
-        run: |
-          sudo dnf -y install podman yq rclone
         shell: bash
       - name: Generate tag
         run: |
@@ -123,7 +100,7 @@ jobs:
         run: $HOME/.install-action/bin/just microsoft-keys
       - name: Prepare container
         run: |
-          podman run --name $BUILD_CONTAINER \
+          docker run --name $BUILD_CONTAINER \
                   --device /dev/fuse --privileged \
                   -v $(pwd):/src \
                   -v $HOME:$HOME \
@@ -213,19 +190,3 @@ jobs:
           tag_name: ${{ env.image_version }}
           body_path: CHANGELOG.md
           make_latest: true
-  delete-runner:
-    name: Delete Hetzner Cloud runner
-    needs:
-      - create-runner # required to get output from the create-runner job
-      - create-release # required to wait when the main job is done
-    runs-on: ubuntu-latest
-    if: ${{ always() }} # required to stop the runner even if the error happened in the previous jobs
-    steps:
-      - name: Delete runner
-        uses: Cyclenerd/hcloud-github-runner@v1
-        with:
-          mode: delete
-          github_token: ${{ secrets.AEMEATH_GH_PAT }}
-          hcloud_token: ${{ secrets.HCLOUD_TOKEN }}
-          name: ${{ needs.create-runner.outputs.label }}
-          server_id: ${{ needs.create-runner.outputs.server_id }}

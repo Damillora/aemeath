@@ -20,7 +20,9 @@ jobs:
       HOME: /home/aemeath
     steps:
       - name: Make home dir
-        run: mkdir -p $HOME
+        run: |
+          sudo mkdir -p $HOME
+          sudo chown $(whoami) -R $HOME
       - name: Maximize build space
         uses: ublue-os/remove-unwanted-software@v8
       - name: Tailscale

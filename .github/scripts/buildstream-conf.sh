@@ -1,6 +1,7 @@
 cat << EOF
 scheduler:
   builders: 1
+  pusher: 4
 
 build:
   max-jobs: 8

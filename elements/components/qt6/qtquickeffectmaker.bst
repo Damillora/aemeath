@@ -13,4 +13,4 @@ depends:
 sources:
 - kind: tar
   url: 'qt:%{qt6-version-branch}/%{qt6-version}/submodules/qtquickeffectmaker-everywhere-src-%{qt6-version}.tar.xz'
-  ref: e3caf13b4e0c0d9e6d696192137615e8e748d7999272c74472945067f469c2c4
+  ref: ac02813fee62de71b8857fdab51cc20f752ebbefba80fe0ea7a2d77c12d9d715

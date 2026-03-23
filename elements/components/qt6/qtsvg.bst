@@ -11,4 +11,4 @@ depends:
 sources:
 - kind: tar
   url: 'qt:%{qt6-version-branch}/%{qt6-version}/submodules/qtsvg-everywhere-src-%{qt6-version}.tar.xz'
-  ref: f07ff80f38caf235187200345392ca7479445ddf49a36c3694cd52a735dad6e1
+  ref: dfa8d653be07087d9407ed4a4ebae847f8953e0b7abd829f089803ab652a30e6

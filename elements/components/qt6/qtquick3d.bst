@@ -14,4 +14,4 @@ depends:
 sources:
 - kind: tar
   url: 'qt:%{qt6-version-branch}/%{qt6-version}/submodules/qtquick3d-everywhere-src-%{qt6-version}.tar.xz'
-  ref: b95439f31d1e580c379e9828b48b03b932b0bdade4ff09f4dd639eff9da2cd75
+  ref: b42000bb33e55b6c642657eb7022ee1f74f9e19cf64d52e85d41763f567b8994

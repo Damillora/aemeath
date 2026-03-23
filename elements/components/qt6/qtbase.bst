@@ -73,12 +73,12 @@ config:
     - |
       mkdir -p "%{install-root}%{bindir}"
       while read -r target link; do
-        ln -sr "%{install-root}%{prefix}/$target" "%{install-root}%{prefix}/$link"
+        ln -srf "%{install-root}%{prefix}/$target" "%{install-root}%{prefix}/$link"
       done < "%{build-dir}/user_facing_tool_links.txt"
 
     - |
       cd "%{install-root}%{libdir}/qt6/bin"
-      for f in qmake qtpaths androiddeployqt; do
+      for f in qmake qtpaths androiddeployqt wasmdeployqt; do
         if [ -f "$f" ] && [ -f "${f}6" ]; then
           ln -sf "${f}6" "$f"
         fi
@@ -87,7 +87,7 @@ config:
 sources:
 - kind: tar
   url: 'qt:%{qt6-version-branch}/%{qt6-version}/submodules/qtbase-everywhere-src-%{qt6-version}.tar.xz'
-  ref: aeb78d29291a2b5fd53cb55950f8f5065b4978c25fb1d77f627d695ab9adf21e
+  ref: 231ad85979864d914dc9568a1b71c91d6cf20d7b2021d059103bf0eb51cb755e
 
 public:
   bst:

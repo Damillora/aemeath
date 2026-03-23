@@ -14,4 +14,4 @@ depends:
 sources:
 - kind: tar
   url: 'qt:%{qt6-version-branch}/%{qt6-version}/submodules/qtvirtualkeyboard-everywhere-src-%{qt6-version}.tar.xz'
-  ref: 6273256091a83f3f283d1a91498964fd6a91256b667d7b9e98005d731fdb986b
+  ref: d88a4b1713a313e3ac06c32837b5d00724d1dcf7b44c2594f1029f7c74a8e686

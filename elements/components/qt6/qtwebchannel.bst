@@ -11,4 +11,4 @@ depends:
 sources:
 - kind: tar
   url: 'qt:%{qt6-version-branch}/%{qt6-version}/submodules/qtwebchannel-everywhere-src-%{qt6-version}.tar.xz'
-  ref: e31ea59f8e19e0374d54fdc7a8479c840acffc4ba5297ee43564b5158a4f2c27
+  ref: e946143a8b015e2c9d5cc6110515f43618b441799da546138d0b05d8afa9fb24

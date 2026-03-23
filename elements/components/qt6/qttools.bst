@@ -13,7 +13,7 @@ config:
     - |
       mkdir -p "%{install-root}%{bindir}"
       while read -r target link; do
-        ln -sr "%{install-root}%{prefix}/$target" "%{install-root}%{prefix}/$link"
+        ln -srf "%{install-root}%{prefix}/$target" "%{install-root}%{prefix}/$link"
       done < "%{build-dir}/user_facing_tool_links.txt"
 
     - |
@@ -27,7 +27,7 @@ config:
 sources:
 - kind: tar
   url: 'qt:%{qt6-version-branch}/%{qt6-version}/submodules/qttools-everywhere-src-%{qt6-version}.tar.xz'
-  ref: 1e3d2c07c1fd76d2425c6eaeeaa62ffaff5f79210c4e1a5bc2a6a9db668d5b24
+  ref: cfb1993d7a10848965b01b9cf33a54b8a4ba4e5e3a6d28d59483e73f10d9fc76
 
 public:
   bst:

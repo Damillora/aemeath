@@ -12,4 +12,4 @@ depends:
 sources:
 - kind: tar
   url: 'qt:%{qt6-version-branch}/%{qt6-version}/submodules/qtimageformats-everywhere-src-%{qt6-version}.tar.xz'
-  ref: 8b8f9c718638081e7b3c000e7f31910140b1202a98e98df5d1b496fe6f639d67
+  ref: d3adb02ac5e2fe24068dbdaee0d7cc68cc3fa8553291c1bfce77c9fe8e940cc8

@@ -13,4 +13,4 @@ depends:
 sources:
 - kind: tar
   url: 'qt:%{qt6-version-branch}/%{qt6-version}/submodules/qt5compat-everywhere-src-%{qt6-version}.tar.xz'
-  ref: 3fa418f0fac02eb9efc5f762fbe25f20647b0ebb7fa92faf07e6de85044161c2
+  ref: e62954646b2749723aa5c7db32faab407358734075590058a01e793382d4c63e

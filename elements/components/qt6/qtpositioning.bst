@@ -11,4 +11,4 @@ depends:
 sources:
 - kind: tar
   url: 'qt:%{qt6-version-branch}/%{qt6-version}/submodules/qtpositioning-everywhere-src-%{qt6-version}.tar.xz'
-  ref: 7051fa64477c66769840cad396fc3772a01ba5516363c8842a7a513fa0c4cdce
+  ref: d61fd0985ede513ec34d2d1c1e92f383eb8eb46678ca9da805cf795cccb796e9

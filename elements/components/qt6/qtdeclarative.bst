@@ -16,13 +16,13 @@ config:
     - |
       mkdir -p "%{install-root}%{bindir}"
       while read -r target link; do
-        ln -sr "%{install-root}%{prefix}/$target" "%{install-root}%{prefix}/$link"
+        ln -srf "%{install-root}%{prefix}/$target" "%{install-root}%{prefix}/$link"
       done < "%{build-dir}/user_facing_tool_links.txt"
 
 sources:
 - kind: tar
   url: 'qt:%{qt6-version-branch}/%{qt6-version}/submodules/qtdeclarative-everywhere-src-%{qt6-version}.tar.xz'
-  ref: a249914ff66cdcdbf0df8b5ffad997a2ee6dce01cc17d43c6cc56fdc1d0f4b0f
+  ref: 4eece569431ddf8324e7d322fa27001916570b23df535f8fb28aba445eedfde9
 
 public:
   bst:

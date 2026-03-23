@@ -12,4 +12,4 @@ depends:
 sources:
 - kind: tar
   url: 'qt:%{qt6-version-branch}/%{qt6-version}/submodules/qtlocation-everywhere-src-%{qt6-version}.tar.xz'
-  ref: d313f05dedc593517c47d0fa3eb131a2597c01db23de263fe89fea561be50f3c
+  ref: 89b8386a8ae9e0b40a43fad398ac344f93a3b0d22f09bec4631f25d79135abef

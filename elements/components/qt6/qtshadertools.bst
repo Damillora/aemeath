@@ -10,4 +10,4 @@ depends:
 sources:
 - kind: tar
   url: 'qt:%{qt6-version-branch}/%{qt6-version}/submodules/qtshadertools-everywhere-src-%{qt6-version}.tar.xz'
-  ref: 18d9dbbc4f7e6e96e6ed89a9965dc032e2b58158b65156c035537826216716c9
+  ref: e43cb1ae8809b2a858281ee269f98da59d0fc1bcf958ca5510c81f7ad3d2e14a

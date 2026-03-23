@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BUILD_CONTAINER: aemeath-build
-      RUN_CMD: docker exec -w /src -e HOME aemeath-build
+      RUN_CMD: sudo docker exec -w /src -e HOME aemeath-build
     steps:
       - name: Maximize build space
         uses: ublue-os/remove-unwanted-software@v8
@@ -99,7 +99,7 @@ jobs:
         run: $HOME/.cargo/bin/just microsoft-keys
       - name: Prepare container
         run: |
-          docker run --name $BUILD_CONTAINER \
+          sudo docker run --name $BUILD_CONTAINER \
                   --device /dev/fuse --privileged \
                   -v /dev:/dev \
                   -v $(pwd):/src \

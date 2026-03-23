@@ -101,6 +101,7 @@ jobs:
         run: |
           docker run --name $BUILD_CONTAINER \
                   --device /dev/fuse --privileged \
+                  -v /dev:/dev \
                   -v $(pwd):/src \
                   -v $HOME:$HOME \
                   -e HOME=$HOME \

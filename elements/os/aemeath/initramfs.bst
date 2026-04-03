@@ -1,7 +1,7 @@
 kind: script
 
 build-depends:
-- filename: freedesktop-sdk.bst:components/linux.bst
+- filename: components/boot/linux.bst
   strict: true
 - os/aemeath/initramfs/deps.bst
 - os/aemeath/initramfs/initial-scripts.bst

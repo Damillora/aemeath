@@ -2,7 +2,7 @@ kind: manual
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
-- filename: freedesktop-sdk.bst:components/linux.bst
+- filename: components/boot/linux.bst
   strict: true
 - freedesktop-sdk.bst:components/findutils.bst
 - freedesktop-sdk.bst:components/sign-file.bst

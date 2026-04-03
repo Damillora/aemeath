@@ -114,7 +114,7 @@ jobs:
         run: |
           $RUN_CMD $HOME/.cargo/bin/just build
           # Cache Linux kernel
-          $RUN_CMD bst build freedesktop-sdk.bst:components/linux.bst
+          $RUN_CMD bst build components/boot/linux.bst
         shell: bash
       - name: Disable push for building images
         run: |

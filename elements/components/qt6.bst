@@ -32,3 +32,4 @@ depends:
   - components/qt6/qtwebchannel.bst
   - components/qt6/qtserialport.bst
   - components/qt6/qtwebsockets.bst
+  - components/qt6/qtwebengine.bst

@@ -23,7 +23,7 @@ depends:
   - components/plasma/kde-gtk-config.bst
   - components/plasma/kmenuedit.bst
   - components/plasma/kscreen.bst
-  - components/plasma/kwallet-pam.bst
+  # - components/plasma/kwallet-pam.bst
   - components/plasma/kwrited.bst
   - components/plasma/milou.bst
   - components/plasma/plasma-nm.bst

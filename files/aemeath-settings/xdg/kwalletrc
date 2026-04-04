@@ -1,0 +1,4 @@
+[KSecretD]
+Enabled=false
+[Migration]
+MigrateTo3rdParty=true

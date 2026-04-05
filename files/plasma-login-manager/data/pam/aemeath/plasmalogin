@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
 
+auth        optional    pam_kwallet5.so
 auth        optional    pam_oo7.so
 auth        include     system-auth
 

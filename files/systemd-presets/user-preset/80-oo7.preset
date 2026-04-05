@@ -1,0 +1,2 @@
+# Enables OO7 secret service unconditionally for all user sessions
+enable oo7-daemon.service

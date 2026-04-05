@@ -52,7 +52,6 @@ depends:
 # Configurations
 - freedesktop-sdk.bst:components/steam-devices.bst
 - freedesktop-sdk.bst:vm/base-filesystem.bst
-- freedesktop-sdk.bst:vm/config/journald.bst
 - freedesktop-sdk.bst:vm/config/resolved.bst
 - freedesktop-sdk.bst:vm/config/useradd-default.bst
 - freedesktop-sdk.bst:vm/config/systemd-homed-firstboot.bst

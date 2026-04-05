@@ -31,6 +31,9 @@ depends:
 - components/deps/qt6-qca.bst
 - components/deps/qt6-qcoro.bst
 
+runtime-depends:
+- components/kf6/kquickcharts.bst
+
 variables:
   cmake-local: -DBUILD_TESTING=OFF
 

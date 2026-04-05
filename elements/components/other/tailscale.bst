@@ -33,7 +33,6 @@ sources:
   #- '*-pre*'
   #ref: v1.96.1-0-g6af139fa027b44475bd3c32e581f115165ab2ebb
   ref: v1.94.2-0-g2de4d317a8c2595904f1563ebd98fdcf843da275
-
 - kind: tar
   #url: aemeath:files/tailscale-v1.96.1-vendor.tar.xz
   url: aemeath:files/tailscale-v1.94.2-vendor.tar.xz

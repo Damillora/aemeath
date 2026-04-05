@@ -4,12 +4,14 @@
 # SPDX-FileCopyrightText: none
 
 auth        optional    pam_kwallet5.so
+auth        optional    pam_oo7.so
 auth        include     system-auth
 
 account     include     system-auth
 
 password    include     system-auth
+password    optional    pam_oo7.so
 
 session     optional    pam_keyinit.so          force revoke
+session     optional    pam_oo7.so             auto_start
 session     include     system-auth
-session     optional    pam_kwallet5.so         auto_start

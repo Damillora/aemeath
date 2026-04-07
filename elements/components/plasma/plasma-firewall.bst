@@ -24,4 +24,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/plasma-firewall-%{plasma-version}.tar.xz'
-  ref: dca9ac27df7b6dbc28db69440d7cc1c0b92257815c5aa3664540b897566c0e88
+  ref: 5d9968be018af11da32a068bbe478a6f428e9bea16daee648044de11d9addeac

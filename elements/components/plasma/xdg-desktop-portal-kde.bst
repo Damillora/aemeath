@@ -37,4 +37,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/xdg-desktop-portal-kde-%{plasma-version}.tar.xz'
-  ref: d9b5c39596b4039e517c8a04bb6c2faae7f7c4d99855756fdafb9417fe3ffbfd
+  ref: d99bdc236abfcae497727d5e48e7bbcc62641700efb0df284afef221ef878518

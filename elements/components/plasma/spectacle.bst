@@ -44,4 +44,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/spectacle-%{plasma-version}.tar.xz'
-  ref: beceaffae061676215582227208b8a29e9dce1689480ba86e76ec8afa0fef13d
+  ref: 1e6d66f3a4731c635f6abd144f1bb002271b12626ccb38e86f04e79c7e1ad2e6

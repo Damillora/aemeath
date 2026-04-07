@@ -20,4 +20,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/ksshaskpass-%{plasma-version}.tar.xz'
-  ref: f19f8a135abe71abeb55b2d01a6fdf207977e5b6ff74ba95a149bb32714118fc
+  ref: 46f3606c1591986091d9b289c491512e8c058216a71f20ccdcad32d5b02a4393

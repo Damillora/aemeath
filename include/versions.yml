@@ -4,7 +4,7 @@ sdk-version: "25.08.8"
 qt6-version-branch: "6.11"
 qt6-version: "6.11.0"
 # KDE Frameworks
-kf6-version: "6.24"
+kf6-version: "6.25"
 # KDE Plasma
 plasma-version: "6.6.4"
 # KDE Gear

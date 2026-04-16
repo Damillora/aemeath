@@ -18,4 +18,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:release-service/%{gear-version}/src/ffmpegthumbs-%{gear-version}.tar.xz'
-  ref: eeb38acc65a955c16532b83a20bca08fce3e484674dbb0ccaecae44277ef8de8
+  ref: 7663ba531dbd90fbb15d6309fd94e96a4b283f57d8a48da6778f7130ee45c5f1

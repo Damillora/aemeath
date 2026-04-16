@@ -25,4 +25,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:release-service/%{gear-version}/src/filelight-%{gear-version}.tar.xz'
-  ref: 914876f16e0a07da4c84fbac66b260a5b03ecebeb55c2ff3743781fe5039d3dc
+  ref: 141a734d1ba99a51f9068804755e6e1400c813ad22b2059294017398de37c13a

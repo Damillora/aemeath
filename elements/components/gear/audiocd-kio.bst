@@ -20,7 +20,6 @@ depends:
 - components/kf6/kwidgetsaddons.bst
 - components/kf6/solid.bst
 - components/gear/libkcddb.bst
-- components/gear/libkcompactdisc.bst
 - components/deps/cdparanoia.bst
 
 variables:
@@ -29,4 +28,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:release-service/%{gear-version}/src/audiocd-kio-%{gear-version}.tar.xz'
-  ref: 7c5a9ff8ec7017d3c761107f910b6c75511d4bee9fe168732b77006f5b44fff1
+  ref: 8425bf7643d61bcbe597898161beb6260fd0f1670d33083def9959d99cafe8b7

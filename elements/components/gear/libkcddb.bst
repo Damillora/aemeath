@@ -27,4 +27,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:release-service/%{gear-version}/src/libkcddb-%{gear-version}.tar.xz'
-  ref: e448606348517300496ad86344bd7dde5d6a67f12a247e8c3cbaa7e61a67ce73
+  ref: a7b35cc2562334a36ebc6e737962b3d8ec22322f376b1d6eb6837f312fe05360

@@ -1,0 +1,119 @@
+From 5585d3233e019ecb0c172d117a1d7b4f04f7a48b Mon Sep 17 00:00:00 2001
+From: Damillora <developer@damillora.com>
+Date: Sun, 5 Apr 2026 21:29:22 +0700
+Subject: [PATCH] pam: forward home env var to oo7-daemon on autostart
+
+---
+ pam/src/lib.rs    | 12 ++++++------
+ pam/src/socket.rs |  9 +++++++--
+ 2 files changed, 13 insertions(+), 8 deletions(-)
+
+diff --git a/pam/src/lib.rs b/pam/src/lib.rs
+index ff15003..3489a89 100644
+--- a/pam/src/lib.rs
++++ b/pam/src/lib.rs
+@@ -86,7 +86,7 @@ unsafe fn get_auth_token_internal(
+ }
+ 
+ /// Get the UID and GID for a username using getpwnam (handles NSS/LDAP/etc)
+-fn get_user_credentials(username: &str) -> Option<(u32, u32)> {
++fn get_user_credentials(username: &str) -> Option<(u32, u32, String)> {
+     use std::ffi::CString;
+ 
+     let username_c = CString::new(username).ok()?;
+@@ -95,7 +95,7 @@ fn get_user_credentials(username: &str) -> Option<(u32, u32)> {
+     if pwd.is_null() {
+         None
+     } else {
+-        Some(unsafe { ((*pwd).pw_uid, (*pwd).pw_gid) })
++        Some(unsafe { ((*pwd).pw_uid, (*pwd).pw_gid, CStr::from_ptr((*pwd).pw_dir).to_string_lossy().into_owned() ) })
+     }
+ }
+ 
+@@ -266,7 +266,7 @@ pub unsafe extern "C" fn pam_sm_open_session(
+         }
+     };
+ 
+-    let (user_uid, user_gid) = match get_user_credentials(&username) {
++    let (user_uid, user_gid, user_home) = match get_user_credentials(&username) {
+         Some(creds) => creds,
+         None => {
+             tracing::error!("Failed to get credentials for user: {}", username);
+@@ -278,7 +278,7 @@ pub unsafe extern "C" fn pam_sm_open_session(
+ 
+     // Send the secret to the oo7 daemon
+     std::thread::spawn(move || {
+-        match send_secret_to_daemon(message, user_uid, user_gid, auto_start) {
++        match send_secret_to_daemon(message, user_uid, user_gid, &user_home, auto_start) {
+             Ok(_) => {
+                 tracing::info!(
+                     "Successfully sent secret to oo7 daemon for user: {}",
+@@ -336,7 +336,7 @@ pub unsafe extern "C" fn pam_sm_chauthtok(
+             }
+         };
+ 
+-        let (user_uid, user_gid) = match get_user_credentials(&username) {
++        let (user_uid, user_gid, user_home) = match get_user_credentials(&username) {
+             Some(creds) => creds,
+             None => {
+                 tracing::error!("Failed to get credentials for user: {}", username);
+@@ -385,7 +385,7 @@ pub unsafe extern "C" fn pam_sm_chauthtok(
+         );
+ 
+         std::thread::spawn(move || {
+-            match send_secret_to_daemon(message, user_uid, user_gid, false) {
++            match send_secret_to_daemon(message, user_uid, user_gid, &user_home, false) {
+                 Ok(_) => {
+                     tracing::info!(
+                         "Successfully sent password change request to oo7 daemon for user: {}",
+diff --git a/pam/src/socket.rs b/pam/src/socket.rs
+index 7468f8d..605091a 100644
+--- a/pam/src/socket.rs
++++ b/pam/src/socket.rs
+@@ -42,6 +42,7 @@ pub fn send_secret_to_daemon(
+     message: PamMessage,
+     uid: u32,
+     gid: u32,
++    home: &str,
+     auto_start: bool,
+ ) -> Result<(), SocketError> {
+     // Check if we're already running as the target user
+@@ -54,7 +55,7 @@ pub fn send_secret_to_daemon(
+         tracing::debug!("Already running as target user (UID={uid}, GID={gid})",);
+         let runtime = tokio::runtime::Runtime::new().map_err(SocketError::Connect)?;
+         return runtime
+-            .block_on(async { send_secret_to_daemon_async(message, uid, auto_start).await });
++            .block_on(async { send_secret_to_daemon_async(message, uid, home, auto_start).await });
+     }
+ 
+     // Need to fork and switch credentials
+@@ -93,7 +94,7 @@ pub fn send_secret_to_daemon(
+             };
+ 
+             let result = runtime
+-                .block_on(async { send_secret_to_daemon_async(message, uid, auto_start).await });
++                .block_on(async { send_secret_to_daemon_async(message, uid, home, auto_start).await });
+ 
+             match result {
+                 Ok(_) => unsafe { libc::_exit(0) },
+@@ -188,6 +189,7 @@ fn start_daemon() -> Result<(), SocketError> {
+ async fn send_secret_to_daemon_async(
+     message: PamMessage,
+     uid: u32,
++    home: &str,
+     auto_start: bool,
+ ) -> Result<(), SocketError> {
+     let socket_path = std::env::var("OO7_PAM_SOCKET")
+@@ -219,6 +221,9 @@ async fn send_secret_to_daemon_async(
+             Ok(Err(e)) if e.kind() == io::ErrorKind::NotFound && auto_start && !daemon_started => {
+                 // Socket doesn't exist yet, start daemon on first attempt
+                 tracing::info!("Socket not found, attempting to start daemon");
++                unsafe {
++                    std::env::set_var("HOME", home);
++                }
+                 start_daemon()?;
+                 daemon_started = true;
+                 tokio::time::sleep(Duration::from_millis(100)).await;
+-- 
+2.53.0
+

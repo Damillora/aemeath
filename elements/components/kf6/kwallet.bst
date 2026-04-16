@@ -22,8 +22,14 @@ depends:
 - components/kf6/kwindowsystem.bst
 - components/deps/qt6-qca.bst
 
+runtime-depends:
+- components/deps/oo7-portal.bst
+- components/deps/oo7-server.bst
+
 variables:
-  cmake-local: -DBUILD_TESTING=OFF
+  cmake-local: >-
+    -DBUILD_TESTING=OFF
+    -DBUILD_KSECRETD=OFF
 
 sources:
 - kind: git_repo

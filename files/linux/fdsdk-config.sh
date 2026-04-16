@@ -90,7 +90,6 @@ enable IKCONFIG_PROC
 module CRYPTO_ADIANTUM
 module CRYPTO_AEGIS128
 module CRYPTO_AES
-module CRYPTO_AES_TI
 module CRYPTO_ARC4
 module CRYPTO_BLOWFISH
 module CRYPTO_CAMELLIA
@@ -640,7 +639,6 @@ enable NET_VENDOR_MYRI
 module MYRI10GE
 module NATSEMI
 module NS83820
-module S2IO
 enable NET_VENDOR_NETRONOME
 module NFP
 module HAMACHI

@@ -1,0 +1,12 @@
+sources:
+- kind: git_repo
+  url: github:golang/go.git
+  track: 'go*'
+  exclude:
+  - '*rc*'
+  - '*beta*'
+  ref: go1.26.2-0-g9c8bf0e72a6fb3b415b591b124b59fbb7cf92252
+- kind: patch
+  path: patches/go/disable-dwarf5.patch
+- kind: patch
+  path: patches/go/0001-cmd-link-stop-forcing-binutils-gold-dependency-on-aa.patch

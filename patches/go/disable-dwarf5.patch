@@ -1,0 +1,15 @@
+diff --git a/src/internal/buildcfg/exp.go b/src/internal/buildcfg/exp.go
+index 689ca8ce58..b883b7ea58 100644
+--- a/src/internal/buildcfg/exp.go
++++ b/src/internal/buildcfg/exp.go
+@@ -76,7 +76,9 @@ func ParseGOEXPERIMENT(goos, goarch, goexp string) (*ExperimentFlags, error) {
+ 	// XCOFF format (as far as can be determined) doesn't seem to
+ 	// support the necessary section subtypes for DWARF-specific
+ 	// things like .debug_addr (needed for DWARF 5).
+-	dwarf5Supported := (goos != "darwin" && goos != "ios" && goos != "aix")
++	// dwz does not support it on Linux yet, so dwz/debugedit fails
++	// https://sourceware.org/bugzilla/show_bug.cgi?id=27375
++	dwarf5Supported := (goos != "darwin" && goos != "ios" && goos != "aix" && goos != "linux")
+ 
+ 	baseline := goexperiment.Flags{
+ 		RegabiWrappers:  regabiSupported,

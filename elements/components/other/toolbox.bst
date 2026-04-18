@@ -9,11 +9,11 @@ build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/bash-completion.bst
 - freedesktop-sdk.bst:components/ca-certificates.bst
-- freedesktop-sdk.bst:components/go.bst
 - freedesktop-sdk.bst:components/go-md2man.bst
 - freedesktop-sdk.bst:components/strace.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - components/other/fake-toolbox-env.bst
+- components/compilers/go.bst
 
 depends:
 - freedesktop-sdk.bst:components/podman.bst

@@ -57,6 +57,7 @@ depends:
 - freedesktop-sdk.bst:vm/config/systemd-homed-firstboot.bst
 - components/aemeath/os-release.bst
 - components/aemeath/flathub-config.bst
+- components/aemeath/always-ldconfig.bst
 - components/aemeath/settings.bst
 - components/aemeath/systemd-preset.bst
 - components/aemeath/systemd-preset-all.bst

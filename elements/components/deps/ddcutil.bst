@@ -8,6 +8,7 @@ depends:
 - freedesktop-sdk.bst:components/glib.bst
 - freedesktop-sdk.bst:components/jansson.bst
 - freedesktop-sdk.bst:components/libdrm.bst
+- freedesktop-sdk.bst:components/libdbus.bst
 - freedesktop-sdk.bst:components/libusb.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:components/xorg-lib-x11.bst

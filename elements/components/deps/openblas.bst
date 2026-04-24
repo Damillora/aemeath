@@ -13,4 +13,4 @@ sources:
 - kind: git_repo
   url: github:xianyi/OpenBLAS
   track: v*
-  ref: v0.3.32-0-g8cecf899e21d99f9d8766ed34bfeeb3e2992c844
+  ref: v0.3.33-0-g62bcfb0dc9f1cfa685fc04135c50e2780c303137

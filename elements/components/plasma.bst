@@ -53,10 +53,11 @@ depends:
   - components/plasma/print-manager.bst
   - components/plasma/krdp.bst
   - components/plasma/spectacle.bst
-  # Experimental things
   - components/plasma/plasma-login-manager.bst
   - components/plasma/plasma-setup.bst
   - components/plasma/plasma-keyboard.bst
+  # Experimental things
+  - components/plasma/union.bst
   # obsolete things
   # - components/plasma/wacomtablet.bst
   # - components/plasma/oxygen.bst

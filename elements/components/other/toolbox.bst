@@ -13,7 +13,7 @@ build-depends:
 - freedesktop-sdk.bst:components/strace.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - components/other/fake-toolbox-env.bst
-- components/compilers/go.bst
+- components/dev/compilers/go.bst
 
 depends:
 - freedesktop-sdk.bst:components/podman.bst

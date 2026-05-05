@@ -1,4 +1,8 @@
 cat << EOF
+cache:
+  quota: 50G
+  reserved-disk-space: 5G
+
 scheduler:
   builders: 1
   pushers: 2

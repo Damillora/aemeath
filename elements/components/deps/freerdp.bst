@@ -47,4 +47,4 @@ sources:
 - kind: git_repo
   url: github:FreeRDP/FreeRDP.git
   track: '*.*'
-  ref: 3.25.0-0-g90e7f064dc3ab8672b8ec714059d8cd51be0743f
+  ref: 3.26.0-0-g3f6d7cb1f8973cc84c66b258a9a61c4e2b2f30a6

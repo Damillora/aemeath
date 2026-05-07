@@ -122,7 +122,7 @@ sources:
   track: v*
   exclude:
   - '*-rc*'
-  ref: v7.0.3-0-g03e81f004d7e665e7c0e203c2f240abefbb79056
+  ref: v7.0.4-0-g7e95b21b3c5177b34c86c46e3128bd3a7311429f
 - kind: patch_queue
   path: patches/linux
 - kind: local

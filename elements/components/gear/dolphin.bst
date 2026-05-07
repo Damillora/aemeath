@@ -44,4 +44,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:release-service/%{gear-version}/src/dolphin-%{gear-version}.tar.xz'
-  ref: 5c5e5024835fddbcd9dfaa9c16ab2bcff2475645b0e28d1b269de42e412ec543
+  ref: ba4da5192f7e45f392feaa74dfb18fddddcf9dbcc8f9abeb3f670e83ed9e4f57

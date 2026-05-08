@@ -6,7 +6,5 @@ sources:
   - '*rc*'
   - '*beta*'
   ref: go1.26.3-0-g2dc996f71b0ebafb77e64433e58333e049488a3c
-- kind: patch
-  path: patches/go/disable-dwarf5.patch
-- kind: patch
-  path: patches/go/0001-cmd-link-stop-forcing-binutils-gold-dependency-on-aa.patch
+- kind: patch_queue
+  path: patches/go

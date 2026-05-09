@@ -19,10 +19,10 @@ variables:
     --host=%{bootstrap-triplet}
     --build=$(../scripts/config.guess)
     --disable-nscd
-    libc_cv_slibdir=/usr/lib
+    libc_cv_slibdir=%{libdir}
     --enable-kernel=6.0
 
 config:
   configure-commands:
     (<):
-    - echo "rootsbindir=/usr/sbin" > configparms
+    - echo "rootsbindir=%{sbindir}" > configparms

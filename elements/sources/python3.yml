@@ -1,0 +1,9 @@
+sources:
+- kind: git_repo
+  track: v3.*
+  exclude:
+  - v*a*
+  - v*b*
+  - v*rc*
+  url: github:python/cpython.git
+  ref: v3.14.6-0-gc63aec69bd59c55314c06c23f4c22c03de76fe45

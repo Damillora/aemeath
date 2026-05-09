@@ -9,5 +9,4 @@ config:
   - devel
   - doc
   - tests
-  - shells
   include-orphans: True

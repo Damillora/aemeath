@@ -1,0 +1,19 @@
+kind: cmake
+
+build-depends:
+- components/buildsystems/cmake.bst
+- components/graphics-data/vulkan-headers.bst
+
+depends:
+- components/sys-libs/glibc.bst
+- components/sys-libs/gcc-libs.bst
+
+variables:
+  license-files-extra: LICENSE.md
+  cmake-local: >-
+    -DVOLK_INSTALL:BOOL=ON
+
+sources:
+- kind: git_repo
+  url: github:zeux/volk.git
+  ref: vulkan-sdk-1.4.321.0-0-ga8da8ef3368482b0ee9b0ec0c6079a16a89c6924

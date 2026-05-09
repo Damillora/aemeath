@@ -1,0 +1,34 @@
+optimize-debug: true
+strip-binaries: |
+  cd %{install-root}
+  for LIB in $(find usr/lib -type f -name \*.so* ! -name \*dbg) \
+    $(find usr/lib -type f -name \*.ko* ! -name \*dbg) \
+    $(find usr/lib -type f -name \*.a) \
+    $(find usr/bin usr/libexec -type f);
+  do
+    read -n4 hdr < "$LIB"
+    if [ "$hdr" == "$(printf \\x7fELF)" ]; then
+      is_writable=0
+      [ -w "$LIB" ] && is_writable=1
+
+      echo "[aemeath-strip]: $LIB"
+      dirname="$(dirname "%{install-root}%{debugdir}/$LIB.dbg")"
+      tempfile=$(mktemp "$binary.XXXXXX")
+
+      [ "$is_writable" = "0" ] && chmod u+w "$LIB"
+      mkdir -p "$dirname"
+      objcopy --only-keep-debug --compress-debug-sections=zstd $LIB %{install-root}%{debugdir}/$LIB.dbg
+
+      # Safe stripping
+      strip --strip-unneeded $LIB -o "$tempfile"
+      cat "$tempfile" > "$LIB"
+
+      # Safe debuglink
+      objcopy --add-gnu-debuglink=.%{debugdir}/$LIB.dbg $LIB "$tempfile"
+      cat "$tempfile" > "$LIB"
+
+      [ "$is_writable" = "0" ] && chmod u-w "$LIB"
+
+      rm "$tempfile"
+    fi
+  done

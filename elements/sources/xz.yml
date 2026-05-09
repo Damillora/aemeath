@@ -1,0 +1,8 @@
+sources:
+- kind: git_repo
+  url: github:tukaani-project/xz.git
+  track: v*
+  exclude:
+  - v*alpha
+  - v*beta
+  ref: v5.8.3-0-g4b73f2ec19a99ef465282fbce633e8deb33691b3

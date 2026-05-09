@@ -1,0 +1,5 @@
+sources:
+- kind: git_repo
+  url: github:flatpak/flatpak.git
+  track: 1.1[02468]*
+  ref: 1.18.0-0-g5de2b58bdafde88515d9d6b9189bd1cfd3b88c46

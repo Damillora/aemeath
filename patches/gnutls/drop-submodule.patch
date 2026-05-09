@@ -1,0 +1,24 @@
+diff --git a/bootstrap.conf b/bootstrap.conf
+index fcea3310a..72183bb2c 100644
+--- a/bootstrap.conf
++++ b/bootstrap.conf
+@@ -52,19 +52,8 @@ git        1.4.4
+ gperf      -
+ gtkdocize  -
+ perl       5.5
+-wget       -
+ "
+ 
+-# update git submodules
+-git_options=
+-if test -n "$SUBMODULE_NOFETCH"; then
+-  git_options="--no-fetch"
+-fi
+-
+-for mod in $required_submodules; do
+-  git submodule update --init $git_options $mod
+-done
+-
+ # This check needs to be done before actual import.
+ TMP_GNULIB_SRCDIR="${GNULIB_SRCDIR:-gnulib}"
+ if test -d "$TMP_GNULIB_SRCDIR"; then

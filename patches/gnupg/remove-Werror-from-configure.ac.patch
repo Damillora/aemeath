@@ -1,0 +1,27 @@
+From a78bd28500188c274058dfa43c9fa1c845d1c185 Mon Sep 17 00:00:00 2001
+From: Seppo Yli-Olli <seppo.yliolli@gmail.com>
+Date: Thu, 28 May 2020 23:12:24 +0300
+Subject: [PATCH] Remove -Werror from configure.ac This creates a dependency on
+ specific compiler versions since default warnings change from compiler to
+ compiler
+
+---
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/configure.ac b/configure.ac
+index 9eb25bd02..2061fc289 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -1631,7 +1631,7 @@ if test "$GCC" = yes; then
+         fi
+ 
+         AC_MSG_CHECKING([if gcc supports -Wlogical-op])
+-        CFLAGS="-Wlogical-op -Werror"
++        CFLAGS="-Wlogical-op"
+         AC_COMPILE_IFELSE([AC_LANG_PROGRAM([],[])],_gcc_wopt=yes,_gcc_wopt=no)
+         AC_MSG_RESULT($_gcc_wopt)
+         if test x"$_gcc_wopt" = xyes ; then
+-- 
+2.20.1
+

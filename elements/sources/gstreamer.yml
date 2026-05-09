@@ -1,0 +1,5 @@
+sources:
+- kind: git_repo
+  url: freedesktop:gstreamer/gstreamer.git
+  track: 1.*[02468].*
+  ref: 1.28.4-0-gb46f881eaa8126eddfd21b5ae5512f8d4ff36255

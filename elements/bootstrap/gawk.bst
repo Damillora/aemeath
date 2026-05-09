@@ -1,0 +1,31 @@
+kind: autotools
+
+(@):
+- elements/bootstrap/include/vars.yml
+- elements/sources/gawk.yml
+
+build-depends:
+- binary-seed.bst
+- bootstrap/binutils-stage1.bst
+- bootstrap/gcc-stage1.bst
+- filename:
+  - bootstrap/linux-api-headers.bst
+  - bootstrap/glibc.bst
+  config:
+    location: "%{bootstrap-sysroot}"
+
+runtime-depends:
+- bootstrap/glibc.bst
+
+variables:
+   conf-local: >-
+     --host=%{bootstrap-triplet}
+     --build=$(build-aux/config.guess)
+
+config:
+  configure-commands:
+      (<):
+        - sed -i 's/extras//' Makefile.in
+  install-commands:
+    (>):
+    - rm "%{install-root}/usr/share/info/dir"

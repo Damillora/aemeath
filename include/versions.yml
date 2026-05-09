@@ -1,13 +1,25 @@
-# Freedesktop SDK
-sdk-version: "25.08.12"
+# This file is used to pin tracks of several important packages.
+# It is also used to generate release notes.
+
+# Toolchain
+binutils-track: "2_46_1" # Binutils uses underscores instead of dots
+gcc-track: "16.1.0"
+glibc-track: "2.43"
+# LLVM
+llvm-track: "22.1"
+rust-track: "1.95.0"
+
+# System services
+systemd-track: "261"
+
 # Qt6
-qt6-version-branch: "6.11"
-qt6-version: "6.11.1"
+qt6-branch: "6.11"
+qt6-track: "6.11.1"
 # KDE Frameworks
-kf6-version: "6.27"
+kf6-track: "6.27"
 # KDE Plasma
 plasma-branch: "stable"
-plasma-version: "6.7.0"
+plasma-track: "6.7.1"
 # KDE Gear
 gear-branch: "stable"
-gear-version: "26.04.2"
+gear-track: "26.04.2"

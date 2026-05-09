@@ -1,0 +1,4 @@
+sources:
+- kind: tar
+  url: gnu:patch/patch-2.8.tar.gz
+  ref: 308a4983ff324521b9b21310bfc2398ca861798f02307c79eb99bb0e0d2bf980

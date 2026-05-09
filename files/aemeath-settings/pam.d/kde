@@ -1,6 +1,14 @@
 #%PAM-1.0
 
-auth            include         system-auth
-account         include         system-auth
-password        include         system-auth
-session         include         system-auth
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: none
+
+
+auth     requisite      pam_nologin.so
+auth     required       pam_env.so
+
+auth     required       pam_succeed_if.so uid >= 1000 quiet
+auth        include     system-auth
+account     include     system-auth
+password    include     system-auth
+session     include     system-auth

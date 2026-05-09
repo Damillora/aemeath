@@ -1,0 +1,6 @@
+# Use the previous version of the compiler to bootstrap the new one.
+# That's how upstream recommends doing it.
+sources:
+- kind: tar
+  url: golang:dl/go1.26.4.linux-amd64.tar.gz
+  ref: 1153d3d50e0ac764b447adfe05c2bcf08e889d42a02e0fe0259bd47f6733ad7f

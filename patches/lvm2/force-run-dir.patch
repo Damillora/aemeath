@@ -1,0 +1,11 @@
+diff -ur lvm2.orig/configure.ac lvm2/configure.ac
+--- lvm2.orig/configure.ac	2025-06-18 20:32:07.225793132 +0200
++++ lvm2/configure.ac	2025-06-18 20:32:29.813543145 +0200
+@@ -740,7 +740,6 @@
+ ################################################################################
+ AC_MSG_CHECKING([for default run directory])
+ RUN_DIR="/run"
+-AS_IF([test ! -d "$RUN_DIR"], [RUN_DIR="/var/run"])
+ AC_MSG_RESULT([$RUN_DIR])
+ dnl -- Set up pidfile and run directory
+ AH_TEMPLATE(DEFAULT_PID_DIR)

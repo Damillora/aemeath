@@ -1,0 +1,14 @@
+
+sources:
+- kind: git_repo
+  url: savannah:cpio.git
+  track: v*
+  ref: v2.15-0-g900bab656ff24db5e3099941fb909c79c07962ed
+- kind: git_module
+  url: savannah:paxutils.git
+  path: paxutils
+  ref: 9ad2a83e9c8de70d83dbe956c144be51f66a9abb
+- kind: git_module
+  url: savannah:gnulib.git
+  path: gnulib
+  ref: 29d705ead11382c8d608dcc254394439cb43b9b8

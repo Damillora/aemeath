@@ -1,0 +1,115 @@
+From 6b5d49fefb83a0b33a71d2d2f8271e9b1a84e0d4 Mon Sep 17 00:00:00 2001
+From: bbhtt <bbhtt.zn0i8@slmail.me>
+Date: Thu, 12 Jun 2025 07:55:21 +0530
+Subject: [PATCH] session-env: Skip DBUS_SESSION_BUS_ADDRESS inside Flatpak
+
+If gpg is running inside Flatpak there is no guarantee that the X11,
+Wayland or D-Bus socket inside the container corresponds 1:1 to the
+analogous socket that is available outside.
+
+This used to work by coincidence inside Flatpak, but the addition of
+the "Wayland security context" mechanism in 1.15.x resulted in
+the `WAYLAND_DISPLAY` usually differing from its value on the host. [1]
+
+The above issue was worked around in Flatpak [2] but an even earlier
+issue was found where `DBUS_SESSION_BUS_ADDRESS` inside the Flatpak
+`/run/flatpak/bus` is different from host [3].
+
+Passing these incorrect values in stdenvnames from gpg inside the
+Flatpak runtime to the agent running on host, causes the pinentry
+dialogue to not show up at all. See [4] for issue reports from
+various Flatpak applications about this.
+
+So we skip the `DBUS_SESSION_BUS_ADDRESS` in
+`session_env_list_stdenvnames()`. According to smcv, a Flatpak maintainer
+likely more values should be blocklisted [5] but we never got the full
+list and this change makes the pinentry dialogue work from inside
+Flatpak [5].
+
+[1]: https://github.com/flatpak/flatpak/issues/5863
+[2]: https://github.com/flatpak/flatpak/pull/6018
+[3]: https://github.com/flatpak/flatpak/commit/40510e8ae8fd433df04959938b8e81e582849481#diff-12ca338bd8d02696d700648c2b68705b2f354a228a4b6cbab5cd9e4335f63dabR884
+[4]: https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/issues/1767
+[5]: https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/merge_requests/26722#note_2556926866
+---
+ common/session-env.c | 42 +++++++++++++++++++++++++++++++++++-------
+ 1 file changed, 35 insertions(+), 7 deletions(-)
+
+diff --git a/common/session-env.c b/common/session-env.c
+index e774c1d9b..7ecf5ba09 100644
+--- a/common/session-env.c
++++ b/common/session-env.c
+@@ -101,6 +101,14 @@ static size_t lastallocatedarraysize;
+ #define CHUNK_ARRAYSIZE 10
+ #define MAXDEFAULT_ARRAYSIZE (INITIAL_ARRAYSIZE + CHUNK_ARRAYSIZE * 5)
+ 
++static int
++is_inside_flatpak (void)
++{
++  static int inside = -1;
++  if (inside == -1)
++    inside = (access ("/.flatpak-info", F_OK) == 0);
++  return inside;
++}
+ 
+ /* Return the names of standard environment variables one after the
+    other.  The caller needs to set the value at the address of
+@@ -122,7 +130,12 @@ session_env_list_stdenvnames (int *iterator, const char **r_assname)
+           char *p;
+ 
+           for (idx = 0; idx < DIM (stdenvnames); idx++)
+-            len += strlen (stdenvnames[idx].name) + 1;
++            {
++              if (is_inside_flatpak () &&
++                  strcmp (stdenvnames[idx].name, "DBUS_SESSION_BUS_ADDRESS") == 0)
++                continue;
++              len += strlen (stdenvnames[idx].name) + 1;
++            }
+           commastring = xtrymalloc (len);
+           if (!commastring)
+             {
+@@ -133,7 +146,10 @@ session_env_list_stdenvnames (int *iterator, const char **r_assname)
+           p = commastring;
+           for (idx = 0; idx < DIM (stdenvnames); idx++)
+             {
+-              if (idx)
++              if (is_inside_flatpak () &&
++                  strcmp (stdenvnames[idx].name, "DBUS_SESSION_BUS_ADDRESS") == 0)
++                continue;
++              if (p != commastring)
+                 *p++ = ',';
+               p = stpcpy (p, stdenvnames[idx].name);
+             }
+@@ -143,12 +159,24 @@ session_env_list_stdenvnames (int *iterator, const char **r_assname)
+     }
+ 
+   idx = *iterator;
+-  if (idx < 0 || idx >= DIM (stdenvnames))
++
++  if (idx < 0)
+     return NULL;
+-  *iterator = idx + 1;
+-  if (r_assname)
+-    *r_assname = stdenvnames[idx].assname;
+-  return stdenvnames[idx].name;
++
++  while (idx < DIM (stdenvnames))
++    {
++      if (is_inside_flatpak () &&
++          strcmp (stdenvnames[idx].name, "DBUS_SESSION_BUS_ADDRESS") == 0)
++        {
++          idx++;
++          continue;
++        }
++      *iterator = idx + 1;
++      if (r_assname)
++        *r_assname = stdenvnames[idx].assname;
++      return stdenvnames[idx].name;
++    }
++  return NULL;
+ }
+ 
+ 
+-- 
+2.49.0
+

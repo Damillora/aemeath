@@ -1,14 +1,13 @@
 kind: cmake
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
-- freedesktop-sdk.bst:components/rust.bst
-- components/kf6/extra-cmake-modules.bst
+- components/buildsystems/cmake.bst
+- components/dev-lang/rust.bst
+- components/kde-kf6/extra-cmake-modules.bst
 - components/dev-tools/corrosion.bst
 
 depends:
-- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
-- components/qt6/qtbase.bst
+- components/qt6-toolkit/qtbase.bst
 
 variables:
   cmake-local: >-

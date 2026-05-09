@@ -1,0 +1,35 @@
+kind: stack
+
+depends:
+  - components/qt6-toolkit/qt3d.bst
+  - components/qt6-toolkit/qt5compat.bst
+  - components/qt6-toolkit/qtbase.bst
+  - components/qt6-toolkit/qtcharts.bst
+  - components/qt6-toolkit/qtconnectivity.bst
+  - components/qt6-toolkit/qtdeclarative.bst
+  - components/qt6-toolkit/qtgrpc.bst
+  - components/qt6-toolkit/qthttpserver.bst
+  - components/qt6-toolkit/qtimageformats.bst
+  - components/qt6-toolkit/qtlanguageserver.bst
+  - components/qt6-toolkit/qtlocation.bst
+  - components/qt6-toolkit/qtmultimedia.bst
+  - components/qt6-toolkit/qtnetworkauth.bst
+  - components/qt6-toolkit/qtpositioning.bst
+  - components/qt6-toolkit/qtquick3d.bst
+  - components/qt6-toolkit/qtquick3dphysics.bst
+  - components/qt6-toolkit/qtquickeffectmaker.bst
+  - components/qt6-toolkit/qtquicktimeline.bst
+  - components/qt6-toolkit/qtremoteobjects.bst
+  - components/qt6-toolkit/qtscxml.bst
+  - components/qt6-toolkit/qtsensors.bst
+  - components/qt6-toolkit/qtserialport.bst
+  - components/qt6-toolkit/qtsvg.bst
+  - components/qt6-toolkit/qtshadertools.bst
+  - components/qt6-toolkit/qtspeech.bst
+  - components/qt6-toolkit/qttools.bst
+  - components/qt6-toolkit/qttranslations.bst
+  - components/qt6-toolkit/qtwayland.bst
+  - components/qt6-toolkit/qtwebchannel.bst
+  - components/qt6-toolkit/qtserialport.bst
+  - components/qt6-toolkit/qtwebsockets.bst
+  - components/qt6-toolkit/qtwebengine.bst

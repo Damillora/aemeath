@@ -1,0 +1,15 @@
+diff --git a/doxygen/meson.build b/doxygen/meson.build
+index afc0e4989..66723e8b1 100644
+--- a/doxygen/meson.build
++++ b/doxygen/meson.build
+@@ -6,5 +6,8 @@ doxygen_conf = configure_file(
+   configuration : cdata,
+ )
+ 
+-run_target('doxygen',
+-  command : ['doxygen', doxygen_conf])
++doxygen = find_program('doxygen', required: false)
++if doxygen.found()
++  run_target('doxygen',
++    command : [doxygen, doxygen_conf])
++endif

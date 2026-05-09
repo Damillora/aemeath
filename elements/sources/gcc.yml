@@ -1,0 +1,5 @@
+sources:
+- kind: git_repo
+  url: gcc:gcc.git
+  track: "refs/tags/releases/gcc-%{gcc-track}*"
+  ref: releases/gcc-16.1.0-0-g6afcc4f6da931eb93f3ab001a0dd9650ea71d1ea

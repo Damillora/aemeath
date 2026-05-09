@@ -1,0 +1,51 @@
+cflags-common: "-g -O2 -pipe"
+cflags-fortify-source: "-Wp,-D_FORTIFY_SOURCE=3"
+cflags-glibcxx-assertions: "-Wp,-D_GLIBCXX_ASSERTIONS"
+cflags-exceptions: "-fexceptions"
+cflags-harden: >-
+  -fstack-protector-strong
+  -fstack-clash-protection
+  -fcf-protection
+cflags-debug: >-
+  -grecord-gcc-switches
+  -fasynchronous-unwind-tables
+  -fno-omit-frame-pointer
+  -mno-omit-leaf-frame-pointer
+cflags-tune: >-
+  -march=x86-64-v3
+cflags-local: ""
+cflags: >-
+  %{cflags-common}
+  %{cflags-fortify-source}
+  %{cflags-glibcxx-assertions}
+  %{cflags-exceptions}
+  %{cflags-harden}
+  %{cflags-debug}
+  %{cflags-tune}
+  %{cflags-local}
+
+rustflags-debug: "-C debuginfo=2"
+rustflags-force-frame-pointer: "-Cforce-frame-pointers=yes"
+rustflags-tune: "-C target-cpu=x86-64-v3"
+rustflags-local: ""
+rustflags: >-
+  %{rustflags-debug}
+  %{rustflags-force-frame-pointer}
+  %{rustflags-tune}
+  %{rustflags-local}
+
+ldflags-common: "-Wl,-z,relro,-z,now -Wl,--as-needed"
+ldflags-local: ""
+ldflags: "%{ldflags-common} %{ldflags-local}"
+
+goflags-ldflags: "-compressdwarf=false -linkmode=external"
+goflags-buildmode: "-buildmode=pie"
+goflags-vendor: >-
+  -mod=vendor
+  -modcacherw
+goflags-local: ""
+goflags: >-
+  %{goflags-buildmode}
+  %{goflags-vendor}
+  "-ldflags=%{goflags-ldflags}"
+  %{goflags-local}

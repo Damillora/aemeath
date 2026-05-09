@@ -1,13 +1,10 @@
 kind: manual
 
 build-depends:
-- freedesktop-sdk.bst:components/binutils.bst
-- freedesktop-sdk.bst:components/sbsigntools.bst
-- freedesktop-sdk.bst:components/sign-file.bst
-- freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:components/systemd-ukify.bst
-- freedesktop-sdk.bst:components/util-linux.bst
-- components/aemeath/os-release.bst
+- components/platform/minimal.bst
+- components/boot-util/sbsigntools.bst
+- components/boot-util/systemd-ukify.bst
+- components/sys-data/os-release.bst
 
 variables:
   strip-binaries: ''

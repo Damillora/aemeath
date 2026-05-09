@@ -1,9 +1,9 @@
 kind: script
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
-- freedesktop-sdk.bst:components/jq.bst
-- freedesktop-sdk.bst:components/xz.bst
+- components/platform/minimal.bst
+- components/util-misc/jq.bst
+- components/util-archive/xz.bst
 - filename: os/aemeath/usr-image.bst
   config:
     location: /usr-image

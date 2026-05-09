@@ -1,12 +1,11 @@
 kind: cmake
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
-- freedesktop-sdk.bst:components/rust.bst
+- components/buildsystems/cmake.bst
+- components/dev-lang/rust.bst
 
 depends:
-- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
-- freedesktop-sdk.bst:components/cmake.bst
+- components/dev-tools/cmake.bst
 
 variables:
   cmake-local: -DBUILD_TESTING=OFF

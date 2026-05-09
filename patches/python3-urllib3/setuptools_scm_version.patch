@@ -1,0 +1,25 @@
+From 58471a74924017a87df678f94fb82b812543d361 Mon Sep 17 00:00:00 2001
+From: bbhtt <bbhtt.zn0i8@slmail.me>
+Date: Sat, 9 May 2026 05:29:00 +0530
+Subject: [PATCH 2/2] Relax setuptools-scm constraint
+
+---
+ pyproject.toml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/pyproject.toml b/pyproject.toml
+index 4d1f0895..5ac365e9 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -1,7 +1,7 @@
+ # This file is protected via CODEOWNERS
+ 
+ [build-system]
+-requires = ["hatchling>=1.27.0,<2", "hatch-vcs>=0.4.0,<0.6.0", "setuptools-scm>=8,<11"]
++requires = ["hatchling>=1.27.0,<2", "hatch-vcs>=0.4.0,<0.6.0", "setuptools-scm>=8"]
+ build-backend = "hatchling.build"
+ 
+ [project]
+-- 
+2.54.0
+

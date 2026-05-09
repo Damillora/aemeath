@@ -26,4 +26,4 @@ sources:
 #- kind: tar
 #  url: 'kde_stable:plasma/%{plasma-version}/systemsettings-%{plasma-version}.tar.xz'
 #  ref: 18d2aab42f3f3ce17c5e636238c2d7a1908152f2203f521d6d8441537d3edf04
-  ref: 4a9d386fda3b5a308b6c3102019a82ebf48cd51f
+  ref: cfec3ce5721df46ae485c3e2851b75f0ddb411a9

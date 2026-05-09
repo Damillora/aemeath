@@ -1,0 +1,9 @@
+environment:
+  CFLAGS:  "%{cflags}"
+  CXXFLAGS: "%{cflags}"
+  LDFLAGS:  "%{ldflags}"
+  RUSTFLAGS:  "%{rustflags}"
+  CGO_CFLAGS: "%{cflags}"
+  CGO_CXXFLAGS: "%{cflags}"
+  CGO_LDFLAGS: "%{ldflags}"
+  GOFLAGS: "%{goflags}"

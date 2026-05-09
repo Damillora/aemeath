@@ -1,0 +1,52 @@
+diff --git a/pyproject.toml b/pyproject.toml
+index a0c7f8e3e3..25ddc8c4d6 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -16,7 +16,7 @@
+ requires = [
+     "setuptools>=77.0.1",
+     "wheel",
+-    "cython==3.1.1"
++    "cython>=3.1.1"
+ ]
+ build-backend = "setuptools.build_meta"
+ 
+diff --git a/setup.py b/setup.py
+index 38d3ab7229..9d736bfe1a 100644
+--- a/setup.py
++++ b/setup.py
+@@ -559,7 +559,7 @@ except ImportError:
+         sys.stderr.write(
+             "We could not find Cython. Setup may take 10-20 minutes.\n"
+         )
+-        SETUP_REQUIRES += ("cython==3.1.1",)
++        SETUP_REQUIRES += ("cython>=3.1.1",)
+ 
+ COMMAND_CLASS = {
+     "doc": commands.SphinxDocumentation,
+diff --git a/src/python/grpcio_observability/pyproject.toml b/src/python/grpcio_observability/pyproject.toml
+index 857a1f660b..e35d7aba8d 100644
+--- a/src/python/grpcio_observability/pyproject.toml
++++ b/src/python/grpcio_observability/pyproject.toml
+@@ -16,7 +16,7 @@
+ requires = [
+     "setuptools>=77.0.1",
+     "wheel",
+-    "Cython==3.1.1",
++    "Cython>=3.1.1",
+ ]
+ build-backend = "setuptools.build_meta"
+ 
+diff --git a/tools/distrib/python/grpcio_tools/pyproject.toml b/tools/distrib/python/grpcio_tools/pyproject.toml
+index bb2519268d..79561903c8 100644
+--- a/tools/distrib/python/grpcio_tools/pyproject.toml
++++ b/tools/distrib/python/grpcio_tools/pyproject.toml
+@@ -16,7 +16,7 @@
+ requires = [
+     "setuptools>=77.0.1",
+     "wheel",
+-    "Cython==3.1.1",
++    "Cython>=3.1.1",
+ ]
+ build-backend = "setuptools.build_meta"
+ 

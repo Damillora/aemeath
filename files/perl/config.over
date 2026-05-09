@@ -1,0 +1,3 @@
+cf_time=$(LC_ALL=C date --utc -d "@${SOURCE_DATE_EPOCH}")
+myuname="Linux builder 5.7.15 #1 SMP ${cf_time} ${BSTARCH} GNU/Linux"
+osvers="5.7.15"

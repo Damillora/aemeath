@@ -1,0 +1,22 @@
+diff --git a/cligen/cligen/package.py b/cligen/cligen/package.py
+index 75adf14..47ac8f5 100644
+--- a/cligen/cligen/package.py
++++ b/cligen/cligen/package.py
+@@ -8,15 +8,8 @@ import io
+ import os
+ import textwrap
+ 
+-
+-try:
+-    import pwd
+-
+-    def get_default_copyright_holder():
+-        return pwd.getpwuid(os.getuid()).pw_gecos
+-except ImportError:
+-    def get_default_copyright_holder():
+-        return 'COPYRIGHT HOLDER'
++def get_default_copyright_holder():
++    return 'COPYRIGHT HOLDER'
+ 
+ 
+ class Info(NamedTuple):

@@ -1,0 +1,6 @@
+sources:
+- kind: tar
+  url: github:docbook/xslt10-stylesheets/releases/download/release/1.79.2/docbook-xsl-nons-1.79.2.tar.bz2
+  ref: ee8b9eca0b7a8f89075832a2da7534bce8c5478fc8fc2676f512d5d87d832102
+- kind: patch
+  path: patches/docbook-xsl/docbook-xsl-nons-1.79.2-stack_fix-1.patch

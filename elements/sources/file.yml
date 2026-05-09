@@ -1,0 +1,6 @@
+sources:
+- kind: git_repo
+  url: github:file/file.git
+  track: FILE*
+  ref: FILE5_48-0-geb754ace19fed5481d8142426543100a2d6bae4e
+  version-guess-pattern: '(\d+)_(\d+)'

@@ -1,0 +1,12 @@
+sources:
+- kind: git_repo
+  url: github:besser82/libxcrypt.git
+  track: v*
+  ref: v4.5.2-0-gdb70b42bd7b2a5b00a8580c8dec0aa66791c950a
+
+config:
+  configure-commands:
+    (<):
+    # git is not available during bootstrap
+    - |
+      sed -i 's/git clean/true/' autogen.sh

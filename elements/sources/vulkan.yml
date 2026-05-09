@@ -3,17 +3,17 @@ sources:
   url: github:KhronosGroup/Vulkan-Headers.git
   directory: vulkan-headers
   track: vulkan-sdk-*
-  ref: vulkan-sdk-1.4.350.0-0-g8864cdc896bbc2a9b6eb36b3218fc9ef57908d77
+  ref: vulkan-sdk-1.4.350.1-0-g8864cdc896bbc2a9b6eb36b3218fc9ef57908d77
 - kind: git_repo
   url: github:KhronosGroup/Vulkan-Tools.git
   directory: vulkan-tools
   track: vulkan-sdk-*
-  ref: vulkan-sdk-1.4.350.0-0-g1cb3a319969cf0d3e2315b0a87a27447f55b4167
+  ref: vulkan-sdk-1.4.350.1-0-g1cb3a319969cf0d3e2315b0a87a27447f55b4167
 - kind: git_repo
   url: github:KhronosGroup/SPIRV-Headers.git
   directory: spirv-headers
   track: vulkan-sdk-*
-  ref: vulkan-sdk-1.4.350.0-0-gad9184e76a66b1001c29db9b0a3e87f646c64de0
+  ref: vulkan-sdk-1.4.350.1-0-gad9184e76a66b1001c29db9b0a3e87f646c64de0
 - kind: patch
   directory: spirv-headers
   path: patches/spirv-headers/0001-grammar-and-header-changes-for-SPV_INTEL_predicated_.patch
@@ -21,7 +21,7 @@ sources:
   url: github:KhronosGroup/SPIRV-Tools.git
   directory: spirv-tools
   track: vulkan-sdk-*
-  ref: vulkan-sdk-1.4.350.0-0-g0539c81f69a3daeb706fd3477dca61435b475156
+  ref: vulkan-sdk-1.4.350.1-0-g0539c81f69a3daeb706fd3477dca61435b475156
 - kind: patch
   directory: spirv-tools
   path: patches/spirv-tools/Remove-libSPIRV-Tools-shared.so.patch
@@ -29,14 +29,14 @@ sources:
   url: github:KhronosGroup/glslang.git
   directory: glslang
   track: vulkan-sdk-*
-  ref: vulkan-sdk-1.4.350.0-0-g275822a6261ee689aadb1da5f09a0ec2f058685c
+  ref: vulkan-sdk-1.4.350.1-0-g275822a6261ee689aadb1da5f09a0ec2f058685c
 - kind: git_repo
   url: github:KhronosGroup/Vulkan-Loader.git
   directory: vulkan-icd-loader
   track: vulkan-sdk-*
-  ref: vulkan-sdk-1.4.350.0-0-ga9e72c66d5cb79911eb9a9063bf4016dd0a3a123
+  ref: vulkan-sdk-1.4.350.1-0-ga9e72c66d5cb79911eb9a9063bf4016dd0a3a123
 - kind: git_repo
   url: github:zeux/volk.git
   directory: volk
   track: vulkan-sdk-*
-  ref: vulkan-sdk-1.4.350.0-0-g3ca312a4f38baa63d8006b6905abbeeb89c8087d
+  ref: vulkan-sdk-1.4.350.1-0-g3ca312a4f38baa63d8006b6905abbeeb89c8087d

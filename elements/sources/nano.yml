@@ -1,0 +1,4 @@
+sources:
+- kind: tar
+  url: gnu:nano/nano-9.0.tar.xz
+  ref: 9f384374b496110a25b73ad5a5febb384783c6e3188b37063f677ac908013fde

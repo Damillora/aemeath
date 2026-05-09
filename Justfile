@@ -1,5 +1,5 @@
-prod_keys := "false"
-bst := if prod_keys == "true" { "bst -o prod_keys true" } else  { "bst" }
+devel := "false"
+bst := if devel == "true" { "bst --no-strict" } else  { "bst" }
 
 [default]
 default: microsoft-keys build export disk-image
@@ -15,8 +15,19 @@ clean-disks:
 clean-live:
     rm -rf live
 
+source-track:
+    # - glibc updates way too often, and it causes a full rebuild, so we want to
+    #   track it only occassionally
+    {{bst}} source track \
+        --except bootstrap/glibc.bst \
+        --except components/sys-libs/glibc.bst
+
+source-track-all:
+    # Track everything including glibc
+    {{bst}} source track
+
 build:
-    {{bst}} build aemeath/desktop.bst
+    {{bst}} build components/platform/desktop.bst components/aemeath-tools/deploy-tools.bst components/boot-kernel/linux.bst
 
 export: clean-target
     {{bst}} build os/aemeath/export.bst

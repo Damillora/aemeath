@@ -1,0 +1,12 @@
+diff --git a/pyproject.toml b/pyproject.toml
+index c028031..d0413ec 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -73,6 +73,7 @@ build-backend = "hatchling.build"
+ source = "vcs"
+ 
+ [tool.hatch.version.raw-options]
++version_scheme = "only-version"
+ local_scheme = "no-local-version"
+ 
+ [tool.pyright]

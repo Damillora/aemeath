@@ -1,0 +1,4 @@
+sources:
+- kind: tar
+  url: gnu:groff/groff-1.24.1.tar.gz
+  ref: 74e2819795b6aff431aeac983d63a9c8968eeaba2a2eba7df8ba4c7b41e7cfd8

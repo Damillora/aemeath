@@ -1,0 +1,4 @@
+sources:
+- kind: tar
+  url: aemeath:files/libaio-0.3.113.tar.gz
+  ref: 1c561c20670c5c09cc8437a622008c0693c6a7816c1f30332da3796953b2f454

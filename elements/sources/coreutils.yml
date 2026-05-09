@@ -1,0 +1,4 @@
+sources:
+- kind: tar
+  url: gnu:coreutils/coreutils-9.11.tar.xz
+  ref: 394024eda0a5955217ceda9cd1201e65dc8fa3aa29c2951135a49521d57c3cc3

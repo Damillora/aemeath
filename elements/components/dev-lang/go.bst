@@ -4,15 +4,8 @@ kind: manual
 - elements/sources/go.yml
 
 build-depends:
-- freedesktop-sdk.bst:bootstrap/go.bst
-- freedesktop-sdk.bst:bootstrap/grep.bst
-- freedesktop-sdk.bst:bootstrap/sed.bst
-- freedesktop-sdk.bst:bootstrap/findutils.bst
-- freedesktop-sdk.bst:components/gcc.bst
-- freedesktop-sdk.bst:components/stripper.bst
-
-depends:
-- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+- components/buildsystems/minimal.bst
+- components/dev-lang/_private/go-bin.bst
 
 variables:
   optimize-debug: "false"
@@ -32,6 +25,7 @@ config:
   install-commands:
   - |
     install -Dm755 -t "%{install-root}%{libdir}/go" VERSION
+    install -Dm755 -t "%{install-root}%{libdir}/go" go.env
     install -Dm755 -t "%{install-root}%{libdir}/go/bin" bin/*
 
     mkdir -p "%{install-root}%{libdir}/go/pkg"
@@ -57,9 +51,6 @@ config:
 
   - |
     rm -vf "%{install-root}%{libdir}/go/src/debug/elf/testdata/libtiffxx.so_"
-
-  - |
-    %{install-extra}
 
 public:
   bst:

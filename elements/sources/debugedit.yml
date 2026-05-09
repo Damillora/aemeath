@@ -1,0 +1,5 @@
+sources:
+- kind: git_repo
+  url: sourceware:debugedit.git
+  track: debugedit-*
+  ref: debugedit-5.3-0-g20cb70e37d71d4f7b804ca7cc575b915e2ad10dd

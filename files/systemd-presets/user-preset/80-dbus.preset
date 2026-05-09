@@ -1,2 +1,4 @@
 # Enables the D-Bus service unconditionally for all user sessions
 enable dbus.socket
+# Force use of D-Bus Broker
+enable dbus-broker.service

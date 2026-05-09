@@ -7,8 +7,6 @@ kind: autotools
 
 build-depends:
 - binary-seed.bst
-
-depends:
 - bootstrap/binutils-stage1.bst
 
 variables:
@@ -32,6 +30,8 @@ variables:
     --disable-libssp
     --disable-libvtv
     --disable-libstdcxx
+    --enable-deterministic-archives
+    --enable-linker-build-id
     --enable-languages=c,c++
 
 config:
@@ -40,4 +40,4 @@ config:
       - sed -e '/m64=/s/lib64/lib/' -i.orig gcc/config/i386/t-linux64
   install-commands:
     (>):
-    - cat gcc/limitx.h gcc/glimits.h gcc/limity.h > `dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/include/limits.h
+    - cat gcc/limitx.h gcc/glimits.h gcc/limity.h > `dirname $(%{install-root}%{bindir}/%{bootstrap-triplet}-gcc -print-libgcc-file-name)`/include/limits.h

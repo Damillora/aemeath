@@ -3,3 +3,6 @@ variables:
   bootstrap-triplet: x86_64-aemeath-linux-gnu
   bootstrap-sysroot: /aemeath-sysroot
   strip-binaries: ''
+
+environment:
+  PATH: "%{bootstrap-prefix}/bin:/bin"

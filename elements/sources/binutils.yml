@@ -1,0 +1,23 @@
+variables:
+  disable-source: >-
+    --disable-gdb
+    --disable-gdbserver
+    --disable-libdecnumber
+    --disable-readline
+    --disable-sim
+
+config:
+  configure-commands:
+    (<):
+    - |
+      # https://sourceware.org/bugzilla/show_bug.cgi?id=29933
+      rm -rf gdb
+
+sources:
+- kind: git_repo
+  url: sourceware:binutils-gdb.git
+  track: binutils-*
+  exclude:
+  - binutils-2_41
+  ref: binutils-2_46-0-g49d4d3fafa4ec4ff5a3460d91d5b1ed5286487db
+  version-guess-pattern: '(\d+)_(\d+)(?:_(\d+))?'

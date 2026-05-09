@@ -1,0 +1,5 @@
+variables:
+  bootstrap-prefix: /aemeath-tools
+  bootstrap-triplet: x86_64-aemeath-linux-gnu
+  bootstrap-sysroot: /aemeath-sysroot
+  strip-binaries: ''

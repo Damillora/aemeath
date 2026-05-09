@@ -1,0 +1,14 @@
+sources:
+  (>):
+  - kind: tar
+    url: gnu:gmp/gmp-6.3.0.tar.xz
+    directory: gmp
+    ref: a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898
+  - kind: tar
+    url: gnu:mpfr/mpfr-4.2.2.tar.xz
+    directory: mpfr
+    ref: b67ba0383ef7e8a8563734e2e889ef5ec3c3b898a01d00fa0a6869ad81c6ce01
+  - kind: tar
+    url: gnu:mpc/mpc-1.4.1.tar.xz
+    directory: mpc
+    ref: 91204cd32f164bd3b7c992d4a6a8ce6519511aadab30f78b6982d0bf8d73e931

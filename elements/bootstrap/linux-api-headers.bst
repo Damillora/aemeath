@@ -13,4 +13,5 @@ config:
       make mrproper
       make headers
       find usr/include -type f ! -name '*.h' -delete
+      mkdir -p %{install-root}%{prefix}
       cp -rv usr/include %{install-root}%{prefix}

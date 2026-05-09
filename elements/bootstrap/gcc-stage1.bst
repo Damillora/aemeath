@@ -13,6 +13,7 @@ depends:
 
 variables:
   prefix: "%{bootstrap-prefix}"
+  build-dir: build
   conf-local: >-
     --target=%{bootstrap-triplet}
     --with-glibc-version=2.43

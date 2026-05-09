@@ -9,6 +9,7 @@ build-depends:
 
 variables:
   prefix: "%{bootstrap-prefix}"
+  build-dir: build
   conf-local: >-
     --with-sysroot=%{bootstrap-sysroot}
     --target=%{bootstrap-triplet}

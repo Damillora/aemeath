@@ -15,6 +15,7 @@ depends:
 
 variables:
   conf-local: >-
+    --host=none-linux-gnu
     --disable-static
     --enable-cxx
 

@@ -2,7 +2,7 @@ kind: autotools
 
 (@):
 - elements/bootstrap/include/vars.yml
-- elements/sources/gettext.yml
+- elements/sources/util-linux.yml
 
 build-depends:
 - bootstrap/filesystem.bst
@@ -16,18 +16,20 @@ build-depends:
 - bootstrap/diffutils.bst
 - bootstrap/findutils.bst
 - bootstrap/gawk.bst
-- bootstrap/tar.bst
-- bootstrap/gzip.bst
 
 depends:
 - bootstrap/glibc.bst
 
 variables:
-   conf-local: >-
-     --disable-shared
-
-config:
-  install-commands:
-    - |
-      mkdir -p %{installroot}%{bindir}
-      cp -v gettext-tools/src/{msgfmt,msgmerge,xgettext} %{install-root}%{bindir}/
+  conf-local: >-
+    --disable-chfn-chsh
+    --disable-login
+    --disable-nologin
+    --disable-su
+    --disable-setpriv
+    --disable-runuser
+    --disable-pylibmount
+    --disable-static
+    --disable-liblastlog2
+    --without-python
+    --docdir=/usr/share/doc/util-linux-2.42

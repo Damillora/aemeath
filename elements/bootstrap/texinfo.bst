@@ -2,7 +2,7 @@ kind: autotools
 
 (@):
 - elements/bootstrap/include/vars.yml
-- elements/sources/gettext.yml
+- elements/sources/texinfo.yml
 
 build-depends:
 - bootstrap/filesystem.bst
@@ -16,18 +16,6 @@ build-depends:
 - bootstrap/diffutils.bst
 - bootstrap/findutils.bst
 - bootstrap/gawk.bst
-- bootstrap/tar.bst
-- bootstrap/gzip.bst
 
 depends:
 - bootstrap/glibc.bst
-
-variables:
-   conf-local: >-
-     --disable-shared
-
-config:
-  install-commands:
-    - |
-      mkdir -p %{installroot}%{bindir}
-      cp -v gettext-tools/src/{msgfmt,msgmerge,xgettext} %{install-root}%{bindir}/

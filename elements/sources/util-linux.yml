@@ -1,0 +1,9 @@
+sources:
+- kind: git_repo
+  url: kernel:utils/util-linux/util-linux.git
+  track: v*
+  exclude:
+  - v*-rc*
+  - v*-devel*
+  - v*-start*
+  ref: v2.42-0-g04d22901dd3d91d25e985596d588b9cec1ee267d

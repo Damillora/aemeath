@@ -2,9 +2,12 @@ kind: manual
 
 build-depends:
 - bootstrap/platforms/minimal.bst
+- components/sys-devel/binutils.bst
+- components/sys-devel/gcc.bst
 
 depends:
-- components/sys-toolchain/glibc.bst
+- components/sys-libs/glibc.bst
+- components/sys-libs/gcc-libs.bst
 
 config:
   configure-commands:
@@ -23,9 +26,10 @@ config:
   - |
     make PREFIX=%{install-root}%{prefix} install
   - |
-    cp -av libbz2.so.* %{libdir}
-    ln -sfv libbz2.so.1.0.8 %{libdir}/libbz2.so
-    ln -sfv libbz2.so.1.0.8 %{libdir}/libbz2.so.1
+    mkdir -p %{install-root}%{libdir}
+    cp -av libbz2.so.* %{install-root}%{libdir}
+    ln -sfv libbz2.so.1.0.8 %{install-root}%{libdir}/libbz2.so
+    ln -sfv libbz2.so.1.0.8 %{install-root}%{libdir}/libbz2.so.1
 
 sources:
 - kind: git_repo

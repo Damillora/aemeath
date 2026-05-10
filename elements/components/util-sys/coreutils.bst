@@ -16,3 +16,6 @@ depends:
 #  install-commands:
 #    (>):
 #    - rm "%{install-root}/usr/share/info/dir"
+
+environment:
+  FORCE_UNSAFE_CONFIGURE: "1"

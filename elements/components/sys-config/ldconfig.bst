@@ -1,7 +1,10 @@
 kind: manual
 
-depends:
-- public-stacks/runtime-minimal.bst
+build-depends:
+- components/sys-data/filesystem.bst
+- components/util-shells/bash.bst
+- components/util-sys/coreutils.bst
+- components/sys-libs/glibc.bst
 
 variables:
   strip-binaries: ''

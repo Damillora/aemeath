@@ -12,6 +12,20 @@ build-depends:
 depends:
 - components/sys-libs/glibc.bst
 - components/sys-libs/gcc-libs.bst
+- components/sys-libs/zlib-ng.bst
+- components/sys-libs/readline.bst
+- components/util-archive/bzip2.bst
+
+variables:
+  conf-local: >-
+    --enable-unicode
+    --enable-jit
+    --enable-pcre2-16
+    --enable-pcre2-32
+    --enable-pcre2grep-libz
+    --enable-pcre2grep-libbz2
+    --enable-pcre2test-libreadline
+    --disable-static
 
 sources:
 - kind: git_repo

@@ -10,4 +10,5 @@ build-depends:
 
 depends:
 - components/sys-libs/glibc.bst
+- components/sys-libs/gcc-libs.bst
 - components/sys-libs/pcre2.bst

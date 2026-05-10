@@ -32,4 +32,5 @@ aliases:
   gcc: https://gcc.gnu.org/git/
   gnu: https://ftp.jaist.ac.jp/pub/GNU/
   savannah: https://git.savannah.gnu.org/git/
+  savannah_download: https://download.savannah.gnu.org/releases/
   iana: https://www.iana.org/

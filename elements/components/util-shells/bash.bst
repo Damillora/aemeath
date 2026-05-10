@@ -16,3 +16,9 @@ variables:
   conf-local: >-
     --with-installed-readline
     --without-bash-malloc
+
+config:
+  install-commands:
+    (>):
+    - ln -sv bash %{install-root}%{bindir}/sh
+    #- rm "%{install-root}/usr/share/info/dir"

@@ -4,16 +4,15 @@ build-depends:
 - bootstrap/platforms/autotools.bst
 - components/sys-devel/binutils.bst
 - components/sys-devel/gcc.bst
+- components/sys-libs/gettext.bst
 
 depends:
 - components/sys-libs/glibc.bst
 - components/sys-libs/gcc-libs.bst
-- components/sys-libs/gettext.bst
-
 config:
   configure-commands:
     (<):
-    - ./autogen.sh
+    - ./autogen.sh --no-po4a --no-doxygen
 
     # po/en@*.po are generated files. They are not reproducible
     # because of PO-Revision-Date.

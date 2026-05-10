@@ -18,7 +18,8 @@ runtime-depends:
 - bootstrap/glibc.bst
 
 variables:
-   conf-local: >-
-     --host=%{bootstrap-triplet}
-     --build=$(build-aux/config.guess)
-     --disable-static
+  autogen: "./autogen.sh --no-po4a --no-doxygen"
+  conf-local: >-
+    --host=%{bootstrap-triplet}
+    --build=$(build-aux/config.guess)
+    --disable-static

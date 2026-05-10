@@ -2,7 +2,7 @@ kind: autotools
 
 (@):
 - elements/bootstrap/include/vars.yml
-- elements/sources/gettext.yml
+- elements/sources/bison.yml
 
 build-depends:
 - bootstrap/filesystem.bst

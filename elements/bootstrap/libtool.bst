@@ -2,7 +2,7 @@ kind: autotools
 
 (@):
 - elements/bootstrap/include/vars.yml
-- elements/sources/texinfo.yml
+- elements/sources/libtool.yml
 
 build-depends:
 - bootstrap/filesystem.bst
@@ -16,12 +16,6 @@ build-depends:
 - bootstrap/diffutils.bst
 - bootstrap/findutils.bst
 - bootstrap/gawk.bst
-- bootstrap/perl.bst
 
 depends:
-- bootstrap/glibc.bst
-
-config:
-  install-commands:
-    (>):
-    - rm "%{install-root}/usr/share/info/dir"
+- bootstrap/m4.bst

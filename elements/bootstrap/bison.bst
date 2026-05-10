@@ -16,6 +16,7 @@ build-depends:
 - bootstrap/diffutils.bst
 - bootstrap/findutils.bst
 - bootstrap/gawk.bst
+- bootstrap/m4.bst
 
-runtime-depends:
+depends:
 - bootstrap/glibc.bst

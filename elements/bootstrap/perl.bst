@@ -17,7 +17,7 @@ build-depends:
 - bootstrap/findutils.bst
 - bootstrap/gawk.bst
 
-runtime-depends:
+depends:
 - bootstrap/glibc.bst
 
 config:

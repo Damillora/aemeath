@@ -16,6 +16,9 @@ build-depends:
 - bootstrap/diffutils.bst
 - bootstrap/findutils.bst
 - bootstrap/gawk.bst
+- bootstrap/autoconf.bst
+- bootstrap/automake.bst
+- bootstrap/libtool.bst
 
 depends:
 - bootstrap/glibc.bst

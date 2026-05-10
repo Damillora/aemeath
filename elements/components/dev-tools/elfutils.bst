@@ -1,7 +1,6 @@
 kind: autotools
 
 (@):
-- elements/bootstrap/include/vars.yml
 - elements/sources/elfutils.yml
 
 build-depends:

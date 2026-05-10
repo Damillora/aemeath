@@ -5,6 +5,7 @@ kind: manual
 - elements/sources/linux-headers.yml
 
 build-depends:
+
 - bootstrap/filesystem.bst
 - bootstrap/binutils-stage2.bst
 - bootstrap/gcc-stage2.bst
@@ -16,6 +17,7 @@ build-depends:
 - bootstrap/diffutils.bst
 - bootstrap/findutils.bst
 - bootstrap/gawk.bst
+- bootstrap/gzip.bst
 
 config:
   install-commands:
@@ -25,3 +27,10 @@ config:
       find usr/include -type f ! -name '*.h' -delete
       mkdir -p %{install-root}%{prefix}
       cp -rv usr/include %{install-root}%{prefix}
+
+public:
+  bst:
+    overlap-whitelist:
+    # New headers conflict with old linux-api-headers used by bootstrap glibc.
+    # Unsure whether to separate this to its own component
+    - "%{includedir}/**"

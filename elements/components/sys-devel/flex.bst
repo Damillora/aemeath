@@ -1,8 +1,27 @@
 kind: autotools
 
+(@):
+- elements/sources/flex.yml
+
 build-depends:
 # Toolchain depends on this package
-- bootstrap/buildsystems/autotools.bst
+- bootstrap/filesystem.bst
+- bootstrap/binutils-stage2.bst
+- bootstrap/gcc-stage2.bst
+- bootstrap/bison.bst
+- bootstrap/coreutils.bst
+- bootstrap/make.bst
+- bootstrap/grep.bst
+- bootstrap/bash.bst
+- bootstrap/sed.bst
+- bootstrap/diffutils.bst
+- bootstrap/findutils.bst
+- bootstrap/gawk.bst
+- bootstrap/gzip.bst
+- bootstrap/autoconf.bst
+- bootstrap/automake.bst
+- bootstrap/libtool.bst
+- bootstrap/m4.bst
 
 depends:
 - components/sys-libs/glibc.bst
@@ -16,8 +35,3 @@ config:
     (>):
       - ln -sv flex   %{install-root}%{bindir}/lex
       - ln -sv flex.1 %{install-root}%{mandir}/man1/lex.1
-
-sources:
-- kind: tar
-  url: github:westes/flex/files/981163/flex-2.6.4.tar.gz
-  ref: e87aae032bf07c26f85ac0ed3250998c37621d95f8bd748b31f15b33c45ee995

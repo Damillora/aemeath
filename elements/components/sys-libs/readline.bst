@@ -1,21 +1,26 @@
 kind: autotools
 
 build-depends:
-- bootstrap/buildsystems/autotools.bst
+- bootstrap/platforms/autotools.bst
+- components/sys-devel/binutils.bst
+- components/sys-devel/gcc.bst
 
 depends:
-- components/sys-toolchain/glibc.bst
+- components/sys-libs/glibc.bst
+- components/sys-libs/ncurses.bst
 
 variables:
   conf-local: >-
     --disable-static
     --with-curses
+  make-args: >-
+    SHLIB_LIBS="-lncursesw"
 
 config:
   configure-commands:
     (<):
       - sed -i 's/-Wl,-rpath,[^ ]*//' support/shobj-conf
-      -
+
 sources:
 - kind: git_repo
   url: savannah:readline.git

@@ -23,7 +23,6 @@ public:
   bst:
     split-rules:
       static-blocklist:
-        (=):
         - '%{libdir}/libasan.a'
         - '%{libdir}/libatomic.a'
         - '%{libdir}/libgfortran.a'

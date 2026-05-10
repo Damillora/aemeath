@@ -12,3 +12,8 @@ depends:
 - components/util-archive/lz4.bst
 - components/util-archive/zstd.bst
 - components/util-archive/xz.bst
+# Utilities
+- components/util-sys/grep.bst
+- components/util-sys/sed.bst
+- components/util-sys/diffutils.bst
+- components/util-sys/findutils.bst

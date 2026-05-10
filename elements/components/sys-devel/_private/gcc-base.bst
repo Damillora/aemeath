@@ -38,7 +38,8 @@ variables:
 config:
   configure-commands:
     (<):
-      - sed '6031s/$add_dir//' -i ltmain.sh
+      - sed -e '/m64=/s/lib64/lib/' -i gcc/config/i386/t-linux64
+      #- sed -i 's/char [*]q/const &/' libgomp/affinity-fmt.c
   install-commands:
     (>):
     - rm "%{install-root}/usr/share/info/dir"

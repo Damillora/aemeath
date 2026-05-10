@@ -1,10 +1,8 @@
 kind: script
 
 build-depends:
+- bootstrap/platforms/minimal.bst
 - components/sys-libs/glibc.bst
-- bootstrap/bash.bst
-- bootstrap/coreutils.bst
-- bootstrap/gzip.bst
 
 environment:
   LC_ALL: C

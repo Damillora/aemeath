@@ -1,7 +1,7 @@
 kind: autotools
 
 (@):
-- elements/sources/file.yml
+- elements/sources/grep.yml
 
 build-depends:
 - bootstrap/platforms/autotools.bst
@@ -10,3 +10,4 @@ build-depends:
 
 depends:
 - components/sys-libs/glibc.bst
+- components/sys-libs/pcre2.bst

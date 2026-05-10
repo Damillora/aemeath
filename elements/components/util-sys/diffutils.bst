@@ -1,7 +1,7 @@
 kind: autotools
 
 (@):
-- elements/sources/file.yml
+- elements/sources/diffutils.yml
 
 build-depends:
 - bootstrap/platforms/autotools.bst
@@ -10,3 +10,7 @@ build-depends:
 
 depends:
 - components/sys-libs/glibc.bst
+#config:
+#  install-commands:
+#    (>):
+#    - rm "%{install-root}/usr/share/info/dir"

@@ -11,7 +11,7 @@ build-depends:
 - components/sys-devel/binutils.bst
 
 depends:
-- bootstrap/glibc.bst
+- components/sys-libs/glibc.bst
 - components/sys-devel/flex.bst
 
 config:

@@ -9,5 +9,5 @@ build-depends:
 - components/sys-devel/binutils.bst
 - components/sys-devel/gcc.bst
 
-runtime-depends:
+depends:
 - components/sys-libs/glibc.bst

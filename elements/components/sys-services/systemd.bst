@@ -5,6 +5,7 @@ build-depends:
 
 runtime-depends:
 - components/sys-libs/systemd-libs.bst
+- components/sys-services/linux-pam.bst
 
 config:
   exclude:

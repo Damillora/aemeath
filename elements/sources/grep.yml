@@ -1,0 +1,4 @@
+sources:
+- kind: tar
+  url: gnu:grep/grep-3.12.tar.xz
+  ref: 2649b27c0e90e632eadcd757be06c6e9a4f48d941de51e7c0f83ff76408a07b9

@@ -27,6 +27,8 @@ aliases:
   rust: https://static.rust-lang.org/
   nodejs: https://nodejs.org/dist/
   sourceware: https://sourceware.org/git/
+  sourceware_pub: https://sourceware.org/pub/
+  sourceware_ftp: https://sourceware.org/ftp/
   gcc: https://gcc.gnu.org/git/
   gnu: https://ftp.jaist.ac.jp/pub/GNU/
   savannah: https://git.savannah.gnu.org/git/

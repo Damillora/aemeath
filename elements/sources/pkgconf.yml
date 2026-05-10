@@ -1,0 +1,5 @@
+sources:
+- kind: git_repo
+  url: github:pkgconf/pkgconf.git
+  track: pkgconf-*
+  ref: pkgconf-2.5.1-0-g4fc570f91d9d8d843ab32d2198a5c064538d8ffd

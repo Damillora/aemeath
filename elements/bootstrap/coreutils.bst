@@ -26,3 +26,8 @@ variables:
 
 environment:
   FORCE_UNSAFE_CONFIGURE: "1"
+
+config:
+  install-commands:
+    (>):
+    - rm "%{install-root}/usr/share/info/dir"

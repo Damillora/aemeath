@@ -20,7 +20,6 @@ build-depends:
 
 runtime-depends:
 - bootstrap/glibc.bst
-- bootstrap/libstdcxx-libs.bst
 - bootstrap/binutils-stage2.bst
 
 variables:
@@ -53,3 +52,4 @@ config:
   install-commands:
     (>):
     - ln -sv gcc %{install-root}%{bindir}/cc
+    - rm "%{install-root}/usr/share/info/dir"

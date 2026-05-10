@@ -23,6 +23,5 @@ variables:
 config:
   install-commands:
     (>):
-    - ln -sv lib %{install-root}%{prefix}/lib64
     - rm -rf %{install-root}%{datadir}/info
     - rm -rf %{install-root}%{libdir}/bfd-plugins

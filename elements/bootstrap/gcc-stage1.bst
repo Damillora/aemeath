@@ -39,8 +39,5 @@ config:
     (<):
     - sed -e '/m64=/s/lib64/lib/' -i gcc/config/i386/t-linux64
   install-commands:
-    (<):
-    - mkdir -p %{install-root}%{prefix}/%{lib}
-    - ln -sv %{lib} %{install-root}%{prefix}/lib64
     (>):
     - cat gcc/limitx.h gcc/glimits.h gcc/limity.h > `dirname $(%{install-root}%{bindir}/%{bootstrap-triplet}-gcc -print-libgcc-file-name)`/include/limits.h

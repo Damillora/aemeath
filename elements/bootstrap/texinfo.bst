@@ -16,12 +16,7 @@ build-depends:
 - bootstrap/diffutils.bst
 - bootstrap/findutils.bst
 - bootstrap/gawk.bst
-- bootstrap/perl.bst
 
 depends:
 - bootstrap/glibc.bst
-
-config:
-  install-commands:
-    (>):
-    - rm "%{install-root}/usr/share/info/dir"
+- bootstrap/perl.bst

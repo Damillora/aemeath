@@ -1,4 +1,4 @@
 sources:
 - kind: tar
   url: gnu:libtool/libtool-2.5.4.tar.xz
-  ref: 168aa363278351b89af56684448f525a5bce5079d0b6842bd910fdd3f1646887
+  ref: f81f5860666b0bc7d84baddefa60d1cb9fa6fceb2398cc3baca6afaa60266675

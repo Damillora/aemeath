@@ -29,5 +29,5 @@ variables:
 config:
   install-commands:
     - |
-      mkdir -p %{installroot}%{bindir}
+      mkdir -p %{install-root}%{bindir}
       cp -v gettext-tools/src/{msgfmt,msgmerge,xgettext} %{install-root}%{bindir}/

@@ -21,3 +21,8 @@ variables:
    conf-local: >-
      --host=%{bootstrap-triplet}
      --build=$(build-aux/config.guess)
+
+config:
+  install-commands:
+    (>):
+    - rm "%{install-root}/usr/share/info/dir"

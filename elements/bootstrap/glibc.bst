@@ -29,3 +29,6 @@ config:
   configure-commands:
     (<):
     - echo "rootsbindir=%{sbindir}" > configparms
+  install-commands:
+    (>):
+    - rm "%{install-root}/usr/share/info/dir"

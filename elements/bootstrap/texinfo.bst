@@ -19,3 +19,8 @@ build-depends:
 
 depends:
 - bootstrap/glibc.bst
+
+config:
+  install-commands:
+    (>):
+    - rm "%{install-root}/usr/share/info/dir"

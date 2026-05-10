@@ -20,3 +20,8 @@ runtime-depends:
 variables:
    conf-local: >-
      --host=%{bootstrap-triplet}
+
+config:
+  install-commands:
+    (>):
+    - rm "%{install-root}/usr/share/info/dir"

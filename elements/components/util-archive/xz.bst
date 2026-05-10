@@ -8,11 +8,13 @@ build-depends:
 - components/sys-devel/binutils.bst
 - components/sys-devel/gcc.bst
 - components/sys-libs/gettext.bst
+- components/util-archive/gzip.bst
 
 depends:
 - components/sys-libs/glibc.bst
 - components/sys-libs/gcc-libs.bst
 
 variables:
-   conf-local: >-
+  conf-local: >-
      --disable-static
+  autogen: ./autogen.sh --no-po4a --no-doxygen

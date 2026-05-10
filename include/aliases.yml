@@ -16,6 +16,7 @@ aliases:
   xiph: https://downloads.xiph.org/
   dest-unreach: http://www.dest-unreach.org/
   sourceforge: https://sourceforge.net/projects/
+  sourceforge_dl: https://downloads.sourceforge.net/
   rustlang: https://static.rust-lang.org/
   qt: https://download.qt.io/official_releases/qt/
   kde: https://invent.kde.org/

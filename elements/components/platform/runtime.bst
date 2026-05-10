@@ -15,6 +15,8 @@ depends:
 # Utilities
 - components/util-sys/grep.bst
 - components/util-sys/sed.bst
+- components/util-sys/less.bst
 - components/util-sys/diffutils.bst
 - components/util-sys/findutils.bst
 - components/util-sys/psmisc.bst
+#- components/util-sys/procps-ng.bst

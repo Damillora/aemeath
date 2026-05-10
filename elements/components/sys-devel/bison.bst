@@ -11,3 +11,4 @@ build-depends:
 depends:
 - components/sys-libs/glibc.bst
 - components/sys-libs/gcc-libs.bst
+- components/dev-tools/m4.bst

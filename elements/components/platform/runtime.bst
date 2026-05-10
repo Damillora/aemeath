@@ -20,3 +20,7 @@ depends:
 - components/util-sys/findutils.bst
 - components/util-sys/psmisc.bst
 #- components/util-sys/procps-ng.bst
+# Services
+- components/sys-services/systemd.bst
+- components/sys-services/linux-pam.bst
+#- components/sys-services/shadow.bst

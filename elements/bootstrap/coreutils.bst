@@ -20,7 +20,7 @@ runtime-depends:
 variables:
    conf-local: >-
      --host=%{bootstrap-triplet}
-     --build=$(./config.guess)
+     --build=$(build-aux/config.guess)
      --enable-install-program=hostname
      --enable-no-install-program=kill,uptime
 

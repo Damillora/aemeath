@@ -23,6 +23,9 @@ variables:
      --build=$(build-aux/config.guess)
 
 config:
-   configure-commands:
+  configure-commands:
       (<):
         - sed -i 's/extras//' Makefile.in
+  install-commands:
+    (>):
+    - rm "%{install-root}/usr/share/info/dir"

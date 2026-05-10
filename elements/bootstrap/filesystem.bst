@@ -10,4 +10,6 @@ config:
 
       ln -sv %{bindir} %{install-root}/bin
       ln -sv %{libdir} %{install-root}/lib
+      ln -sv %{libdir} %{install-root}/lib64
+      ln -sv %{libdir} %{install-root}%{prefix}/lib64
       ln -sv %{bindir} %{install-root}/sbin

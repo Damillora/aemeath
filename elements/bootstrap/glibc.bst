@@ -12,6 +12,9 @@ build-depends:
   config:
     location: "%{bootstrap-sysroot}"
 
+runtime-depends:
+- bootstrap/linux-api-headers.bst
+
 variables:
   build-dir: build
   conf-local: >-

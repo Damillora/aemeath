@@ -22,3 +22,8 @@ variables:
      --host=%{bootstrap-triplet}
      --build=$(build-aux/config.guess)
      gl_cv_func_strcasecmp_works=yes
+
+config:
+  install-commands:
+    (>):
+    - rm "%{install-root}/usr/share/info/dir"

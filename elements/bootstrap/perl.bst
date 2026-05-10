@@ -1,8 +1,8 @@
-kind: autotools
+kind: make
 
 (@):
 - elements/bootstrap/include/vars.yml
-- elements/sources/gettext.yml
+- elements/sources/perl.yml
 
 build-depends:
 - bootstrap/filesystem.bst
@@ -17,14 +17,20 @@ build-depends:
 - bootstrap/findutils.bst
 - bootstrap/gawk.bst
 
-depends:
+runtime-depends:
 - bootstrap/glibc.bst
 
-variables:
-   conf-local: >-
-     --disable-shared
-
 config:
+  configure-commands:
+  - |
+    sh Configure -des \
+      -Dprefix="%{prefix}" \
+      -Dvendorprefix="%{prefix}" \
+      -D useshrplib
+
   install-commands:
+    (>):
     - |
-      cp -v gettext-tools/src/{msgfmt,msgmerge,xgettext} %{bindir}/
+      rm "%{install-root}%{bindir}/perl"
+      ln -sr "%{install-root}%{bindir}"/perl[0-9]* "%{install-root}%{bindir}/perl"
+

@@ -42,6 +42,7 @@ config:
       #- sed -i 's/char [*]q/const &/' libgomp/affinity-fmt.c
   install-commands:
     (>):
+    - ln -sv gcc %{install-root}%{bindir}/cc
     - rm "%{install-root}/usr/share/info/dir"
 
 public:

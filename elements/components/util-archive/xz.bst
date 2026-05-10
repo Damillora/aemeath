@@ -4,7 +4,7 @@ kind: autotools
 - elements/sources/xz.yml
 
 build-depends:
-- components/buildsystems/minimal.bst
+- components/buildsystems/autotools.bst
 - components/sys-devel/binutils.bst
 - components/sys-devel/gcc.bst
 - components/sys-libs/gettext.bst

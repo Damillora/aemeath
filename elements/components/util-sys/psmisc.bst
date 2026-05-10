@@ -1,21 +1,19 @@
 kind: autotools
 
-(@):
-- elements/sources/gawk.yml
-
 build-depends:
 - bootstrap/platforms/autotools.bst
 - components/sys-devel/binutils.bst
 - components/sys-devel/gcc.bst
+- components/sys-libs/gettext.bst
 
 depends:
 - components/sys-libs/glibc.bst
 - components/sys-libs/gcc-libs.bst
+- components/sys-libs/ncurses.bst
 
-config:
-  configure-commands:
-      (<):
-        - sed -i 's/extras//' Makefile.in
-  #install-commands:
-  #  (>):
-  #  - rm "%{install-root}/usr/share/info/dir"
+sources:
+- kind: git_repo
+  url: gitlab:psmisc/psmisc.git
+  track: v*.*
+  ref: v23.7rc1-0-g3b4adf22ad9623fdbca3c89c6d59b15e7fe309f1
+

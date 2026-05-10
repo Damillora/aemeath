@@ -4,36 +4,22 @@ kind: autotools
 - elements/sources/gcc.yml
 
 build-depends:
-- bootstrap/filesystem.bst
+- bootstrap/platforms/autotools.bst
 - bootstrap/gcc-stage2.bst
-- bootstrap/bison.bst
-- bootstrap/coreutils.bst
-- bootstrap/make.bst
-- bootstrap/grep.bst
-- bootstrap/bash.bst
-- bootstrap/sed.bst
-- bootstrap/diffutils.bst
-- bootstrap/findutils.bst
-- bootstrap/gawk.bst
-- bootstrap/gzip.bst
-- bootstrap/autoconf.bst
-- bootstrap/automake.bst
-- bootstrap/libtool.bst
-- bootstrap/m4.bst
 - bootstrap/gettext-tools.bst
 - bootstrap/texinfo.bst
 - bootstrap/tar.bst
 
 depends:
 - components/sys-devel/binutils.bst
+- components/sys-devel/gmp.bst
+- components/sys-devel/mpfr.bst
+- components/sys-devel/mpc.bst
+- components/sys-devel/flex.bst
 - components/sys-libs/glibc.bst
-- components/sys-libs/gmp.bst
-- components/sys-libs/mpfr.bst
-- components/sys-libs/mpc.bst
 - components/sys-libs/zlib-ng.bst
 - components/dev-tools/pkgconf.bst
 - components/util-archive/zstd.bst
-- components/sys-devel/flex.bst
 
 variables:
   build-dir: build

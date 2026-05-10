@@ -4,19 +4,10 @@ kind: autotools
 - elements/sources/elfutils.yml
 
 build-depends:
-- bootstrap/filesystem.bst
+- bootstrap/platforms/autotools.bst
 - bootstrap/binutils-stage2.bst
 - bootstrap/gcc-stage2.bst
-- bootstrap/coreutils.bst
-- bootstrap/make.bst
-- bootstrap/grep.bst
-- bootstrap/bash.bst
-- bootstrap/sed.bst
-- bootstrap/diffutils.bst
-- bootstrap/findutils.bst
-- bootstrap/gawk.bst
 - bootstrap/pkgconf.bst
-- bootstrap/m4.bst
 
 depends:
 - bootstrap/glibc.bst

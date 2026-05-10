@@ -1,10 +1,10 @@
 kind: manual
 
 build-depends:
-- bootstrap/buildsystems/minimal.bst
+- bootstrap/platforms/minimal.bst
 
 depends:
-- components/sys-toolchain-/glibc.bst
+- components/sys-toolchain/glibc.bst
 
 config:
   configure-commands:

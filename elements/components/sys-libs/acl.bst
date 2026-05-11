@@ -4,6 +4,7 @@ build-depends:
 - bootstrap/platforms/autotools.bst
 - components/sys-devel/binutils.bst
 - components/sys-devel/gcc.bst
+- components/dev-tools/gettext.bst
 
 depends:
 - components/sys-libs/glibc.bst

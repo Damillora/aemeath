@@ -2,7 +2,7 @@ kind: autotools
 
 build-depends:
 - components/buildsystems/autotools.bst
-- bootstrap/texinfo.bst
+- components/dev-tools/texinfo.bst
 
 depends:
 - components/sys-libs/glibc.bst

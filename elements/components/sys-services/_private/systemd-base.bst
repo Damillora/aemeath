@@ -7,10 +7,13 @@ build-depends:
 - components/buildsystems/meson.bst
 - components/sys-libs/libcap.bst
 - components/sys-libs/libxcrypt.bst
+- components/security-libs/p11-kit.bst
 - components/dev-tools/gperf.bst
 - components/util-archive/lz4.bst
 - components/util-archive/zstd.bst
+- components/util-archive/xz.bst
 - components/sys-services/linux-pam.bst
+- components/util-sys/util-linux.bst
 
 config:
   install-commands:

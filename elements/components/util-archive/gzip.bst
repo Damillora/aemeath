@@ -4,7 +4,7 @@ kind: autotools
 - elements/sources/gzip.yml
 
 build-depends:
-- components/buildsystems/minimal.bst
+- bootstrap/platforms/minimal.bst
 - components/sys-devel/binutils.bst
 - components/sys-devel/gcc.bst
 

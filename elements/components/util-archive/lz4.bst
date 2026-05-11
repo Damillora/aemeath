@@ -11,7 +11,7 @@ depends:
 
 variables:
   make-args: >-
-    BUILD_STATIC=no PREFIX=%{install-root}%{prefix}
+    BUILD_STATIC=no PREFIX=%{prefix}
 
 sources:
 - kind: git_repo

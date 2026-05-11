@@ -9,6 +9,7 @@ runtime-depends:
 - components/dev-tools/gperf.bst
 - components/util-archive/lz4.bst
 - components/util-archive/zstd.bst
+- components/util-archive/xz.bst
 
 config:
   include:

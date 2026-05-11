@@ -2,10 +2,14 @@ kind: autotools
 
 build-depends:
 - components/buildsystems/autotools.bst
+- components/dev-tools/groff.bst
 
 depends:
 - components/sys-libs/glibc.bst
 - components/sys-libs/gcc-libs.bst
+
+variables:
+  autogen: make -f Makefile.aut distfiles
 
 public:
   cpe:

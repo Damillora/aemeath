@@ -8,9 +8,11 @@ build-depends:
 - components/sys-devel/binutils.bst
 - components/sys-devel/gcc.bst
 - components/util-archive/tar.bst
+- components/util-archive/gzip.bst
 
 runtime-depends:
 - components/util-archive/tar.bst
+- components/util-archive/gzip.bst
 
 depends:
 - components/sys-libs/glibc.bst

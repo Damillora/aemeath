@@ -5,17 +5,9 @@ kind: make
 
 build-depends:
 # Toolchain depends on this package
-- bootstrap/filesystem.bst
+- bootstrap/platforms/minimal.bst
 - bootstrap/binutils-stage2.bst
 - bootstrap/gcc-stage2.bst
-- bootstrap/coreutils.bst
-- bootstrap/make.bst
-- bootstrap/grep.bst
-- bootstrap/bash.bst
-- bootstrap/sed.bst
-- bootstrap/diffutils.bst
-- bootstrap/findutils.bst
-- bootstrap/gawk.bst
 
 depends:
 - components/sys-libs/glibc.bst

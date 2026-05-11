@@ -1,7 +1,7 @@
 kind: autotools
 
 build-depends:
-- bootstrap/platforms/autotools.bst
+- components/buildsystems/autotools.bst
 - components/sys-devel/binutils.bst
 - components/sys-devel/gcc.bst
 - components/sys-libs/gettext.bst

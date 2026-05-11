@@ -10,6 +10,7 @@ build-depends:
 - components/dev-tools/gperf.bst
 - components/util-archive/lz4.bst
 - components/util-archive/zstd.bst
+- components/sys-services/linux-pam.bst
 
 config:
   install-commands:

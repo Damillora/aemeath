@@ -6,3 +6,4 @@ depends:
 - components/dev-tools/automake.bst
 - components/dev-tools/libtool.bst
 - components/dev-tools/m4.bst
+- components/dev-tools/gettext.bst

@@ -2,9 +2,6 @@ kind: autotools
 
 build-depends:
 - components/buildsystems/autotools.bst
-- components/sys-devel/binutils.bst
-- components/sys-devel/gcc.bst
-- components/sys-libs/gettext.bst
 
 depends:
 - components/sys-libs/glibc.bst

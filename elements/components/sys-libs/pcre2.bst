@@ -1,13 +1,9 @@
 kind: autotools
 
-(@):
-- elements/sources/ncurses.yml
-
 build-depends:
 - bootstrap/platforms/autotools.bst
 - components/sys-devel/binutils.bst
 - components/sys-devel/gcc.bst
-- components/sys-libs/gettext.bst
 
 depends:
 - components/sys-libs/glibc.bst

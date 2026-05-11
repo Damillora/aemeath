@@ -11,4 +11,4 @@ depends:
 - components/dev-lang/perl.bst
 
 runtime-depends:
-- components/sys-libs/gettext.bst
+- components/dev-tools/gettext.bst

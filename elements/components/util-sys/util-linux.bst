@@ -21,6 +21,7 @@ variables:
     --disable-pylibmount
     --disable-liblastlog2
     --disable-static
+    --disable-wall
     --without-python
 
 public:

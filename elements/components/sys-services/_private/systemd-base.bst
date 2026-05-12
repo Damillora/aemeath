@@ -20,6 +20,7 @@ build-depends:
 - components/dev-python3/jinja2.bst
 - components/dev-python3/elftools.bst
 - components/dev-python3/pefile.bst
+- components/util-libs/libxslt.bst
 
 config:
   install-commands:

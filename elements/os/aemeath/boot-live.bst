@@ -7,7 +7,7 @@ build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/systemd-ukify.bst
 - freedesktop-sdk.bst:components/util-linux.bst
-- components/aemeath/os-release.bst
+- components/sys-data/os-release.bst
 
 variables:
   strip-binaries: ''

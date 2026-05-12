@@ -9,7 +9,7 @@ build-depends:
 - freedesktop-sdk.bst:components/mtools.bst
 - freedesktop-sdk.bst:components/util-linux.bst
 - freedesktop-sdk.bst:vm/deploy-tools.bst
-- components/aemeath/os-release.bst
+- components/sys-data/os-release.bst
 - os/aemeath/repart-config-live.bst
 - filename: os/aemeath/usr-image.bst
   config:

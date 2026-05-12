@@ -1,11 +1,11 @@
 kind: meson
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- components/buildsystems/meson.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
-- components/deps/c-stdaux.bst
+- components/util-libs/c-stdaux.bst
 
 sources:
 - kind: git_repo

@@ -23,4 +23,4 @@ depends:
   - freedesktop-sdk.bst:components/lvm2.bst
   - freedesktop-sdk.bst:vm/base-filesystem.bst
   - components/deps/dbus-broker.bst
-  - components/aemeath/os-release.bst
+  - components/sys-data/os-release.bst

@@ -20,32 +20,30 @@ depends:
 - components/util-sys/findutils.bst
 - components/util-sys/psmisc.bst
 - components/util-sys/less.bst
-#- components/util-sys/procps-ng.bst
+- components/util-sys/procps-ng.bst
 - components/util-text/nano.bst
 # Dev Utilities
 - components/dev-tools/git.bst
 # Services
 - components/sys-services/systemd.bst
 - components/sys-services/linux-pam.bst
-#- components/sys-services/shadow.bst
+- components/sys-services/shadow.bst
+- components/sys-services/dbus.bst
+#- components/sys-services/dbus-broker.bst
+#- components/util-sys/kmod.bst
+#- components/net-tools/iproute2.bst
+#- components/util-sys/kbd.bst
+#- components/util-sys/man-db.bst
+- components/sys-data/os-release.bst
 
   # Remaining from Aemeath OS
   # - freedesktop-sdk.bst:components/bash-config.bst
   # - freedesktop-sdk.bst:components/bash-completion.bst
-  # - freedesktop-sdk.bst:components/dbus.bst
   # - freedesktop-sdk.bst:components/linux-firmware.bst
   # - freedesktop-sdk.bst:components/wireless-regdb-bin.bst
   # - freedesktop-sdk.bst:components/dracut.bst
-  # - freedesktop-sdk.bst:components/shadow.bst
-  # - freedesktop-sdk.bst:components/iproute2.bst
   # - freedesktop-sdk.bst:components/usbutils.bst
   # - freedesktop-sdk.bst:components/hosts.bst
-  # - freedesktop-sdk.bst:components/less.bst
-  # - freedesktop-sdk.bst:components/audit.bst
-  # - freedesktop-sdk.bst:components/nsswitch-config.bst
   # - freedesktop-sdk.bst:components/tpm2-tss.bst
   # - freedesktop-sdk.bst:components/tpm2-tools.bst
   # - freedesktop-sdk.bst:components/lvm2.bst
-  # - freedesktop-sdk.bst:vm/base-filesystem.bst
-  # - components/deps/dbus-broker.bst
-  # - components/aemeath/os-release.bst

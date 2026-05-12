@@ -1,7 +1,7 @@
 kind: manual
 
 build-depends:
-- components/aemeath/os-release.bst
+- components/sys-data/os-release.bst
 - os/aemeath/initramfs.bst
 - filename: os/aemeath/usr-image.bst
   config:

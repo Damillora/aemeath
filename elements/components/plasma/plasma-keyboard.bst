@@ -23,4 +23,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/plasma-keyboard-%{plasma-version}.tar.xz'
-  ref: 0c0ec31bf62c012855cb69d1374b9b5d1b9cc2638a1b3006036e34a829302e6d
+  ref: 3bb8be109cc449af54d03f28cc1c1a9e4d4150cb01b9af916a5516ed64740671

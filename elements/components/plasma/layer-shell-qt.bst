@@ -17,4 +17,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/layer-shell-qt-%{plasma-version}.tar.xz'
-  ref: 731af7a222bc1a1e87fd993060ed8fa515b4b38cbc294063b700ec87451e013f
+  ref: e8c145545ac49d5325f16ff710b521deab6e5b9745fcc18ab431252224a8f982

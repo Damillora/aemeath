@@ -25,4 +25,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:plasma/%{plasma-version}/kde-gtk-config-%{plasma-version}.tar.xz'
-  ref: a82347a2e719e00409f73f2d0fc7b4f7ac4432dd31fec0e132d7bf12d06da7df
+  ref: 2902a012ba85d2d201f879d17f0b4f51910e43a1cb0d761788b063b0c17d7b10

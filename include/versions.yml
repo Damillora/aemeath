@@ -6,6 +6,6 @@ qt6-version: "6.11.0"
 # KDE Frameworks
 kf6-version: "6.26"
 # KDE Plasma
-plasma-version: "6.6.4"
+plasma-version: "6.6.5"
 # KDE Gear
 gear-version: "26.04.1"

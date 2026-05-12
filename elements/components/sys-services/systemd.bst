@@ -5,8 +5,14 @@ build-depends:
 
 runtime-depends:
 - components/sys-libs/systemd-libs.bst
+- components/sys-libs/zlib-ng.bst
 - components/sys-services/linux-pam.bst
+- components/util-archive/lz4.bst
+- components/util-archive/zstd.bst
+- components/util-archive/xz.bst
 - components/util-sys/util-linux.bst
+- components/sys-libs/openssl.bst
+- components/net-libs/curl.bst
 
 config:
   exclude:

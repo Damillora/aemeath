@@ -21,6 +21,7 @@ depends:
 - components/util-sys/psmisc.bst
 - components/util-sys/less.bst
 #- components/util-sys/procps-ng.bst
+- components/util-text/nano.bst
 # Dev Utilities
 - components/dev-tools/git.bst
 # Services

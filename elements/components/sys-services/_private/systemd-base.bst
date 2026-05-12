@@ -7,6 +7,9 @@ build-depends:
 - components/buildsystems/meson.bst
 - components/sys-libs/libcap.bst
 - components/sys-libs/libxcrypt.bst
+- components/sys-libs/openssl.bst
+- components/net-libs/curl.bst
+- components/sys-libs/zlib-ng.bst
 - components/security-libs/p11-kit.bst
 - components/dev-tools/gperf.bst
 - components/util-archive/lz4.bst
@@ -14,6 +17,9 @@ build-depends:
 - components/util-archive/xz.bst
 - components/sys-services/linux-pam.bst
 - components/util-sys/util-linux.bst
+- components/dev-python3/jinja2.bst
+- components/dev-python3/elftools.bst
+- components/dev-python3/pefile.bst
 
 config:
   install-commands:
@@ -56,6 +62,7 @@ variables:
     -Drepart=enabled
     -Dman=enabled
     -Dhtml=enabled
+    -Dopenssl=enabled
     -Dp11kit=enabled
     -Dsbat-distro=aemeath-os
     -Dsbat-distro-generation=1
@@ -67,6 +74,8 @@ variables:
     -Dvmlinux-h=provided
     -Dvmlinux-h-path='%{includedir}/linux/vmlinux.h'
     -Dselinux=disabled
+    -Dimportd=enabled
+    -Dsysupdate=enabled
     -Dsysupdated=enabled
 
 public:

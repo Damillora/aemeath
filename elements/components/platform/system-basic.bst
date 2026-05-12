@@ -29,7 +29,7 @@ depends:
 - components/sys-services/linux-pam.bst
 - components/sys-services/shadow.bst
 - components/sys-services/dbus.bst
-#- components/sys-services/dbus-broker.bst
+- components/sys-services/dbus-broker.bst
 #- components/util-sys/kmod.bst
 #- components/net-tools/iproute2.bst
 #- components/util-sys/kbd.bst

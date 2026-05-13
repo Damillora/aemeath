@@ -4,10 +4,15 @@ build-depends:
 - components/buildsystems/autotools.bst
 - components/sys-devel/bison.bst
 - components/sys-devel/flex.bst
+- components/util-sys/which.bst
 
 depends:
 - components/sys-libs/glibc.bst
 - components/sys-libs/gcc-libs.bst
+
+variables:
+  conf-local: >-
+    --disable-vlock
 
 sources:
 - kind: git_repo

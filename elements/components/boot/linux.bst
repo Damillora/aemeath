@@ -2,20 +2,19 @@ kind: make
 description: The Linux kernel
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
-- freedesktop-sdk.bst:components/bison.bst
-- freedesktop-sdk.bst:components/cpio.bst  # loongarch64 build enabled CONFIG_IKHEADERS by default
-- freedesktop-sdk.bst:components/flex.bst
-- freedesktop-sdk.bst:components/bc.bst
-- freedesktop-sdk.bst:components/gzip.bst
-- freedesktop-sdk.bst:components/pahole.bst
-- freedesktop-sdk.bst:components/python3.bst
-- freedesktop-sdk.bst:components/rsync.bst
-- freedesktop-sdk.bst:components/rust.bst
-- freedesktop-sdk.bst:components/rust-bindgen.bst
-- freedesktop-sdk.bst:components/rust-src.bst
-- freedesktop-sdk.bst:components/util-linux.bst
-- freedesktop-sdk.bst:components/zstd.bst
+- components/buildsystems/minimal.bst
+- components/sys-devel/bison.bst
+- components/sys-devel/flex.bst
+- components/util-sys/bc.bst
+- components/util-archive/gzip.bst
+#- freedesktop-sdk.bst:components/pahole.bst
+- components/dev-lang/python3.bst
+- components/net-tools/rsync.bst
+- components/dev-lang/rust.bst
+- components/dev-rust/rust-bindgen.bst
+- components/util-sys/util-linux.bst
+- components/util-archive/zstd.bst
+- components/dev-lang/rust-src.bst
 - filename: components/boot/linux-module-cert.bst
   strict: true
 

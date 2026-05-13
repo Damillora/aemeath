@@ -2,7 +2,7 @@
 sdk-version: "25.08.11"
 # Qt6
 qt6-version-branch: "6.11"
-qt6-version: "6.11.0"
+qt6-version: "6.11.1"
 # KDE Frameworks
 kf6-version: "6.26"
 # KDE Plasma

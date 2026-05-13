@@ -11,4 +11,4 @@ depends:
 sources:
 - kind: tar
   url: 'qt:%{qt6-version-branch}/%{qt6-version}/submodules/qtcharts-everywhere-src-%{qt6-version}.tar.xz'
-  ref: ac409bd4085772f7f091438cce05213b2a88a6edbab16e3dd7a96122386d94b5
+  ref: 3fe3ed318c2a86d1417c5c29cf7494275e8fd4b537cd37453f5599c57365515c

@@ -27,7 +27,7 @@ config:
 sources:
 - kind: tar
   url: 'qt:%{qt6-version-branch}/%{qt6-version}/submodules/qttools-everywhere-src-%{qt6-version}.tar.xz'
-  ref: cfb1993d7a10848965b01b9cf33a54b8a4ba4e5e3a6d28d59483e73f10d9fc76
+  ref: 8e61835a679c93fa9c6065b142353c2071ba68e297898937c32a03777fcaf50d
 
 public:
   bst:

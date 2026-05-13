@@ -11,4 +11,4 @@ depends:
 sources:
 - kind: tar
   url: 'qt:%{qt6-version-branch}/%{qt6-version}/submodules/qtremoteobjects-everywhere-src-%{qt6-version}.tar.xz'
-  ref: e19420aae8f142c7ba9c9d91d78040713bfe0e17c96ef9a813db30dcd59ade97
+  ref: 40629895c69531a687a9c0258316cee3f04c2d18b2bf2ad36dc83e76a58f111a

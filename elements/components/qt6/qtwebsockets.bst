@@ -11,4 +11,4 @@ depends:
 sources:
 - kind: tar
   url: 'qt:%{qt6-version-branch}/%{qt6-version}/submodules/qtwebsockets-everywhere-src-%{qt6-version}.tar.xz'
-  ref: 569f10d1fb35195869576004f5b5ff09735d2f0319e2e8f0dd0f40c7ec31d032
+  ref: 243e3aa11924c8c5c1645e892f62d013caa3766c57512ca926d5b58146646fbf

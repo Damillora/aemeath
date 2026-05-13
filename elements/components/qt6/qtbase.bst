@@ -87,7 +87,7 @@ config:
 sources:
 - kind: tar
   url: 'qt:%{qt6-version-branch}/%{qt6-version}/submodules/qtbase-everywhere-src-%{qt6-version}.tar.xz'
-  ref: 231ad85979864d914dc9568a1b71c91d6cf20d7b2021d059103bf0eb51cb755e
+  ref: d9594a31228aa23ad6b531719a29b45f0f3989fe6c136d45767ea179f233c1ac
 
 public:
   bst:

@@ -11,4 +11,4 @@ depends:
 sources:
 - kind: tar
   url: 'qt:%{qt6-version-branch}/%{qt6-version}/submodules/qtquicktimeline-everywhere-src-%{qt6-version}.tar.xz'
-  ref: 06dbe1cc541431fa321023992ca4ccf83c76b25d07bbf516e0af887a38f32cd6
+  ref: af53f643fd9e4045e1b9ba919998e5c048ca877452c08036c9c8c5ee07ea8c27

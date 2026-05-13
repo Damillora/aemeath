@@ -17,7 +17,8 @@ depends:
 - components/util-libs/popt.bst
 
 variables:
+  build-dir: 'build'
   conf-local: >-
     --without-included-zlib
-    --disable-simd
     --disable-md2man
+    --disable-xxhash

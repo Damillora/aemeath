@@ -4,7 +4,7 @@ build-depends:
 - components/buildsystems/meson.bst
 - components/sys-data/linux-api-headers.bst
 - components/dev-lang/rust.bst
-- components/dev-lang/rust-bindgen.bst
+- components/dev-rust/rust-bindgen.bst
 
 depends:
 - components/sys-libs/glibc.bst

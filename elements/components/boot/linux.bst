@@ -20,6 +20,7 @@ build-depends:
 
 variables:
   bootdir: /boot
+  arch: x86_64
   kernel_arch: 'x86_64'
   src-arch: 'x86'
   image-name: '$(make -s image_name)'
@@ -78,7 +79,7 @@ config:
     release=$(make -s kernelrelease)
     targetdir="%{install-root}%{prefix}/src/linux-${release}"
 
-    rm "%{install-root}%{indep-libdir}/modules/${release}"/build
+    rm "%{install-root}%{libdir}/modules/${release}"/build
 
     to_copy=(
       Makefile
@@ -100,10 +101,7 @@ config:
       cp -aT "${file}" "${targetfile}"
     done
 
-    ln -sr "${targetdir}" "%{install-root}%{indep-libdir}/modules/${release}/build"
-
-  - |
-    %{install-extra}
+    ln -sr "${targetdir}" "%{install-root}%{libdir}/modules/${release}/build"
 
 public:
   bst:
@@ -112,8 +110,8 @@ public:
         (>):
         - '%{bootdir}/System.map'
     overlap-whitelist:
-    - "%{project_licensedir}"
-    - "%{project_licensedir}/**"
+    - "%{datadir}/licenses/"
+    - "%{datadir}/licenses/**"
 
 sources:
 - kind: git_repo

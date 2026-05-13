@@ -18,8 +18,8 @@ runtime-depends:
 - components/util-shells/bash.bst
 - components/util-sys/util-linux.bst
 - components/util-libs/libidn2.bst
-#- components/util-sys/kmod.bst
-#- components/util-sys/kbd.bst
+- components/util-sys/kmod.bst
+- components/util-sys/kbd.bst
 - components/security-libs/p11-kit.bst
 
 config:

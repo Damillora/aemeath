@@ -25,8 +25,8 @@ build-depends:
 - components/util-libs/libxslt.bst
 - components/dev-tools/docbook-xsl.bst
 - components/util-libs/libidn2.bst
-#- components/util-sys/kmod.bst
-#- components/util-sys/kbd.bst
+- components/util-sys/kmod.bst
+- components/util-sys/kbd.bst
 
 config:
   install-commands:

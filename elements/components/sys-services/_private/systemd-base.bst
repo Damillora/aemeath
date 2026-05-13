@@ -5,8 +5,10 @@ kind: meson
 
 build-depends:
 - components/buildsystems/meson.bst
+- components/sys-libs/acl.bst
 - components/sys-libs/libcap.bst
 - components/sys-libs/libxcrypt.bst
+- components/sys-libs/libelf.bst
 - components/sys-libs/openssl.bst
 - components/net-libs/curl.bst
 - components/sys-libs/zlib-ng.bst
@@ -22,6 +24,9 @@ build-depends:
 - components/dev-python3/pefile.bst
 - components/util-libs/libxslt.bst
 - components/dev-tools/docbook-xsl.bst
+- components/util-libs/libidn2.bst
+#- components/util-sys/kmod.bst
+#- components/util-sys/kbd.bst
 
 config:
   install-commands:

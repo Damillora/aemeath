@@ -1,19 +1,15 @@
-kind: autotools
-
-(@):
-- elements/sources/elfutils.yml
+kind: filter
 
 build-depends:
-- bootstrap/platforms/autotools.bst
-- bootstrap/binutils-stage2.bst
-- bootstrap/gcc-stage2.bst
-- bootstrap/pkgconf.bst
+- components/dev-tools/_private/elfutils-base.bst
 
-depends:
-- bootstrap/glibc.bst
-- bootstrap/zlib-ng.bst
+runtime-depends:
+- components/sys-libs/glibc.bst
+- components/sys-libs/gcc-libs.bst
+- components/sys-libs/libelf.bst
 
-variables:
-   conf-local: >-
-     --disable-debuginfod
-     --enable-libdebuginfod=dummy
+config:
+  exclude:
+  - libelf
+
+  include-orphans: True

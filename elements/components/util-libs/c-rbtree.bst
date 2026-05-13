@@ -4,7 +4,8 @@ build-depends:
 - components/buildsystems/meson.bst
 
 depends:
-- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+- components/sys-libs/glibc.bst
+- components/sys-libs/gcc-libs.bst
 - components/util-libs/c-stdaux.bst
 
 sources:

@@ -21,4 +21,4 @@ config:
 sources:
 - kind: tar
   url: rustlang:dist/rust-1.95.0-x86_64-unknown-linux-gnu.tar.xz
-  ref: d2ccef59dd9f7439f2c694948069f789a044dc1addcc0803613232af8f88ee0c
+  ref: 2e0338f18ecbaa4a0f631b9e80e8b8e26bb6fe77dd5454fba8a70cf96c1e84a1

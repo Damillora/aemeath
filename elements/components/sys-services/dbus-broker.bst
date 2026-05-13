@@ -2,12 +2,13 @@ kind: meson
 
 build-depends:
 - components/buildsystems/meson.bst
-- components/sys-data/linux-headers.bst
+- components/sys-data/linux-api-headers.bst
 - components/dev-lang/rust.bst
 - components/dev-lang/rust-bindgen.bst
 
 depends:
-- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+- components/sys-libs/glibc.bst
+- components/sys-libs/gcc-libs.bst
 - components/sys-libs/libcap.bst
 - components/sys-services/systemd.bst
 - components/sys-libs/expat.bst

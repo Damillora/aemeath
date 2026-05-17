@@ -32,12 +32,12 @@ depends:
 - components/sys-services/dbus-broker.bst
 #- components/net-tools/iproute2.bst
 #- components/util-sys/man-db.bst
+# Data
 - components/sys-data/os-release.bst
-
+- components/sys-data/linux-firmware.bst
   # Remaining from Aemeath OS
   # - freedesktop-sdk.bst:components/bash-config.bst
   # - freedesktop-sdk.bst:components/bash-completion.bst
-  # - freedesktop-sdk.bst:components/linux-firmware.bst
   # - freedesktop-sdk.bst:components/wireless-regdb-bin.bst
   # - freedesktop-sdk.bst:components/dracut.bst
   # - freedesktop-sdk.bst:components/usbutils.bst

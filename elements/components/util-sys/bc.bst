@@ -7,6 +7,10 @@ depends:
 - components/sys-libs/glibc.bst
 - components/sys-libs/gcc-libs.bst
 
+variables:
+  autogen: ''
+  configure: "CC='gcc -std=c99' ./configure --prefix=%{prefix} -G -O3"
+
 sources:
 - kind: git_repo
   url: github:gavinhoward/bc.git

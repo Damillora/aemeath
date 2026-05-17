@@ -22,8 +22,7 @@ variables:
 sources:
 - kind: git_repo
   url: kde:plasma/union.git
-  track: master
+  ref: 41f457a9e5a14af4dc1c8fd6be6963b03cbe257d
 #- kind: tar
-#  url: 'kde_stable:plasma/%{plasma-version}/systemsettings-%{plasma-version}.tar.xz'
+#  url: 'kde_stable:plasma/%{plasma-version}/union-%{plasma-version}.tar.xz'
 #  ref: 18d2aab42f3f3ce17c5e636238c2d7a1908152f2203f521d6d8441537d3edf04
-  ref: aba7554dc7e693d2d9509d8def945e4c98d59d36

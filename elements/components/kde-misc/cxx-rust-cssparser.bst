@@ -10,11 +10,15 @@ depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - components/qt6/qtbase.bst
 
+variables:
+  cmake-local: >-
+    -DUSE_CORROSION_CXXBRIDGE=OFF
+
 sources:
 - kind: git_repo
   url: kde:libraries/cxx-rust-cssparser.git
-  track: master
-  ref: 2c5cd92c14164e6da2b98beba1edeaecdc1445d1
+  track: "v*.*"
+  ref: v1.0.0-0-g2c5cd92c14164e6da2b98beba1edeaecdc1445d1
 - kind: cargo2
   cargo-lock: rust/Cargo.lock
   ref:

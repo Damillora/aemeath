@@ -17,9 +17,10 @@ variables:
 sources:
 - kind: git_repo
   url: kde:libraries/cxx-rust-cssparser.git
-  track: "v*.*"
-  ref: v1.0.0-0-g2c5cd92c14164e6da2b98beba1edeaecdc1445d1
+  track: master
+  ref: v1.0.0-3-g17e12236d06b5c55d232856042ccc667a8a05955
 - kind: cargo2
+  vendor-dir: rust/.vendored-crates
   cargo-lock: rust/Cargo.lock
   ref:
   - kind: registry

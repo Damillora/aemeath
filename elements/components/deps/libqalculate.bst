@@ -16,4 +16,4 @@ sources:
 - kind: git_repo
   url: github:Qalculate/libqalculate.git
   track: 'v*'
-  ref: v5.10.0-0-ga1181d86c0715fce9c2cb6bbcd59b1d2cf10e88a
+  ref: v5.11.0-0-g87b6ea21e3b5d03d18c458dea9aa1f55d3bd03cf

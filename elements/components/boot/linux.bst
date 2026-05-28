@@ -13,9 +13,9 @@ build-depends:
 - freedesktop-sdk.bst:components/rsync.bst
 - freedesktop-sdk.bst:components/rust.bst
 - freedesktop-sdk.bst:components/rust-bindgen.bst
+- freedesktop-sdk.bst:components/rust-src.bst
 - freedesktop-sdk.bst:components/util-linux.bst
 - freedesktop-sdk.bst:components/zstd.bst
-- components/freedesktop/rust-src.bst
 - filename: components/boot/linux-module-cert.bst
   strict: true
 

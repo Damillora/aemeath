@@ -19,5 +19,5 @@ sources:
 - kind: git_repo
   url: github:gwsw/less.git
   track: v*-rel
-  ref: v692-rel-0-gdc60d93e8179099f77a275583206d4707fcbca3f
+  ref: v702-rel-0-gfc7dafdbdfd1c26ed839d77f13428419cccd44fe
   version-guess-pattern: '\d+'

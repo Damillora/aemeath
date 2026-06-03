@@ -15,14 +15,14 @@ depends:
 
 config:
   configure-commands:
-    - sed -i '/"lib64"/s/64//' Modules/GNUInstallDirs.cmake
-    - |
-      ./bootstrap --prefix=%{prefix}        \
-                  --system-libs        \
-                  --mandir=%{mandir}  \
-                  --no-system-jsoncpp  \
-                  --no-system-cppdap   \
-                  --no-system-librhash
+  - sed -i '/"lib64"/s/64//' Modules/GNUInstallDirs.cmake
+  - |
+    ./bootstrap --prefix=%{prefix}        \
+                --system-libs        \
+                --mandir=%{mandir}  \
+                --no-system-jsoncpp  \
+                --no-system-cppdap   \
+                --no-system-librhash
 
 sources:
 - kind: git_repo
@@ -30,4 +30,4 @@ sources:
   track: v*
   exclude:
   - v*-rc*
-  ref: v4.3.2-0-g8d3c68cc0f36108f7ebb23ba7a6bc08b9b1d81e4
+  ref: v4.3.3-0-g06cc1d04d8d5a4e13abdadfe20f6937787b1968e

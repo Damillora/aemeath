@@ -22,7 +22,7 @@ config:
 sources:
 - kind: remote
   url: iana:assignments/service-names-port-numbers/service-names-port-numbers.xml
-  ref: f83681d04543e3f52d2bd1c7b15b88eb5e401ad4cc564057f8a5863d6e7a8cba
+  ref: ae7697a32197f8d8f01afa905f571d49083424509a54f4a2ec0c1a471262e19b
 - kind: remote
   url: iana:assignments/protocol-numbers/protocol-numbers.xml
   ref: 59cdd7930cd6152bd11713b8883503511fffb2add72345d21d043cecb969803b

@@ -6,4 +6,4 @@ sources:
   - v*b*
   - v*rc*
   url: github:python/cpython.git
-  ref: v3.14.4-0-g23116f998f6789d8c2fbe5ed5b8146854c8c2a4f
+  ref: v3.14.5-0-g5607950ef232dad16d75c0cf53101d9649d89115

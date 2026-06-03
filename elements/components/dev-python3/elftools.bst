@@ -10,4 +10,4 @@ sources:
 - kind: git_repo
   url: github:eliben/pyelftools
   track: 'v*.*'
-  ref: v0.32-0-gd4ea35fc3c34eb0e4d3f8cfafb31552f5b5c37d6
+  ref: v0.33-0-g52ce435186022bd6b32012a998931fe86c985ec8

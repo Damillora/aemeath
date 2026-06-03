@@ -29,8 +29,8 @@ variables:
 
 config:
   configure-commands:
-   - |
-     env CC=gcc CXX=g++ %{cmake}
+  - |
+    env CC=gcc CXX=g++ %{cmake}
 
 public:
   cpe:
@@ -43,4 +43,4 @@ sources:
   exclude:
   - llvmorg-*-rc*
   - llvmorg-*-init*
-  ref: llvmorg-22.1.5-0-g5ea218a153f4d2f815b8244eab3e4b4ba5e00e6c
+  ref: llvmorg-22.1.7-0-ga255c1ed36a1d06f79bd2633ba9f8d900153007c

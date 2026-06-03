@@ -3,16 +3,16 @@ kind: manual
 (@):
 - elements/sources/go.yml
 
-build-depends:
-- freedesktop-sdk.bst:bootstrap/go.bst
-- freedesktop-sdk.bst:bootstrap/grep.bst
-- freedesktop-sdk.bst:bootstrap/sed.bst
-- freedesktop-sdk.bst:bootstrap/findutils.bst
-- freedesktop-sdk.bst:components/gcc.bst
-- freedesktop-sdk.bst:components/stripper.bst
+#build-depends:
+#- freedesktop-sdk.bst:bootstrap/go.bst
+#- freedesktop-sdk.bst:bootstrap/grep.bst
+#- freedesktop-sdk.bst:bootstrap/sed.bst
+#- freedesktop-sdk.bst:bootstrap/findutils.bst
+#- freedesktop-sdk.bst:components/gcc.bst
+#- freedesktop-sdk.bst:components/stripper.bst
 
-depends:
-- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+#depends:
+#- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   optimize-debug: "false"
@@ -57,9 +57,6 @@ config:
 
   - |
     rm -vf "%{install-root}%{libdir}/go/src/debug/elf/testdata/libtiffxx.so_"
-
-  - |
-    %{install-extra}
 
 public:
   bst:

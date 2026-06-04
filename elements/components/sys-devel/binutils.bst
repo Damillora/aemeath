@@ -42,6 +42,7 @@ variables:
     --enable-64-bit-bfd
     --enable-new-dtags
     --with-system-zlib
+    --with-zstd
     --enable-default-hash-style=gnu
     %{disable-source}
 

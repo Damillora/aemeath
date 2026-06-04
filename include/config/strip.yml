@@ -1,0 +1,12 @@
+
+strip-binaries: |
+  cd %{install-root}
+  for LIB in $(find usr/lib -type f -name \*.so* ! -name \*dbg) \
+    $(find usr/lib -type f -name \*.a) \
+    $(find usr/bin usr/libexec -type f);
+  do
+    if objcopy --only-keep-debug --compress-debug-sections=zstd $LIB %{install-root}%{debugdir}/$LIB.dbg; then
+      strip --strip-unneeded $LIB
+      objcopy --add-gnu-debuglink=$LIB.dbg $LIB
+    fi
+  done

@@ -1,6 +1,9 @@
 kind: make
 description: The Linux kernel
 
+(@):
+- elements/sources/linux.yml
+
 build-depends:
 - components/buildsystems/minimal.bst
 - components/sys-devel/bison.bst
@@ -112,17 +115,3 @@ public:
     overlap-whitelist:
     - "%{datadir}/licenses/"
     - "%{datadir}/licenses/**"
-
-sources:
-- kind: git_repo
-  url: kernel:linux/kernel/git/stable/linux.git
-  track: v*
-  exclude:
-  - '*-rc*'
-  ref: v7.0.12-0-gf53879e2e1e2fa053040e734c1ef8f386109a61b
-- kind: patch_queue
-  path: patches/linux
-- kind: local
-  path: files/linux/config-utils.sh
-- kind: local
-  path: files/linux/fdsdk-config.sh

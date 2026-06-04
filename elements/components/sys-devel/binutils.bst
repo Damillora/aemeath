@@ -25,6 +25,7 @@ build-depends:
 - bootstrap/gettext-tools.bst
 - bootstrap/texinfo.bst
 - bootstrap/tar.bst
+- bootstrap/pkgconf.bst
 
 depends:
 - components/sys-libs/glibc.bst

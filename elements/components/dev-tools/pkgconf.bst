@@ -12,7 +12,6 @@ build-depends:
 
 depends:
 - components/sys-libs/glibc.bst
-- components/sys-devel/flex.bst
 
 config:
   install-commands:

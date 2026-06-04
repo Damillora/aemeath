@@ -11,11 +11,13 @@ build-depends:
 - filename:
   - bootstrap/linux-api-headers.bst
   - bootstrap/glibc.bst
+  - bootstrap/zstd.bst
   config:
     location: "%{bootstrap-sysroot}"
 
 runtime-depends:
 - bootstrap/glibc.bst
+- bootstrap/zstd.bst
 
 variables:
   build-dir: build
@@ -27,6 +29,7 @@ variables:
     --disable-werror
     --enable-new-dtags
     --enable-default-hash-style=gnu
+    --with-zstd
     %{disable-source}
 
 config:

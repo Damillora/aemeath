@@ -17,8 +17,6 @@ depends:
 - components/sys-devel/mpc.bst
 - components/sys-devel/flex.bst
 - components/sys-libs/glibc.bst
-- components/sys-libs/zlib-ng.bst
-- components/dev-tools/pkgconf.bst
 - components/util-archive/zstd.bst
 
 variables:

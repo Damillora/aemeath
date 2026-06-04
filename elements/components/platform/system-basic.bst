@@ -2,6 +2,7 @@ kind: stack
 
 depends:
 - components/platform/minimal.bst
+# System data
 - components/sys-data/iana-etc.bst
 - components/sys-data/locale-base.bst
 - components/sys-data/man-pages.bst

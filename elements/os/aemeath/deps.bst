@@ -2,7 +2,7 @@ kind: stack
 
 depends:
 # Base desktop packages
-- aemeath/desktop.bst
+- components/platform/system-basic.bst
 # Kernel modules
 - os/aemeath/initramfs/kernel-modules.bst
 # Configs

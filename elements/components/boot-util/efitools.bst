@@ -1,11 +1,11 @@
 kind: make
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
-- freedesktop-sdk.bst:components/gnu-efi.bst
-- freedesktop-sdk.bst:components/help2man.bst
-- freedesktop-sdk.bst:components/perl-slurp.bst
-- components/boot/boot-keys.bst
+- components/buildsystems/minimal.bst
+- components/boot-util/gnu-efi.bst
+#- freedesktop-sdk.bst:components/help2man.bst
+#- freedesktop-sdk.bst:components/perl-slurp.bst
+- components/boot-data/boot-keys.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

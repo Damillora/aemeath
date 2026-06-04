@@ -2,10 +2,10 @@ kind: manual
 
 build-depends:
 - components/platforms/minimal.bst
-- filename: components/boot/linux.bst
+- filename: components/boot-kernel/linux.bst
   strict: true
 - components/util-sys/findutils.bst
-- freedesktop-sdk.bst:components/sign-file.bst
+- components/boot-util/sign-file.bst
 
 config:
   install-commands:

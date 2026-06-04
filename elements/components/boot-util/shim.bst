@@ -1,11 +1,11 @@
 kind: make
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
-- freedesktop-sdk.bst:components/git-minimal.bst
-- freedesktop-sdk.bst:components/openssl.bst
-- freedesktop-sdk.bst:components/sbsigntools.bst
-- components/boot/boot-keys.bst
+- components/buildsystems/minimal.bst
+- components/dev-tools/_private/git-basic.bst
+- components/sys-libs/openssl.bst
+- components/boot-util/sbsigntools.bst
+- components/boot-data/boot-keys.bst
 
 variables:
   efi-arch: "x64"

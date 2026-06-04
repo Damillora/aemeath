@@ -18,7 +18,7 @@ build-depends:
 - components/util-sys/util-linux.bst
 - components/util-archive/zstd.bst
 - components/dev-lang/rust-src.bst
-- filename: components/boot/linux-module-cert.bst
+- filename: components/boot-data/linux-module-cert.bst
   strict: true
 
 variables:

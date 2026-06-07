@@ -9,7 +9,7 @@ build-depends:
 depends:
 - components/sys-libs/glibc.bst
 - components/sys-libs/gcc-libs.bst
-- components/security-libs/openssl.bst
+- components/sys-libs/openssl.bst
 
 config:
   build-commands:

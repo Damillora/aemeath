@@ -7,14 +7,16 @@ build-depends:
 - components/buildsystems/cmake.bst
 - components/dev-lang/python3.bst
 - components/dev-lang/_private/rust-bin.bst
+- components/dev-tools/llvm.bst
 
 depends:
 - components/sys-libs/glibc.bst
 - components/sys-libs/gcc-libs.bst
 - components/net-libs/curl.bst
 - components/util-libs/libxml2.bst
-- components/dev-tools/llvm.bst
+- components/dev-libs/llvm-libs.bst
 - components/sys-libs/openssl.bst
+- components/sys-libs/sqlite.bst
 
 variables:
   optimize-debug: "false"
@@ -33,23 +35,26 @@ environment:
 config:
   configure-commands:
   - |
-    cat <<EOF >config.toml
+    cat <<EOF > bootstrap.toml
+    change-id = 154508
+
     [llvm]
     download-ci-llvm = false
     link-shared = true
-    targets = "%{llvm-targets}"
     # disable experimental targets, we certainly don't want them (only AVR at the moment)
     experimental-targets = ""
     [build]
     description = "Aemeath OS Rust"
-    docs = false
+    cargo = "/usr/bin/cargo"
+    rustc = "/usr/bin/rustc"
+    docs = %{build-docs}
     submodules = false
     python = "/usr/bin/python3"
     locked-deps = true
     vendor = true
     verbose = 2
     extended = true
-    tools = ["cargo", "rustdoc", "rustfmt", "analysis"]
+    tools = ["cargo", "clippy", "rustdoc", "rustfmt", "analysis"]
     [install]
     prefix = "%{prefix}"
     sysconfdir = "%{sysconfdir}"
@@ -61,6 +66,7 @@ config:
     [rust]
     optimize = true
     channel = "stable"
+    debuginfo-level-std = %{debuginfo-level-std}
     backtrace = true
     rpath = false
     lto = "off"

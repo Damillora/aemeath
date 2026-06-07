@@ -1,7 +1,7 @@
 kind: manual
 
 build-depends:
-- components/platforms/minimal.bst
+- components/platform/minimal.bst
 - filename: components/boot-kernel/linux.bst
   strict: true
 - components/util-sys/findutils.bst

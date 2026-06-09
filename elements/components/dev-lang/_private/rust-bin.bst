@@ -20,5 +20,5 @@ config:
 # That's how upstream recommends doing it.
 sources:
 - kind: tar
-  url: rustlang:dist/rust-1.95.0-x86_64-unknown-linux-gnu.tar.xz
-  ref: 2e0338f18ecbaa4a0f631b9e80e8b8e26bb6fe77dd5454fba8a70cf96c1e84a1
+  url: rustlang:dist/rust-1.94.0-x86_64-unknown-linux-gnu.tar.xz
+  ref: e8fa4185f3ef6ae32725ff638b1ecdbff28f5d651dc0b3111e2539350d03b15a

@@ -4,7 +4,7 @@ index 903a5a4..897cf9f 100644
 +++ b/Make.rules
 @@ -26,7 +26,7 @@ CRTOBJS		= $(CRTPATH)/$(CRTOBJ)
  LDSCRIPT	= elf_$(ARCH)_efi.lds
- LDFLAGS		+= -shared -Bsymbolic $(CRTOBJS) -L $(CRTPATH) -L /usr/lib -L /usr/lib64 -T $(LDSCRIPT)
+ LDFLAGS		+= -shared -Bsymbolic $(CRTOBJS) -L $(CRTPATH) -L /usr/lib -L /lib64 -T $(LDSCRIPT)
  LOADLIBES	= -lefi -lgnuefi $(shell $(CC) $(ARCH3264) -print-libgcc-file-name)
 -FORMAT		= --target=efi-app-$(ARCH)
 +FORMAT		= --output-target=efi-app-$(ARCH)

@@ -29,6 +29,9 @@ config:
   install-commands:
     (>):
     - |
+      mkdir "%{install-root}/lib64"
+      ln -sfv ../lib/ld-linux-x86-64.so.2 %{install-root}/lib64
+    - |
       touch '%{install-root}%{sysconfdir}/ld.so.conf'
 
 public:

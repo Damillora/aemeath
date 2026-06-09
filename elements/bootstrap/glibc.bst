@@ -31,4 +31,7 @@ config:
     - echo "rootsbindir=%{sbindir}" > configparms
   install-commands:
     (>):
+    - |
+      mkdir "%{install-root}/lib64"
+      ln -sfv ../lib/ld-linux-x86-64.so.2 %{install-root}/lib64
     - rm "%{install-root}/usr/share/info/dir"

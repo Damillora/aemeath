@@ -7,14 +7,13 @@ build-depends:
 - components/buildsystems/cmake.bst
 - components/dev-lang/python3.bst
 - components/dev-lang/_private/rust-bin.bst
-- components/dev-tools/llvm.bst
 
 depends:
 - components/sys-libs/glibc.bst
 - components/sys-libs/gcc-libs.bst
 - components/net-libs/curl.bst
 - components/util-libs/libxml2.bst
-- components/dev-libs/llvm-libs.bst
+- components/dev-tools/llvm.bst
 - components/sys-libs/openssl.bst
 - components/sys-libs/sqlite.bst
 
@@ -35,16 +34,17 @@ environment:
 config:
   configure-commands:
   - |
-    cat <<EOF > bootstrap.toml
-    change-id = 154508
-
+    cat <<EOF >config.toml
     [llvm]
     download-ci-llvm = false
     link-shared = true
+    targets = "%{llvm-targets}"
     # disable experimental targets, we certainly don't want them (only AVR at the moment)
     experimental-targets = ""
     [build]
-    description = "Aemeath OS Rust"
+    build = "%{rust-target}"
+    host = ["%{rust-target}"]
+    target = ["%{rust-target}"]
     cargo = "/usr/bin/cargo"
     rustc = "/usr/bin/rustc"
     docs = %{build-docs}
@@ -54,7 +54,7 @@ config:
     vendor = true
     verbose = 2
     extended = true
-    tools = ["cargo", "clippy", "rustdoc", "rustfmt", "analysis"]
+    tools = ["cargo", "rustdoc", "rustfmt", "analysis"]
     [install]
     prefix = "%{prefix}"
     sysconfdir = "%{sysconfdir}"
@@ -74,15 +74,25 @@ config:
     lld = false
     default-linker = "/usr/bin/clang"
     [target.%{rust-target}]
+    linker = "/usr/bin/clang"
     llvm-config = "/usr/bin/llvm-config"
     EOF
 
   build-commands:
   - |
-    export LIBSSH2_SYS_USE_PKG_CONFIG=1
-    export LIBSQLITE3_SYS_USE_PKG_CONFIG=1
     python3 x.py build -j${MAXJOBS}
 
   install-commands:
   - |
     DESTDIR="%{install-root}" python3 x.py -j1 install
+
+  - |
+    rustlibdir="%{install-root}%{libdir}/rustlib/x86_64-unknown-linux-gnu/lib"
+    for lib in "${rustlibdir}/"lib*.so; do
+      libname=$(basename "${lib}")
+      runtimelib="%{install-root}%{libdir}/${libname}"
+      if [ -f "${runtimelib}" ]; then
+        rm "${lib}"
+        ln -s "$(realpath "${runtimelib}" --relative-to="${rustlibdir}")" "${lib}"
+      fi
+    done

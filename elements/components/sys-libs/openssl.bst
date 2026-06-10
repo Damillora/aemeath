@@ -23,6 +23,9 @@ config:
            --libdir=%{lib}          \
            shared                \
            zlib-dynamic
+  install-commands:
+    (>):
+    - rm %{install-root}%{libdir}/lib*.a
 
 public:
   cpe:

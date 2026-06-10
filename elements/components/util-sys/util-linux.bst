@@ -33,10 +33,10 @@ public:
         chmod 4755 "${sysroot}%{bindir}/${i}"
       done
 
-#config:
-#  install-commands:
-#    (>):
-#    - rm "%{install-root}/usr/share/info/dir"
+config:
+ install-commands:
+   (>):
+   - find "%{install-root}%{libdir}" -name "lib*.a" -delete
 
 environment:
   FORCE_UNSAFE_CONFIGURE: "1"

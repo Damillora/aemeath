@@ -11,3 +11,15 @@ build-depends:
 
 depends:
 - components/sys-libs/glibc.bst
+
+config:
+  install-commands:
+    (>):
+    - |
+      rm -fv %{install-root}%{libdir}/lib*.a
+
+public:
+  bst:
+    overlap-whitelist:
+    # This new ZSTD will conflict with ZSTD used by binutils
+    - "**"

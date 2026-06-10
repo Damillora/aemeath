@@ -19,3 +19,8 @@ variables:
     --libdir=%{libdir}
     --zlib-compat
     --without-new-strategies
+
+config:
+  install-commands:
+    (>):
+    - rm -fv %{install-root}%{libdir}/libz.a

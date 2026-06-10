@@ -23,13 +23,17 @@ variables:
     --build=$(../scripts/config.guess)
     --disable-nscd
     libc_cv_slibdir=%{libdir}
-    libc_cv_rootsbindir=%{sbindir}
     --enable-kernel=6.0
 
 config:
   configure-commands:
     (<):
-    - echo "sbindir=%{sbindir}" >> configparms
+    - |
+      mkdir -p "%{build-dir}"
+      cd "%{build-dir}"
+
+      echo rootsbindir=%{sbindir} >>configparms
+      echo sbindir=%{sbindir} >>configparms
   install-commands:
     (>):
     - |

@@ -30,6 +30,9 @@ config:
     cp -av libbz2.so.* %{install-root}%{libdir}
     ln -sfv libbz2.so.1.0.8 %{install-root}%{libdir}/libbz2.so
     ln -sfv libbz2.so.1.0.8 %{install-root}%{libdir}/libbz2.so.1
+  - |
+    rm -fv %{install-root}%{libdir}/lib*.a
+
 
 sources:
 - kind: git_repo

@@ -9,6 +9,12 @@ depends:
 - components/sys-libs/systemd-libs.bst
 - components/util-sys/util-linux.bst
 
+config:
+  install-commands:
+    (>):
+    - |
+      find "%{install-root}" -name "lib*.a" -delete
+
 
 sources:
 - kind: git_repo

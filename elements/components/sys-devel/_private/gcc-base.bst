@@ -5,13 +5,13 @@ kind: autotools
 
 build-depends:
 - bootstrap/platforms/autotools.bst
+- components/sys-devel/binutils.bst
 - bootstrap/gcc-stage2.bst
 - bootstrap/gettext-tools.bst
 - bootstrap/texinfo.bst
 - bootstrap/tar.bst
 
 depends:
-- components/sys-devel/binutils.bst
 - components/sys-devel/gmp.bst
 - components/sys-devel/mpfr.bst
 - components/sys-devel/mpc.bst

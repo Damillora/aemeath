@@ -12,6 +12,11 @@ variables:
     prefix="%{prefix}"
     lib="%{lib}"
 
+config:
+  install-commands:
+    (>):
+    - |
+      find "%{install-root}" -name "lib*.a" -delete
 
 sources:
 - kind: git_repo

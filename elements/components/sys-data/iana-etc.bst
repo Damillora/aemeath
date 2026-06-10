@@ -4,11 +4,8 @@ kind: manual
 - elements/bootstrap/include/vars.yml
 
 build-depends:
-- bootstrap/filesystem.bst
-- bootstrap/bash.bst
-- bootstrap/coreutils.bst
-- bootstrap/make.bst
-- bootstrap/python3.bst
+- components/buildsystems/minimal.bst
+- components/dev-lang/python3.bst
 
 config:
   build-commands:

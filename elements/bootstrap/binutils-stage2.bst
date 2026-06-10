@@ -38,4 +38,6 @@ config:
       - sed '6031s/$add_dir//' -i ltmain.sh
   install-commands:
     (>):
+    - |
+      rm -v %{install-root}%{libdir}/lib{bfd,ctf,ctf-nobfd,opcodes,sframe}.a
     - rm "%{install-root}/usr/share/info/dir"

@@ -5,27 +5,12 @@ kind: autotools
 
 build-depends:
 # Toolchain depends on this
-- bootstrap/filesystem.bst
+- bootstrap/platforms/autotools.bst
 - bootstrap/binutils-stage2.bst
 - bootstrap/gcc-stage2.bst
-- bootstrap/bison.bst
-- bootstrap/coreutils.bst
-- bootstrap/make.bst
-- bootstrap/grep.bst
-- bootstrap/bash.bst
-- bootstrap/sed.bst
-- bootstrap/diffutils.bst
-- bootstrap/findutils.bst
-- bootstrap/gawk.bst
-- bootstrap/gzip.bst
-- bootstrap/autoconf.bst
-- bootstrap/automake.bst
-- bootstrap/libtool.bst
-- bootstrap/m4.bst
-- bootstrap/gettext-tools.bst
 - bootstrap/texinfo.bst
 - bootstrap/tar.bst
-- bootstrap/pkgconf.bst
+- components/sys-data/locale-base.bst
 
 depends:
 - components/sys-libs/glibc.bst

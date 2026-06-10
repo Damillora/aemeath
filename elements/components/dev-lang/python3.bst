@@ -27,5 +27,7 @@ config:
   install-commands:
     (>):
     - |
+      find "%{install-root}" -name "lib*.a" -delete
+    - |
       mkdir -p %{install-root}%{bindir}
       ln -s %{bindir}/python3 %{install-root}%{bindir}/python

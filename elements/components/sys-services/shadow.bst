@@ -20,7 +20,7 @@ variables:
     --without-libbsd
     --with-group-name-max-length=32
 
-  make-install: make -j1 %{make-install-args} exec_prefix=${prefix}
+  make-install: make -j1 %{make-install-args} exec_prefix=${prefix} ubindir="%{bindir}" usbindir="%{sbindir}"
 
 config:
   configure-commands:

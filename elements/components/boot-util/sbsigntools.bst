@@ -1,7 +1,7 @@
 kind: autotools
 
 build-depends:
-- components/buildsystem/autotools.bst
+- components/buildsystems/autotools.bst
 - components/dev-tools/_private/git-basic.bst
 - components/boot-util/gnu-efi.bst
 #- components/help2man.bst
@@ -22,5 +22,5 @@ sources:
   ref: v0.9.5-0-g9cfca9fe7aa7a8e29b92fe33ce8433e212c9a8ba
 - kind: git_module
   path: lib/ccan.git
-  url: git_https:git.ozlabs.org/ccan
+  url: ozlabs:ccan
   ref: b1f28e17227f2320d07fe052a8a48942fe17caa5

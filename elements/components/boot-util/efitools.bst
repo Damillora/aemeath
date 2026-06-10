@@ -8,9 +8,8 @@ build-depends:
 - components/boot-data/boot-keys.bst
 
 depends:
-- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
-- freedesktop-sdk.bst:components/openssl.bst
-- freedesktop-sdk.bst:components/sbsigntools.bst
+- components/sys-libs/openssl.bst
+- components/boot-util/sbsigntools.bst
 
 variables:
   aemeath-keys-uuid: 4191ff64-84a5-48fd-a262-58b23c00751d

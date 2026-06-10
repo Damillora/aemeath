@@ -3,8 +3,8 @@ kind: autotools
 build-depends:
 - components/buildsystems/autotools.bst
 - components/dev-tools/_private/git-basic.bst
+- components/dev-tools/help2man.bst
 - components/boot-util/gnu-efi.bst
-#- components/help2man.bst
 
 depends:
 - components/sys-libs/openssl.bst
@@ -13,6 +13,7 @@ depends:
 variables:
   conf-local: >-
     CRTPATH=%{libdir}
+    CFLAGS="-Wno-error=unused-but-set-variable"
     CPPFLAGS="-DOPENSSL_API_COMPAT=0x10100000L"
 
 sources:

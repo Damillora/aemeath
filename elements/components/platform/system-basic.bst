@@ -36,6 +36,7 @@ depends:
 # Data
 - components/sys-data/os-release.bst
 - components/sys-data/linux-firmware.bst
+- components/sys-data/tzdata.bst
   # Remaining from Aemeath OS
   # - freedesktop-sdk.bst:components/bash-config.bst
   # - freedesktop-sdk.bst:components/bash-completion.bst

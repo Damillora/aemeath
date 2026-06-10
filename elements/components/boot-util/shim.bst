@@ -4,6 +4,7 @@ build-depends:
 - components/buildsystems/minimal.bst
 - components/dev-tools/_private/git-basic.bst
 - components/sys-libs/openssl.bst
+- components/sys-libs/libelf.bst
 - components/boot-util/sbsigntools.bst
 - components/boot-data/boot-keys.bst
 

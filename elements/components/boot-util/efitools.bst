@@ -3,8 +3,8 @@ kind: make
 build-depends:
 - components/buildsystems/minimal.bst
 - components/boot-util/gnu-efi.bst
-#- freedesktop-sdk.bst:components/help2man.bst
-#- freedesktop-sdk.bst:components/perl-slurp.bst
+- components/dev-tools/help2man.bst
+- components/dev-perl/slurp.bst
 - components/boot-data/boot-keys.bst
 
 depends:

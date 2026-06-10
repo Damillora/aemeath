@@ -1,10 +1,8 @@
 kind: script
 
 build-depends:
-- freedesktop-sdk.bst:components/fakecap.bst
-- freedesktop-sdk.bst:components/erofs-utils.bst
-- freedesktop-sdk.bst:vm/deploy-tools.bst
-- freedesktop-sdk.bst:vm/prepare-image.bst
+- components/filesystem-util/erofs-utils.bst
+- components/aemeath-tools/deploy-tools.bst
 - os/aemeath/initial-scripts.bst
 - os/aemeath/repart-config.bst
 - os/aemeath/repart-config-compress.bst
@@ -19,14 +17,9 @@ variables:
 environment:
   EROFS_OPTIONS: --all-time -E fragments,fragdedupe=inode
   EROFS_WORKERS: --workers=%{max-jobs}
-  LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
-  FAKECAP_DB: /fakecap
 
 config:
   commands:
-  - |
-    mkdir /fakecap
-
   - |
     prepare-image.sh \
        --sysroot /sysroot \

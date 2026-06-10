@@ -10,9 +10,10 @@ config:
   - |
     mkdir -pv %{install-root}{%{sysconfdir},%{localstatedir},%{bindir},%{libdir}}
 
-    ln -sv %{bindir} %{install-root}/bin
-    ln -sv %{libdir} %{install-root}/lib
-    ln -sv %{bindir} %{install-root}/sbin
+    ln -sv .%{bindir} %{install-root}/bin
+    ln -sv .%{bindir} %{install-root}/sbin
+    ln -sv .%{libdir} %{install-root}/lib
+    ln -sv bin %{install-root}%{prefix}/sbin
 
   - |
     mkdir -p "%{install-root}/tmp"

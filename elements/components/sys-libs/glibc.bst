@@ -19,13 +19,14 @@ variables:
     --disable-werror
     --disable-nscd
     libc_cv_slibdir=%{libdir}
+    libc_cv_rootsbindir=%{sbindir}
     --enable-stack-protector=strong
     --enable-kernel=6.0
 
 config:
   configure-commands:
     (<):
-    - echo "rootsbindir=%{sbindir}" > configparms
+    - echo "sbindir=%{sbindir}" >> configparms
   install-commands:
     (>):
     - |

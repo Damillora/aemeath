@@ -1,28 +1,33 @@
-kind: autotools
+kind: meson
 
 (@):
 - elements/sources/util-linux.yml
 
 build-depends:
-- components/buildsystems/autotools.bst
+- components/buildsystems/meson.bst
 
 depends:
-- components/util-sys/file.bst
+- components/sys-libs/libxcrypt.bst
 - components/sys-libs/sqlite.bst
+- components/util-sys/file.bst
 
 variables:
-  conf-local: >-
-    --disable-chfn-chsh
-    --disable-login
-    --disable-nologin
-    --disable-su
-    --disable-setpriv
-    --disable-runuser
-    --disable-pylibmount
-    --disable-liblastlog2
-    --disable-static
-    --disable-wall
-    --without-python
+  meson-local: >-
+    -Dlibuser=disabled
+    -Dlibutempter=disabled
+    -Dncurses=disabled
+    -Dncursesw=enabled
+    -Deconf=disabled
+    -Dbuild-chfn-chsh=disabled
+    -Dbuild-login=disabled
+    -Dbuild-nologin=disabled
+    -Dbuild-su=disabled
+    -Dbuild-setpriv=disabled
+    -Dbuild-runuser=disabled
+    -Dbuild-pylibmount=disabled
+    -Dbuild-liblastlog2=disabled
+    -Dbuild-wall=disabled
+    -Dbuild-python=disabled
 
 public:
   initial-script:

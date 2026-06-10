@@ -8,6 +8,11 @@ runtime-depends:
 - components/sys-libs/openssl.bst
 - components/security-libs/p11-kit.bst
 
+variables:
+  make-args: >-
+    PREFIX="%{prefix}"
+    SBINDIR=%{sbindir}
+
 sources:
 - kind: git_repo
   url: github:lfs-book/make-ca.git

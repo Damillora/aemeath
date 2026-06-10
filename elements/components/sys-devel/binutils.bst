@@ -11,12 +11,13 @@ build-depends:
 - bootstrap/texinfo.bst
 - bootstrap/tar.bst
 - components/sys-data/locale-base.bst
+- components/sys-devel/flex.bst
 
 depends:
 - components/sys-libs/glibc.bst
 - components/sys-libs/zlib-ng.bst
 - components/util-archive/zstd.bst
-- components/sys-devel/flex.bst
+- components/sys-libs/libfl.bst
 
 variables:
   build-dir: build

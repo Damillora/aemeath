@@ -11,6 +11,7 @@ variables:
   make-args: >-
     prefix="%{prefix}"
     lib="%{lib}"
+    sbindir=bin
 
 config:
   install-commands:

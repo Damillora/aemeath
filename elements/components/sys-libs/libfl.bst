@@ -5,9 +5,8 @@ build-depends:
 
 runtime-depends:
 - components/sys-libs/glibc.bst
-- components/sys-libs/libfl.bst
 
 config:
-  exclude:
+  include:
   - libfl
-  include-orphans: true
+  include-orphans: false

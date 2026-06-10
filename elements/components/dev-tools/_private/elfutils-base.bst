@@ -16,9 +16,14 @@ variables:
      --disable-debuginfod
      --enable-libdebuginfod=dummy
 
+config:
+  install-commands:
+    (>):
+      - rm %{install-root}%{libdir}/libelf.a
+
 public:
   bst:
     split-rules:
       libelf:
-        - '%{libdir}/libelf.*'
-        - '%{includedir}/elfutils'
+        - '%{libdir}/libelf*'
+        - '%{includedir}/**'

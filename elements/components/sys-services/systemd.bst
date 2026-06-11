@@ -4,7 +4,7 @@ build-depends:
 - components/sys-services/_private/systemd-base.bst
 
 runtime-depends:
-- components/net-libs/curl.bst
+#- components/net-libs/curl.bst
 - components/sys-libs/systemd-libs.bst
 - components/sys-libs/acl.bst
 - components/sys-libs/libelf.bst
@@ -22,7 +22,7 @@ runtime-depends:
 - components/util-sys/kbd.bst
 - components/security-libs/p11-kit.bst
 - components/filesystem-util/cryptsetup.bst
-- components/filesystem-util/lvm2.bst
+- components/sys-services/systemd-hwdb.bst
 
 config:
   exclude:

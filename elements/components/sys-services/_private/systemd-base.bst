@@ -13,6 +13,7 @@ build-depends:
 - components/net-libs/curl.bst
 - components/sys-libs/zlib-ng.bst
 - components/security-libs/p11-kit.bst
+- components/security-tools/tpm2-tss.bst
 - components/dev-tools/gperf.bst
 - components/util-archive/lz4.bst
 - components/util-archive/zstd.bst

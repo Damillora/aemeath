@@ -1,14 +1,14 @@
 kind: script
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
-- freedesktop-sdk.bst:components/zstd.bst
-- freedesktop-sdk.bst:components/jq.bst
-- freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:components/dosfstools.bst
-- freedesktop-sdk.bst:components/mtools.bst
-- freedesktop-sdk.bst:components/util-linux.bst
-- freedesktop-sdk.bst:vm/deploy-tools.bst
+- components/platform/minimal.bst
+- components/util-archive/zstd.bst
+- components/util-misc/jq.bst
+- components/sys-services/systemd.bst
+- components/filesystem-util/dosfstools.bst
+- components/filesystem-util/mtools.bst
+- components/util-sys/util-linux.bst
+- components/aemeath-tools/deploy-tools.bst
 - components/sys-data/os-release.bst
 - os/aemeath/repart-config-live.bst
 - filename: os/aemeath/usr-image.bst

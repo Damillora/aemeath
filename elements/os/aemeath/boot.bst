@@ -1,18 +1,19 @@
 kind: manual
 
 build-depends:
+- components/platform/minimal.bst
 - components/sys-data/os-release.bst
 - os/aemeath/initramfs.bst
 - filename: os/aemeath/usr-image.bst
   config:
     location: /usr-image
-- freedesktop-sdk.bst:components/binutils.bst
-- freedesktop-sdk.bst:components/sbsigntools.bst
-- freedesktop-sdk.bst:components/sign-file.bst
-- freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:components/systemd-ukify.bst
-- freedesktop-sdk.bst:components/util-linux.bst
-- freedesktop-sdk.bst:components/jq.bst
+- components/sys-devel/binutils.bst
+- components/boot-util/sbsigntools.bst
+- components/boot-util/sign-file.bst
+- components/sys-services/systemd.bst
+- components/boot-util/systemd-ukify.bst
+- components/util-sys/util-linux.bst
+- components/util-misc/jq.bst
 
 variables:
   strip-binaries: ''

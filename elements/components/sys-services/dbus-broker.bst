@@ -20,6 +20,9 @@ depends:
 - components/util-libs/c-stdaux.bst
 - components/util-libs/c-utf8.bst
 
+runtime-depends:
+- components/sys-services/dbus.bst
+
 variables:
   # Disable manpage until we have argparse-manpage
   # Disable bash completions until we have shtab

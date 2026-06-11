@@ -23,8 +23,12 @@ depends:
 - components/util-sys/less.bst
 - components/util-sys/procps-ng.bst
 - components/util-text/nano.bst
+# TPM Support
+- components/security-tools/tpm2-tss.bst
+- components/security-tools/tpm2-tools.bst
 # Filesystems
 - components/filesystem-util/btrfs-progs.bst
+- components/filesystem-util/lvm2.bst
 # Dev Utilities
 - components/dev-tools/git.bst
 # Services
@@ -47,4 +51,3 @@ depends:
   # - freedesktop-sdk.bst:components/hosts.bst
   # - freedesktop-sdk.bst:components/tpm2-tss.bst
   # - freedesktop-sdk.bst:components/tpm2-tools.bst
-  # - freedesktop-sdk.bst:components/lvm2.bst

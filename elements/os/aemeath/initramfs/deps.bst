@@ -3,7 +3,6 @@ kind: stack
 depends:
 - os/aemeath/deps.bst
 #- freedesktop-sdk.bst:components/plymouth.bst
-#- freedesktop-sdk.bst:components/fakecap.bst
 - components/sys-devel/binutils.bst
 - components/dev-tools/pkgconf.bst
 - components/boot-util/dracut.bst

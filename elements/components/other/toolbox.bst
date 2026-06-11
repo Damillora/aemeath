@@ -12,8 +12,8 @@ build-depends:
 - freedesktop-sdk.bst:components/go-md2man.bst
 - freedesktop-sdk.bst:components/strace.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- freedesktop-sdk.bst:components/go.bst
 - components/other/fake-toolbox-env.bst
-- components/dev-lang/go.bst
 
 depends:
 - freedesktop-sdk.bst:components/podman.bst

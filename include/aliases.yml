@@ -24,3 +24,4 @@ aliases:
   kernel: https://git.kernel.org/pub/scm/
   rust: https://static.rust-lang.org/
   nodejs: https://nodejs.org/dist/
+  tailscale_pkgs: https://pkgs.tailscale.com/stable/

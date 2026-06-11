@@ -14,7 +14,7 @@ depends:
 - components/kf6/kguiaddons.bst
 - components/kf6/kiconthemes.bst
 - components/kf6/kirigami.bst
-- components/kde-misc/cxx-rust-cssparser.bst
+- components/deps/cxx-rust-cssparser.bst
 
 variables:
   cmake-local: -DBUILD_TESTING=OFF

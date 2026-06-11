@@ -25,7 +25,7 @@ variables:
 
 sources:
 - kind: tar
-  url: "kde_stable:release-service/%{gear-version}/src/kate-%{gear-version}.tar.xz"
+  url: "kde_download:%{gear-branch}/release-service/%{gear-version}/src/kate-%{gear-version}.tar.xz"
   ref: f138a5b022b6ca0562b903bea7b2a794bb6bb18b88a9277ffcaf418b9b49018d
 
 public:

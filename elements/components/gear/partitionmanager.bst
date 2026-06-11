@@ -27,5 +27,5 @@ variables:
 
 sources:
 - kind: tar
-  url: 'kde_stable:release-service/%{gear-version}/src/partitionmanager-%{gear-version}.tar.xz'
+  url: 'kde_download:%{gear-branch}/release-service/%{gear-version}/src/partitionmanager-%{gear-version}.tar.xz'
   ref: 27e10f6f9ade3b08eda8be1807e1f1470d6db22196422be06224c951c5593cb5

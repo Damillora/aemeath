@@ -16,5 +16,5 @@ variables:
 
 sources:
 - kind: tar
-  url: 'kde_stable:plasma/%{plasma-version}/plasma-activities-%{plasma-version}.tar.xz'
+  url: 'kde_download:%{plasma-branch}/plasma/%{plasma-version}/plasma-activities-%{plasma-version}.tar.xz'
   ref: 54d06a22a5765aa1e92834885d02abc7ce1bf8d6bda9533bb3472d4fef575562

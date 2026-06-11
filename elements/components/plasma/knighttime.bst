@@ -20,5 +20,5 @@ variables:
 
 sources:
 - kind: tar
-  url: 'kde_stable:plasma/%{plasma-version}/knighttime-%{plasma-version}.tar.xz'
+  url: 'kde_download:%{plasma-branch}/plasma/%{plasma-version}/knighttime-%{plasma-version}.tar.xz'
   ref: 5f26692a864540b993351106f5469fd17939bd55e79f931c8f97395d9c5a809d

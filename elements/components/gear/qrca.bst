@@ -29,5 +29,5 @@ variables:
 
 sources:
 - kind: tar
-  url: 'kde_stable:release-service/%{gear-version}/src/qrca-%{gear-version}.tar.xz'
+  url: 'kde_download:%{gear-branch}/release-service/%{gear-version}/src/qrca-%{gear-version}.tar.xz'
   ref: c6d3fc50e20b004c8aa981e4921f117244681bbabfce2e687f2b612e4b2f6427

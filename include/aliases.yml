@@ -18,7 +18,7 @@ aliases:
   rustlang: https://static.rust-lang.org/
   qt: https://download.qt.io/official_releases/qt/
   kde: https://invent.kde.org/
-  kde_stable: https://download.kde.org/stable/
+  kde_download: https://download.kde.org/
   aemeath: https://aemeath.fuxuan.nanao.moe/
   kerberos: https://kerberos.org/
   kernel: https://git.kernel.org/pub/scm/

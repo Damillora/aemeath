@@ -21,4 +21,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:release-service/%{gear-version}/src/kdialog-%{gear-version}.tar.xz'
-  ref: 64714ea3e68b207223e3867587966d6aff57f1e2ef282b1f09786c4f4244ae01
+  ref: 527ecfd4a9af19078f55f5758977821dbcef47a1b496b1a1b680d681228ade6d

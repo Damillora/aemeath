@@ -25,4 +25,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:release-service/%{gear-version}/src/kaccounts-integration-%{gear-version}.tar.xz'
-  ref: 014a079cead78292dc830fb85a4e6bf539dca4e5d7f67498d6ea2e0048c6c352
+  ref: 7fbbb5b8b009588b114b84f4c5913b3e429fb004f9ad7ce1bbd8564530df9e96

@@ -28,4 +28,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_stable:release-service/%{gear-version}/src/audiocd-kio-%{gear-version}.tar.xz'
-  ref: c98f6499f8d196bd87151056c431f212615eda800a17b79d2d14e86ef3029810
+  ref: 53a6084d7c4aaf125e372c0ca5be0947483bcbd75c352b97fbd24cede36dc2d6

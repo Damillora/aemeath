@@ -7,7 +7,7 @@ depends:
 - components/sys-libs/glibc.bst
 - components/sys-libs/gcc-libs.bst
 - components/sys-libs/systemd-libs.bst
-- components/util-sys/util-linux.bst
+- components/util-libs/util-linux-libs.bst
 
 config:
   install-commands:

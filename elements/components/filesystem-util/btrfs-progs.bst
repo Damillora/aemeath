@@ -11,7 +11,7 @@ depends:
 - components/sys-libs/systemd-libs.bst
 - components/sys-libs/zlib-ng.bst
 - components/filesystem-util/e2fsprogs.bst
-- components/util-sys/util-linux.bst
+- components/util-libs/util-linux-libs.bst
 - components/util-archive/lzo.bst
 - components/util-archive/zstd.bst
 

@@ -21,6 +21,8 @@ runtime-depends:
 - components/util-sys/kmod.bst
 - components/util-sys/kbd.bst
 - components/security-libs/p11-kit.bst
+- components/filesystem-util/cryptsetup.bst
+- components/filesystem-util/lvm2.bst
 
 config:
   exclude:

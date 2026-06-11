@@ -27,6 +27,8 @@ build-depends:
 - components/util-libs/libidn2.bst
 - components/util-sys/kmod.bst
 - components/util-sys/kbd.bst
+- components/filesystem-util/_private/cryptsetup-stage1.bst
+- components/filesystem-util/_private/lvm2-stage1.bst
 
 config:
   install-commands:
@@ -71,6 +73,8 @@ variables:
     -Dhtml=enabled
     -Dopenssl=enabled
     -Dp11kit=enabled
+    -Dlibcryptsetup=enabled
+    -Dlibcryptsetup-plugins=enabled
     -Dsbat-distro=aemeath-os
     -Dsbat-distro-generation=1
     -Dsbat-distro-summary="Aemeath OS"

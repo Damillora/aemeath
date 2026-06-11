@@ -7,12 +7,11 @@ runtime-depends:
 - components/sys-libs/libxcrypt.bst
 - components/sys-libs/sqlite.bst
 - components/util-sys/file.bst
-- components/util-libs/util-linux-libs.bst
 
 config:
-  exclude:
+  include:
   - libblkid
   - libfdisk
   - libmount
   - libuuid
-  include-orphans: true
+  include-orphans: false

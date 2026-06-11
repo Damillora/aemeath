@@ -7,7 +7,6 @@ depends:
 #- components/dosfstools.bst
 #- components/mtools.bst
 - components/sys-data/tzdata.bst
-- components/aemeath-tools/generate-initramfs.bst
 - components/aemeath-tools/prepare-image.bst
 #- components/genimage.bst
 #- integration/mtab.bst

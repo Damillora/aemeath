@@ -46,7 +46,6 @@ config:
            --libdirs %{libdir} \
            --add systemd-repart \
            --add systemd-veritysetup \
-           --add crypt \
            --add tpm2-tss
 
   - mkdir -p "%{install-root}/boot"

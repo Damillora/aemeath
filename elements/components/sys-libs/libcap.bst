@@ -9,9 +9,11 @@ depends:
 
 variables:
   make-args: >-
+    DYNAMIC=yes
     prefix="%{prefix}"
     lib="%{lib}"
     sbindir=bin
+    RAISE_SETFCAP=no
 
 config:
   install-commands:

@@ -29,10 +29,13 @@ config:
       mkdir -p "%{build-dir}"
       cd "%{build-dir}"
 
-      echo rootsbindir=%{sbindir} >>configparms
-      echo sbindir=%{sbindir} >>configparms
+      echo "rtlddir=%{libdir}" >> configparms
+      echo rootsbindir=%{sbindir} >> configparms
+      echo sbindir=%{sbindir} >> configparms
   install-commands:
     (>):
+    - |
+      sed '/RTLDLIST=/s@/usr@@g' -i %{install-root}%{bindir}/ldd
     - |
       mkdir "%{install-root}/lib64"
       ln -sfv ../lib/ld-linux-x86-64.so.2 %{install-root}/lib64

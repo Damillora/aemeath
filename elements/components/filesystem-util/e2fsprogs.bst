@@ -9,12 +9,20 @@ depends:
 - components/sys-libs/systemd-libs.bst
 - components/util-libs/util-linux-libs.bst
 
+variables:
+  conf-local: >-
+    --enable-elf-shlibs
+    --disable-libblkid
+    --disable-libuuid
+    --disable-uuidd
+    --disable-fsck
+  make-install: make -j1 DESTDIR="%{install-root}" LDCONFIG=true install install-libs
+
 config:
   install-commands:
     (>):
     - |
       find "%{install-root}" -name "lib*.a" -delete
-
 
 sources:
 - kind: git_repo

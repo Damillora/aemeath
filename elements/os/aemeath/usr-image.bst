@@ -17,10 +17,13 @@ variables:
 environment:
   EROFS_OPTIONS: --all-time -E fragments,fragdedupe=inode
   EROFS_WORKERS: --workers=%{max-jobs}
+  LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
+  FAKECAP_DB: /fakecap
 
 config:
   commands:
   - |
+    mkdir /fakecap
     prepare-image.sh \
        --sysroot /sysroot \
        --seed "%{sysroot-seed}" \

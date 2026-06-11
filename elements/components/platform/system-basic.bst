@@ -23,6 +23,8 @@ depends:
 - components/util-sys/less.bst
 - components/util-sys/procps-ng.bst
 - components/util-text/nano.bst
+# Filesystems
+- components/filesystem-util/btrfs-progs.bst
 # Dev Utilities
 - components/dev-tools/git.bst
 # Services
@@ -31,8 +33,8 @@ depends:
 - components/sys-services/shadow.bst
 - components/sys-services/dbus.bst
 - components/sys-services/dbus-broker.bst
-#- components/net-tools/iproute2.bst
-#- components/util-sys/man-db.bst
+- components/util-sys/iproute2.bst
+- components/util-sys/man-db.bst
 # Data
 - components/sys-data/os-release.bst
 - components/sys-data/linux-firmware.bst
@@ -41,7 +43,6 @@ depends:
   # - freedesktop-sdk.bst:components/bash-config.bst
   # - freedesktop-sdk.bst:components/bash-completion.bst
   # - freedesktop-sdk.bst:components/wireless-regdb-bin.bst
-  # - freedesktop-sdk.bst:components/dracut.bst
   # - freedesktop-sdk.bst:components/usbutils.bst
   # - freedesktop-sdk.bst:components/hosts.bst
   # - freedesktop-sdk.bst:components/tpm2-tss.bst

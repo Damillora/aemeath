@@ -1,15 +1,14 @@
 kind: script
 
 build-depends:
-- filename: components/boot/linux.bst
+- components/aemeath-tools/deploy-tools.bst
+- filename: components/boot-kernel/linux.bst
   strict: true
 - os/aemeath/initramfs/deps.bst
 - os/aemeath/initramfs/initial-scripts.bst
-- freedesktop-sdk.bst:vm/prepare-image.bst
 
 variables:
   uuidnamespace: df2427db-01ec-4c99-96b1-be3edb3cd9f6
-
   efi-arch: "x64"
 
 environment:
@@ -46,7 +45,6 @@ config:
            --add-drivers virtio-gpu \
            --add-drivers i915 \
            --libdirs %{libdir} \
-           --libdirs %{indep-libdir} \
            --add systemd-repart \
            --add systemd-veritysetup \
            --add crypt \

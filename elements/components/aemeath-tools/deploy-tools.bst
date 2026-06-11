@@ -2,6 +2,7 @@ kind: stack
 
 depends:
 - components/filesystem-util/e2fsprogs.bst
+- components/aemeath-tools/fakecap.bst
 - components/sys-services/systemd.bst
 #- components/dosfstools.bst
 #- components/mtools.bst

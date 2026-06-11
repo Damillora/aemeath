@@ -34,6 +34,7 @@ aliases:
   gnu: https://ftp.jaist.ac.jp/pub/GNU/
   savannah: https://git.savannah.gnu.org/git/
   savannah_download: https://download.savannah.gnu.org/releases/
+  savannah_mirror: https://download-mirror.savannah.gnu.org/releases/
   iana: https://www.iana.org/
   mozilla_hg: https://hg-edge.mozilla.org/
   gnome: https://gitlab.gnome.org/GNOME/

@@ -6,6 +6,7 @@ depends:
 #- freedesktop-sdk.bst:components/fakecap.bst
 - components/sys-devel/binutils.bst
 - components/dev-tools/pkgconf.bst
+- components/boot-util/dracut.bst
 - components/filesystem-util/erofs-utils.bst
 - components/filesystem-util/btrfs-progs.bst
 - os/aemeath/repart-config.bst

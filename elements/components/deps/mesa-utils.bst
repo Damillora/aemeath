@@ -10,14 +10,30 @@ depends:
 - freedesktop-sdk.bst:components/libdrm.bst
 - freedesktop-sdk.bst:components/libdecor.bst
 - freedesktop-sdk.bst:components/libxkbcommon.bst
-- components/freedesktop/freeglut.bst
-- components/freedesktop/glu.bst
+- components/deps/freeglut.bst
+- components/deps/glu.bst
 
 variables:
   meson-local: >-
     -Dgles1=disabled
     -Dosmesa=disabled
     -Dvulkan=disabled
+config:
+  install-commands:
+  - |
+    install -Dm 0755 build/src/egl/opengl/\
+    {eglinfo,eglgears_wayland,eglgears_x11,\
+    eglkms,egltri_wayland,egltri_x11,\
+    peglgears,xeglgears,xeglthreads} -t "%{install-root}%{bindir}/"
+
+    install -Dm 0755 build/src/egl/opengles2/\
+    {es2_info,es2gears_wayland,es2gears_x11,es2tri} -t "%{install-root}%{bindir}/"
+
+    install -Dm 0755 build/src/xdemos/{glxinfo,glxgears} -t "%{install-root}%{bindir}/"
+    install -Dm 0755 build/src/vulkan/vkgears -t "%{install-root}%{bindir}/"
+
+  - |
+    %{install-extra}
 
 sources:
 - kind: git_repo

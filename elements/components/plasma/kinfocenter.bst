@@ -25,9 +25,9 @@ depends:
 - components/kf6/kirigami.bst
 - components/kf6/kservice.bst
 - components/kf6/solid.bst
-- components/freedesktop/clinfo.bst
-- components/freedesktop/mesa-demos.bst
-- components/freedesktop/vulkan-tools.bst
+- components/deps/clinfo.bst
+- components/deps/mesa-utils.bst
+- components/deps/vulkan-tools.bst
 - components/deps/wayland-utils.bst
 - components/deps/libdisplay-info.bst
 - components/deps/lm-sensors.bst

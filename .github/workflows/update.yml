@@ -58,6 +58,21 @@ jobs:
           git config --global --add safe.directory $GITHUB_WORKSPACE
           git config --global user.name "Aemeath OS Updates"
           git config --global user.email "aemeath@damillora.com"
+          git switch -c feature/update-versions
+          git rebase main
           git add elements
-          git commit -m "chore: bst source track" && git push
+          git commit -m "chore: bst source track" && git push -u origin feature/update-versions
+          # Check if an open PR already exists from the current branch to main
+          PR_EXISTS=$(gh pr list --head "feature/update-versions" --base main --state open --json number --jq '.[0].number')
+
+          if [ -z "$PR_EXISTS" ]; then
+            echo "No open PR found. Creating a new one..."
+            gh pr create \
+              --title chore: bst source track" \
+              --body "This PR was automatically created by GitHub Actions." \
+              --base main \
+              --head "feature/update-versions"
+          else
+            echo "Pull request already exists: #$PR_EXISTS. Skipping creation."
+          fi
         shell: bash

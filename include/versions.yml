@@ -4,7 +4,7 @@ sdk-version: "25.08.12"
 qt6-version-branch: "6.11"
 qt6-version: "6.11.1"
 # KDE Frameworks
-kf6-version: "6.26"
+kf6-version: "6.27"
 # KDE Plasma
 plasma-branch: "stable"
 plasma-version: "6.6.5"

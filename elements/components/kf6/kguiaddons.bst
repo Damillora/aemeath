@@ -22,4 +22,4 @@ sources:
 - kind: git_repo
   url: kde:frameworks/kguiaddons.git
   track: 'v%{kf6-version}.*'
-  ref: v6.26.0-rc1-0-g19d657c78f869258b445f3af74983e470dff46ba
+  ref: v6.27.0-rc1-0-gfdc090e85cec8da9c2d08b85813807c9bfe454cf

@@ -6,7 +6,13 @@ depends:
 - components/sys-data/iana-etc.bst
 - components/sys-data/locale-base.bst
 - components/sys-data/man-pages.bst
+- components/sys-data/os-release.bst
+- components/sys-data/linux-firmware.bst
+- components/sys-data/tzdata.bst
+# Configuration
+- components/sys-config/bash-config.bst
 - components/sys-config/sudoers-config.bst
+- components/sys-config/hosts.bst
 # Archive formats
 - components/util-archive/bzip2.bst
 - components/util-archive/gzip.bst
@@ -39,15 +45,8 @@ depends:
 - components/sys-services/dbus-broker.bst
 - components/util-sys/iproute2.bst
 - components/util-sys/man-db.bst
-# Data
-- components/sys-data/os-release.bst
-- components/sys-data/linux-firmware.bst
-- components/sys-data/tzdata.bst
+# Other components
+- components/util-shells/bash-completion.bst
   # Remaining from Aemeath OS
-  # - freedesktop-sdk.bst:components/bash-config.bst
-  # - freedesktop-sdk.bst:components/bash-completion.bst
   # - freedesktop-sdk.bst:components/wireless-regdb-bin.bst
   # - freedesktop-sdk.bst:components/usbutils.bst
-  # - freedesktop-sdk.bst:components/hosts.bst
-  # - freedesktop-sdk.bst:components/tpm2-tss.bst
-  # - freedesktop-sdk.bst:components/tpm2-tools.bst

@@ -24,6 +24,9 @@ depends:
 - components/plasma/libplasma.bst
 - components/plasma/plasma-workspace.bst
 
+runtime-depends:
+- components/deps/oo7-pam.bst
+
 variables:
   cmake-local: >-
     -DBUILD_TESTING=OFF

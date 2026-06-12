@@ -3,13 +3,15 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
 
-auth        optional    pam_kwallet5.so
-auth        include     system-auth
+auth        substack    system-auth
+auth        optional    pam_oo7.so
 
 account     include     system-auth
 
 password    include     system-auth
+password    optional    pam_oo7.so
 
-session     optional    pam_keyinit.so          force revoke
+session     optional    pam_keyinit.so         force revoke
 session     include     system-auth
-session     optional    pam_kwallet5.so         auto_start
+session     required    pam_env.so
+session     optional    pam_oo7.so             auto_start

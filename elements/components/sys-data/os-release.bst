@@ -16,8 +16,10 @@ config:
   - |
     mkdir -p "%{install-root}%{libdir}"
     install os-release "%{install-root}%{libdir}"
+    install issue "%{install-root}%{libdir}"
     mkdir -p "%{install-root}%{sysconfdir}"
     ln -s "$(realpath --relative-to="%{install-root}%{sysconfdir}" "%{install-root}%{libdir}/os-release")" %{install-root}%{sysconfdir}/os-release
+    ln -s "$(realpath --relative-to="%{install-root}%{sysconfdir}" "%{install-root}%{libdir}/issue")" %{install-root}%{sysconfdir}/issue
 
 sources:
 - kind: local

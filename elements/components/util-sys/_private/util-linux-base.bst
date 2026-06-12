@@ -27,6 +27,8 @@ variables:
     -Dbuild-pylibmount=disabled
     -Dbuild-liblastlog2=disabled
     -Dbuild-wall=disabled
+    -Dbuild-newgrp=disabled
+    -Dbuild-vipw=disabled
     -Dbuild-python=disabled
 
 public:

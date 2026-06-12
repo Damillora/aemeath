@@ -15,6 +15,8 @@ variables:
     --enable-dmeventd
     --enable-cmdlib
     --enable-pkgconfig
+    --enable-udev_sync
+    --enable-udev_rules
     --with-confdir=%{sysconfdir}
     --with-staticdir=%{sbindir}
     --with-usrlibdir=%{libdir}

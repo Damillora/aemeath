@@ -62,6 +62,18 @@ jobs:
           git rebase main
           git add elements
           git commit -m "chore: bst source track" && git push -u origin feature/update-versions
+        shell: bash
+
+  pull_request_creation:
+    name: Create PR
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    needs:
+      - build_push
+    steps:
+      - name: Create PR
+        run: |
           # Check if an open PR already exists from the current branch to main
           PR_EXISTS=$(gh pr list --head "feature/update-versions" --base main --state open --json number --jq '.[0].number')
 
@@ -75,4 +87,3 @@ jobs:
           else
             echo "Pull request already exists: #$PR_EXISTS. Skipping creation."
           fi
-        shell: bash

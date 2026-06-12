@@ -1,0 +1,5 @@
+sources:
+- kind: git_repo
+  url: kernel:linux/kernel/git/stable/linux.git
+  track: v7.0.5
+  ref: v7.0.5-0-g3fd2ca34a3e7d1f52e7deaa27016379935ae0845

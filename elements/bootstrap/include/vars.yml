@@ -1,0 +1,14 @@
+variables:
+  bootstrap-prefix: /aemeath-tools
+  bootstrap-triplet: x86_64-aemeath-linux-gnu
+  bootstrap-sysroot: /aemeath-sysroot
+  strip-binaries: |
+    for i in $(find %{install-root}%{libdir} -type f -name \*.so* ! -name \*dbg) \
+      $(find %{install-root}%{libdir} -type f -name \*.a) \
+      $(find %{install-root}%{bindir} %{install-root}%{libexecdir} -type f);
+    do
+      strip --strip-unneeded $i || true
+    done
+
+environment:
+  PATH: "%{bootstrap-prefix}/bin:/bin"

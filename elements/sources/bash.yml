@@ -1,0 +1,9 @@
+sources:
+- kind: git_repo
+  url: savannah:bash.git
+  # bash doesn't provide patch releases, and just commits patches
+  # to git. We track master to get those latest fixes without having
+  # to backport them one by one.
+  # When reviewing an update, please review what patches it introduces
+  track: master
+  ref: bash-5.3-10-g637f5c8696a6adc9b4519f1cd74aa78492266b7f

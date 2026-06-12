@@ -1,7 +1,7 @@
 kind: import
 
 config:
-  target: '%{indep-libdir}/repart.d.live'
+  target: '%{libdir}/repart.d.live'
 
 sources:
 - kind: local

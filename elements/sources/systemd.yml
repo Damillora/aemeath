@@ -1,0 +1,8 @@
+sources:
+- kind: git_repo
+  url: github:systemd/systemd.git
+  track: v*
+  exclude:
+  - '*rc*'
+  ref: v260.2-0-gf1d0952a125b96b7ab2f1ff29a87448ade8ac29b
+  version-guess-pattern: '(\d+)(?:\.(\d+))?'

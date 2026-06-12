@@ -1,0 +1,13 @@
+kind: makemaker
+
+build-depends:
+- components/buildsystems/minimal.bst
+
+depends:
+- components/dev-lang/perl.bst
+
+sources:
+- kind: cpan
+  name: 'File::Slurp'
+  suffix: authors/id/C/CA/CAPOEIRAB/File-Slurp-9999.32.tar.gz
+  sha256sum: 4c3c21992a9d42be3a79dd74a3c83d27d38057269d65509a2f555ea0fb2bc5b0

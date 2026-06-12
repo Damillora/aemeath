@@ -1,0 +1,36 @@
+kind: make
+
+(@):
+- elements/bootstrap/include/vars.yml
+- elements/sources/perl.yml
+
+build-depends:
+- bootstrap/filesystem.bst
+- bootstrap/binutils-stage2.bst
+- bootstrap/gcc-stage2.bst
+- bootstrap/coreutils.bst
+- bootstrap/make.bst
+- bootstrap/grep.bst
+- bootstrap/bash.bst
+- bootstrap/sed.bst
+- bootstrap/diffutils.bst
+- bootstrap/findutils.bst
+- bootstrap/gawk.bst
+
+depends:
+- bootstrap/glibc.bst
+
+config:
+  configure-commands:
+  - |
+    sh Configure -des \
+      -Dprefix="%{prefix}" \
+      -Dvendorprefix="%{prefix}" \
+      -D useshrplib
+
+  install-commands:
+    (>):
+    - |
+      rm "%{install-root}%{bindir}/perl"
+      ln -sr "%{install-root}%{bindir}"/perl[0-9]* "%{install-root}%{bindir}/perl"
+

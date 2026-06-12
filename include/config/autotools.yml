@@ -1,0 +1,10 @@
+autotools:
+  variables:
+    build-dir: "."
+    conf-root: "%{build-root}"
+    configure: mkdir -p "%{build-dir}"; cd "%{build-dir}" && %{conf-cmd} %{conf-args}
+    make: make -C "%{build-dir}" %{make-args}
+    make-install: make -C "%{build-dir}" -j1 %{make-install-args}
+    remove-libtool-modules: true
+    remove-libtool-libraries: true
+

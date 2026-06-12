@@ -1,0 +1,4 @@
+sources:
+- kind: tar
+  url: gnu:tar/tar-1.35.tar.gz
+  ref: 14d55e32063ea9526e057fbf35fcabd53378e769787eff7919c3755b02d2b57e

@@ -1,0 +1,8 @@
+sources:
+- kind: git_repo
+  url: github:ThomasDickey/ncurses-snapshots.git
+  track: "v*"
+  exclude:
+  - "v*_*_*"
+  ref: v6_6-0-g0096bd402c4a9c8f39bd7ed266e1b8920327e4d8
+  version-guess-pattern: '(\d+)_(\d+)'

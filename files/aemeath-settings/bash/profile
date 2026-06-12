@@ -1,0 +1,14 @@
+for i in /etc/profile.d/*.sh; do
+  if [ -r "${i}" ]; then
+    . "${i}"
+  fi
+done
+
+if test "$BASH" &&\
+   test "$PS1" &&\
+   test -z "$POSIXLY_CORRECT" &&\
+   test "${0#-}" != sh &&\
+   test -r /etc/bashrc
+then
+	. /etc/bashrc
+fi

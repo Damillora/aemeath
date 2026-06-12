@@ -1,0 +1,7 @@
+sources:
+- kind: git_repo
+  url: samba:rsync.git
+  track: v*
+  ref: v3.4.3-0-g2c7777aaa62abeb1bca192da345e6e8c685e872a
+  exclude:
+  - '*pre*'

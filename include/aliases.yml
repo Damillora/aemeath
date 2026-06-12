@@ -1,5 +1,6 @@
 aliases:
   gitlab: https://gitlab.com/
+  gitlab_registry: https://registry.gitlab.com/
   github: https://github.com/
   crates: https://static.crates.io/
   freedesktop: https://gitlab.freedesktop.org/
@@ -15,6 +16,7 @@ aliases:
   xiph: https://downloads.xiph.org/
   dest-unreach: http://www.dest-unreach.org/
   sourceforge: https://sourceforge.net/projects/
+  sourceforge_dl: https://downloads.sourceforge.net/
   rustlang: https://static.rust-lang.org/
   qt: https://download.qt.io/official_releases/qt/
   kde: https://invent.kde.org/
@@ -22,5 +24,23 @@ aliases:
   aemeath: https://aemeath.fuxuan.nanao.moe/
   kerberos: https://kerberos.org/
   kernel: https://git.kernel.org/pub/scm/
+  kernel_http: https://www.kernel.org/pub/linux/
   rust: https://static.rust-lang.org/
   nodejs: https://nodejs.org/dist/
+  sourceware: https://sourceware.org/git/
+  sourceware_pub: https://sourceware.org/pub/
+  sourceware_ftp: https://sourceware.org/ftp/
+  gcc: https://gcc.gnu.org/git/
+  gnu: https://ftp.jaist.ac.jp/pub/GNU/
+  savannah: https://git.savannah.gnu.org/git/
+  savannah_download: https://download.savannah.gnu.org/releases/
+  savannah_mirror: https://download-mirror.savannah.gnu.org/releases/
+  iana: https://www.iana.org/
+  mozilla_hg: https://hg-edge.mozilla.org/
+  gnome: https://gitlab.gnome.org/GNOME/
+  cmake: https://gitlab.kitware.com/cmake/
+  samba: https://git.samba.org/
+  nettle: https://git.lysator.liu.se/nettle/
+  oberhumer: https://www.oberhumer.com/
+  ozlabs: https://git.ozlabs.org/
+  ruby: https://cache.ruby-lang.org/

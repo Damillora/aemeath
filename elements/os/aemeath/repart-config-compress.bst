@@ -1,7 +1,7 @@
 kind: import
 
 config:
-  target: '%{indep-libdir}/repart.d.compress'
+  target: '%{libdir}/repart.d.compress'
 
 sources:
 - kind: local

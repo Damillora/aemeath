@@ -1,0 +1,13 @@
+sources:
+- kind: git_repo
+  url: kernel:linux/kernel/git/stable/linux.git
+  track: v*
+  exclude:
+  - '*-rc*'
+  ref: v7.0.11-0-gbb532bfaf7919c7c98caab81864e9ce2646e11e3
+- kind: patch_queue
+  path: patches/linux
+- kind: local
+  path: files/linux/config-utils.sh
+- kind: local
+  path: files/linux/fdsdk-config.sh

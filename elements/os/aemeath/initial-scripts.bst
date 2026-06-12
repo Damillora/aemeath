@@ -4,4 +4,4 @@ build-depends:
 - os/aemeath/deps.bst
 
 config:
-  path: /etc/fdsdk/initial_scripts
+  path: /etc/aemeath/initial_scripts

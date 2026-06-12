@@ -21,16 +21,16 @@ variables:
 config:
   install-commands:
   - |
-    install -Dm 0755 build/src/egl/opengl/\
+    install -Dm 0755 _builddir/src/egl/opengl/\
     {eglinfo,eglgears_wayland,eglgears_x11,\
     eglkms,egltri_wayland,egltri_x11,\
     peglgears,xeglgears,xeglthreads} -t "%{install-root}%{bindir}/"
 
-    install -Dm 0755 build/src/egl/opengles2/\
+    install -Dm 0755 _builddir/src/egl/opengles2/\
     {es2_info,es2gears_wayland,es2gears_x11,es2tri} -t "%{install-root}%{bindir}/"
 
-    install -Dm 0755 build/src/xdemos/{glxinfo,glxgears} -t "%{install-root}%{bindir}/"
-    install -Dm 0755 build/src/vulkan/vkgears -t "%{install-root}%{bindir}/"
+    install -Dm 0755 _builddir/src/xdemos/{glxinfo,glxgears} -t "%{install-root}%{bindir}/"
+    install -Dm 0755 _builddir/src/vulkan/vkgears -t "%{install-root}%{bindir}/"
 
   - |
     %{install-extra}

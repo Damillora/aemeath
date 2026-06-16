@@ -14,3 +14,8 @@ variables:
     vulkan-headers/LICENSES/Apache-2.0.txt \
     vulkan-headers/LICENSES/MIT.txt
   command-subdir: vulkan-headers
+
+public:
+  bst:
+    overlap-whitelist:
+      - "**"

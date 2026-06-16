@@ -16,7 +16,6 @@ depends:
 - components/kf6/kcoreaddons.bst
 - components/kf6/kcrash.bst
 - components/kf6/kglobalaccel.bst
-- components/kf6/kguiaddons.bst
 - components/kf6/ki18n.bst
 - components/kf6/kiconthemes.bst
 - components/kf6/kio.bst

@@ -28,6 +28,7 @@ depends:
 - components/kf6/prison.bst
 - components/kf6/solid.bst
 - components/plasma/libplasma.bst
+- components/deps/kirigami-addons.bst
 - components/deps/qt6-qca.bst
 - components/deps/qt6-qcoro.bst
 

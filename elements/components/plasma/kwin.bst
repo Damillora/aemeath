@@ -6,6 +6,7 @@ build-depends:
 - components/kf6/extra-cmake-modules.bst
 - components/kf6/kdoctools.bst
 - components/deps/plasma-wayland-protocols.bst
+- freedesktop-sdk.bst:components/vulkan-headers.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
@@ -62,6 +63,7 @@ depends:
 - components/plasma/kscreenlocker.bst
 - components/plasma/kwayland.bst
 - components/plasma/libplasma.bst
+- components/plasma/milou.bst
 - components/plasma/plasma-activities.bst
 - components/deps/libcanberra.bst
 - components/deps/libdisplay-info.bst

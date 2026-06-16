@@ -15,9 +15,9 @@ depends:
 - components/kf6/kstatusnotifieritem.bst
 - components/plasma/kpipewire.bst
 - components/deps/freerdp.bst
+- components/deps/kirigami-addons.bst
 - components/deps/plasma-wayland-protocols.bst
 - components/deps/qt6-qtkeychain.bst
-
 variables:
   cmake-local: -DBUILD_TESTING=OFF
 

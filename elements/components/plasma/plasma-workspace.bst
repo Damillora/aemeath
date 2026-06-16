@@ -58,7 +58,6 @@ depends:
 - components/kf6/kitemmodels.bst
 - components/kf6/knewstuff.bst
 - components/kf6/knotifications.bst
-- components/kf6/knotifyconfig.bst
 - components/kf6/kpackage.bst
 - components/kf6/kparts.bst
 - components/kf6/kquickcharts.bst

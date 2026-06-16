@@ -29,7 +29,6 @@ depends:
 - components/qt6/qtbase.bst
 - components/qt6/qt5compat.bst
 - components/qt6/qtdeclarative.bst
-- components/kf6/kauth.bst
 - components/kf6/kbookmarks.bst
 - components/kf6/kcmutils.bst
 - components/kf6/kcodecs.bst

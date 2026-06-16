@@ -19,6 +19,7 @@ depends:
 - components/kf6/kcrash.bst
 - components/kf6/kdbusaddons.bst
 - components/kf6/ki18n.bst
+- components/kf6/kitemmodels.bst
 - components/kf6/kimageformats.bst
 - components/kf6/ksvg.bst
 - components/kf6/kwindowsystem.bst
@@ -26,6 +27,7 @@ depends:
 - components/plasma/layer-shell-qt.bst
 - components/plasma/libkscreen.bst
 - components/plasma/libplasma.bst
+- components/plasma/plasma5support.bst
 
 variables:
   cmake-local: -DBUILD_TESTING=OFF

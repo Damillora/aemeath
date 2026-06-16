@@ -83,4 +83,4 @@ public:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-version}/kwin-%{plasma-version}.tar.xz'
-  ref: 6c187ce7a5506090b438ef900103836fa0537674dde8b31e5b497ef321643cb4
+  ref: d20b798094a9f58e57de55eca3d58b1cdcb7db2939eb8bf73918c4fab6d9aec5

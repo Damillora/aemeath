@@ -27,4 +27,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-version}/libksysguard-%{plasma-version}.tar.xz'
-  ref: f088854a021028b7b0f6a735c89e9aa53bd13e903af11ed16a49c944e33b00df
+  ref: e34c01438399fc23090cde4d47225bcd8f60899d138ecae99cc599659536ace3

@@ -28,4 +28,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{gear-branch}/plasma/%{plasma-version}/aurorae-%{plasma-version}.tar.xz'
-  ref: e7c3de710a75f99df8c4f80a741e3d1e90e5c5cadae44a3d180861d0f5c9dcf9
+  ref: 538223ebe7521305d29873c278f85e7910eb7810a31d2a69698ede76a5c0da3c

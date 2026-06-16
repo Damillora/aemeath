@@ -10,4 +10,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-version}/plasma-workspace-wallpapers-%{plasma-version}.tar.xz'
-  ref: 4a021dbda761da7aaf7192e8d038aa1f2305a576a57f2384f54bc8ed90731418
+  ref: 0e92220c0ae0b7c42644ebed6fe159fb0097a892e640cb1242047c929931ea0a

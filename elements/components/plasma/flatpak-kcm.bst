@@ -23,4 +23,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-version}/flatpak-kcm-%{plasma-version}.tar.xz'
-  ref: 061377c064c2ac06f77d2850e711867e91768c3c8333dffb8f2b0ba21803b01a
+  ref: 4a6490696eb4c86438b04e97dc163be50b0cd7bb7eacfbb204692094ff60b76b

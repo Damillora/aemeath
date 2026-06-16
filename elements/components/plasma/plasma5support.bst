@@ -30,4 +30,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-version}/plasma5support-%{plasma-version}.tar.xz'
-  ref: 5f45687e2d281cdfc0666a0ad777adfcbbbb2534284ca6450d3aa7d700b9f763
+  ref: e60e1e47a3dee93518647d66393c21e2406f7779e9e9e4382d7cea68cebbfb7b

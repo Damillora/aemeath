@@ -33,4 +33,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-version}/kscreen-%{plasma-version}.tar.xz'
-  ref: 753ebc00cf75359c2e7ba3aabb20ff3596d0fbbe2f0b6d3ed6098d27282a3276
+  ref: ad57a4326a64979a68aa5068a7151702d9b02db0720670e4be3e178905beda56

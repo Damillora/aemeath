@@ -2,10 +2,10 @@ kind: cmake
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
-- freedesktop-sdk.bst:components/vulkan-headers.bst
 - freedesktop-sdk.bst:components/wayland-protocols.bst
 - components/kf6/extra-cmake-modules.bst
 - components/kf6/kdoctools.bst
+- components/freedesktop/vulkan-headers.bst
 - components/deps/plasma-wayland-protocols.bst
 
 depends:
@@ -28,7 +28,6 @@ depends:
 - freedesktop-sdk.bst:components/xcb-util-wm.bst
 - freedesktop-sdk.bst:components/fontconfig.bst
 - freedesktop-sdk.bst:components/freetype.bst
-- freedesktop-sdk.bst:components/vulkan-icd-loader.bst
 - components/qt6/qtbase.bst
 - components/qt6/qt5compat.bst
 - components/qt6/qtdeclarative.bst

@@ -50,12 +50,14 @@ case "$arch" in
 	# fp5
 	module DRM_PANEL_RAYDIUM_RM692E5
 	enable REGULATOR_QCOM_PM8008
+	enable REGULATOR_QCOM_REFGEN
 	module DRM_SIMPLEDRM
 	module BACKLIGHT_QCOM_WLED
 	enable USB_XHCI_SIDEBAND
 	module SND_USB_AUDIO_QMI
 	module SND_SOC_USB
 	module SND_SOC_QDSP6_USB
+	enable SCSI_UFS_QCOM
 
 	# FIXME: Because ARM_SMMU is built-in and will try to probe
 	# the clocks, we need to have them built-in. We should try to
@@ -67,6 +69,8 @@ case "$arch" in
 	enable SC_LPASS_CORECC_7280
 	enable SC_VIDEOCC_7280
 	enable SC_GCC_7280
+
+	enable QCOM_PD_MAPPER
     ;;
 esac
 
@@ -105,13 +109,10 @@ module CRYPTO_CTS
 module CRYPTO_DEFLATE
 module CRYPTO_DES
 module CRYPTO_DH
-enable CRYPTO_DRBG_CTR
-enable CRYPTO_DRBG_HASH
 module CRYPTO_ECB
 module CRYPTO_ECDSA
 module CRYPTO_ECRDSA
 module CRYPTO_FCRYPT
-module CRYPTO_GHASH
 module CRYPTO_HMAC
 module CRYPTO_LRW
 module CRYPTO_LZ4
@@ -140,13 +141,9 @@ enable CRYPTO_USER_API_SKCIPHER
 case "$arch" in
     x86_64)
         module CRYPTO_AES_NI_INTEL
-        module CRYPTO_GHASH_CLMUL_NI_INTEL
-        module CRYPTO_DES3_EDE_X86_64
     ;;
     aarch64)
         module CRYPTO_GHASH_ARM64_CE
-        module CRYPTO_AES_ARM64
-        module CRYPTO_AES_ARM64_CE
         module CRYPTO_AES_ARM64_CE_CCM
         module CRYPTO_AES_ARM64_CE_BLK
         module CRYPTO_AES_ARM64_NEON_BLK
@@ -271,6 +268,7 @@ module VIRTIO_INPUT
 module SND_VIRTIO
 module I2C_VIRTIO
 module LIBNVDIMM
+module VIRTIO_VFIO_PCI
 module VIRTIO_ANCHOR
 enable VIRTIO_PMEM
 module VIRTIO_NET
@@ -457,6 +455,7 @@ module AR5523
 module ATH10K_USB
 module ATH11K
 module ATH11K_PCI
+module ATH12K
 module ATH5K
 module ATH6KL
 module ATH6KL_SDIO
@@ -542,15 +541,10 @@ module ZD1211RW
 
 # Ethernet hardware
 module IGB
-if has PCMCIA; then
-    module PCMCIA_3C574
-    module PCMCIA_3C589
-fi
 module TYPHOON
 module VORTEX
 module NE2K_PCI
 if has PCMCIA; then
-    module PCMCIA_AXNET
     module PCMCIA_PCNET
 fi
 module ADAPTEC_STARFIRE
@@ -564,9 +558,6 @@ case "$arch" in
         module AMD_XGBE
     ;;
 esac
-if has PCMCIA; then
-    module PCMCIA_NMCLAN
-fi
 module PCNET32
 module AQTION
 module ALX
@@ -641,8 +632,6 @@ module NATSEMI
 module NS83820
 enable NET_VENDOR_NETRONOME
 module NFP
-module HAMACHI
-module YELLOWFIN
 module NETXEN_NIC
 module QED
 enable QED_SRIOV
@@ -665,9 +654,6 @@ module SC92031
 module SIS190
 module SIS900
 module EPIC100
-if has PCMCIA; then
-    module PCMCIA_SMC91C92
-fi
 module SMSC9420
 case "$arch" in
     x86_64)
@@ -720,6 +706,24 @@ case "$arch" in
     aarch64)
         module DRM_PANFROST
         module DRM_MSM
+        module DRM_PANEL_SAMSUNG_SOFEF00
+    ;;
+esac
+
+# NPUs
+enable DRM_ACCEL
+module DRM_ACCEL_QAIC
+case "$arch" in
+    x86_64)
+        module DRM_ACCEL_IVPU
+        module DRM_ACCEL_AMDXDNA
+        module DRM_ACCEL_HABANALABS
+    ;;
+    aarch64)
+        module DRM_ACCEL_ROCKET
+        # ACCEL_ARM_ETHOSU can build on other architectures but not
+        # sure if there is any hardware.
+        module DRM_ACCEL_ARM_ETHOSU
     ;;
 esac
 
@@ -888,6 +892,7 @@ enable USB_PWC_INPUT_EVDEV
 if has ACPI && has I2C && has X86; then
     module IPU_BRIDGE
     module VIDEO_IPU3_CIO2
+    module VIDEO_INTEL_IPU6
 fi
 
 # PHY controllers
@@ -1207,7 +1212,6 @@ case "$arch" in
         module SND_SOC_AMD_PS_MACH
         module SND_SOC_AMD_RENOIR
         module SND_SOC_AMD_RENOIR_MACH
-        module SND_SOC_AMD_RPL_ACP6x
         module SND_SOC_AMD_RV_RT5682_MACH
         module SND_SOC_AMD_SOF_MACH
         module SND_SOC_AMD_VANGOGH_MACH
@@ -1278,6 +1282,12 @@ if has ARCH_ENABLE_MEMORY_HOTPLUG; then
         enable ZONE_DEVICE
         enable DEVICE_PRIVATE
         enable HMM_MIRROR
+
+        case "$arch" in
+            aarch64|x86_64|riscv*)
+                module VIRTIO_MEM
+            ;;
+        esac
     fi
 fi
 
@@ -1769,7 +1779,7 @@ case "$arch" in
         module MFD_INTEL_PMC_BXT
     ;;
     aarch64)
-        module MFD_QCOM_PM8008
+        enable MFD_QCOM_PM8008
     ;;
 esac
 module MFD_AXP20X_I2C
@@ -2395,6 +2405,7 @@ fi
 remove DEBUG_INFO_SPLIT
 remove DEBUG_INFO_REDUCED
 enable DEBUG_INFO_DWARF_TOOLCHAIN_DEFAULT
+enable DEBUG_INFO_BTF
 
 # Ramdisk
 module BLK_DEV_RAM
@@ -2613,6 +2624,9 @@ case "$arch" in
 esac
 
 enable CPU_FREQ
+if has GENERIC_ARCH_TOPOLOGY; then
+    module CPUFREQ_VIRT
+fi
 
 # cpufreq
 case "$arch" in
@@ -2749,6 +2763,7 @@ case "$arch" in
         enable X86_PLATFORM_DRIVERS_HP
         module ALIENWARE_WMI
         module ASUS_NB_WMI
+        module ASUS_ARMOURY
         module ASUS_WMI
         module ASUS_TF103C_DOCK
         enable DELL_SMBIOS_WMI
@@ -2820,3 +2835,8 @@ fi
 # MPTCP support
 enable MPTCP
 enable MPTCP_IPV6
+
+# Can improve performance. i915 and v3d drm drivers recommend enabling it.
+if has HAVE_ARCH_TRANSPARENT_HUGEPAGE; then
+    enable TRANSPARENT_HUGEPAGE
+fi

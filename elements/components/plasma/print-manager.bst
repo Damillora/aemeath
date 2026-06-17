@@ -14,6 +14,7 @@ depends:
 - components/kf6/kconfigwidgets.bst
 - components/kf6/kcoreaddons.bst
 - components/kf6/kdbusaddons.bst
+- components/kf6/kdeclarative.bst
 - components/kf6/ki18n.bst
 - components/kf6/kio.bst
 - components/kf6/kirigami.bst

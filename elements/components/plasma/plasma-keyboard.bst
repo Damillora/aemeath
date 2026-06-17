@@ -16,6 +16,7 @@ depends:
 - components/kf6/kconfig.bst
 - components/kf6/kcoreaddons.bst
 - components/kf6/ki18n.bst
+- components/plasma/libplasma.bst
 
 variables:
   cmake-local: -DBUILD_TESTING=OFF

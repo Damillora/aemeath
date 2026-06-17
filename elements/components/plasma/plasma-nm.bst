@@ -31,6 +31,7 @@ depends:
 - components/deps/kirigami-addons.bst
 - components/deps/qt6-qca.bst
 - components/deps/qt6-qcoro.bst
+- components/deps/qt6-qtkeychain.bst
 
 runtime-depends:
 - components/kf6/kquickcharts.bst

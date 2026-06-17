@@ -549,7 +549,6 @@ if has PCMCIA; then
 fi
 module ADAPTEC_STARFIRE
 module ET131X
-module ACENIC
 module ENA_ETHERNET
 module AMD8111_ETH
 case "$arch" in

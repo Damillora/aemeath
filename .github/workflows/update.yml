@@ -59,9 +59,10 @@ jobs:
           git config --global user.name "Aemeath OS Updates"
           git config --global user.email "aemeath@damillora.com"
           git switch -c feature/update-versions
-          git rebase main
           git add elements
-          git commit -m "chore: bst source track" && git push -u origin feature/update-versions
+          git commit -m "chore: bst source track" 
+          git rebase main
+          git push -u origin feature/update-versions         
         shell: bash
 
   pull_request_creation:

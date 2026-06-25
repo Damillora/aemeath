@@ -5,6 +5,9 @@ on:
     - cron: "27 00 * * *" # 03:05am UTC everyday
   workflow_dispatch:
 
+env:
+  GH_TOKEN: ${{ github.token }}
+
 jobs:
   build_push:
     name: Track sources
@@ -60,7 +63,7 @@ jobs:
           git config --global user.email "aemeath@damillora.com"
           git switch -c feature/update-versions
           git add elements
-          git commit -m "chore: bst source track" 
+          git commit -m "chore: bst source track"
           git rebase main
           git push -u origin feature/update-versions --force
         shell: bash

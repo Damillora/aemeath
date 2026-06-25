@@ -11,6 +11,10 @@ depends:
 - components/util-libs/glib.bst
 - components/util-libs/icu.bst
 
+variables:
+  # Harfbuzz does not seem to like the exception switch
+  cflags-exceptions: ''
+
 sources:
 - kind: git_repo
   url: github:harfbuzz/harfbuzz.git

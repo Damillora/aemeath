@@ -1,11 +1,11 @@
-# Aemeath
+# Aemeath OS
 
-An experimental immutable Linux distribution based on the Freedesktop SDK, running the KDE
-Plasma desktop environment.
+An experimental independent Linux distribution running the KDE Plasma 
+desktop environment.
 
-Aemeath does not have a package manager. System updates are image-based,
-while applications are installed from Flatpak. It aims to include the latest KDE software,
-while building on top of the same Freedesktop SDK used by the Flatpak runtime.
+Aemeath OS is an immutable Linux distribution and does not have a package manager. 
+System updates are image-based, while applications are installed from Flatpak. 
+It aims to deliver a complete desktop experience based on the latest KDE software.
 
 **WARNING: Aemeath is currently very experimental, and not ready to use as a daily driver.
 It is recommended to run Aemeath inside a virtual machine with 3D acceleration enabled,
@@ -13,18 +13,16 @@ to prevent your real data from being eaten by the Threnodian.**
 
 ## Current Status
 
-Right now, it sort of boots into the desktop, but packaging is still pretty much a mess,
-especially Plasma ones. This will get cleaned up in due time, but until then, you'll
-need to bear with it for a while.
+Aemeath OS has moved away from the Freedesktop SDK base, becoming an independent 
+distribution. It currently boots into a usable, but minimal KDE Plasma environment.
 
-An S3 bucket for downloads has been set up, but there's no easy way to access them yet.
-`systemd-sysupdate` does not use the S3 bucket yet.
+An S3 bucket for downloads has been set up, and used for system updates and downloads.
 
-Secure Boot is currently missing from the installation.
+Secure Boot is supported, using Aemeath OS' own keys.
 
 ## Download
 
-Coming soon. The bucket is set up, but there's no index page for now.
+[https://github.com/Damillora/aemeath/releases/](GitHub Release)
 
 ## Building
 
@@ -37,5 +35,5 @@ bst build os/aemeath/disk-image.bst
 
 ## Acknowledgements
 
-- The [Freedesktop SDK](https://freedesktop-sdk.io) project, without which this wouldn't be possible.
+- The [Freedesktop SDK](https://freedesktop-sdk.io) project, which was an excellent starting point for Aemeath OS.
 - [GNOME OS](https://os.gnome.org), where a lot of additional dependencies were imported from.

@@ -22,7 +22,7 @@ Secure Boot is supported, using Aemeath OS' own keys.
 
 ## Download
 
-[https://github.com/Damillora/aemeath/releases/](GitHub Release)
+[GitHub Release](https://github.com/Damillora/aemeath/releases/)
 
 ## Building
 

@@ -2,7 +2,7 @@
 name: Update sources
 on:
   schedule:
-    - cron: "27 00 * * *" # 03:05am UTC everyday
+    - cron: "27 00 */3 * *" # 03:05am UTC everyday
   workflow_dispatch:
 
 env:
@@ -55,7 +55,10 @@ jobs:
           VENDOR_KEY: ${{secrets.VENDOR_KEY}}
       - name: Track sources
         continue-on-error: true
-        run: bst source track
+        run: |
+          bst source track \
+            --except bootstrap/glibc.bst \
+            --except components/sys-libs/glibc.bst
       - name: Commit & push
         run: |
           git config --global --add safe.directory $GITHUB_WORKSPACE

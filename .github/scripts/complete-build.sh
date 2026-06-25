@@ -17,15 +17,15 @@ just live-image
 
 for f in target/*
 do
-  rclone copy "$f" fina:aemeath/sysupdate/
+  rclone copy "$f" fina:aemeath/os/updates/
 done
 for f in disks/*
 do
-  rclone copy "$f" fina:aemeath/images/
+  rclone copy "$f" fina:aemeath/os/download/
 done
 for f in live/*
 do
-  rclone copy "$f" fina:aemeath/images/
+  rclone copy "$f" fina:aemeath/os/download/
 done
 git tag "$image_version"
 git push origin tag "$image_version"

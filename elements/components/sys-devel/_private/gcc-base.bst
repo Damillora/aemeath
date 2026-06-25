@@ -30,6 +30,7 @@ variables:
     --disable-bootstrap
     --disable-fixincludes
     --disable-libssp
+    --enable-cet
     --with-system-zlib
     --enable-languages=c,c++
 

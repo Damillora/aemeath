@@ -39,6 +39,7 @@ variables:
     --disable-libsanitizer
     --disable-libssp
     --disable-libvtv
+    --enable-cet
     --enable-deterministic-archives
     --enable-linker-build-id
     --enable-languages=c,c++

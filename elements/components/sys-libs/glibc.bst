@@ -21,6 +21,7 @@ variables:
     --disable-werror
     --disable-nscd
     libc_cv_slibdir=%{libdir}
+    --enable-cet
     --enable-stack-protector=strong
     --enable-kernel=6.0
 

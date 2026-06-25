@@ -15,6 +15,8 @@ runtime-depends:
 
 variables:
   build-dir: build
+  # fortify-source breaks building glibc
+  cflags-fortify-source: ""
   conf-local: >-
     --disable-werror
     --disable-nscd

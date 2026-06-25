@@ -13,7 +13,7 @@ environment:
 
 variables:
   # gnu-efi requires disabling of the stack protector.
-  target_flags_stack_protector_strong: ''
+  cflags-stack-protector: ''
   make-args: >-
     INSTALLROOT='%{install-root}'
     LIBDIR='%{libdir}'

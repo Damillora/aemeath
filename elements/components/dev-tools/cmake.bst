@@ -10,6 +10,7 @@ depends:
 - components/util-libs/libarchive.bst
 - components/util-libs/libuv.bst
 - components/net-libs/libnghttp2.bst
+- components/net-libs/curl.bst
 - components/sys-libs/openssl.bst
 
 config:

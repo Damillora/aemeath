@@ -25,7 +25,9 @@ depends:
 - components/desktop-tools/system-config-printer.bst
 
 variables:
-  cmake-local: -DBUILD_TESTING=OFF
+  cmake-local: >-
+    -DBUILD_TESTING=OFF
+    -DCMAKE_INSTALL_LIBEXECDIR=libexec
 
 sources:
 - kind: tar

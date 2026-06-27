@@ -14,7 +14,9 @@ depends:
 - components/qt6-libs/qtkeychain.bst
 
 variables:
-  cmake-local: -DBUILD_TESTING=OFF
+  cmake-local: >-
+    -DBUILD_TESTING=OFF
+    -DCMAKE_INSTALL_LIBEXECDIR=libexec
 
 sources:
 - kind: tar

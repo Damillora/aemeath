@@ -28,6 +28,7 @@ variables:
     -DBUILD_TESTING=OFF
     -DDBUS_CONFIG_FILENAME=plasma_org.freedesktop.DisplayManager.conf
     -DPAM_OS_CONFIGURATION=aemeath
+    -DCMAKE_INSTALL_LIBEXECDIR=libexec
 
 sources:
 - kind: tar

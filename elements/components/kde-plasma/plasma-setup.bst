@@ -20,7 +20,7 @@ depends:
 variables:
   cmake-local: >-
     -DBUILD_TESTING=OFF
-    -DCMAKE_BUILD_TYPE=Release
+    -DCMAKE_INSTALL_LIBEXECDIR=libexec
 
 sources:
 - kind: tar

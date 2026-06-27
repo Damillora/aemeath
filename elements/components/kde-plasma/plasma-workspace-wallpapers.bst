@@ -5,7 +5,9 @@ build-depends:
 - components/kde-kf6/extra-cmake-modules.bst
 
 variables:
-  cmake-local: -DBUILD_TESTING=OFF
+  cmake-local: >-
+    -DBUILD_TESTING=OFF
+    -DCMAKE_INSTALL_LIBEXECDIR=libexec
 
 sources:
 - kind: tar

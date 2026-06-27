@@ -41,6 +41,7 @@ variables:
   cmake-local: >-
     -DBUILD_TESTING=OFF
     -DBUILD_SystemdSysupdateBackend=ON
+    -DCMAKE_INSTALL_LIBEXECDIR=libexec
 
 sources:
 - kind: tar

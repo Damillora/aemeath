@@ -107,6 +107,7 @@ variables:
   cmake-local: >-
     -DBUILD_TESTING=OFF
     -DWITH_X11_SESSION=OFF
+    -DCMAKE_INSTALL_LIBEXECDIR=libexec
 
 config:
   install-commands:

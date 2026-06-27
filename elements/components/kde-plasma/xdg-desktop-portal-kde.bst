@@ -30,7 +30,9 @@ runtime-depends:
 - components/desktop-services/xdg-desktop-portal.bst
 
 variables:
-  cmake-local: -DBUILD_TESTING=OFF
+  cmake-local: >-
+    -DBUILD_TESTING=OFF
+    -DCMAKE_INSTALL_LIBEXECDIR=libexec
 
 sources:
 - kind: tar

@@ -33,6 +33,7 @@ variables:
   cmake-local: >-
     -DBUILD_TESTING=OFF
     -DBUILD_QT5=OFF
+    -DCMAKE_INSTALL_LIBEXECDIR=libexec
 
 sources:
 - kind: tar

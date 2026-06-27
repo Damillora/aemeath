@@ -34,6 +34,7 @@ variables:
   cmake-local: >-
     -DBUILD_TESTING=OFF
     -DWITH_PYTHON_VENDORING=OFF
+    -DCMAKE_INSTALL_LIBEXECDIR=libexec
 
 sources:
 - kind: tar

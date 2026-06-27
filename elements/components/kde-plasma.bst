@@ -56,6 +56,7 @@ depends:
   - components/kde-plasma/plasma-login-manager.bst
   - components/kde-plasma/plasma-setup.bst
   - components/kde-plasma/plasma-keyboard.bst
+  - components/kde-plasma/oxygen.bst
   # Experimental things
   - components/kde-plasma/union.bst
   # obsolete things

@@ -1,5 +1,8 @@
 kind: cmake
 
+(@):
+- include/vars/qt6.yml
+
 build-depends:
 - components/buildsystems/cmake.bst
 - components/dev-tools/gperf.bst

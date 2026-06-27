@@ -27,7 +27,7 @@ source-track-all:
     {{bst}} source track
 
 build:
-    {{bst}} build components/platform/desktop.bst components/aemeath-tools/deploy-tools.bst components/boot-kernel/linux.bst
+    {{bst}} build os/aemeath/build-deps.bst
 
 export: clean-target
     {{bst}} build os/aemeath/export.bst

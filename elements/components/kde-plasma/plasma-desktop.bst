@@ -72,9 +72,9 @@ depends:
 - components/desktop-libs/libcanberra.bst
 
 variables:
-  cmake-local: |
-    -DBUILD_TESTING=OFF \
-    -DBUILD_KCM_MOUSE_X11=OFF \
+  cmake-local: >-
+    -DBUILD_TESTING=OFF
+    -DBUILD_KCM_MOUSE_X11=OFF
     -DBUILD_KCM_TOUCHPAD_X11=OFF
     -DCMAKE_INSTALL_LIBEXECDIR=libexec
 

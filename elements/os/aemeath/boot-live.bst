@@ -2,8 +2,7 @@ kind: manual
 
 build-depends:
 - components/platform/minimal.bst
-- components/boot-util/sbsigntools.bst
-- components/boot-util/systemd-ukify.bst
+- components/aemeath-tools/boot-tools.bst
 - components/sys-data/os-release.bst
 
 variables:

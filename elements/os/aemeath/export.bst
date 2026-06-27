@@ -2,8 +2,7 @@ kind: script
 
 build-depends:
 - components/platform/minimal.bst
-- components/util-misc/jq.bst
-- components/util-archive/xz.bst
+- components/aemeath-tools/deploy-tools.bst
 - filename: os/aemeath/usr-image.bst
   config:
     location: /usr-image

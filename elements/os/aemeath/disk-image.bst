@@ -2,12 +2,6 @@ kind: script
 
 build-depends:
 - components/platform/minimal.bst
-- components/util-archive/zstd.bst
-- components/util-misc/jq.bst
-- components/sys-services/systemd.bst
-- components/filesystem-util/dosfstools.bst
-- components/filesystem-util/mtools.bst
-- components/util-sys/util-linux.bst
 - components/aemeath-tools/deploy-tools.bst
 - components/sys-data/os-release.bst
 - os/aemeath/repart-config-disk.bst

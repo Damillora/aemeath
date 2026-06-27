@@ -3,17 +3,12 @@ kind: manual
 build-depends:
 - components/platform/minimal.bst
 - components/sys-data/os-release.bst
+- components/aemeath-tools/boot-tools.bst
 - os/aemeath/initramfs.bst
 - filename: os/aemeath/usr-image.bst
   config:
     location: /usr-image
-- components/sys-devel/binutils.bst
-- components/boot-util/sbsigntools.bst
-- components/boot-util/sign-file.bst
-- components/sys-services/systemd.bst
-- components/boot-util/systemd-ukify.bst
-- components/util-sys/util-linux.bst
-- components/util-misc/jq.bst
+
 
 variables:
   strip-binaries: ''

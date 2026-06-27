@@ -9,5 +9,9 @@ depends:
 - components/filesystem-util/mtools.bst
 - components/sys-data/tzdata.bst
 - components/aemeath-tools/prepare-image.bst
+- components/util-archive/zstd.bst
+- components/util-archive/xz.bst
+- components/util-misc/jq.bst
+- components/util-sys/util-linux.bst
 #- components/genimage.bst
 #- integration/mtab.bst

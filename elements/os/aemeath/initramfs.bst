@@ -2,6 +2,7 @@ kind: script
 
 build-depends:
 - components/aemeath-tools/deploy-tools.bst
+- components/aemeath-tools/boot-tools.bst
 - os/aemeath/initramfs/kernel-image.bst
 - os/aemeath/initramfs/deps.bst
 - os/aemeath/initramfs/initial-scripts.bst

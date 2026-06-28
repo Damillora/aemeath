@@ -7,10 +7,3 @@ config:
   include:
   - interfaces
   include-orphans: False
-
-public:
-  bst:
-    split-rules:
-      devel:
-        (>):
-        - '%{bindir}/pw-config'

@@ -4,6 +4,7 @@ build-depends:
 - components/buildsystems/cmake.bst
 - components/dev-tools/_private/git-basic.bst
 - components/dev-lang/python3.bst
+- components/graphics-data/spirv-headers.bst
 - components/graphics-tools/spirv-tools.bst
 
 depends:

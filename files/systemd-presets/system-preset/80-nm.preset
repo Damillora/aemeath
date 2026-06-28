@@ -1,6 +1,4 @@
-enable NetworkManager.service
 
-disable NetworkManager-initrd.service
 disable systemd-networkd.socket
 disable systemd-networkd.service
 disable systemd-networkd-wait-online.service

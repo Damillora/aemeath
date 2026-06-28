@@ -4,7 +4,7 @@ bst := if devel == "true" { "bst --no-strict" } else  { "bst" }
 [default]
 default: microsoft-keys build export disk-image
 
-clean: clean-target clean-disks
+clean: clean-target clean-disks clean-live
 
 clean-target:
     rm -rf target

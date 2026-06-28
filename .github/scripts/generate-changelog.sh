@@ -17,8 +17,8 @@ cat > "CHANGELOG.md" << EOF
 |**KDE Gear**           | $gear_track              |
 
 ## Downloads
-* [Disk Image](https://aemeath.fuxuan.nanao.moe/os/download/aemeath_${image_version}.img.zst)
-* [Live Image](https://aemeath.fuxuan.nanao.moe/os/download/aemeath-live_${image_version}.img.zst)
+* [Disk Image](https://aemeath-dl.nanao.moe/os/download/aemeath_${image_version}.img.zst)
+* [Live Image](https://aemeath-dl.nanao.moe/os/download/aemeath-live_${image_version}.img.zst)
 
 **NOTE: due to space limitations, only recent versions are downloadable**
 

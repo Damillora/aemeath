@@ -5,7 +5,7 @@ Verify=false
 
 [Source]
 Type=url-file
-Path=https://aemeath.fuxuan.nanao.moe/os/updates/
+Path=https://aemeath-dl.nanao.moe/os/updates/
 MatchPattern=usr_@v_@u.verity.xz
 
 [Target]

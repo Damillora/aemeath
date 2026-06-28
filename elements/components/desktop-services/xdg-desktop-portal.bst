@@ -14,6 +14,6 @@ runtime-depends:
 - components/desktop-data/xdg-portal-interfaces.bst
 
 config:
-  include:
+  exclude:
   - interfaces
-  include-orphans: False
+  include-orphans: True

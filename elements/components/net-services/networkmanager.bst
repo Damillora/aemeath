@@ -37,6 +37,7 @@ variables:
     -D session_tracking=systemd
     -D nm_cloud_setup=false
     -D modem_manager=false
+    -D systemdsystemgeneratordir="$(pkg-config --variable systemdsystemgeneratordir systemd)"
 
 sources:
 - kind: git_repo
@@ -45,3 +46,5 @@ sources:
   exclude:
   - '*-dev'
   ref: 1.56.1-0-gb829f838fc5d8c93437faa5db44a5396b67893de
+- kind: patch_queue
+  path: patches/networkmanager

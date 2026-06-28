@@ -2,6 +2,7 @@ kind: meson
 
 build-depends:
 - components/buildsystems/meson.bst
+- components/sys-services/systemd.bst
 
 depends:
 - components/util-libs/glib.bst

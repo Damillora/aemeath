@@ -15,6 +15,10 @@ depends:
 - components/sys-libs/gdbm.bst
 - components/sys-libs/openssl.bst
 - components/sys-libs/sqlite.bst
+- components/sys-libs/zlib-ng.bst
+- components/util-archive/bzip2.bst
+- components/util-archive/xz.bst
+- components/util-archive/zstd.bst
 
 variables:
   conf-local: >-

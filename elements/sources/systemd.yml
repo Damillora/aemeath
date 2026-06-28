@@ -4,5 +4,5 @@ sources:
   track: "v%{systemd-track}*"
   exclude:
   - '*rc*'
-  ref: v261-0-gde9dbc37ad4aa637e200ac02a0545095997055df
+  ref: v261.1-0-geff9446d505d62c075bed37d606860b38cfe51fb
   version-guess-pattern: '(\d+)(?:\.(\d+))?'

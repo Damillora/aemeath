@@ -30,4 +30,4 @@ sources:
   track: gpgme-*
   exclude:
   - "*-base"
-  ref: gpgme-2.1.0-0-g5bc31cad011192ef5d06304a28f3b8bf1382081c
+  ref: gpgme-2.1.1-0-gc68741376b5561f6a9885819c55922cd189a5172

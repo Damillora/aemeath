@@ -57,6 +57,7 @@ depends:
   - components/kde-plasma/plasma-setup.bst
   - components/kde-plasma/plasma-keyboard.bst
   - components/kde-plasma/oxygen.bst
+  - components/kde-plasma/oxygen-sounds.bst
   # Experimental things
   - components/kde-plasma/union.bst
   # obsolete things

@@ -19,7 +19,6 @@ runtime-depends:
 - components/container-tools/crun.bst
 - components/container-tools/netavark.bst
 - components/container-tools/passt.bst
-- components/container-tools/slirp4netns.bst
 - components/container-tools/fuse-overlayfs.bst
 - components/net-tools/iptables.bst
 

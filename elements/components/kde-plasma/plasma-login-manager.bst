@@ -33,6 +33,6 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/plasma-login-manager-%{plasma-track}.tar.xz'
-  ref: 71953f359f0c22c2351e39620856ac48db1efdee9bbc4c41d1683d8fcf8439d6
+  ref: 849a07f86a5d309db5098aa99f9c4309ebef4ec1865d9ef45024fe75b41875d7
 - kind: local
   path: files/plasma-login-manager

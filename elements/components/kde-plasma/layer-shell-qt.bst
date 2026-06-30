@@ -18,4 +18,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/layer-shell-qt-%{plasma-track}.tar.xz'
-  ref: 032a3f5433f1913291a595e33ca08a0a4c7e22e2d7ce37f5f728247696c61188
+  ref: 392cd82742f109452f874d14f5d391a823c7b021bdc2446c0f474b3d1e77b129

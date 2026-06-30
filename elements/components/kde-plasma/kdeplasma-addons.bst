@@ -50,7 +50,7 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/kdeplasma-addons-%{plasma-track}.tar.xz'
-  ref: 9d0e71ef1808506308751b5f9b274c96dcbd3d302c3c2495ad6d51eb3b7ea4ff
+  ref: 6f7778cbeabd34e4819bb8a3bc5b410aa43c21fe5e3322e3b49d00f21608aa07
 - kind: cargo2
   cargo-lock: kdeds/kameleon/qmk/kameleon-qmk-helper/Cargo.lock
   ref:

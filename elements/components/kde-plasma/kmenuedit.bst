@@ -32,4 +32,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/kmenuedit-%{plasma-track}.tar.xz'
-  ref: e272153222727b0b75f54ab7cbcbe1156d43473c206b5a73d67e5aea36df8449
+  ref: 1473b7802d43cce105126cb79cae71cbd8a3e3ce9507d1825a5c649c45042f21

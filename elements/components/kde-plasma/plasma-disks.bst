@@ -27,4 +27,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/plasma-disks-%{plasma-track}.tar.xz'
-  ref: 80cc66bfebaf8489cb800d3d15f0e27f01107a0cf36ca165900c61c0ebfee3bd
+  ref: b00cec03108fd2e9f4142f39c62fa8a6ab566c60c9a28755f41e3a8fd1c3a791

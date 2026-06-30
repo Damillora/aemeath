@@ -40,4 +40,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/kscreenlocker-%{plasma-track}.tar.xz'
-  ref: 9baccd16178b50b60f998b812a61e0740574f13d5995ca21939c5e16068e3c9e
+  ref: 77f02418b61a62727cb43c03c7ed7772c67b1c2cbc3691e4f36726a4720a1cba

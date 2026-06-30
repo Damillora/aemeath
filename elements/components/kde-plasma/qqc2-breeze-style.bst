@@ -23,4 +23,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/qqc2-breeze-style-%{plasma-track}.tar.xz'
-  ref: 0bd37f4a565b94aec7c2e677923a70551b953578f5b50c14bd6f449b749ac212
+  ref: 94e1dad9b110c43d48d8bea7c12e7fa2754e56d1a05a7bb249a03035e77f5b49

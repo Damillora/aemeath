@@ -23,4 +23,4 @@ sources:
 - kind: git_repo
   url: savannah:parallel.git
   track: '[0-9]*'
-  ref: 20260522-0-gd913adb63fd4d8f28ed82cd9c519d0e017a763a2
+  ref: 20260622-0-g742d790dd11df40843c63a0ff0d657673dea6189

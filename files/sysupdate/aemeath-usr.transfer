@@ -1,5 +1,5 @@
 [Transfer]
-ProtectVersion=%A
+ProtectVersion=%w
 AppStream=https://github.com/Damillora/aemeath/raw/refs/heads/main/com.damillora.aemeath.metainfo.xml
 Verify=false
 

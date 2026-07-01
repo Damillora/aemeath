@@ -79,6 +79,11 @@ jobs:
     needs:
       - build_push
     steps:
+      - name: Checkout
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+        with:
+          token: ${{ secrets.AEMEATH_GH_PAT }}
+          ref: "feature/update-versions"
       - name: Create PR
         run: |
           # Check if an open PR already exists from the current branch to main

@@ -1,7 +1,7 @@
 cat << EOF
 cache:
-  quota: 50G
-  reserved-disk-space: 5G
+  quota: 100G
+  reserved-disk-space: 20G
 
 scheduler:
   builders: 1

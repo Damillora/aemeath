@@ -7,7 +7,6 @@ set -euox pipefail
 source <(yq -o=shell include/image-version.yml)
 just clean
 just build
-bst build components/boot/linux.bst
 .github/scripts/buildstream-conf.sh nopush > $HOME/.config/buildstream.conf
 just export
 just disk-image

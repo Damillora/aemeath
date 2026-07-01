@@ -12,4 +12,4 @@ sources:
 - kind: git_repo
   url: github:getsentry/sentry-python.git
   track: '2.*'
-  ref: 2.63.0-0-g44b008a336bd9c64bf54ab8318bffbf9cc015bd1
+  ref: 2.64.0-0-g9cb0167cee81bb19686f36adb8e9888248f214af

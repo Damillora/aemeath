@@ -33,4 +33,4 @@ sources:
 - kind: git_repo
   url: savannah:acl.git
   track: v*
-  ref: v2.3.2-0-g214c7d146945c31a9dc04cb7094b85053f52a21e
+  ref: v2.4.0-0-g3589787cd589b34bdd9265936e17190b6d3f17d1

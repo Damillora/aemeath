@@ -12,4 +12,4 @@ sources:
 - kind: git_repo
   url: gnome:gsettings-desktop-schemas.git
   track: '[0-9]*'
-  ref: 50.1-0-gea4bd542cfd931be783667fb84e02414f04e3ba9
+  ref: 51.alpha-0-g85c08754ff5fc7052284e501baf8b1e763c771bc

@@ -36,4 +36,4 @@ sources:
 - kind: git_repo
   url: savannah:attr.git
   track: v*
-  ref: v2.5.2-0-gee80fdbc11c351fe96bc54a20c2893dde7df8845
+  ref: v2.6.0-0-gc440855d6b33446edf4b5eb1a2d892281f15a99b

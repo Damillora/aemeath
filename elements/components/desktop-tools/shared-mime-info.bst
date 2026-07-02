@@ -3,6 +3,7 @@ kind: meson
 build-depends:
 - components/buildsystems/meson.bst
 - components/dev-tools/docbook-xsl.bst
+- components/dev-tools/xmlto.bst
 
 depends:
 - components/util-libs/libxml2.bst

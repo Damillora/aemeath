@@ -29,4 +29,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{gear-branch}/release-service/%{gear-track}/src/qrca-%{gear-track}.tar.xz'
-  ref: c6d3fc50e20b004c8aa981e4921f117244681bbabfce2e687f2b612e4b2f6427
+  ref: d67d2fa3ba6d96ef73e0335ccd99661c6cd479e99bffc1e3b21ddb23ac21148e

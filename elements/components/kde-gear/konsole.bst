@@ -38,4 +38,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{gear-branch}/release-service/%{gear-track}/src/konsole-%{gear-track}.tar.xz'
-  ref: d81a696d6a316d0c8fabe3cecd83783f656ee97c70ced89513b3fd16e9d216ac
+  ref: fe54d0297c24a52b2ec8ebf45bf75b22736f65301663846b8f3539044943e1ac

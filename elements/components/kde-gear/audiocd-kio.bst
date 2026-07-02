@@ -27,4 +27,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{gear-branch}/release-service/%{gear-track}/src/audiocd-kio-%{gear-track}.tar.xz'
-  ref: 53a6084d7c4aaf125e372c0ca5be0947483bcbd75c352b97fbd24cede36dc2d6
+  ref: ba8a6f27311ca14f8d1e1c2135fa925e1075c43c6463ea2f641b1af3de670430

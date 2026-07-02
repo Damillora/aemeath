@@ -14,4 +14,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{gear-branch}/release-service/%{gear-track}/src/libkexiv2-%{gear-track}.tar.xz'
-  ref: fdd8b2ca473339281676bccd1be1d6bf7df2f7644822c52a5cb73af8535a854e
+  ref: dd5ddbf107dd9a51454ae83b0537ca80ce31e65da649c0a8db745e356d0d0064

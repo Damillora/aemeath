@@ -9,6 +9,10 @@ depends:
 - components/util-libs/libxml2.bst
 - components/util-libs/glib.bst
 
+variables:
+  meson-local: >-
+    -Dbuild-tests=false
+
 public:
   bst:
     integration-commands:

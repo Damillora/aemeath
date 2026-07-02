@@ -5,6 +5,7 @@ kind: meson
 
 build-depends:
 - components/buildsystems/meson.bst
+- components/dev-lang/rust.bst
 - components/util-archive/tar.bst
 
 depends:

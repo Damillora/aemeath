@@ -5,3 +5,4 @@ sources:
   exclude:
   - v*-rc*
   ref: v2.55.0-0-ge9019fcafe0040228b8631c30f97ae1adb61bcdc
+- kind: cargo2

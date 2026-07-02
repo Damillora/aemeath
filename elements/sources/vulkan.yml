@@ -14,9 +14,9 @@ sources:
   directory: spirv-headers
   track: vulkan-sdk-*
   ref: vulkan-sdk-1.4.350.1-0-gad9184e76a66b1001c29db9b0a3e87f646c64de0
-- kind: patch
+- kind: patch_queue
   directory: spirv-headers
-  path: patches/spirv-headers/0001-grammar-and-header-changes-for-SPV_INTEL_predicated_.patch
+  path: patches/spirv-headers
 - kind: git_repo
   url: github:KhronosGroup/SPIRV-Tools.git
   directory: spirv-tools

@@ -28,7 +28,7 @@ depends:
 - components/util-sys/diffutils.bst
 - components/util-sys/findutils.bst
 - components/util-sys/psmisc.bst
-- components/util-sys/less.bst
+- components/util-sys/which.bst
 - components/util-sys/procps-ng.bst
 - components/util-text/nano.bst
 # TPM Support

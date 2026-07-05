@@ -92,7 +92,7 @@ jobs:
           if [ -z "$PR_EXISTS" ]; then
             echo "No open PR found. Creating a new one..."
             gh pr create \
-              --title chore: bst source track" \
+              --title "chore: bst source track" \
               --body "This PR was automatically created by GitHub Actions." \
               --base main \
               --head "feature/update-versions"

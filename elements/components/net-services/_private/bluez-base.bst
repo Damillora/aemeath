@@ -15,9 +15,6 @@ variables:
   make-args: ICAL_LIBS="-lical -licalvcal"
 
 config:
-  configure-commands:
-    (<):
-    - sed -i '4967,4968d' src/adapter.c
   install-commands:
     (>):
     - |

@@ -5,6 +5,10 @@ on:
     - cron: "27 00 */3 * *" # 03:05am UTC everyday
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pull-requests: write
+
 env:
   GH_TOKEN: ${{ github.token }}
 

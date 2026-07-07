@@ -11,4 +11,4 @@ sources:
 - kind: git_repo
   url: github:NixOS/patchelf.git
   track: '*.*.*'
-  ref: 0.19.0-0-g1e279e99b952c765824fa0401abb8dc0d944e4ea
+  ref: 0.19.1-0-g7688b17c18d16f67fa8d5a82a2404c2e3a18648d

@@ -12,4 +12,3 @@ depends:
 - bootstrap/findutils.bst
 - bootstrap/gawk.bst
 - bootstrap/gzip.bst
-- bootstrap/pkgconf.bst

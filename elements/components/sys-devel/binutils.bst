@@ -10,6 +10,7 @@ build-depends:
 - bootstrap/gcc-stage2.bst
 - bootstrap/texinfo.bst
 - bootstrap/tar.bst
+- bootstrap/pkgconf.bst
 - components/sys-data/locale-base.bst
 - components/sys-devel/flex.bst
 

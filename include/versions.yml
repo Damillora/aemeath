@@ -16,7 +16,7 @@ systemd-track: "261"
 qt6-branch: "6.11"
 qt6-track: "6.11.1"
 # KDE Frameworks
-kf6-track: "6.27"
+kf6-track: "6.28"
 # KDE Plasma
 plasma-branch: "stable"
 plasma-track: "6.7.2"

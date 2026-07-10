@@ -15,4 +15,4 @@ sources:
 - kind: git_repo
   url: freedesktop:xorg/lib/libxfont.git
   track: libXfont2-*
-  ref: libXfont2-2.0.7-0-g2c2e44c94ef17ecd5003a173237b57b315e28d93
+  ref: libXfont2-2.0.8-0-g88b9df882c0ea91d7bb468aa4792ef1b6f13aa9d

@@ -25,4 +25,4 @@ sources:
   exclude:
   - v*-rc*
   - "v*-dev*"
-  ref: v3.7.0-0-g132fb82ff4b43c9b8eaeeb533f38c95ae925131c
+  ref: v3.7.1-0-g5c1c43091ed611fdea774374355eb938c73a9157

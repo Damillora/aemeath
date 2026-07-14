@@ -42,4 +42,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/kinfocenter-%{plasma-track}.tar.xz'
-  ref: a28f42d1f6f8b36ff1f551d593e21165098a976af91fe718c37edde0113a407d
+  ref: 436eb7e95e061ebddb84d0e51b5abf477a5a3b2698462ea247ea6ba633a88655

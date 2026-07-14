@@ -24,4 +24,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/ksystemstats-%{plasma-track}.tar.xz'
-  ref: b4f6dedd0db69ce5b2e4a56500664c6409802b6986096febed3ceb8a49e04f2f
+  ref: 394a6d342a1f8a2c3d6273fb8604c18220f9135d234bd2e651ef76f99d19c259

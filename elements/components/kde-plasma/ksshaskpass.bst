@@ -21,4 +21,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/ksshaskpass-%{plasma-track}.tar.xz'
-  ref: 10c389d9e9257bfb50461bd99b4663f51d2ecb8fa3b74ca3b5829cf563cc745c
+  ref: d275e6b3427e6f120c97f7a6e64d9d157829976a1241277f13cdef1c7e2b193a

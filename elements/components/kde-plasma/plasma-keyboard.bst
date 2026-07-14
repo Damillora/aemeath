@@ -25,4 +25,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/plasma-keyboard-%{plasma-track}.tar.xz'
-  ref: ca46e412e7530481904d4cd3f622c5ba2d03504bd7bce77ea3e1221c01c01c07
+  ref: c371d98c4588db6672a93aa13b53d178f2dc383bdb580c8bed65d1849be7c97e

@@ -33,4 +33,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/oxygen-%{plasma-track}.tar.xz'
-  ref: d3357c2e0c69db6ced5365006b96770db0baadb0899a4e572ae5016377712ade
+  ref: d4537dc7d5afa2a754278abef32ceead82da41a8c8ca19e6cbd6f678f49aea9c

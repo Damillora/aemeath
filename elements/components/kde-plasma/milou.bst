@@ -20,4 +20,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/milou-%{plasma-track}.tar.xz'
-  ref: 75162402168082cce5ad8be41331fc9f55cb74f5e27326b6233eeaf5c6aba6d1
+  ref: 20b8d9e040ffbeeebe05b27d89759c8e8c89081aba463e3ae0d3847e60ad4d52

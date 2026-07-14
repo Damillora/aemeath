@@ -28,4 +28,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/kglobalacceld-%{plasma-track}.tar.xz'
-  ref: 40cd6b417678faba69847e1fa4d9efc8f500cdf95db17e317d6d868d18c95339
+  ref: cd940d21bb050d6ee689d5962d31292c52f31cfa9211ea789dbed4ff05022f1d

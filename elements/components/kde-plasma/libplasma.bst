@@ -38,4 +38,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/libplasma-%{plasma-track}.tar.xz'
-  ref: 133d8de5f00ad0d15b515ea9f13bc64fac7f7f52d077243dc8dfee16323f9f8c
+  ref: 9634ea7432d05fc7429a512d3ce5673d8bfff59f9618aa04013ea4f09ab8b010

@@ -18,4 +18,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/kwayland-%{plasma-track}.tar.xz'
-  ref: 3d3ca745d4f7a53be8b331fccde825d9cc54a8761d7a33318f4fb2d602b857f4
+  ref: 0e331dca128a9e2f0b408e1020e5b613e24d742cc1bfd8bb5f89459fee11c217

@@ -23,4 +23,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/union-%{plasma-track}.tar.xz'
-  ref: d67436c579077ad5ac2fac4a333873c5983666746d45c7e780d6384d9a0f8de6
+  ref: ee91e8ecf066d5bc72d653e5327cef0580d82aa60e0fce9b47f945804d399199

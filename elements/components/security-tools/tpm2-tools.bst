@@ -17,7 +17,7 @@ sources:
   track: '*.*.*'
   exclude:
   - '*rc*'
-  ref: 5.6.1-0-g6ea98b5a6ae129bc7c614508a5529dca15df4c21
+  ref: 5.7.1-0-g3dab6b23c1f6f4fbaa2aa87a749be46445aae17c
 - kind: patch_queue
   path: patches/tpm2-tools
 

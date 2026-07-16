@@ -2,4 +2,4 @@ sources:
 - kind: git_repo
   url: github:pkgconf/pkgconf.git
   track: pkgconf-*
-  ref: pkgconf-3.0.1-0-g4b41ca92da14c2c9b3ccd22c0accb3df67873d3e
+  ref: pkgconf-3.0.3-0-g048d0a4f8dffb8e14fc9e9a595d2e9a503c4813b

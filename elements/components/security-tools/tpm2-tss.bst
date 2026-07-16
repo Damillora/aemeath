@@ -27,4 +27,4 @@ sources:
   track: '*.*.*'
   exclude:
   - '*rc*'
-  ref: 4.1.3-0-g30e6057722058cb85c292dcb7b77760ad6410d4e
+  ref: 4.2.0-0-g506c5e6db0c8514f321dc16a0da2580483f3df04

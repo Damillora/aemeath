@@ -1,4 +1,0 @@
-sources:
-- kind: tar
-  url: savannah_download:attr/attr-2.5.2.tar.xz
-  ref: f2e97b0ab7ce293681ab701915766190d607a1dba7fae8a718138150b700a70b

@@ -2,5 +2,5 @@
 # That's how upstream recommends doing it.
 sources:
 - kind: tar
-  url: rustlang:dist/rust-1.94.0-x86_64-unknown-linux-gnu.tar.xz
-  ref: e8fa4185f3ef6ae32725ff638b1ecdbff28f5d651dc0b3111e2539350d03b15a
+  url: rustlang:dist/rust-1.96.0-x86_64-unknown-linux-gnu.tar.xz
+  ref: c295047583a56238ea06b43f849f4b877fa12bfd4c7103f8d9a74c94c9c4e108

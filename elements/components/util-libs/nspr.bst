@@ -1,8 +1,5 @@
 kind: autotools
 
-(@):
-- elements/sources/nspr.yml
-
 build-depends:
 - components/buildsystems/autotools.bst
 
@@ -31,3 +28,10 @@ config:
 
     - |
       rm -f "%{install-root}%{bindir}/prerr.properties" "%{install-root}%{bindir}/compile-et.pl"
+
+sources:
+- kind: tar
+  # https://hg-edge.mozilla.org/projects/nspr
+  url: mozilla_archive:pub/nspr/releases/v%{source-track_nspr}/src/nspr-%{source-track_nspr}.tar.gz
+  ref: bbd02ee87a55676063a63e5bc819e0227de2666b47307b2a0134414cdf42368e
+  base-dir: '*/nspr'

@@ -22,3 +22,8 @@ config:
     (>):
     - |
       rm "%{install-root}%{infodir}/dir"
+
+sources:
+- kind: tar
+  url: gnu:groff/groff-%{source-track_groff}.tar.gz
+  ref: 74e2819795b6aff431aeac983d63a9c8968eeaba2a2eba7df8ba4c7b41e7cfd8

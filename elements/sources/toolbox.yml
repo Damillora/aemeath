@@ -1,4 +1,0 @@
-sources:
-- kind: tar
-  url: github:containers/toolbox/releases/download/0.3/toolbox-0.3-vendored.tar.xz
-  ref: 0243bd995743ea73464426839ee80e2a13a8c529e3053292783f603b882dd125

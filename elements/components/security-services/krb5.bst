@@ -1,8 +1,5 @@
 kind: autotools
 
-(@):
-- elements/sources/krb5.yml
-
 build-depends:
 - components/buildsystems/autotools.bst
 - components/sys-devel/bison.bst
@@ -28,3 +25,11 @@ variables:
 public:
   cpe:
     product: kerberos_5
+
+sources:
+- kind: tar
+  url: kerberos:dist/krb5/%{source-branch_krb5}/krb5-%{source-track_krb5}.tar.gz
+  ref: 3243ffbc8ea4d4ac22ddc7dd2a1dc54c57874c40648b60ff97009763554eaf13
+- kind: patch_queue
+  path: patches/krb5
+

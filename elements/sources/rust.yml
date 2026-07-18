@@ -1,4 +1,4 @@
 sources:
 - kind: tar
-  url: rustlang:dist/rustc-1.97.1-src.tar.xz
+  url: rustlang:dist/rustc-%{source-track_rust}-src.tar.xz
   ref: 0ed06fdaffd4722a7702e0b4eebfafc897ab8f513e8e1b247cdd7e5c6df6ded2

@@ -1,8 +1,5 @@
 kind: autotools
 
-(@):
-- elements/sources/man-db.yml
-
 build-depends:
 - components/buildsystems/autotools.bst
 - components/dev-tools/_private/git-basic.bst
@@ -27,3 +24,8 @@ variables:
 public:
   cpe:
     vendor: 'gnu'
+
+sources:
+- kind: tar
+  url: savannah_mirror:man-db/man-db-%{source-track_man-db}.tar.xz
+  ref: 8afebb6f7eb6bb8542929458841f5c7e6f240e30c86358c1fbcefbea076c87d9

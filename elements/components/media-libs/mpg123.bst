@@ -1,10 +1,12 @@
 kind: autotools
 
-(@):
-- elements/sources/mpg123.yml
-
 build-depends:
 - components/buildsystems/autotools.bst
 
 depends:
 - components/media-libs/libpulse.bst
+
+sources:
+- kind: tar
+  url: mpg123:mpg123-%{source-track_mpg123}.tar.bz2
+  ref: 929a7c18ba662b8927aed4de229ad9ae8ab2b4806dd0f30b90113eb1b4e2195a

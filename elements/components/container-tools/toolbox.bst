@@ -1,8 +1,5 @@
 kind: meson
 
-(@):
-- elements/sources/toolbox.yml
-
 build-depends:
 - components/buildsystems/meson.bst
 - components/sys-services/systemd.bst
@@ -29,3 +26,8 @@ environment:
 public:
   cpe:
     vendor: 'containers_project'
+
+sources:
+- kind: tar
+  url: github:containers/toolbox/releases/download/%{source-track_toolbox}/toolbox-%{source-track_toolbox}-vendored.tar.xz
+  ref: 0243bd995743ea73464426839ee80e2a13a8c529e3053292783f603b882dd125

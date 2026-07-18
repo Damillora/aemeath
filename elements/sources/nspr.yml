@@ -1,6 +1,0 @@
-sources:
-- kind: tar
-  # https://hg-edge.mozilla.org/projects/nspr
-  url: mozilla_archive:pub/nspr/releases/v4.39/src/nspr-4.39.tar.gz
-  ref: bbd02ee87a55676063a63e5bc819e0227de2666b47307b2a0134414cdf42368e
-  base-dir: '*/nspr'

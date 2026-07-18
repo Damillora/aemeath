@@ -1,8 +1,5 @@
 kind: autotools
 
-(@):
-- elements/sources/flex.yml
-
 build-depends:
 # Toolchain depends on this package
 - bootstrap/platforms/autotools.bst
@@ -27,3 +24,10 @@ public:
     split-rules:
       libfl:
       - '%{libdir}/libfl.so.*'
+
+sources:
+- kind: tar
+  url: github:westes/flex/files/981163/flex-2.6.4.tar.gz
+  ref: e87aae032bf07c26f85ac0ed3250998c37621d95f8bd748b31f15b33c45ee995
+  #url: github:westes/flex/releases/download/v%{source-track_flex}/flex-%{source-track_flex}.tar.gz
+  #ref: e87aae032bf07c26f85ac0ed3250998c37621d95f8bd748b31f15b33c45ee995

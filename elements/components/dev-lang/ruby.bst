@@ -1,8 +1,5 @@
 kind: autotools
 
-(@):
-- elements/sources/ruby.yml
-
 build-depends:
 - components/buildsystems/minimal.bst
 
@@ -22,3 +19,8 @@ variables:
     --enable-ipv6
     --with-compress-debug-sections=no
     --disable-rpath
+
+sources:
+- kind: tar
+  url: ruby:pub/ruby/%{source-branch_ruby}/ruby-%{source-track_ruby}.tar.xz
+  ref: 5dc5521ea54c726e6cc10b1b5a0f4004b27b482e61c04c99aed79315e30895e5

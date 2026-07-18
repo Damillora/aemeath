@@ -1,8 +1,5 @@
 kind: manual
 
-(@):
-- elements/sources/go.yml
-
 build-depends:
 - components/buildsystems/minimal.bst
 - components/dev-lang/_private/go-bin.bst
@@ -59,3 +56,15 @@ public:
         (>):
         - "%{libdir}/go/src/**"
         - "%{libdir}/go/src"
+
+sources:
+- kind: git_repo
+  url: github:golang/go.git
+  track: 'go*'
+  exclude:
+  - '*rc*'
+  - '*beta*'
+  ref: go%{source-track_go}-0-ga9ce111d580581fb925ae88f125c69b7d93504ea
+- kind: patch
+  path: patches/go/disable-dwarf5.patch
+

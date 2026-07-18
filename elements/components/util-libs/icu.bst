@@ -1,8 +1,5 @@
 kind: autotools
 
-(@):
-- elements/sources/icu.yml
-
 build-depends:
 - components/buildsystems/autotools.bst
 - components/dev-lang/python3.bst
@@ -24,3 +21,11 @@ config:
 public:
   cpe:
     product: international_components_for_unicode
+
+# The git repsitory is unreliable as tags are force-pushed
+# See https://github.com/sdispater/tomlkit/issues/322
+sources:
+- kind: tar
+  url: github:unicode-org/icu/releases/download/release-%{source-track_icu}/icu4c-%{source-track_icu}-sources.tgz
+  ref: 3a2e7a47604ba702f345878308e6fefeca612ee895cf4a5f222e7955fabfe0c0
+  version-guess-pattern: '(\d+)_(\d+)'

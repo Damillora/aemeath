@@ -1,8 +1,5 @@
 kind: manual
 
-(@):
-- elements/sources/go-bin.yml
-
 build-depends:
 - components/buildsystems/minimal.bst
 
@@ -36,4 +33,12 @@ config:
   # Disable debug handling in stage1 which is unnecessary and can cause
   # failures during dwz optimizations.
   strip-commands: []
+
+# Use the previous version of the compiler to bootstrap the new one.
+# That's how upstream recommends doing it.
+sources:
+- kind: tar
+  url: golang:dl/go%{source-track_go}.linux-amd64.tar.gz
+  ref: 1153d3d50e0ac764b447adfe05c2bcf08e889d42a02e0fe0259bd47f6733ad7f
+
 

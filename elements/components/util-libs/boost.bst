@@ -1,8 +1,5 @@
 kind: manual
 
-(@):
-- elements/sources/boost.yml
-
 build-depends:
 - components/buildsystems/minimal.bst
 
@@ -24,3 +21,8 @@ config:
   install-commands:
   - |
     ./b2 --prefix=%{install-root}%{prefix} --libdir="%{lib}" install threading=multi link=shared
+
+sources:
+- kind: tar
+  url: github:boostorg/boost/releases/download/boost-%{source-track_boost}/boost-%{source-track_boost}-b2-nodocs.tar.xz
+  ref: 7334bb672b9c7aa135da88bcc3111a64a198be9a7d44eb5151d9248e7cfd43ef

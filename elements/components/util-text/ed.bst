@@ -1,8 +1,5 @@
 kind: autotools
 
-(@):
-- elements/sources/ed.yml
-
 build-depends:
 - components/buildsystems/autotools.bst
 - components/dev-tools/texinfo.bst
@@ -25,3 +22,8 @@ config:
 public:
   cpe:
     vendor: gnu
+
+sources:
+- kind: tar
+  url: gnu:ed/ed-%{source-track_ed}.tar.lz
+  ref: 56e107ddc2f29dad6690376c15bf9751509e1ee3b8241710e44edbe5c3a158cc

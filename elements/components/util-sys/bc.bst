@@ -1,8 +1,5 @@
 kind: autotools
 
-(@):
-- elements/sources/bc.yml
-
 build-depends:
 - components/buildsystems/autotools.bst
 - components/util-text/ed.bst
@@ -17,3 +14,8 @@ config:
     (>):
     - |
       rm "%{install-root}%{infodir}/dir"
+
+sources:
+- kind: tar
+  url: gnu:bc/bc-%{source-track_bc}.tar.gz
+  ref: ae470fec429775653e042015edc928d07c8c3b2fc59765172a330d3d87785f86

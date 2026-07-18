@@ -1,4 +1,0 @@
-sources:
-- kind: tar
-  url: sourceforge:lame/files/lame/3.100/lame-3.100.tar.gz
-  ref: ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e

@@ -1,8 +1,5 @@
 kind: autotools
 
-(@):
-- elements/sources/tcl.yml
-
 build-depends:
 - components/buildsystems/minimal.bst
 
@@ -44,3 +41,8 @@ config:
 environment:
   BUILD_ZLIB: "False"
   BUILD_BZIP2: "0"
+
+sources:
+- kind: tar
+  url: sourceforge_dl:tcl/tcl%{source-track_tcl}-src.tar.gz
+  ref: a3903371efcce8a405c5c245d029e9f6850258a60fa3761c4d58995610949b31

@@ -1,4 +1,4 @@
 sources:
 - kind: tar
   url: gnu:gawk/gawk-%{source-track_gawk}.tar.xz
-  ref: 07f6f7342b7febe4313fc2c2542ad93d64fe20ad8717200109f105a826f5fd37
+  ref: 3dd430f0cd3b4428c6c3f6afc021b9cd3c1f8c93f7a688dc268ca428a90b4ac1

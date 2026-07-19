@@ -17,6 +17,7 @@ variables:
     -DZXING_BLACKBOX_TESTS=OFF
     -DZXING_USE_BUNDLED_ZINT=OFF
     -DZXING_WRITERS=BOTH
+    -DSTB_IMAGE_INCLUDE_DIR=%{includedir}
 
 sources:
 - kind: git_repo

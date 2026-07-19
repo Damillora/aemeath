@@ -26,5 +26,3 @@ sources:
   exclude:
   - '*rc*'
   ref: v3.1.0-0-g885baaf0840335153c1a487fa65f9c1388702c81
-- kind: patch_queue
-  path: patches/zxing-cpp

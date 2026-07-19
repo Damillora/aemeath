@@ -1,4 +1,6 @@
 sources:
-- kind: tar
-  url: gnu:sed/sed-%{source-track_sed}.tar.gz
-  ref: 4d179ffaf92ec4dcec541f7c032be1c3b9a1856f4970adb95a505221702f5277
+- kind: gnu
+  name: sed
+  ref:
+    suffix: sed/sed-4.10.tar.xz
+    sha256sum: b8e72182b2ec96a3574e2998c47b7aaa64cc20ce000d8e9ac313cc07cecf28c7

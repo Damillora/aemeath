@@ -19,4 +19,4 @@ sources:
   track: '*.*.*'
   exclude:
   - '*.*.9*'
-  ref: 1.25.0-0-g3e673a438b0a9749e3bdf5cac4befac86333024c
+  ref: 1.26.0-0-g87cc8a8728a923fc57938faa81ba0e74f34ecdc7

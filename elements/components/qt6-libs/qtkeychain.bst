@@ -19,4 +19,4 @@ sources:
 - kind: git_repo
   url: github:frankosterfeld/qtkeychain.git
   track: "*.*"
-  ref: 0.16.0-0-gaa6da344e1a20b9194e12bace3665caeea6b6304
+  ref: 0.17.0-0-g875f77d9f61bd97fd84cca47ce3bc71186dfbd09

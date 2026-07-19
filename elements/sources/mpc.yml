@@ -1,4 +1,6 @@
 sources:
-  - kind: tar
-    url: gnu:mpc/mpc-%{source-track_mpc}.tar.xz
-    ref: 91204cd32f164bd3b7c992d4a6a8ce6519511aadab30f78b6982d0bf8d73e931
+- kind: gnu
+  name: mpc
+  ref:
+    suffix: mpc/mpc-1.4.1.tar.xz
+    sha256sum: 91204cd32f164bd3b7c992d4a6a8ce6519511aadab30f78b6982d0bf8d73e931

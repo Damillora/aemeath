@@ -26,4 +26,4 @@ sources:
 - kind: git_repo
   url: github:libjxl/libjxl
   track: "v*"
-  ref: v0.11.2-0-g332feb17d17311c748445f7ee75c4fb55cc38530
+  ref: v0.12.0-0-ga7a9c787341cf703dede03c2009fa460cae5e5df

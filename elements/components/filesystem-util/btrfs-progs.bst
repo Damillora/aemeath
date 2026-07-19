@@ -16,11 +16,11 @@ depends:
 - components/util-archive/zstd.bst
 
 variables:
-   conf-local: >-
-     --disable-documentation
+  conf-local: >-
+    --disable-documentation
 
 sources:
 - kind: git_repo
   url: kernel:linux/kernel/git/kdave/btrfs-progs.git
   track: 'v*'
-  ref: v7.0-0-g9c5987432906daebde23f9703c0f6f90c35fa9da
+  ref: v7.1-0-g4ab0e80be9e3bb1db2e6038e6d4316d35fb7ba8b

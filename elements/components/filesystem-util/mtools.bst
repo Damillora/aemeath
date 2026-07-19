@@ -8,6 +8,8 @@ depends:
 - components/sys-libs/gcc-libs.bst
 
 sources:
-- kind: tar
-  url: gnu:mtools/mtools-%{source-track_mtools}.tar.bz2
-  ref: 6fe5193583d6e7c59da75e63d7234f76c0b07caf33b103894f46f66a871ffc9f
+- kind: gnu
+  name: mtools
+  ref:
+    suffix: mtools/mtools-4.0.49.tar.bz2
+    sha256sum: 6fe5193583d6e7c59da75e63d7234f76c0b07caf33b103894f46f66a871ffc9f

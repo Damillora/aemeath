@@ -19,4 +19,4 @@ sources:
 - kind: git_repo
   url: freedesktop:accountsservice/accountsservice.git
   track: refs/tags/*
-  ref: 26.26.9-0-g2205cc63b4a6841df780fe449f62d3f7b0fd19b7
+  ref: 26.27.3-0-g4e254d9624cc48224c9920b9509df0b144f7be0c

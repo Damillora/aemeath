@@ -39,6 +39,6 @@ config:
 sources:
 - kind: tar
   url: golang:dl/go%{source-track_go}.linux-amd64.tar.gz
-  ref: 1153d3d50e0ac764b447adfe05c2bcf08e889d42a02e0fe0259bd47f6733ad7f
+  ref: 5c2c3b16caefa1d968a94c1daca04a7ca301a496d9b086e17ad77bb81393f053
 
 

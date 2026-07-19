@@ -20,4 +20,4 @@ sources:
 - kind: git_repo
   url: aemeath_mirror:passt.git
   track: '*_*_*.*'
-  ref: 2026_06_11.a9c61ff-0-ga9c61ffaf15347b8dfcc2347c5440e4b0e82333b
+  ref: 2026_07_16.090d739-0-g090d739bd16ed0d810bf2fe9603229aad74adc62

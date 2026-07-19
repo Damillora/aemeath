@@ -1,4 +1,6 @@
 sources:
-- kind: tar
-  url: gnu:tar/tar-%{source-track_tar}.tar.gz
-  ref: 14d55e32063ea9526e057fbf35fcabd53378e769787eff7919c3755b02d2b57e
+- kind: gnu
+  name: tar
+  ref:
+    suffix: tar/tar-1.35.tar.xz
+    sha256sum: 4d62ff37342ec7aed748535323930c7cf94acf71c3591882b26a7ea50f3edc16

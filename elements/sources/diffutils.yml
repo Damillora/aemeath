@@ -1,4 +1,6 @@
 sources:
-- kind: tar
-  url: gnu:diffutils/diffutils-%{source-track_diffutils}.tar.xz
-  ref: 7c8b7f9fc8609141fdea9cece85249d308624391ff61dedaf528fcb337727dfd
+- kind: gnu
+  name: diffutils
+  ref:
+    suffix: diffutils/diffutils-3.12.tar.xz
+    sha256sum: 7c8b7f9fc8609141fdea9cece85249d308624391ff61dedaf528fcb337727dfd

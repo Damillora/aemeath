@@ -24,6 +24,8 @@ public:
     vendor: gnu
 
 sources:
-- kind: tar
-  url: gnu:ed/ed-%{source-track_ed}.tar.lz
-  ref: 56e107ddc2f29dad6690376c15bf9751509e1ee3b8241710e44edbe5c3a158cc
+- kind: gnu
+  name: ed
+  ref:
+    suffix: ed/ed-1.4.tar.gz
+    sha256sum: db36da85ee1a9d8bafb4b041bd4c8c11becba0c43ec446353b67045de1634fda

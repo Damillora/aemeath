@@ -1,8 +1,5 @@
 kind: autotools
 
-(@):
-- elements/sources/groff.yml
-
 build-depends:
 - components/buildsystems/autotools.bst
 - components/dev-tools/texinfo.bst
@@ -24,6 +21,8 @@ config:
       rm "%{install-root}%{infodir}/dir"
 
 sources:
-- kind: tar
-  url: gnu:groff/groff-%{source-track_groff}.tar.gz
-  ref: 74e2819795b6aff431aeac983d63a9c8968eeaba2a2eba7df8ba4c7b41e7cfd8
+- kind: gnu
+  name: groff
+  ref:
+    suffix: groff/groff-1.24.1.tar.gz
+    sha256sum: 74e2819795b6aff431aeac983d63a9c8968eeaba2a2eba7df8ba4c7b41e7cfd8

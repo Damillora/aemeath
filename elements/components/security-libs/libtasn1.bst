@@ -13,6 +13,8 @@ variables:
     --enable-shared
 
 sources:
-- kind: tar
-  url: gnu:libtasn1/libtasn1-%{source-track_libtasn1}.tar.gz
-  ref: 1d8a444a223cc5464240777346e125de51d8e6abf0b8bac742ac84609167dc87
+- kind: gnu
+  name: libtasn1
+  ref:
+    suffix: libtasn1/libtasn1-4.21.0.tar.gz
+    sha256sum: 1d8a444a223cc5464240777346e125de51d8e6abf0b8bac742ac84609167dc87

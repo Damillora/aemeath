@@ -1,4 +1,6 @@
 sources:
-- kind: tar
-  url: gnu:automake/automake-%{source-track_automake}.tar.xz
-  ref: 168aa363278351b89af56684448f525a5bce5079d0b6842bd910fdd3f1646887
+- kind: gnu
+  name: automake
+  ref:
+    suffix: automake/automake-1.18.1.tar.xz
+    sha256sum: 168aa363278351b89af56684448f525a5bce5079d0b6842bd910fdd3f1646887

@@ -1,4 +1,6 @@
 sources:
-- kind: tar
-  url: gnu:coreutils/coreutils-%{source-track_coreutils}.tar.xz
-  ref: 394024eda0a5955217ceda9cd1201e65dc8fa3aa29c2951135a49521d57c3cc3
+- kind: gnu
+  name: coreutils
+  ref:
+    suffix: coreutils/coreutils-9.11.tar.xz
+    sha256sum: 394024eda0a5955217ceda9cd1201e65dc8fa3aa29c2951135a49521d57c3cc3

@@ -29,7 +29,7 @@ sources:
 - kind: git_repo
   url: github:podman-container-tools/container-libs.git
   track: common/v*
-  ref: common/v0.68.0-0-gbb6a37c8946a977f24a8eed4d97b2dc3608cd05e
+  ref: common/v0.68.1-0-gebdc3c45f0ae5f2a14fafa4fad7973a9f46fdf9a
 - kind: git_repo
   url: github:containers/shortnames.git
   directory: shortnames

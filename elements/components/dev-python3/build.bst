@@ -20,5 +20,5 @@ sources:
 - kind: git_repo
   url: github:pypa/build.git
   track: '*.*.*'
-  ref: 1.5.0-0-g615d04cfc52ac3c1592a463f0afe484fee1cc368
+  ref: 1.5.1-0-gd08fcd723500a7d676867144e1e7a22b650aeb7d
 

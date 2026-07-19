@@ -26,7 +26,7 @@ sources:
   track: v*
   exclude:
   - '*pre*'
-  ref: v1.81.1-0-ge84a8a2f04095f2772ba42a4abccde4f9243e75b
+  ref: v1.82.1-0-gacccf84c0df20487d64101f528e5d426541ca4e5
 - kind: git_module
   url: github:google/re2.git
   path: third_party/re2

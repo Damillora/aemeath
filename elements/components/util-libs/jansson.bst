@@ -16,4 +16,4 @@ sources:
 - kind: git_repo
   url: github:akheron/jansson.git
   track: "v*"
-  ref: v2.15.0-0-g4a9a6db73d5dc553164992e87426502ab2d54512
+  ref: v2.15.1-0-gdbb5fb3636e155fccfce4cd215de752779bd6971

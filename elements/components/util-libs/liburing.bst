@@ -24,4 +24,4 @@ sources:
   track: liburing-*
   exclude:
   - '*rc*'
-  ref: liburing-2.14-0-ge3d35ea59d3ba09075ed4d7751e4bb9049cce64a
+  ref: liburing-2.15-0-gd41bf9220ec39277ff235379e9089d9e0fd6c2a5

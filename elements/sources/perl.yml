@@ -5,4 +5,4 @@ sources:
   track: v5.*[02468].*
   exclude:
   - v*-RC*
-  ref: v5.42.2-0-gb62845c7186b0b6a8e4e83419e6b5ef64ceef3ed
+  ref: v5.44.0-0-ge634cc838fb1785dfafb5d13b52807ea16b5c52c

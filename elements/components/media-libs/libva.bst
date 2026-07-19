@@ -21,4 +21,4 @@ sources:
 - kind: git_repo
   url: github:intel/libva.git
   track: "2.*.*"
-  ref: 2.23.0-0-gdbf83dc3b1ce6bad46e1628aaf2da5ef731157b8
+  ref: 2.24.1-0-g710eb465c6277ee2cac3e6948767b01eebe7e77a

@@ -12,4 +12,4 @@ sources:
 - kind: git_repo
   url: github:hughsie/libxmlb.git
   track: '*.*'
-  ref: 0.3.27-0-g2320a66cd267a82bfd41db90e35cd33e1f71bd8b
+  ref: 0.3.28-0-g7a1b31db70bca83345de26219eb7e858cb85d321

@@ -1,0 +1,129 @@
+diff --git a/src/buildstream_plugins_community/sources/_utils.py b/src/buildstream_plugins_community/sources/_utils.py
+index 58c2ab8..b4bc887 100644
+--- a/src/buildstream_plugins_community/sources/_utils.py
++++ b/src/buildstream_plugins_community/sources/_utils.py
+@@ -207,7 +207,7 @@ class TarStager:
+         self.mirror_file = mirror_file
+ 
+     def stage(self, directory):
+-        with tarfile.open(self.mirror_file, "r:gz") as tar:
++        with tarfile.open(self.mirror_file, "r:*") as tar:
+             tar.extractall(
+                 path=directory,
+                 members=_strip_top_dir(tar.getmembers(), "path"),
+diff --git a/src/buildstream_plugins_community/sources/gnu.py b/src/buildstream_plugins_community/sources/gnu.py
+index 30b1d0d..b886bbd 100644
+--- a/src/buildstream_plugins_community/sources/gnu.py
++++ b/src/buildstream_plugins_community/sources/gnu.py
+@@ -62,7 +62,7 @@ import re
+ 
+ import requests
+ from buildstream import Source, SourceError, utils
+-from ._utils import HTTPFetcher, TarStager
++from ._utils import HTTPFetcher, TarStager, translate_url
+ 
+ 
+ # Supported compression algorithms, ordered from least-preferred to most-preferred
+@@ -89,7 +89,7 @@ class GnuSource(Source):
+ 
+     def configure(self, node):
+         node.validate_keys(
+-            ["name", "dirname", "mirror", "track"] + Source.COMMON_CONFIG_KEYS
++            ["name", "dirname", "mirror", "track", "ref"] + Source.COMMON_CONFIG_KEYS
+         )
+ 
+         self.name = node.get_str("name")
+@@ -102,13 +102,14 @@ class GnuSource(Source):
+ 
+         self.tracking = node.get_bool("track", True)
+ 
+-        self.load_ref(node)
+-
+         self.base_url = node.get_str(
+             "mirror", "https://ftpmirror.gnu.org/gnu/"
+         )
+         self.mark_download_url(self.base_url)
+ 
++        self.ref = None
++        self.load_ref(node)
++
+     def preflight(self):
+         pass
+ 
+@@ -117,29 +118,34 @@ class GnuSource(Source):
+ 
+     def load_ref(self, node):
+         ref_mapping = node.get_mapping("ref", None)
++        suffix = None
++        sha256sum = None
+         if ref_mapping:
+-            self.suffix = ref_mapping.get_str("suffix")
+-            self.sha256sum = ref_mapping.get_str("sha256sum")
+-            self.fetcher = HTTPFetcher(
+-                self,
+-                self.mirror_directory,
+-                self.base_url,
+-                self.suffix,
+-                self.sha256sum,
+-            )
++            suffix = ref_mapping.get_str("suffix", None)
++            sha256sum = ref_mapping.get_str("sha256sum", None)
++        self.suffix = suffix
++        self.sha256sum = sha256sum
++        self.fetcher = HTTPFetcher(
++            self,
++            self.mirror_directory,
++            self.base_url,
++            suffix,
++            sha256sum,
++        )
+ 
+     def get_ref(self):
+-        if self.suffix and self.sha256sum:
+-            return {
+-                "sha256sum": self.sha256sum,
+-                "suffix": self.suffix,
+-            }
+-        return None
++        return {
++           "suffix": self.suffix,
++           "sha256sum": self.sha256sum
++        }
+ 
+     def set_ref(self, ref, node):
+         self.suffix = ref["suffix"]
+         self.sha256sum = ref["sha256sum"]
+-        node["ref"] = ref
++        node["ref"] = {
++           "suffix": self.suffix,
++           "sha256sum": self.sha256sum
++        }
+ 
+     def track(self):
+         if not self.tracking:
+@@ -150,7 +156,7 @@ class GnuSource(Source):
+         # TODO: is it possible to cache this data somewhere so we only download
+         #       this index once per invocation of `bst source track`?
+         # TODO: Should we make this URL configurable somehow?
+-        index_url = "https://ftp.gnu.org/find.txt.gz"
++        index_url = self.translate_url("https://ftp.gnu.org/find.txt.gz")
+ 
+         resp = requests.get(index_url, timeout=60)
+ 
+@@ -180,6 +186,7 @@ class GnuSource(Source):
+             sha256sum = None
+ 
+         fetcher = HTTPFetcher(
++            self,
+             self.mirror_directory,
+             self.base_url,
+             suffix,
+@@ -188,7 +195,7 @@ class GnuSource(Source):
+ 
+         sha256sum = fetcher.fetch()
+ 
+-        self.info(f"Found tarball: {found} (hash: {self.sha256sum})")
++        self.info(f"Found tarball: {found} (hash: {sha256sum})")
+         return {
+             "sha256sum": sha256sum,
+             "suffix": suffix,

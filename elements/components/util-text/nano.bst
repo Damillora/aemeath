@@ -18,6 +18,8 @@ config:
     - rm "%{install-root}/usr/share/info/dir"
 
 sources:
-- kind: tar
-  url: gnu:nano/nano-%{source-track_nano}.tar.xz
-  ref: 5f47764274cb7532349ce0aa20ec10f1e8e851a6e9fa3eb66812c43d196db042
+- kind: gnu
+  name: nano
+  ref:
+    suffix: nano/nano-9.1.tar.xz
+    sha256sum: 5f47764274cb7532349ce0aa20ec10f1e8e851a6e9fa3eb66812c43d196db042

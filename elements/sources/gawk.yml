@@ -4,3 +4,5 @@ sources:
   ref:
     suffix: gawk/gawk-5.4.1.tar.xz
     sha256sum: 07f6f7342b7febe4313fc2c2542ad93d64fe20ad8717200109f105a826f5fd37
+- kind: patch_queue
+  path: patches/gawk

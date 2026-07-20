@@ -10,13 +10,7 @@ depends:
 
 variables:
   cmake-local: >-
-    -DBUILD_STATIC_LIBS=OFF
-config:
-  configure-commands:
-    (<):
-    - |
-      sed -i 's/VERSION 2.8/VERSION 4.0/' apps/CMakeLists.txt
-      sed -i 's/VERSION 3.9/VERSION 4.0/' tests/CMakeLists.txt
+    -D BUILD_STATIC_LIBS=OFF
 
 sources:
 - kind: git_repo

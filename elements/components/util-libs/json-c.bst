@@ -2,6 +2,7 @@ kind: cmake
 
 build-depends:
 - components/buildsystems/cmake.bst
+- components/dev-tools/doxygen.bst
 
 depends:
 - components/sys-libs/glibc.bst

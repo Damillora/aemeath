@@ -1,0 +1,4 @@
+cmake:
+  variables:
+    cmake-global: >-
+      -DCMAKE_BUILD_TYPE=Release

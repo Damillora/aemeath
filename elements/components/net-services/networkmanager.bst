@@ -46,6 +46,6 @@ sources:
   exclude:
   - '*-dev'
   - '*-rc*'
-  ref: 1.56.1-0-gb829f838fc5d8c93437faa5db44a5396b67893de
+  ref: 1.58.0-0-g61302aac7f2e7411f3b42159544926484eacd37e
 - kind: patch_queue
   path: patches/networkmanager

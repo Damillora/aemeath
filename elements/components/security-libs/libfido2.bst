@@ -8,8 +8,11 @@ depends:
 - components/util-libs/libcbor.bst
 
 variables:
+  # libfido2 somehow sets their own fortify flag on release mode
+  cflags-fortify-source: "" 
   cmake-local: >-
     -DBUILD_STATIC_LIBS:BOOL=FALSE
+
 sources:
 - kind: git_repo
   url: github:Yubico/libfido2.git

@@ -47,5 +47,3 @@ sources:
   - '*-dev'
   - '*-rc*'
   ref: 1.58.0-0-g61302aac7f2e7411f3b42159544926484eacd37e
-- kind: patch_queue
-  path: patches/networkmanager

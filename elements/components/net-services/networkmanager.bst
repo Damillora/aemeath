@@ -33,6 +33,7 @@ variables:
     -D ppp=false
     -D nbft=false
     -D selinux=false
+    -D clat=false
     -D qt=false
     -D session_tracking=systemd
     -D nm_cloud_setup=false

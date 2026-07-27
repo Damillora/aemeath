@@ -7,6 +7,7 @@ build-depends:
 - components/dev-tools/gtk-doc.bst
 - components/sys-services/systemd.bst
 - components/util-sys/bpf.bst
+- components/dev-tools/llvm.bst
 
 depends:
 - components/net-libs/libndp.bst

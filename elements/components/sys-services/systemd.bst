@@ -7,6 +7,7 @@ runtime-depends:
 #- components/net-libs/curl.bst
 - components/sys-libs/systemd-libs.bst
 - components/sys-libs/acl.bst
+- components/sys-libs/libbpf.bst
 - components/sys-libs/libelf.bst
 - components/sys-libs/zlib-ng.bst
 - components/sys-libs/openssl.bst

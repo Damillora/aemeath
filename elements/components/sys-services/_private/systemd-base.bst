@@ -8,6 +8,7 @@ build-depends:
 - components/sys-libs/acl.bst
 - components/sys-libs/libcap.bst
 - components/sys-libs/libxcrypt.bst
+- components/sys-libs/libbpf.bst
 - components/sys-libs/libelf.bst
 - components/sys-libs/libseccomp.bst
 - components/sys-libs/openssl.bst
@@ -29,6 +30,7 @@ build-depends:
 - components/util-libs/libidn2.bst
 - components/util-sys/kmod.bst
 - components/util-sys/kbd.bst
+- components/util-sys/bpf.bst
 - components/filesystem-util/_private/cryptsetup-stage1.bst
 - components/filesystem-util/_private/lvm2-stage1.bst
 

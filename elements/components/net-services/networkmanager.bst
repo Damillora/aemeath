@@ -6,10 +6,12 @@ build-depends:
 - components/dev-tools/gobject-introspection.bst
 - components/dev-tools/gtk-doc.bst
 - components/sys-services/systemd.bst
+- components/util-sys/bpf.bst
 
 depends:
 - components/net-libs/libndp.bst
 - components/net-libs/curl.bst
+- components/sys-libs/libbpf.bst
 - components/sys-libs/systemd-libs.bst
 - components/util-libs/util-linux-libs.bst
 - components/util-libs/glib.bst
@@ -33,7 +35,6 @@ variables:
     -D ppp=false
     -D nbft=false
     -D selinux=false
-    -D clat=false
     -D qt=false
     -D session_tracking=systemd
     -D nm_cloud_setup=false

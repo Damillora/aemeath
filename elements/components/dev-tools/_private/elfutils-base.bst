@@ -26,4 +26,5 @@ public:
     split-rules:
       libelf:
         - '%{libdir}/libelf*'
+        - '%{libdir}/pkgconfig/libelf.pc'
         - '%{includedir}/**'

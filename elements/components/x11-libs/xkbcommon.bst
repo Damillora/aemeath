@@ -30,4 +30,4 @@ sources:
 - kind: git_repo
   url: github:xkbcommon/libxkbcommon.git
   track: xkbcommon-*
-  ref: xkbcommon-1.13.2-0-gd1442aaa6b635551182e83c3b55037f4c118c962
+  ref: xkbcommon-1.14.0-beta1-0-g1e11d3afe458ad2efe1d081b3185e42d32c80f56

@@ -16,4 +16,4 @@ sources:
 - kind: git_repo
   url: github:tesseract-ocr/tesseract.git
   track: '*.*'
-  ref: 5.5.2-0-g6e1d56a847e697de07b38619356550e5cf4e8633
+  ref: 5.5.3-0-gdb0ec62f81b0737fbbe184d8fea40af5738f8eef

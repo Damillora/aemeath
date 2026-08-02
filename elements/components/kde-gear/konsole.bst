@@ -6,6 +6,7 @@ build-depends:
 - components/kde-kf6/kdoctools.bst
 
 depends:
+- components/net-libs/libssh.bst
 - components/util-libs/icu.bst
 - components/qt6-toolkit/qtbase.bst
 - components/qt6-toolkit/qtmultimedia.bst

@@ -1,7 +1,7 @@
-kind: autotools
+kind: cmake
 
 build-depends:
-- components/buildsystems/autotools.bst
+- components/buildsystems/cmake.bst
 - components/dev-lang/python3.bst
 - components/net-tools/openssh.bst
 
@@ -12,5 +12,5 @@ depends:
 sources:
 - kind: git_repo
   url: libssh:projects/libssh.git
-  track: v*
-  ref: libssh-0.7.7-1-ge5352e30214823751e6e4df755560f0ff962d8a4
+  track: libssh-*
+  ref: libssh-0.12.2-0-g07430deb9b97b751ec5ea5a7fc307f40bf042e0a

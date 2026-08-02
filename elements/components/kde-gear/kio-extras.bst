@@ -25,7 +25,7 @@ depends:
 - components/kde-kf6/solid.bst
 - components/kde-kf6/syntax-highlighting.bst
 - components/kde-gear/libkexiv2.bst
-#- components/hw-libs/libmtp.bst
+- components/hw-libs/libmtp.bst
 - components/util-libs/libplist.bst
 - components/hw-libs/libimobiledevice.bst
 - components/qt6-libs/qcoro.bst

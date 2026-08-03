@@ -14,4 +14,4 @@ sources:
 - kind: git_repo
   url: github:Python-Markdown/markdown.git
   track: "*.*.*"
-  ref: 3.10.2-0-ge7a0efb3a7c36d6b8005403122705662bc17c904
+  ref: 3.10.3-0-gbb50627dc07fde6ee5ed7478464062c537ebad2c

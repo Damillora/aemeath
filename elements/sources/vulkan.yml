@@ -14,9 +14,6 @@ sources:
   directory: spirv-headers
   track: vulkan-sdk-*
   ref: vulkan-sdk-1.4.357.0-0-g29981f65241605e08b0ede4cfeb999fe3b723c6a
-- kind: patch_queue
-  directory: spirv-headers
-  path: patches/spirv-headers
 - kind: git_repo
   url: github:KhronosGroup/SPIRV-Tools.git
   directory: spirv-tools

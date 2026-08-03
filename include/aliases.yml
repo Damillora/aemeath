@@ -31,6 +31,7 @@ aliases:
   kernel_http: https://www.kernel.org/pub/linux/
   kernel: https://git.kernel.org/pub/scm/
   launchpad: https://launchpad.net/
+  libssh: https://git.libssh.org/
   lua: https://www.lua.org/ftp/
   mozilla_archive: https://archive.mozilla.org/
   mozilla_hg: https://hg-edge.mozilla.org/

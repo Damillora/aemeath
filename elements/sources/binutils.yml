@@ -15,7 +15,7 @@ config:
 
 sources:
 - kind: git_repo
-  url: sourceware:binutils-gdb.git
+  url: sourcehut:~sourceware/binutils-gdb
   track: "binutils-%{binutils-track}"
   exclude:
   - binutils-2_41

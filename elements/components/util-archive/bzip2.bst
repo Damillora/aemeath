@@ -36,6 +36,6 @@ config:
 
 sources:
 - kind: git_repo
-  url: sourceware:bzip2.git
+  url: sourcehut:~sourceware/bzip2
   track: bzip2-*
   ref: bzip2-1.0.8-0-g6a8690fc8d26c815e798c588f796eabe9d684cf0

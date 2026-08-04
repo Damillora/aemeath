@@ -34,4 +34,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/plasma-pa-%{plasma-track}.tar.xz'
-  ref: c97e985d37494c3617afcbe1d43e039de0068ed53e237083f27dc046e20d1665
+  ref: 419c3cfe15f2f3093c4255d84a24708dd7ad28da2ce80cfee3521f761ba6937e

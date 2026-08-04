@@ -16,4 +16,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/kdecoration-%{plasma-track}.tar.xz'
-  ref: 69690713d2216323dae96d61d74e087bd9e5e5b3effcf1c54f7a3e823672d0e7
+  ref: af366baba8694e16226844a94b4772a63a7e8d8d43e4c1950215eb163b4ca590

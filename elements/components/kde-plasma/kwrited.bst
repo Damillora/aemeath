@@ -19,4 +19,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/kwrited-%{plasma-track}.tar.xz'
-  ref: 0e20696353a99c6cc4f188240b1a9b51fd077b0cbb20c9d5123b9a2a8fb7fc2d
+  ref: e556bb6aa096ccc146c4cddf8c1ea3f99d76c283f99f1d61d49d4ec2b0e9eab6

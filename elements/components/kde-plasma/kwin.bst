@@ -85,4 +85,4 @@ public:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/kwin-%{plasma-track}.tar.xz'
-  ref: 345b45d400884cc6b00f4b3585cc056aa2780f32afe2df394d20c5a98273c559
+  ref: db7a7dba71aaca1e5218733b80f90a998d84e2ab36e4d62d0e3ea00376c5802d

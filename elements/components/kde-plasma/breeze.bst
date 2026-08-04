@@ -30,4 +30,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/breeze-%{plasma-track}.tar.xz'
-  ref: d853fc45a43e64ee6d901860b19e78a50c8a03cfe9127f2a5781d50f13ffe838
+  ref: 31dc88f924a5f5c979f09275ccc897cb0001bda45604561c8f18eb35b2e38b5a

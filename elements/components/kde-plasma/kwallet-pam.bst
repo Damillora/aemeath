@@ -19,4 +19,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/kwallet-pam-%{plasma-track}.tar.xz'
-  ref: a720a1440edf8734e4b8d4d4d5ea96fc14946c21f38f6a5ca1b738d8a8dc583b
+  ref: 24430ef5bef8b7c06b8f6770058afaab8fbbc166392535408b4e1d9e99a1ca9c

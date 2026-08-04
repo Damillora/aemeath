@@ -13,4 +13,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/oxygen-sounds-%{plasma-track}.tar.xz'
-  ref: 799a12bc37b630ca0fd65082e2e7d891aff76cfdf81406ff8c76ceb487bcd657
+  ref: 4e7b942544e5ebdecda5eb23a6858ac2a9429c0c54ffba8a2455f1ff4b9ca9de

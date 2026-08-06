@@ -10,6 +10,11 @@ depends:
 - components/kde-kf6/kconfig.bst
 - components/graphics-libs/opencv.bst
 
+config:
+  configure-commands:
+    (<):
+    - sed -e 's|OpenCV 4.7|OpenCV 5|' -i CMakeLists.txt
+
 sources:
 - kind: git_repo
   url: kde:libraries/kquickimageeditor.git

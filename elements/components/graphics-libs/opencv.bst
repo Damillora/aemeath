@@ -43,9 +43,11 @@ variables:
 
 sources:
 - kind: tar
-  url: github:opencv/opencv/archive/refs/tags/4.13.0.tar.gz
-  ref: 1d40ca017ea51c533cf9fd5cbde5b5fe7ae248291ddf2af99d4c17cf8e13017d
+  url: github:opencv/opencv/archive/refs/tags/%{source-track_opencv}.tar.gz
+  ref: b0528f5a1d379d59d4701cb28c36e22214cc51cf64594e5b56f2d3e6c0233095
 - kind: tar
   directory: contrib
-  url: github:opencv/opencv_contrib/archive/refs/tags/4.13.0.tar.gz
-  ref: 1e0077a4fd2960a7d2f4c9e49d6ba7bb891cac2d1be36d7e8e47aa97a9d1039b
+  url: github:opencv/opencv_contrib/archive/refs/tags/%{source-track_opencv}.tar.gz
+  ref: c58f6344170c39abf187c56f3843b59cab1fd3e89cf19ba2ce25dc061659b27f
+- kind: patch_queue
+  path: patches/opencv

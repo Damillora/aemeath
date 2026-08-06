@@ -42,6 +42,11 @@ variables:
     -DBUILD_TESTING=OFF
     -DCMAKE_INSTALL_LIBEXECDIR=libexec
 
+config:
+  configure-commands:
+    (<):
+    - sed -e 's|OpenCV 4.7|OpenCV 5|' -i CMakeLists.txt
+
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/spectacle-%{plasma-track}.tar.xz'

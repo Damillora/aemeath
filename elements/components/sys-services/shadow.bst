@@ -32,7 +32,9 @@ config:
         -e 's:/var/spool/mail:/var/mail:'                   \
         -e '/PATH=/{s@/sbin:@@;s@/bin:@@}'                  \
         -i etc/login.defs
-    - sed -i '/stdio.h/i #include <stdint.h>' lib/find_new_sub_*ids.c
+    - |
+      sed -i '/stdio.h/i #include <stdint.h>' lib/find_new_sub_*ids.c
+
   install-commands:
     (>):
     - |

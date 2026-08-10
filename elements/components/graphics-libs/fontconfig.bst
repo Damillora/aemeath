@@ -21,4 +21,4 @@ sources:
 - kind: git_repo
   url: freedesktop:fontconfig/fontconfig.git
   track: "*.*"
-  ref: 2.18.2-0-ga4e25ec391d417e4bca052fbfa5cd7ce5f7fd39e
+  ref: 2.18.3-0-g0f236723a3c26bd9745e32ba2b3ee21e5f809295

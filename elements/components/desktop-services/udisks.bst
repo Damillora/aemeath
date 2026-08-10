@@ -19,4 +19,4 @@ sources:
   exclude:
   - "udisks-2.10.90"
   - "udisks-2.10.91"
-  ref: udisks-2.11.1-0-g6375ff14d3fed5f20c66ff50cfc02844473294a1
+  ref: udisks-2.11.2-0-gcaffebe56d8208365cf0d62e0d05d31260d91156

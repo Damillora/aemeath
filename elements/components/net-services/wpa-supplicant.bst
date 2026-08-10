@@ -47,4 +47,4 @@ sources:
 - kind: git_repo
   url: w1fi:hostap.git
   track: hostap_*
-  ref: hostap_2_11-0-gd945ddd368085f255e68328f2d3b020ceea359af
+  ref: hostap_2_12-0-g831364bf02710ad09c2f27d3efa92abeeb5634c0

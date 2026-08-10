@@ -26,6 +26,6 @@ sources:
 - kind: git_repo
   url: github:pypa/setuptools-scm.git
   track: vcs-versioning-v*
-  ref: vcs-versioning-v2.2.3-0-g1933665088a7164284e117faf3ed5e6442f2694e
+  ref: vcs-versioning-v2.2.4-0-g100aa30d9d5212a663d286dbb5accdfc3de3310c
 
 

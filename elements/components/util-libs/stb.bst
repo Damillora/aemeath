@@ -16,4 +16,4 @@ sources:
 - kind: git_repo
   url: github:nothings/stb.git
   track: 'master'
-  ref: 31c1ad37456438565541f4919958214b6e762fb4
+  ref: 2c980bb59875b0d32144a71867fbdebb2f77cd20

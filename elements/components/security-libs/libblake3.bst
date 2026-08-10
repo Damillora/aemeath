@@ -17,4 +17,4 @@ sources:
 - kind: git_repo
   url: github:BLAKE3-team/BLAKE3.git
   track: '*.*'
-  ref: 1.8.5-0-g93a431c78a52d7ccf0f366f106467f5070e6075e
+  ref: 1.8.6-0-g77b257eee7da5cd608eaf6be8343d3a4c9776af2

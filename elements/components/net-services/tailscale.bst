@@ -25,9 +25,9 @@ config:
 sources:
 - kind: git_repo
   url: github:tailscale/tailscale.git
-  track: v1.98.8
-  ref: v1.98.8-0-g05a91829316e055517a1e84f7b00016846ef4107
+  track: v1.102.2
+  ref: v1.102.2-0-geb67e5dcbe145d63e1128b9b4b630f8a82da101f
 - kind: tar
-  url: aemeath:files/tailscale-v1.98.8-vendor.tar.xz
+  url: aemeath:files/tailscale-v1.102.2-vendor.tar.xz
   directory: vendor
-  ref: 722fb244625badfd797eaa18ebd79e4cc9b148aec004d475f87eb4d7f5e97d09
+  ref: 923523c77907011eb75a59a8d76378d1291b0e0a1dc9d698beae36e08012fe34

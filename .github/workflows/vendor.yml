@@ -42,5 +42,5 @@ jobs:
           git checkout $tailscale_version
           go mod vendor
           tar cJf "$GITHUB_WORKSPACE/tailscale-${tailscale_version}-vendor.tar.xz" -C vendor  .
-          rclone copy --ignore-existing "$GITHUB_WORKSPACE/tailscale-${tailscale_version}-vendor.tar.xz" aemeath:files/
+          rclone copy --ignore-existing "$GITHUB_WORKSPACE/tailscale-${tailscale_version}-vendor.tar.xz" aemeath:aemeathos-files/files/
         shell: bash

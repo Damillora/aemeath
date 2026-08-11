@@ -15,7 +15,7 @@ depends:
 variables:
   conf-local: >-
     --without-python
-    --with-python3
+    --without-python3
 
 sources:
 - kind: git_repo

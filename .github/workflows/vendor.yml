@@ -1,0 +1,46 @@
+---
+name: Generate vendor tarballs
+on:
+  schedule:
+    - cron: "27 00 * * *" # 03:05am UTC everyday
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref || github.run_id }}-${{ inputs.brand_name}}-${{ inputs.stream_name }}
+  cancel-in-progress: true
+
+jobs:
+  vendor:
+    name: Generate vendor tarballs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-go@v6
+        with:
+          go-version: ">=1.26.0"
+      - name: Setup tools
+        run: |
+          # Setup rclone
+          curl https://rclone.org/install.sh | sudo bash
+          mkdir -p $HOME/.config/rclone
+          cat << EOF > $HOME/.config/rclone/rclone.conf
+          
+          [aemeath]
+          type = b2
+          account = $B2_ACCOUNT 
+          key = $B2_KEY
+          hard_delete = true
+          EOF
+        shell: bash
+        env:
+          B2_ACCOUNT: ${{secrets.B2_ACCOUNT}}
+          B2_KEY: ${{secrets.B2_KEY}}
+      - name: Tailscale vendor
+        run: |
+          git clone https://github.com/tailscale/tailscale.git
+          cd tailscale
+          tailscale_version=$(git describe --tags $(git rev-list --tags --max-count=1))
+          git checkout $tailscale_version
+          go mod vendor
+          tar cJf "$GITHUB_WORKSPACE/tailscale-${tailscale_version}-vendor.tar.xz" -C vendor  .
+          rclone copy --ignore-existing "$GITHUB_WORKSPACE/tailscale-${tailscale_version}-vendor.tar.xz" aemeath:files/
+        shell: bash

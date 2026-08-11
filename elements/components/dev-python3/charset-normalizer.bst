@@ -7,6 +7,9 @@ build-depends:
 depends:
 - components/dev-lang/python3.bst
 
+variables:
+  build-args-local: "--skip-dependency-check"
+
 environment:
   CHARSET_NORMALIZER_USE_MYPYC: 0
 

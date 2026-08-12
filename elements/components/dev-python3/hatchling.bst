@@ -8,6 +8,7 @@ depends:
 - components/dev-python3/pathspec.bst
 - components/dev-python3/packaging.bst
 - components/dev-python3/pluggy.bst
+- components/dev-python3/tomlkit.bst
 - components/dev-python3/trove-classifiers.bst
 
 variables:

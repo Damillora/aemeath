@@ -11,6 +11,6 @@ depends:
 
 sources:
 - kind: git_repo
-  url: libssh:projects/libssh.git
+  url: gitlab:libssh/libssh-mirror
   track: libssh-*
   ref: libssh-0.12.2-0-g07430deb9b97b751ec5ea5a7fc307f40bf042e0a

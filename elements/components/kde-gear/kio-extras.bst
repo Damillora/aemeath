@@ -7,6 +7,7 @@ build-depends:
 
 depends:
 - components/net-libs/libproxy.bst
+- components/net-libs/libssh.bst
 - components/util-libs/libtirpc.bst
 - components/x11-libs/xcursor.bst
 #- components/deps/samba.bst

@@ -22,6 +22,6 @@ sources:
 - kind: git_repo
   url: github:google/googletest.git
   track: "*.*"
-  ref: v1.17.0-0-g52eb8108c5bdec04579160ae17225d66034bd723
+  ref: v1.18.0-0-g063de7e9578f82b369302001269680b4b1553359
   directory: third_party/googletest
 

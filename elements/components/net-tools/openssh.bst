@@ -59,5 +59,5 @@ sources:
 - kind: git_repo
   url: github:openssh/openssh-portable.git
   track: V_*
-  ref: V_10_4_P1-0-ge8dd756725e8800fcd0b3fd71ee6b4382d1e8fab
+  ref: V_10_5_P1-0-gb3f7344209832eea8ece447d871ea748767c444b
   version-guess-pattern: '(\d+)_(\d+)'

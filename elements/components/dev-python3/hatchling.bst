@@ -18,5 +18,5 @@ sources:
 - kind: git_repo
   url: github:pypa/hatch.git
   track: 'hatch-v*'
-  ref: hatch-v1.17.1-0-g5dae0595d1dfbaa5268aeeee7d81fde604d097d8
+  ref: hatch-v1.18.0-0-g558061c5ecbe7e9b10d81965d4cdc8df05832228
 

@@ -15,7 +15,7 @@ sources:
 - kind: git_repo
   url: github:rockdaboot/libpsl.git
   track: '*.*.*'
-  ref: 0.23.1-0-gaa3a80e18f25caf3916636c8668dcc0fff7c016d
+  ref: 0.23.2-0-gef1faa5509c6bde3605bffa6b9de09c4ce7801e8
 - kind: git_module
   path: list
   url: github:publicsuffix/list.git

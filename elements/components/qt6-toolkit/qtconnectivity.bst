@@ -14,4 +14,4 @@ depends:
 sources:
 - kind: tar
   url: 'qt:%{qt6-branch}/%{qt6-track}/submodules/qtconnectivity-everywhere-src-%{qt6-track}.tar.xz'
-  ref: 2105289ea414b46ed5fa53ba8782230045b9e47cc8156b5940c9e31e3980e591
+  ref: 85b01a57bd059583ab520a857990dfdf4021447507ff5b9498f036b7295e6037

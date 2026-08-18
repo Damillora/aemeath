@@ -14,4 +14,4 @@ depends:
 sources:
 - kind: tar
   url: 'qt:%{qt6-branch}/%{qt6-track}/submodules/qtimageformats-everywhere-src-%{qt6-track}.tar.xz'
-  ref: b2bf6c6845ac175ed7f819145483ba4676f617aaa6a5012c8efee63c8bbac413
+  ref: cecd8900f34b6550076309bc94f62f828008b633a4239e0a08c86788f41001f8

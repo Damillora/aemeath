@@ -13,4 +13,4 @@ depends:
 sources:
 - kind: tar
   url: 'qt:%{qt6-branch}/%{qt6-track}/submodules/qtscxml-everywhere-src-%{qt6-track}.tar.xz'
-  ref: 8e495245e5d1fe75de612c8a07e4043635407a1979bb1dd588f1751d1390203f
+  ref: f594c4bba7f8bffb20857973c72895669d6e54df08c8d897f50d15251cec35ff

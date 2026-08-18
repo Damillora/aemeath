@@ -79,4 +79,4 @@ variables:
 sources:
 - kind: tar
   url: 'qt:%{qt6-branch}/%{qt6-track}/submodules/qtwebengine-everywhere-src-%{qt6-track}.tar.xz'
-  ref: 679c66ccc6c158fc215e9c58ef160331ecd29974232e345c05161889f8667083
+  ref: 6101c1aa00ff933d1b65ee5d167f76e8d71b9ac5b378b0111277723ebda7c163

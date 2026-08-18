@@ -15,4 +15,4 @@ depends:
 sources:
 - kind: tar
   url: 'qt:%{qt6-branch}/%{qt6-track}/submodules/qtgrpc-everywhere-src-%{qt6-track}.tar.xz'
-  ref: 437b04f0c550ccdb1739ca5f9119b73dfa0376564815e8bfc199890643e2a250
+  ref: 44414617f0058ff34965fa852027bfcc7e4f71eefca8cd4406c96af22c64ad93

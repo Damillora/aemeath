@@ -13,4 +13,4 @@ depends:
 sources:
 - kind: tar
   url: 'qt:%{qt6-branch}/%{qt6-track}/submodules/qtnetworkauth-everywhere-src-%{qt6-track}.tar.xz'
-  ref: 9f1d5bf22ccc033e42076186b964f9d4d4179fd0312a2c0f1aa19db42516563d
+  ref: 0c83c23077ab7824393fa15bb0015c3c5acaf5678544aa789e3fcbb4d41fa05b

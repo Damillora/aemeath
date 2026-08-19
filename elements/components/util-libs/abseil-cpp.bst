@@ -16,6 +16,6 @@ sources:
 - kind: git_repo
   url: github:abseil/abseil-cpp.git
   track: '[0-9]*.[0-9]'
-  ref: 20260526.0-0-g5650e9cf76d3be4318d5fa3af38ee483ddfd5e4a
+  ref: 20260817.0-0-g2065f4ded0558c6f89fee67c8e5228feb4eb960e
 - kind: patch_queue
   path: patches/abseil-cpp

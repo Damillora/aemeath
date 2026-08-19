@@ -19,4 +19,4 @@ sources:
   track: libevdev-*
   exclude:
   - 'libevdev-*.*.9*'
-  ref: libevdev-1.13.6-0-g139b58e135184f66a35c2401771f3d8134f097ad
+  ref: libevdev-1.13.7-0-ga158f468affb059669189454a52b0d78c563618b

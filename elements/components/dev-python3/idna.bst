@@ -13,4 +13,4 @@ sources:
 - kind: git_repo
   url: github:kjd/idna.git
   track: v*
-  ref: v3.18-0-gf39ea903ba49eb5a0b2c6723c9a929b41ed4a0f1
+  ref: v3.19-0-g03a9a11dd8aecd4fea742cabe20f4d3d9ed82abb

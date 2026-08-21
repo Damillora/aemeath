@@ -24,4 +24,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{gear-branch}/release-service/%{gear-track}/src/kcharselect-%{gear-track}.tar.xz'
-  ref: 376a31bf03ea2d6a231fdc012c793f608f48c0172e3543b84a44e0e9b87a6651
+  ref: 8e7d9d3d1be07b4051214b44eb5aaa3ef92124515491add2bb41fcad402b0b88

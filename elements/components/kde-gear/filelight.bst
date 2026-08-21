@@ -24,4 +24,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{gear-branch}/release-service/%{gear-track}/src/filelight-%{gear-track}.tar.xz'
-  ref: b3fb2947253566bda42a15c111ccf1df0cff7003e90c29acfa05f50ac9bc03f6
+  ref: 029ab28cdc6615d2e50741334d1fd29ceb119184019d0d566dce82f65f8d135f

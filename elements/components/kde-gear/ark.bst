@@ -36,4 +36,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{gear-branch}/release-service/%{gear-track}/src/ark-%{gear-track}.tar.xz'
-  ref: 8018fec69668aac35e5ab7ce4e51ce04de6ab7f56a3996322b016f41c31d5a01
+  ref: d4627791d17d17f0c4472f8bc464778d7b5526adeca9bba27565e77ff8b44db7

@@ -24,4 +24,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{gear-branch}/release-service/%{gear-track}/src/kpmcore-%{gear-track}.tar.xz'
-  ref: 08018d9465fccaf9f56ee8178f2aa3419d6bcfef667308bb558e387516216e6d
+  ref: 3367f581294363fe450f0891518f7f07b7d0c6562c7348236d90008065f79e50

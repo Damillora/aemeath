@@ -26,4 +26,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{gear-branch}/release-service/%{gear-track}/src/kfind-%{gear-track}.tar.xz'
-  ref: 21b79c83b60bd142f20edf2cf380c377c0fcaa2a34b727401905ab69621c27d8
+  ref: 26ba9bb2b2fdc645dc9863fba9ba78aa4a5ef86a2c91f82afa5a8ca6afd3fa66

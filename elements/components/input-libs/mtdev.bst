@@ -9,6 +9,6 @@ depends:
 
 sources:
 - kind: git_repo
-  url: bitmath:mtdev.git
+  url: aemeath_mirror:mtdev.git
   track: 'v*'
   ref: v1.1.7-0-g9035c2225494b80b02e985fc7ee77880e0bd6993

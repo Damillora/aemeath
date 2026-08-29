@@ -5,7 +5,7 @@ build-depends:
 
 runtime-depends:
 - components/net-libs/curl.bst
-- components/graphics-libs/librsvg.bst
+- components/graphics-libs/libvips.bst
 - components/security-libs/libblake3.bst
 - components/sys-libs/systemd-libs.bst
 - components/util-libs/glib.bst

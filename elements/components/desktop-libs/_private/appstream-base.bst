@@ -16,7 +16,7 @@ build-depends:
 depends:
 - components/net-libs/curl.bst
 - components/sys-libs/systemd-libs.bst
-- components/graphics-libs/librsvg.bst
+- components/graphics-libs/libvips.bst
 - components/security-libs/libblake3.bst
 - components/util-libs/glib.bst
 - components/util-libs/libfyaml.bst

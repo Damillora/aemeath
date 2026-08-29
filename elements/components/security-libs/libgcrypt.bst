@@ -17,4 +17,4 @@ sources:
 - kind: git_repo
   url: github:gpg/libgcrypt.git
   track: libgcrypt-*
-  ref: libgcrypt-1.12.2-0-gefc346430901b84f1f580a147191624d7ded0db6
+  ref: libgcrypt-1.12.3-0-g6468840ef7b29244e9fa540ec3c0d3f2fd85a763

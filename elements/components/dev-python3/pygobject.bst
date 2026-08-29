@@ -32,7 +32,7 @@ sources:
 - kind: git_repo
   url: gnome:pygobject.git
   track: '*.*[02468].*'
-  ref: 3.56.3-0-g57b42b3423227010946db6fd84aad72c734ddf63
+  ref: 3.58.0-0-g2d3b72e58386e82c1723884aaaaf6a6b4eab9aec
 - kind: git_repo
   url: github:python/pythoncapi-compat.git
   directory: subprojects/pythoncapi-compat

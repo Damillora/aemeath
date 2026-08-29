@@ -20,4 +20,4 @@ sources:
 - kind: git_repo
   url: kde:libraries/qca.git
   track: v*
-  ref: v2.3.10-0-gdf5171e3c4baf346581f15af5a040e61b166a332
+  ref: v2.3.12-0-gc7de7c95043b7af1846cd55058474cff4508bb6c

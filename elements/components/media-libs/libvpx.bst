@@ -32,6 +32,4 @@ sources:
   track: "v*"
   exclude:
   - "*-rc*"
-  ref: v1.16.0-0-g1024874c5919305883187e2953de8fcb4c3d7fa6
-- kind: patch_queue
-  path: patches/libvpx
+  ref: v1.17.0-0-g6df3ec34557879fff673706f4a1d9fbd0f3a6f0e

@@ -27,4 +27,4 @@ sources:
 - kind: git_repo
   url: gnome:at-spi2-core.git
   track: '*.*'
-  ref: 2.61.1-0-g4b8949e1c62c1046295d762f46349c6405454d47
+  ref: 2.61.90-0-g1ef5342c846d592046ad8d9b706dca95b9689f9f

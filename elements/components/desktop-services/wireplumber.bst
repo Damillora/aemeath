@@ -18,4 +18,4 @@ sources:
 - kind: git_repo
   url: freedesktop:pipewire/wireplumber.git
   track: "*.*"
-  ref: 0.5.15-0-gbc4fa8f5e84806f86530c97cb35283eecc3ec081
+  ref: 0.5.16-0-gec59fa568cf16634c8a4a20e7a085b345a5c76c7

@@ -2,5 +2,5 @@ sources:
 - kind: git_repo
   url: github:nss-dev/nss.git
   track: NSS_3_*_RTM
-  ref: NSS_3_127_RTM-0-g966619e1f903197f5690c06fd01f5d9a1595328b
+  ref: NSS_3_128_RTM-0-g02a2746db5e758e2722a1c679fe2662cf8df16a7
   directory: nss

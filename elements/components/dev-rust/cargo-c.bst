@@ -22,7 +22,7 @@ sources:
 - kind: git_repo
   track: v*
   url: github:lu-zero/cargo-c.git
-  ref: v0.10.24-0-gd7d1743e8d94faa858b4326e7d45e201f4347b27
+  ref: v0.10.25-0-ga228fd974eb1334dc4c8033bc401a4832b3b4ab4
 - kind: remote
   url: github:lu-zero/cargo-c/releases/download/v0.10.24/Cargo.lock
   ref: 0cbf346afe2c77fec7b39f8954b9de0639ced04234764240c8290dbec8d45e82

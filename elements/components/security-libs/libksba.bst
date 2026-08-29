@@ -17,4 +17,4 @@ sources:
 - kind: git_repo
   url: github:gpg/libksba.git
   track: libksba-*
-  ref: libksba-1.8.0-0-g476c602e2f35f1ddd769a613fa44681df33d0101
+  ref: libksba-1.8.1-0-g717381422750fb5a3e971d768ba46cae9a01682d

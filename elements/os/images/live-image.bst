@@ -14,9 +14,6 @@ build-depends:
 - filename: os/layers/boot/live.bst
   config:
     location: '/sysroot'
-- filename: os/layers/boot/installer.bst
-  config:
-    location: '/sysroot'
 
 environment:
   E2FSPROGS_FAKE_TIME: '1767369576'

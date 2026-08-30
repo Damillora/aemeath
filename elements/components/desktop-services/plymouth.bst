@@ -21,6 +21,7 @@ depends:
 
 variables:
   meson-local: >-
+    -Dgtk=disabled
     -Dlogo="%{datadir}/pixmaps/aemeath-os.png"
 
 config:

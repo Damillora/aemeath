@@ -9,11 +9,15 @@ build-depends:
 - components/sys-services/systemd.bst
 
 depends:
-- components/graphics-libs/pango.bst
-- components/graphics-libs/libdrm.bst
-- components/gtk-toolkit/gtk3.bst
-- components/input-libs/libevdev.bst
 - components/desktop-data/plymouth-logo.bst
+- components/graphics-libs/cairo.bst
+- components/graphics-libs/pango.bst
+- components/graphics-libs/freetype.bst
+- components/graphics-libs/libdrm.bst
+- components/input-libs/libevdev.bst
+- components/x11-libs/xkbcommon.bst
+- components/x11-data/xkeyboard-config.bst
+- components/sys-libs/systemd-libs.bst
 
 variables:
   meson-local: >-

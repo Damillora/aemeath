@@ -10,5 +10,6 @@ depends:
 - os/config/sysupdate-config.bst
 #- os/aemeath/enable-sysupdate.bst
 # Aemeath install tools
+- os/config/repart-config-install.bst
 - components/aemeath-tools/aemeath-install.bst
 - components/filesystem-util/mtools.bst

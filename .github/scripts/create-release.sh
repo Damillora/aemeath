@@ -10,7 +10,7 @@ just live-image
 
 .github/scripts/generate-changelog.sh
 
-for f in target/*
+for f in export/*
 do
   rclone copy "$f" aemeath:aemeathos-files/os/updates/
 done

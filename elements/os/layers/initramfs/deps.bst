@@ -1,9 +1,6 @@
 kind: stack
 
 depends:
-- os/aemeath/deps.bst
-- os/aemeath/repart-config.bst
-- os/aemeath/initramfs/kernel-modules.bst
+- os/layers/base/deps.bst
 - components/aemeath-tools/boot-tools.bst
 - components/aemeath-tools/boot-utils.bst
-

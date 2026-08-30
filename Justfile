@@ -38,8 +38,8 @@ disk-image: clean-disks
     {{bst}} artifact checkout os/aemeath/disk-image.bst --directory disks
 
 live-image: clean-live
-    {{bst}} build os/aemeath/live-image.bst
-    {{bst}} artifact checkout os/aemeath/live-image.bst --directory live
+    {{bst}} build os/images/live-image.bst
+    {{bst}} artifact checkout os/images/live-image.bst --directory live
 
 generate-keys:
     #!/bin/bash

@@ -1,0 +1,15 @@
+[Transfer]
+ProtectVersion=%w
+Features=aemeath-sdk
+Verify=false
+
+[Source]
+Type=url-file
+Path=https://aemeath-dl.nanao.moe/os/updates/
+MatchPattern=aemeath-sdk_@v.raw.xz
+
+[Target]
+Type=regular-file
+Path=/var/lib/extensions/
+MatchPattern=aemeath-sdk_@v.raw
+InstancesMax=2

@@ -2,10 +2,10 @@ kind: script
 
 build-depends:
 - components/aemeath-tools/deploy-tools.bst
-- os/aemeath/initial-scripts.bst
-- os/aemeath/repart-config.bst
-- os/aemeath/repart-config-compress.bst
-- filename: os/aemeath/filesystem.bst
+- os/config/repart-config.bst
+- os/config/repart-config-compress.bst
+- os/layers/base/initial-scripts.bst
+- filename: os/layers/base/filesystem.bst
   config:
     location: '/sysroot'
 

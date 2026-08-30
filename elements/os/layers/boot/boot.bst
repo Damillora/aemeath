@@ -3,12 +3,10 @@ kind: manual
 build-depends:
 - components/platform/minimal.bst
 - components/sys-data/os-release.bst
-- components/aemeath-tools/boot-tools.bst
-- os/aemeath/initramfs.bst
-- filename: os/aemeath/usr-image.bst
-  config:
-    location: /usr-image
-
+- components/boot-util/sbsigntools.bst
+- os/layers/boot/boot-keys.bst
+- os/layers/boot/kernel.bst
+- os/layers/boot/bootloader.bst
 
 variables:
   strip-binaries: ''
@@ -22,18 +20,8 @@ config:
   - |
     cp -rT /boot "%{install-root}/boot"
   - |
-    version="$(ls -1 /usr/lib/modules | head -n1)"
-    echo -n "%{kcmdline} usrhash=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).roothash' /usr-image/compress.repart.json) " > new-cmdline.txt
-    ukify build \
-      --linux=/usr/lib/modules/${version}/vmlinuz \
-      --initrd=/usr/lib/modules/${version}/initramfs.img \
-      --cmdline=@new-cmdline.txt \
-      --secureboot-private-key=VENDOR.key \
-      --secureboot-certificate=VENDOR.crt \
-      --output="%{install-root}/boot/EFI/Linux/aemeath_%{image-version}.efi"
-  - |
+    # Sign bootloaders
     sbsign --key VENDOR.key --cert VENDOR.crt --output "%{install-root}/boot/EFI/systemd/systemd-boot%{efi-arch}.efi" "/boot/EFI/systemd/systemd-boot%{efi-arch}.efi"
-  - |
     sbsign --key DB.key --cert DB.crt --output "%{install-root}/boot/EFI/aemeath/shim%{efi-arch}.efi" "/boot/EFI/aemeath/shim%{efi-arch}.efi"
     sbsign --key DB.key --cert DB.crt --output "%{install-root}/boot/EFI/aemeath/mm%{efi-arch}.efi" "/boot/EFI/aemeath/mm%{efi-arch}.efi"
     sbsign --key DB.key --cert DB.crt --output "%{install-root}/boot/EFI/BOOT/fb%{efi-arch}.efi" "/boot/EFI/BOOT/fb%{efi-arch}.efi"

@@ -3,12 +3,9 @@ kind: script
 build-depends:
 - components/platform/minimal.bst
 - components/aemeath-tools/deploy-tools.bst
-- filename: os/aemeath/usr-image.bst
+- filename: os/layers/base/image.bst
   config:
     location: /usr-image
-- filename: os/aemeath/boot.bst
-  config:
-    location: /boot
 
 environment:
   XZFLAGS: '-T%{max-jobs}'
@@ -28,9 +25,5 @@ config:
     xz ${XZFLAGS} "%{install-root}/usr_%{image-version}_${usr_verity_part_uuid}.verity"
 
   - |
-    cp "/boot/boot/EFI/Linux/aemeath_%{image-version}.efi" '%{install-root}/'
-    xz ${XZFLAGS} "%{install-root}/aemeath_%{image-version}.efi"
-
-  - |
     cd '%{install-root}/'
-    sha256sum *.xz > SHA256SUMS
+    sha256sum *.xz > SHA256SUMS-base

@@ -12,7 +12,6 @@ config:
   - |
     mkdir -p "%{install-root}/usr/lib"
     cp -rT /usr/lib/modules "%{install-root}/usr/lib/modules"
-
   - |
     openssl x509 -inform PEM -outform DER -in linux-module-cert.crt -out linux-module-cert.cer
 

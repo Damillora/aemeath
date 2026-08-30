@@ -5,4 +5,4 @@ config:
 
 sources:
 - kind: local
-  path: files/repart-config/system
+  path: files/repart-config/install

@@ -8,6 +8,7 @@ clean: clean-target clean-disks clean-live
 
 clean-target:
     rm -rf target
+    rm -rf export
 
 clean-disks:
     rm -rf disks
@@ -30,8 +31,16 @@ build:
     {{bst}} build os/aemeath/build-deps.bst
 
 export: clean-target
-    {{bst}} build os/aemeath/export.bst
-    {{bst}} artifact checkout os/aemeath/export.bst --directory target
+    #!/bin/bash
+    set -euxo pipefail
+    mkdir -p target
+    mkdir -p export
+    {{bst}} build os/layers/base/export.bst os/layers/sdk/export.bst
+    {{bst}} artifact checkout os/layers/base/export.bst --directory target/base
+    {{bst}} artifact checkout os/layers/sdk/export.bst --directory target/sdk
+    cp target/*/* export/
+    cat export/SHA256SUMS-* > export/SHA256SUMS
+    rm export/SHA256SUMS-*
 
 disk-image: clean-disks
     {{bst}} build os/aemeath/disk-image.bst

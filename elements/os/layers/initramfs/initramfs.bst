@@ -25,13 +25,16 @@ config:
                      --seed "%{uuidnamespace}" >/tmp/vars
   - |
     echo '%{libdir}' >/etc/ld.so.conf
-
+  - |
+    mkdir -p /etc/verity.d
+    cp /boot-keys/VENDOR.crt /etc/verity.d/
   - |
     dracut -v --xz --reproducible --fstab \
            --no-machineid \
            --kver $(ls -1 /lib/modules | head -n1) \
            --install 'fsck.btrfs' \
            --install 'mkfs.btrfs' \
+           --include '/etc/verity.d' '/etc/verity.d' \
            --add-drivers erofs \
            --add-drivers btrfs \
            --add-drivers amdgpu \

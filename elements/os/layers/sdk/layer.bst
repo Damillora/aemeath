@@ -25,6 +25,39 @@ config:
   - |
     mkdir /fakecap
   - |
+    # Clean up static libs here for now
+    # Next rebuild will properly integrate this
+    find /sysroot%{libdir} /sysroot-sdk%{libdir} -name \*.a \
+       ! -name libBrokenLocale.a \
+       ! -name libanl.a \
+       ! -name libc.a \
+       ! -name libc_nonshared.a \
+       ! -name libdl.a \
+       ! -name libg.a \
+       ! -name libm.a \
+       ! -name libmcheck.a \
+       ! -name libmvec.a \
+       ! -name libpthread.a \
+       ! -name libresolv.a \
+       ! -name librt.a \
+       ! -name libutil.a \
+       ! -name libatomic_asneeded.a \
+       ! -name libgcc.a \
+       ! -name libgcc_eh.a \
+       ! -name libgcov.a \
+       ! -name libgomp.a \
+       ! -name libhwasan.a \
+       ! -name libitm.a \
+       ! -name liblsan.a \
+       ! -name libquadmath.a \
+       ! -name libstdc++.a \
+       ! -name libstdc++exp.a \
+       ! -name libstdc++fs.a \
+       ! -name libsupc++.a \
+       ! -name libtsan.a \
+       ! -name libubsan.a \
+       -exec rm '{}' \; -print;
+  - |
     prepare-image.sh \
        --sysroot /sysroot \
        --seed "%{sysroot-seed}" \

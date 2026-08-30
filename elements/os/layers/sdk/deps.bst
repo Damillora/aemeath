@@ -8,3 +8,5 @@ depends:
 - components/buildsystems/cmake.bst
 - components/buildsystems/meson.bst
 - components/buildsystems/python.bst
+# LLVM, in case something needs it
+- components/dev-tools/llvm.bst

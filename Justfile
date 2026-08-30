@@ -35,7 +35,7 @@ export: clean-target
     set -euxo pipefail
     mkdir -p target
     mkdir -p export
-    {{bst}} build os/layers/base/export.bst os/layers/sdk/export.bst
+    {{bst}} build os/layers/base/export.bst os/layers/sdk/export.bst os/layers/boot/export.bst
     {{bst}} artifact checkout os/layers/base/export.bst --directory target/base
     {{bst}} artifact checkout os/layers/sdk/export.bst --directory target/sdk
     {{bst}} artifact checkout os/layers/boot/export.bst --directory target/boot

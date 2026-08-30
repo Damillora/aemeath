@@ -15,7 +15,7 @@ variables:
   strip-binaries: ''
 
 environment:
-  EROFS_OPTIONS: --all-time -E fragments,fragdedupe=inode
+  EROFS_OPTIONS: -z zstd --all-time -E fragments,fragdedupe=inode
   EROFS_WORKERS: --workers=%{max-jobs}
   LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
   FAKECAP_DB: '%{build-root}/fakecap'

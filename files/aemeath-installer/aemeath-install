@@ -1,0 +1,4 @@
+#!/bin/bash
+set -euox pipefail
+echo Installing Aemeath OS to $1...
+systemd-repart --sector-size=512 --definitions=/usr/lib/repart.d.install--empty=allow --discard=no --offline=true --no-pager --dry-run=no "$1"

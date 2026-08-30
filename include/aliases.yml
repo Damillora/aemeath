@@ -8,6 +8,7 @@ aliases:
   boost: https://archives.boost.io/
   chromium: https://chromium.googlesource.com/
   cmake: https://gitlab.kitware.com/cmake/
+  codeberg: https://codeberg.org/
   cpan: https://cpan.metacpan.org/
   crates: https://static.crates.io/
   dest-unreach: http://www.dest-unreach.org/

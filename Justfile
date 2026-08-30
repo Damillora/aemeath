@@ -38,6 +38,7 @@ export: clean-target
     {{bst}} build os/layers/base/export.bst os/layers/sdk/export.bst
     {{bst}} artifact checkout os/layers/base/export.bst --directory target/base
     {{bst}} artifact checkout os/layers/sdk/export.bst --directory target/sdk
+    {{bst}} artifact checkout os/layers/boot/export.bst --directory target/boot
     cp target/*/* export/
     cat export/SHA256SUMS-* > export/SHA256SUMS
     rm export/SHA256SUMS-*

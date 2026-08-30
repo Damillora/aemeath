@@ -39,6 +39,7 @@ config:
            --add-drivers i915 \
            --libdirs %{libdir} \
            --add systemd-repart \
+           --add systemd-sysext \
            --add systemd-veritysetup \
            --add tpm2-tss
 

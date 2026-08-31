@@ -1,0 +1,13 @@
+[Unit]
+Description=Setup live environment
+ConditionKernelCommandLine=aemeath.live-image
+After=local-fs.target
+Wants=local-fs.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/libexec/setup-live-env
+
+[Install]
+WantedBy=multi-user.target

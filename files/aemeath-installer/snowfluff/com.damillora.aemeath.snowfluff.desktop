@@ -5,4 +5,5 @@ Exec=snowfluff
 Icon=system-software-install
 Type=Application
 Terminal=false
+NoDisplay=true
 Categories=Game

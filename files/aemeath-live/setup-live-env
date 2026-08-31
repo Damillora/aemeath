@@ -1,0 +1,23 @@
+#!/bin/bash
+set -euox pipefail
+useradd -G wheel -m aemeath
+passwd -d aemeath
+mkdir -p /home/aemeath/.local/share/applications
+cp /usr/share/applications/com.damillora.aemeath.snowfluff.desktop /home/aemeath/.local/share/applications/com.damillora.aemeath.snowfluff.desktop
+sed -i '/NoDisplay=true/d' /home/aemeath/.local/share/applications/com.damillora.aemeath.snowfluff.desktop
+
+mkdir -p /etc/plasmalogin.conf.d
+cat > /etc/plasmalogin.conf.d/autologin.conf << EOF
+[Autologin]
+User=aemeath
+Session=plasma.desktop
+EOF
+
+mkdir -p /etc/polkit-1/rules.d
+cat > /etc/polkit-1/rules.d/99-live.rules << EOF
+polkit.addRule(function(action, subject) {
+    if (subject.user == "aemeath") {
+        return polkit.Result.YES;
+    }
+});
+EOF

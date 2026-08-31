@@ -14,3 +14,5 @@ depends:
 - components/aemeath-tools/aemeath-install.bst
 - components/aemeath-tools/snowfluff.bst
 - components/filesystem-util/mtools.bst
+# Aemeath live tools
+- components/aemeath-tools/live-setup.bst

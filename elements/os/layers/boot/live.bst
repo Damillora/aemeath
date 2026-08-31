@@ -14,7 +14,7 @@ config:
     mkdir -p "%{install-root}/boot/EFI/Linux/aemeath_%{image-version}.efi.extra.d"
   - |
     ukify build \
-      --cmdline="root=tmpfs rd.systemd.mask=systemd-repart.service systemd.mask=systemd-repart.service" \
+      --cmdline="root=tmpfs rd.systemd.mask=systemd-repart.service systemd.mask=systemd-repart.service systemd.mask=plasma-setup.service aemeath.live-image" \
       --secureboot-private-key=VENDOR.key \
       --secureboot-certificate=VENDOR.crt \
       --output="%{install-root}/boot/EFI/Linux/aemeath_%{image-version}.efi.extra.d/live.addon.efi"

@@ -44,8 +44,8 @@ export: clean-target
     rm export/SHA256SUMS-*
 
 disk-image: clean-disks
-    {{bst}} build os/aemeath/disk-image.bst
-    {{bst}} artifact checkout os/aemeath/disk-image.bst --directory disks
+    {{bst}} build os/images/disk-image.bst
+    {{bst}} artifact checkout os/images/disk-image.bst --directory disks
 
 live-image: clean-live
     {{bst}} build os/images/live-image.bst

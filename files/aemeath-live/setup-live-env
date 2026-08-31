@@ -6,6 +6,15 @@ mkdir -p /home/aemeath/.local/share/applications
 cp /usr/share/applications/com.damillora.aemeath.snowfluff.desktop /home/aemeath/.local/share/applications/com.damillora.aemeath.snowfluff.desktop
 sed -i '/NoDisplay=true/d' /home/aemeath/.local/share/applications/com.damillora.aemeath.snowfluff.desktop
 
+mkdir -p /home/aemeath/.config
+cat > /home/aemeath/.config/plasma-welcomerc << EOF
+[General]
+LiveEnvironment=true
+LiveInstaller=com.damillora.aemeath.snowfluff
+EOF
+
+chown -R aemeath:aemeath /home/aemeath
+
 mkdir -p /etc/plasmalogin.conf.d
 cat > /etc/plasmalogin.conf.d/autologin.conf << EOF
 [Autologin]

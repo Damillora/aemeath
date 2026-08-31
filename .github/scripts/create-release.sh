@@ -12,15 +12,15 @@ just live-image
 
 for f in export/*
 do
-  rclone copy "$f" aemeath:aemeathos-files/os/updates/
+  rclone copy "$f" aemeath:aemeathos-files/os/updates/ -P
 done
 for f in disks/*
 do
-  rclone copy "$f" aemeath:aemeathos-files/os/download/
+  rclone copy "$f" aemeath:aemeathos-files/os/download/ -P
 done
 for f in live/*
 do
-  rclone copy "$f" aemeath:aemeathos-files/os/download/
+  rclone copy "$f" aemeath:aemeathos-files/os/download/ -P
 done
 git tag "$image_version"
 git push origin tag "$image_version"

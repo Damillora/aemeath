@@ -1,0 +1,5 @@
+[com.damillora.aemeath.snowfluffhelper.install]
+Name=Install Aemeath OS
+Description=The system is attempting to install Aemeath OS into a drive
+Policy=auth_admin
+Persistence=session

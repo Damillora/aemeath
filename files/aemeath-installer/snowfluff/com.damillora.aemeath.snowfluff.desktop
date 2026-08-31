@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Aemeath OS Installer
+Comment=Install this system into another drive
+Exec=snowfluff
+Icon=system-software-install
+Type=Application
+Terminal=false
+Categories=Game

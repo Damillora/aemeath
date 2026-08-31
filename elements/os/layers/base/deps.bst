@@ -12,4 +12,5 @@ depends:
 # Aemeath install tools
 - os/config/repart-config-install.bst
 - components/aemeath-tools/aemeath-install.bst
+- components/aemeath-tools/snowfluff.bst
 - components/filesystem-util/mtools.bst

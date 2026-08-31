@@ -5,4 +5,5 @@ depends:
 - components/aemeath-tools/boot-tools.bst
 - components/aemeath-tools/boot-utils.bst
 - components/aemeath-tools/deploy-tools.bst
+- components/aemeath-tools/install-tools.bst
 - components/boot-kernel/linux.bst

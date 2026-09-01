@@ -23,7 +23,7 @@ ActionReply SnowfluffHelper::install(const QVariantMap &args) {
 
   ActionReply reply;
 
-  if (process.waitForFinished()) {
+  if (process.waitForFinished(15*60*1000)) {
     // Capture the exit code
     int exitCode = process.exitCode();
     auto stdoutOutput = QString::fromUtf8(process.readAllStandardOutput());

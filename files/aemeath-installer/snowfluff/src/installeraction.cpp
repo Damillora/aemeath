@@ -22,6 +22,7 @@ void InstallerAction::startInstallation(QString deviceTarget)
     Action installAction(QStringLiteral("com.damillora.aemeath.snowfluffhelper.install"));
     installAction.setHelperId(QStringLiteral("com.damillora.aemeath.snowfluffhelper"));
     installAction.setArguments(args);
+    installAction.setTimeout(15*60*1000);
     this->installJob = installAction.execute();
     connect(installJob, &ExecuteJob::result, this, [this](const KJob* job) {
         qDebug() << "Finished " << this->installJob->error();

@@ -10,4 +10,4 @@ sources:
 - kind: git_repo
   url: netfilter:libnftnl
   track: libnftnl-*
-  ref: libnftnl-1.3.1-0-g0f48d7638800bb48c863e6b7e5f2fe92972bb31c
+  ref: libnftnl-1.3.2-0-g3d7184970506df2c09868dc6ef3c21aba383db63

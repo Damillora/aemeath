@@ -11,6 +11,7 @@ variables:
   cmake-local: >-
     -DBUILD_TESTING=OFF
     -DWITH_ICON_GENERATION=OFF
+    -DCMAKE_INSTALL_LIBEXECDIR=libexec
 
 sources:
 - kind: git_repo

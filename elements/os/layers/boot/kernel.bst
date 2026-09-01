@@ -10,7 +10,6 @@ build-depends:
   config:
     location: /usr-image
 
-
 variables:
   strip-binaries: ''
   kcmdline: |

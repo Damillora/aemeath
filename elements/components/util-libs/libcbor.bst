@@ -7,7 +7,6 @@ depends:
 - components/sys-libs/glibc.bst
 - components/sys-libs/gcc-libs.bst
 
-
 variables:
   cmake-local: >-
     -DBUILD_SHARED_LIBS:BOOL=ON

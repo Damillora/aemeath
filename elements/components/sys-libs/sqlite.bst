@@ -11,7 +11,6 @@ depends:
 - components/sys-libs/zlib-ng.bst
 - components/sys-libs/readline.bst
 
-
 variables:
   cflags-local: >-
     -DSQLITE_ENABLE_COLUMN_METADATA=1

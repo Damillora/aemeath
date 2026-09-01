@@ -9,7 +9,6 @@ build-depends:
 - components/buildsystems/meson.bst
 - components/sys-devel/flex.bst
 
-
 variables:
   meson-local: >-
     -Dpam_lastlog=enabled

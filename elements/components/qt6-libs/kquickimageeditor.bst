@@ -3,6 +3,7 @@ kind: cmake
 build-depends:
 - components/buildsystems/cmake.bst
 - components/kde-kf6/extra-cmake-modules.bst
+- components/qt6-toolkit/qtshadertools.bst
 
 depends:
 - components/qt6-toolkit/qtbase.bst

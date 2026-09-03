@@ -9,6 +9,8 @@ depends:
 - components/qt6-toolkit/qtbase.bst
 - components/qt6-toolkit/qtdeclarative.bst
 - components/kde-kf6/kconfig.bst
+- components/kde-kf6/kirigami.bst
+- components/util-libs/highway.bst
 
 sources:
 - kind: git_repo

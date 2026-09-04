@@ -9,5 +9,5 @@ depends:
 sources:
 - kind: cpan
   name: 'URI'
-  suffix: authors/id/O/OA/OALDERS/URI-5.36.tar.gz
-  sha256sum: 32719e57413db6e18492e104707b95c2210df637614c512e7368c9ec3c2f783b
+  suffix: authors/id/O/OA/OALDERS/URI-5.37.tar.gz
+  sha256sum: 5a8750ddd8ee743d7cc89bebdd542a9b78a34023164ebe19dea0c248e121c21e

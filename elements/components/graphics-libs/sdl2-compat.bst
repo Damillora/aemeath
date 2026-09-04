@@ -10,4 +10,4 @@ sources:
 - kind: git_repo
   url: github:libsdl-org/sdl2-compat.git
   track: release-*
-  ref: release-2.32.70-0-ga53b6ad90ecd2d0ccfe01d5cfd2059793acf8c12
+  ref: release-2.32.72-0-g50b45c4417f6c9cab3168a74df59ff1e8c4125ae

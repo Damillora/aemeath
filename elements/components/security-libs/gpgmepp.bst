@@ -13,4 +13,4 @@ sources:
   track: gpgmepp-*
   exclude:
   - "*-base"
-  ref: gpgmepp-2.1.0-0-g6a99d7eef09aedd768356792f38aca2cc03659da
+  ref: gpgmepp-2.2.0-0-g1b3da8425856c558fe31d6d85aa99e1f9ec5bc9f

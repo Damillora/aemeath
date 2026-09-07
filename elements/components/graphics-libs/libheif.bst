@@ -45,7 +45,7 @@ sources:
   track: v*
   exclude:
   - '*rc*'
-  ref: v1.23.3-0-g78c9746aea226b22885e8d35241353ce669c4ea5
+  ref: v1.23.4-0-g4e14f5942c1732ace9611b9522cc991501445463
 
 public:
   bst:

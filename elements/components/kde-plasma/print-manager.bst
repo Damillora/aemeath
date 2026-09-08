@@ -32,4 +32,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/print-manager-%{plasma-track}.tar.xz'
-  ref: 4bce095c6dc9607b20551b0ea5c5ebcb56a49510ee0c02d344572604d7416868
+  ref: f1658390a7104f2b806176f188ea38f148e7900cb928b4ddfcae0616af52f6ce

@@ -50,4 +50,4 @@ config:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/spectacle-%{plasma-track}.tar.xz'
-  ref: 5c61ffd9b37ca6384b754d44a051c8f979ab77984f92e7ddf3a1c15156d65665
+  ref: 2a63a8da331f9249e0ff0091a38f2fa946c7b85c7b7133bd8b60dd524e8e01b8

@@ -81,4 +81,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/plasma-desktop-%{plasma-track}.tar.xz'
-  ref: c2f0c2b7ab70cbd99ef17ffad4c3117dab12ef6a71790da33e39688386474962
+  ref: 079fcf6b87d7bf65e3f2a4670d605fac9469344c279a285a98ad549332d7b53e

@@ -22,4 +22,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/knighttime-%{plasma-track}.tar.xz'
-  ref: df367488f087897156523ea98cd239297642de10e5e053b8e7255e94e7935ede
+  ref: 5cb23e736e4be4952e63c855cfb45850e1085d650e67b7cae3cbf9721921cb9f

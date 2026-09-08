@@ -23,4 +23,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/polkit-kde-agent-1-%{plasma-track}.tar.xz'
-  ref: d80699575c08824af81fc0e2adc1c48c5e9aa466a9b80bc296e0394936736e0a
+  ref: fb731dd979c0296994b5efe37b0a9cdeec5e704f91565540930effdbd7efee58

@@ -33,4 +33,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/plasma-systemmonitor-%{plasma-track}.tar.xz'
-  ref: 80694f9d683a3720116197f7899e47a0b10f01a46a66af65ee079e2145897a8d
+  ref: 5708e8f0e1833e0829144a14aba1f177262661cc57b20c4a5a34bfd6973d1f1b

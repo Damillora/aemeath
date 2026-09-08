@@ -50,7 +50,7 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/kdeplasma-addons-%{plasma-track}.tar.xz'
-  ref: 5098c28b7e4e0c1c9320db28c2e778f3ecd5c62d655c95983993f66003980ec1
+  ref: 1bc1c861487733f4944695d509c81f19b90a4d80c5825cc6df633b0313e3e8cc
 - kind: cargo2
   cargo-lock: kdeds/kameleon/qmk/kameleon-qmk-helper/Cargo.lock
   ref:
@@ -512,8 +512,8 @@ sources:
     sha: ffd8af6d5b78619bab301ff3c560a5bd22426150253db278f164d6cf3b72c50f
   - kind: registry
     name: zbus_polkit
-    version: 5.0.0
-    sha: ad23d5c4d198c7e2641b33e6e0d1f866f117408ba66fe80bbe52e289eeb77c52
+    version: 5.1.0
+    sha: 283d50dac36a7fee0d9c2e6b9c71253326c1f863a9d350342d338637aa3019ae
   - kind: registry
     name: zerocopy
     version: 0.8.48

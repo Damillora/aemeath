@@ -25,4 +25,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/plasma-firewall-%{plasma-track}.tar.xz'
-  ref: 7f26c2a3bfc935dde9936f1cc611dac4cf936d7d7d3cb3ea41f141064ebaac56
+  ref: adbc6a62d272a3866461274bb78de49e0f83c9971225f619adb3042399be6997

@@ -26,4 +26,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/kde-gtk-config-%{plasma-track}.tar.xz'
-  ref: 52eab1e9f71e0a92d542ee1cc655895ed4b999a9e394d468f4ef2c838f0c739b
+  ref: 6590fefad29e37be7d51ed89e9dbaf67884ae0a3fed14f8d58ac1352c0c0503d

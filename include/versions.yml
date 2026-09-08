@@ -19,7 +19,7 @@ qt6-track: "6.11.2"
 kf6-track: "6.29"
 # KDE Plasma
 plasma-branch: "stable"
-plasma-track: "6.7.4"
+plasma-track: "6.7.5"
 # KDE Gear
 gear-branch: "stable"
 gear-track: "26.08.0"

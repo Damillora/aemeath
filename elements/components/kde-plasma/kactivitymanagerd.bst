@@ -24,4 +24,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{plasma-branch}/plasma/%{plasma-track}/kactivitymanagerd-%{plasma-track}.tar.xz'
-  ref: b2e9c2537ddcc243774d41355428335167c2bb8e9fc48143c4e467528536c87f
+  ref: 6e549b0dacd28797153696e4ee27f8e19aee6f3711f94ee379b8fae8ecfd937a

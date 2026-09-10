@@ -41,4 +41,4 @@ sources:
   track: fuse-*
   exclude:
   - "*rc*"
-  ref: fuse-3.18.2-0-g033844748010a3b8265bf1c90b9ae8ffe4cd9ca7
+  ref: fuse-3.18.3-0-g3dbcfce64ba0dd529cec7b94305662e7901a991b

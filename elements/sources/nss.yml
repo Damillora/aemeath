@@ -5,4 +5,4 @@ sources:
   ref: NSS_3_129_RTM-0-g23b159efa6d74923192ab6c7f6d0d5f3ad952d4d
   directory: nss
 - kind: patch_queue
-  patch: patches/nss
+  path: patches/nss

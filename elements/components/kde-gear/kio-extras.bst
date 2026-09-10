@@ -43,4 +43,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{gear-branch}/release-service/%{gear-track}/src/kio-extras-%{gear-track}.tar.xz'
-  ref: 3adb4f9189b4b91d57b78d0a894868d8382451134bcfcc4f235027f23db13b3d
+  ref: 8050c3dd33fed06a60dda8205f4e0134d3aac95f0647b1d9c05419845341397c

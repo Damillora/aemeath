@@ -47,4 +47,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{gear-branch}/release-service/%{gear-track}/src/kdeconnect-kde-%{gear-track}.tar.xz'
-  ref: 9acf2e9bed4537eda6cd009eccfc9cce80dafbe2f9bfdb8054c2f0ebf92d0bfc
+  ref: 2aed54ecd6b88a91d047714b384d7bd20d0a8d8bf399923c73cf3509372b36e0

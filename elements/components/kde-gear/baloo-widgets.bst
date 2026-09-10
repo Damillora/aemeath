@@ -24,4 +24,4 @@ variables:
 sources:
 - kind: tar
   url: 'kde_download:%{gear-branch}/release-service/%{gear-track}/src/baloo-widgets-%{gear-track}.tar.xz'
-  ref: 4ac009e3a58bc24c58710aa53d9788761f7fa6230f20c5816744bc17e6d45d9a
+  ref: b4af5cc65d886ab9d2a807254e11295e585d7cedd993d2b3b78f2f17e3a7f544

@@ -55,6 +55,7 @@ config:
         */*.so.TOC) ;;
         */libnssckbi.so) ;;
         *.chk) ;;
+        pkgconfig) ;;
 
         *.so)
           install -Dm644 -t "%{install-root}%{libdir}/" "${lib}"

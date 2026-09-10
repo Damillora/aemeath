@@ -50,15 +50,16 @@ config:
   install-commands:
   - |
     cd dist
-    install -v -m755 Linux*/lib/*.so  /usr/lib         &&
-    install -v -m644 Linux*/lib/*.chk /usr/lib         &&
+    mkdir -p %{install-root}%{libdir}/pkgconfig %{install-root}%{bindir} %{install-root}%{includedir}/nss
+    install -v -m755 Release*/lib/*.so  %{install-root}%{libdir}         &&
+    install -v -m644 Release*/lib/*.chk %{install-root}%{libdir}         &&
 
-    install -v -m755 -d               /usr/include/nss &&
-    cp -v -RL {public,private}/nss/*  /usr/include/nss &&
+    install -v -m755 -d               %{install-root}%{includedir}/nss &&
+    cp -v -RL {public,private}/nss/*  %{install-root}%{includedir}/nss &&
 
-    install -v -m755 Linux*/bin/{certutil,nss-config,pk12util} /usr/bin &&
+    install -v -m755 Release*/bin/{certutil,nss-config,pk12util} %{install-root}%{bindir} &&
 
-    install -v -m644 Linux*/lib/pkgconfig/nss.pc  /usr/lib/pkgconfig
+    install -v -m644 Release*/lib/pkgconfig/nss.pc  %{install-root}%{libdir}/pkgconfig
 
   - |
     ln -sfv ./pkcs11/p11-kit-trust.so %{install-root}%{libdir}/libnssckbi.so

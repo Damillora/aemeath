@@ -16,6 +16,6 @@ config:
 
 sources:
 - kind: git_repo
-  url: aemeath_mirror:xmlto.git
+  url: codeberg:xmlto/xmlto.git
   track: '*.*.*'
   ref: 0.0.29-0-g635dcd5bc84a7b67a3a2050a179d96e1d3050b15

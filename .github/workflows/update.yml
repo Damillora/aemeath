@@ -2,7 +2,7 @@
 name: Update sources
 on:
   schedule:
-    - cron: "27 00 */3 * *" # 03:05am UTC everyday
+    - cron: "27 00 * * 6" # 03:05am UTC everyday
   workflow_dispatch:
 
 permissions:

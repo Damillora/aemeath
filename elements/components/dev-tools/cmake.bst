@@ -26,7 +26,7 @@ config:
 
 sources:
 - kind: git_repo
-  url: cmake:cmake.git
+  url: aemeath_mirror:cmake.git
   track: v*
   exclude:
   - v*-rc*

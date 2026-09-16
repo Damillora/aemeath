@@ -15,4 +15,4 @@ sources:
 - kind: git_repo
   url: github:strukturag/libde265.git
   track: v*
-  ref: v1.1.2-0-gd0bcab76380c079358a3156b3e3b37d17c00a078
+  ref: v1.1.3-0-gba62bf4cfb3242f3bf0a45617ff09e35236e4d82

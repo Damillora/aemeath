@@ -19,7 +19,7 @@ variables:
 config:
   configure-commands:
     (<):
-      - sed -i 's/-Wl,-rpath,[^ ]*//' support/shobj-conf
+    - sed -i 's/-Wl,-rpath,[^ ]*//' support/shobj-conf
 
 sources:
 - kind: git_repo
@@ -29,4 +29,4 @@ sources:
   # to backport them one by one.
   # When reviewing an update, please review what patches it introduces
   track: master
-  ref: readline-8.3-3-g553d6bb272f26400d6d4d1cac7c1df84c447449b
+  ref: readline-8.3-6-gf95e81428a77b37d83e56c0c7099956e8a7adfc8

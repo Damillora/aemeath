@@ -6,4 +6,4 @@ sources:
   # to backport them one by one.
   # When reviewing an update, please review what patches it introduces
   track: master
-  ref: bash-5.3-16-gb460816602167718f78a6233164e8875f49b75b2
+  ref: bash-5.3-21-g9c465866b7d849378369ef700cbe2965aa9691e3

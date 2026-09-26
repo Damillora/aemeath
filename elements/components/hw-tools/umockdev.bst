@@ -16,4 +16,4 @@ sources:
 - kind: git_repo
   url: github:martinpitt/umockdev.git
   track: "*.*"
-  ref: 0.19.8-0-gb0e239fca33ca9e9663be8aa18778a2ce18cb207
+  ref: 0.19.9-0-gfe4701458b4004ac5ae592023ec0d02692a102c6

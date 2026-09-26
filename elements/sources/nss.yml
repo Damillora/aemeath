@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: github:nss-dev/nss.git
   track: NSS_3_*_RTM
-  ref: NSS_3_129_RTM-0-g23b159efa6d74923192ab6c7f6d0d5f3ad952d4d
+  ref: NSS_3_130_RTM-0-g97045cee4390aa5c035f95e6db13f3cd7c940fc1
   directory: nss
 - kind: patch_queue
   path: patches/nss

@@ -6,4 +6,4 @@ sources:
   - v*-rc*
   - v*-devel*
   - v*-start*
-  ref: v2.42.3-0-g6f20a5defcf9066d4d2af372424a1576bd3d495d
+  ref: v2.42.4-0-gd76cbf8f13e65ff657344f7f6a90042cf755ba59

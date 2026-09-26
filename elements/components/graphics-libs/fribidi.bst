@@ -15,4 +15,4 @@ sources:
 - kind: git_repo
   url: github:fribidi/fribidi.git
   track: v*
-  ref: v1.0.16-0-g68162babff4f39c4e2dc164a5e825af93bda9983
+  ref: v1.0.17-0-gb93119f5fdc7ea47672cc304c1455ffa6dfe7536

@@ -31,4 +31,4 @@ sources:
 - kind: git_repo
   url: 'kde:libraries/kirigami-addons.git'
   track: 'v*'
-  ref: v1.14.1-0-g190e7bb629be3f8ce8372b3782d5a174ed52e47a
+  ref: v1.14.2-0-gcb9010d5f2e2107c981e215c09b55c200b857101

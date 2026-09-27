@@ -15,4 +15,4 @@ sources:
 - kind: git_repo
   url: github:libuv/libuv.git
   track: v*
-  ref: v1.52.1-0-g1cfa32ff59c076ffb6ed735bbc8c18361558661f
+  ref: v1.53.0-0-g840404ce8ba7cc0204be52389a6cfff9f2c90fb6

@@ -18,7 +18,7 @@ sources:
 - kind: git_repo
   url: github:google/snappy.git
   track: "*.*"
-  ref: 1.2.2-0-g6af9287fbdb913f0794d0148c6aa43b58e63c8e3
+  ref: 1.3.1-0-g9c28114a38866f6deeaa826db918293bc28ae410
 - kind: git_repo
   url: github:google/googletest.git
   track: "*.*"

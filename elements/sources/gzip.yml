@@ -2,5 +2,5 @@ sources:
 - kind: gnu
   name: gzip
   ref:
-    suffix: gzip/gzip-1.14.tar.xz
-    sha256sum: 01a7b881bd220bfdf615f97b8718f80bdfd3f6add385b993dcf6efd14e8c0ac6
+    suffix: gzip/gzip-1.15.tar.xz
+    sha256sum: 9aa0cc780dec156b8282844833b342ab7cb08c25d2cd9a1869cdd0df31deff48

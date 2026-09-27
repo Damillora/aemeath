@@ -10,4 +10,4 @@ sources:
 - kind: git_repo
   url: 'kde:libraries/plasma-wayland-protocols.git'
   track: 'v*'
-  ref: v1.22.0-0-g382dfabda886d3f2f5c067b22e5a22376685ba78
+  ref: v1.23.0-0-gc5ac4db818f4a575a6ccfe0065b73ecfaba6e93e

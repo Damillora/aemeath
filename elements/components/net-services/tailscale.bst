@@ -28,7 +28,7 @@ sources:
   track: v*
   exclude:
   - "*pre*"
-  ref: v1.102.4-0-gbbcd7d1fc2054b9189ebc1531acf74bd880ca0c8
+  ref: v1.102.5-0-g5fb2a81b065b0a0bbbfc67ab20a0d9c6a1108115
 - kind: tar
   url: aemeath:files/tailscale-v1.102.4-vendor.tar.xz
   directory: vendor

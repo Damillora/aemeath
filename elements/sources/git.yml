@@ -4,7 +4,7 @@ sources:
   track: v*
   exclude:
   - v*-rc*
-  ref: v2.55.0-0-ge9019fcafe0040228b8631c30f97ae1adb61bcdc
+  ref: v2.56.0-0-ga018953688f1b10bddf91bff8747068f5f4746a4
 - kind: cargo2
   cargo-lock: contrib/libgit-rs/Cargo.lock
   ref:

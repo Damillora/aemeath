@@ -16,4 +16,4 @@ sources:
 - kind: git_repo
   url: github:notofonts/notofonts.github.io
   track: noto-monthly-release-*
-  ref: noto-monthly-release-2026.09.01-0-g76fff9eee60dcef8381bfcae8d0b4311e2186e67
+  ref: noto-monthly-release-2026.10.01-0-g025970232f4f8ff349310d9785431e87d20ed27c

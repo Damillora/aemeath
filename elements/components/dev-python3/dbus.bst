@@ -21,4 +21,4 @@ sources:
 - kind: git_repo
   url: freedesktop:dbus/dbus-python.git
   track: dbus-python-*
-  ref: dbus-python-1.4.0-0-gd4c4e537d5afccd7e88b232e09393806955f238a
+  ref: dbus-python-1.5.0-0-g7fe53bdbdf3bc7f928f7d09599c0f65fa9b5937a

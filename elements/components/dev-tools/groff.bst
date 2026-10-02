@@ -24,5 +24,5 @@ sources:
 - kind: gnu
   name: groff
   ref:
-    suffix: groff/groff-1.24.1.tar.gz
-    sha256sum: 74e2819795b6aff431aeac983d63a9c8968eeaba2a2eba7df8ba4c7b41e7cfd8
+    suffix: groff/groff-1.24.2.tar.gz
+    sha256sum: f9c1efd5bebbe37fc6e1063db7473ce8df1e3e0be4ff0f43ce04fce57e9c5dd9

@@ -1,3 +1,11 @@
+# NOTICE: Aemeath OS is sunsetting
+
+After 7 months of maintenance, external circumstances led to struggle in maintaining Aemeath OS properly, and version 20260921.1 will be **the last** Aemeath OS release.
+
+It was an insightful journey, but one person can only do so much. 
+
+Recommended replacement is the currently-alpha KDE Linux.
+
 # Aemeath OS
 
 An experimental independent Linux distribution running the KDE Plasma 
